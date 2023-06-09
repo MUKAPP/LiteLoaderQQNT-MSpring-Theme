@@ -14,7 +14,20 @@
 
 ![置顶&选中聊天展示](./screenshots/1.png)
 
+![非置顶&自己气泡展示](./screenshots/3.png)
+
+![一些细节-模糊展示](./screenshots/5.png)
+
+### 夜间模式
+
+![置顶&选中聊天展示](./screenshots/2.png)
+
+![非置顶&自己气泡展示](./screenshots/4.png)
+
+![一些细节-模糊展示](./screenshots/6.png)
+
 ## 使用方法
 
-下载 Zip文件 解压，将解压出的文件夹移动至 `BetterQQNT数据目录/plugins/` 下面，重启QQNT即可  
+下载 Zip文件 解压，将解压出的文件夹移动至 `BetterQQNT数据目录/plugins/` 下面，重启QQNT即可
+
 若想要自定义背景图片，将图片改为 `bg.jpg` 后放到 `BetterQQNT数据目录/plugins_data/test-theme/` 下面（自定义图片是原作者就有的功能，但是我并未额外适配）
