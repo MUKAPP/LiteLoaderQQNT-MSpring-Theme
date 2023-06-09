@@ -1,0 +1,182 @@
+/* 设置背景图片与效果 */
+#app::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: var(--test-theme-background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* 删除背景 */
+.recent-contact,
+.viewport-list__inner,
+.contact,
+.tab-header,
+.radio-tab,
+.q-collapse-item>.q-collapse-item__header,
+.normal-file,
+.forward-ops .op-icon,
+.sys-notify,
+.msg-content-container,
+.sys-notify-card {
+    background: initial !important;
+}
+
+.container--self {
+    background: #cb82be !important;
+}
+
+
+/* 列表条目圆角 */
+.viewport-list__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.list-item {
+    border-radius: 16px;
+}
+
+.group-chat {
+    display: initial !important;
+}
+
+.chat-msg-area {
+    overflow: initial !important;
+}
+
+.chat-msg-area .list-wrap {
+    padding-bottom: calc(150px + 20px);
+}
+
+.chat-input-area {
+    border-radius: 16px;
+    margin: 20px;
+    top: calc(var(--inputAreaHeight) * -1 + -40px);
+    z-index: 9;
+}
+
+
+/* 浅色模式 */
+@media (prefers-color-scheme: light) {
+
+    /* 添加模糊 */
+    .msg-content-container,
+    .normal-file,
+    .forward-ops .op-icon,
+    .radio-tab,
+    .sys-notify-card,
+    .chat-input-area {
+        backdrop-filter: brightness(94%) saturate(120%) blur(8px);
+    }
+
+    .side-panel {
+        backdrop-filter: brightness(120%) saturate(120%) blur(32px);
+        box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%);
+        background: #ffffff9f !important;
+    }
+
+    .tab-container {
+        background: initial !important;
+    }
+
+    .list-item:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .sidebar {
+        background: #ffffff !important;
+    }
+
+    .search-result,
+    .q-popover,
+    .user-card-main {
+        backdrop-filter: brightness(160%) saturate(120%) blur(8px);
+        background: #ffffff9f !important;
+        border-radius: 8px;
+    }
+}
+
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+
+    /* 添加模糊 */
+    .msg-content-container,
+    .normal-file,
+    .forward-ops .op-icon,
+    .radio-tab,
+    .sys-notify-card,
+    .chat-input-area {
+        backdrop-filter: brightness(140%) saturate(120%) blur(8px);
+    }
+
+    .side-panel {
+        backdrop-filter: brightness(110%) saturate(120%) blur(32px);
+        box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%);
+        background: #1717179f !important;
+    }
+
+    .list-item:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .search-result,
+    .q-popover,
+    .user-card-main {
+        backdrop-filter: brightness(160%) saturate(120%) blur(8px);
+        background: #1717179f !important;
+        border-radius: 8px;
+    }
+
+}
+
+:root {
+    --el-color-primary: #cb82be;
+}
+
+.q-theme-tokens-light {
+    --brand_standard: #cb82be;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
+    --bubble_host: #cb82be;
+    --nt_brand_standard_2_20_2_alpha: #cb82be3f;
+}
+
+.q-theme-tokens-dark {
+    --brand_standard: #cb82be;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
+    --bubble_host: #cb82be;
+}
+
+.send-btn-wrap,
+.top-bar__adder,
+.search-input,
+.radio-tab {
+    border-radius: 8px !important;
+}
+
+.q-context-menu:not(.is-pure),
+.q-context-sub-menu__container:not(.is-pure),
+.q-button {
+    /* backdrop-filter: brightness(100%) saturate(120%) blur(8px); */
+    /* background: none !important; */
+    border-radius: 8px;
+}
+
+.guilds-item-btn .q-button {
+    border-radius: 8px !important;
+}
+
+.guilds-item {
+    border-radius: 16px !important;
+    height: initial !important;
+    min-width: auto !important;
+}
