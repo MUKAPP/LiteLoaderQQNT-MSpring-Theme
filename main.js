@@ -30,7 +30,7 @@ function updateStyle(webContents) {
             return;
         }
         webContents.send(
-            "betterQQNT.test_theme.updateStyle",
+            "betterQQNT.mspring_theme.updateStyle",
             data
         );
     });
@@ -47,11 +47,6 @@ function watchCSSChange(webContents) {
 
 
 function onBrowserWindowCreated(window, plugin) {
-    const preloads = Array.from(new Set([
-        ...window.webContents.session.getPreloads(),
-        path.join(plugin.path, "preload.js")
-    ]));
-    window.webContents.session.setPreloads(preloads);
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();
         if (url.includes("app://./renderer/index.html")) {
