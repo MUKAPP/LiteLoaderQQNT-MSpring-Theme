@@ -22,7 +22,13 @@
 .forward-ops .op-icon,
 .sys-notify,
 .msg-content-container,
-.sys-notify-card {
+.sys-notify-card,
+.sidebar,
+.setting-tab,
+.setting-main,
+.nav-bar-container,
+.file-manager-main,
+.file-list-normal-scroll-container {
     background: initial !important;
 }
 
@@ -62,7 +68,6 @@
     z-index: 9;
 }
 
-
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
@@ -90,9 +95,7 @@
         background-color: rgba(0, 0, 0, 0.1) !important;
     }
 
-    .sidebar,
-    .setting-tab,
-    .setting-main {
+    #app {
         background: #ffffff !important;
     }
 
@@ -102,6 +105,18 @@
         backdrop-filter: brightness(160%) saturate(120%) blur(8px);
         background: #ffffff9f !important;
         border-radius: 8px;
+    }
+
+    .file-list-normal-sort,
+    .file-list-normal-sort-title {
+        background: #f0f0f0 !important;
+        margin-bottom: 16px;
+        border-radius: 8px;
+    }
+
+    .favorites-layout__right-area,
+    .favorites-layout__content {
+        background-color: #ffffff !important;
     }
 }
 
@@ -129,7 +144,7 @@
         background-color: rgba(255, 255, 255, 0.1) !important;
     }
 
-    .setting-tab {
+    #app {
         background: #1a1a1a !important;
     }
 
@@ -139,6 +154,17 @@
         backdrop-filter: brightness(160%) saturate(120%) blur(8px);
         background: #1717179f !important;
         border-radius: 8px;
+    }
+
+    .file-list-normal-sort,
+    .file-list-normal-sort-title {
+        background: var(--overlay_top);
+        margin-bottom: 16px;
+        border-radius: 8px;
+    }
+
+    .favorites-layout__left-area {
+        background-color: #1a1a1a !important;
     }
 
 }
