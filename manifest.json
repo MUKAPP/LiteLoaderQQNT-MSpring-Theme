@@ -1,14 +1,14 @@
 {
     "manifest_version": 1,
     "type": "theme",
-    "name": "Test-Theme",
-    "slug": "test_theme",
-    "description": "测试用的主题",
-    "version": "0.1.0",
+    "name": "MSpring-Theme",
+    "slug": "mspring_theme",
+    "description": "BetterQQNT 主题，优雅 · 粉粉 · 细致",
+    "version": "0.1.1",
     "author": [
         {
-            "name": "沫烬染",
-            "link": "https://github.com/mo-jinran"
+            "name": "MUKAPP",
+            "link": "https://github.com/MUKAPP"
         }
     ],
     "inject": "./main.js"

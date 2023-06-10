@@ -90,7 +90,9 @@
         background-color: rgba(0, 0, 0, 0.1) !important;
     }
 
-    .sidebar {
+    .sidebar,
+    .setting-tab,
+    .setting-main {
         background: #ffffff !important;
     }
 
@@ -127,6 +129,10 @@
         background-color: rgba(255, 255, 255, 0.1) !important;
     }
 
+    .setting-tab {
+        background: #1a1a1a !important;
+    }
+
     .search-result,
     .q-popover,
     .user-card-main {
@@ -147,6 +153,7 @@
     --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
     --bubble_host: #cb82be;
     --nt_brand_standard_2_20_2_alpha: #cb82be3f;
+    --overlay_active_brand: #cb82be;
 }
 
 .q-theme-tokens-dark {
@@ -154,12 +161,14 @@
     --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
     --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
     --bubble_host: #cb82be;
+    --overlay_active_brand: #cb82be;
 }
 
 .send-btn-wrap,
 .top-bar__adder,
 .search-input,
-.radio-tab {
+.radio-tab,
+.q-pulldown-menu-button {
     border-radius: 8px !important;
 }
 

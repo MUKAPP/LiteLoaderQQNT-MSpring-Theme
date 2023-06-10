@@ -4,7 +4,9 @@
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用
 
-如果你发现哪里还没有适配，欢迎提 Issues
+事实上我不怎么会 css，模仿着改的（）
+
+如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
 
 基于 BetterQQNT 作者的 [test-theme](https://github.com/mo-jinran/BetterQQNT-test-theme) 编写
 
