@@ -141,6 +141,10 @@
         backdrop-filter: brightness(140%) saturate(120%) blur(8px);
     }
 
+    .chat-input-area {
+        background: #2121213f;
+    }
+
     .side-panel {
         backdrop-filter: brightness(110%) saturate(120%) blur(32px);
         box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%);
