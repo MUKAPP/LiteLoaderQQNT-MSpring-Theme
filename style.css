@@ -281,3 +281,7 @@
     background: none !important;
     backdrop-filter: none !important;
 }
+
+.q-input__inner:focus {
+    border-radius: 8px !important;
+}
