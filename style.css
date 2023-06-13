@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background-image: var(--mspring_theme-background);
+    background-image: var(--mspring-theme-background);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,6 +180,7 @@
     --bubble_host: #cb82be;
     --nt_brand_standard_2_20_2_alpha: #cb82be3f;
     --overlay_active_brand: #cb82be;
+    --text_link: #cb82be;
 }
 
 .q-theme-tokens-dark {
@@ -188,6 +189,7 @@
     --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
     --bubble_host: #cb82be;
     --overlay_active_brand: #cb82be;
+    --text_link: #cb82be;
 }
 
 .send-btn-wrap,
@@ -214,4 +216,19 @@
     border-radius: 16px !important;
     height: initial !important;
     min-width: auto !important;
+}
+
+.password-container__input-area .q-input,
+.password-container__input-area .password,
+.password-container__input-area .input.focus {
+    border-radius: 8px !important;
+    background: #0000003f !important;
+}
+
+.login-container{
+    background: none !important;
+}
+
+.auto-login .avatar{
+    box-shadow: 0px 4px 28px 0px #cb82beaf !important;
 }

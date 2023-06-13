@@ -4,7 +4,7 @@
   "name": "MSpring-Theme",
   "slug": "mspring_theme",
   "description": "BetterQQNT 主题，优雅 · 粉粉 · 细致",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": [
     {
       "name": "MUKAPP",
@@ -12,6 +12,7 @@
     }
   ],
   "injects": {
+    "renderer": "./renderer.js",
     "main": "./main.js",
     "preload": "./preload.js"
   }

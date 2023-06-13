@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { BrowserWindow, ipcMain } = require("electron");
 
 
 // 防抖函数
@@ -11,14 +12,6 @@ function debounce(fn, time) {
             fn.apply(this, args);
         }, time);
     }
-}
-
-
-// 注入js
-function injectJS(webContents) {
-    const filepath = path.join(__dirname, "renderer.js");
-    const filetext = fs.readFileSync(filepath, "utf-8");
-    webContents.executeJavaScript(filetext, true);
 }
 
 
@@ -37,7 +30,7 @@ function updateStyle(webContents) {
 }
 
 
-// 监听CSS修改
+// 监听CSS修改-开发时候用的
 function watchCSSChange(webContents) {
     const filepath = path.join(__dirname, "style.css");
     fs.watch(filepath, "utf-8", debounce(() => {
@@ -46,20 +39,28 @@ function watchCSSChange(webContents) {
 }
 
 
+function onLoad(plugin) {
+    ipcMain.on(
+        "betterQQNT.mspring_theme.rendererReady",
+        (event, message) => {
+            const window = BrowserWindow.fromWebContents(event.sender);
+            updateStyle(window.webContents);
+        }
+    );
+}
+
+
 function onBrowserWindowCreated(window, plugin) {
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();
         if (url.includes("app://./renderer/index.html")) {
-            injectJS(window.webContents);
             watchCSSChange(window.webContents);
-            window.webContents.on("did-finish-load", () => {
-                updateStyle(window.webContents);
-            });
         }
     });
 }
 
 
 module.exports = {
+    onLoad,
     onBrowserWindowCreated
 }
