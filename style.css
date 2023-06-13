@@ -29,6 +29,7 @@
     background: initial !important;
 }
 
+/* 自己消息的背景 */
 .container--self {
     background: #cb82be !important;
 }
@@ -41,6 +42,7 @@
     padding: 8px;
 }
 
+/* 消息列表项圆角 */
 .list-item {
     border-radius: 16px;
 }
@@ -77,12 +79,14 @@
         backdrop-filter: brightness(94%) saturate(120%) blur(8px);
     }
 
+    /* 聊天界面更多面板 */
     .side-panel {
         backdrop-filter: brightness(120%) saturate(120%) blur(32px);
         box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%) !important;
         background: #ffffff9f !important;
     }
 
+    /* 去除tab右边区域的背景 */
     .tab-container {
         background: initial !important;
     }
@@ -108,7 +112,8 @@
     }
 
     .favorites-layout__right-area,
-    .favorites-layout__content {
+    .favorites-layout__content,
+    .login-container {
         background-color: #ffffff !important;
     }
 
@@ -117,6 +122,10 @@
     .password-container__input-area .password .input.focus {
         border-radius: 8px !important;
         background: #00000021 !important;
+    }
+
+    .sidebar {
+        background: none !important;
     }
 }
 
@@ -164,10 +173,12 @@
         border-radius: 8px;
     }
 
-    .favorites-layout__left-area {
+    .favorites-layout__left-area,
+    .login-container,
+        .sidebar {
         background-color: #1a1a1a !important;
     }
-
+    
     .password-container__input-area .q-input,
     .password-container__input-area .password .input,
     .password-container__input-area .password .input.focus {
@@ -189,6 +200,7 @@
         padding-bottom: 0px;
         border-radius: 8px;
         background: #ffffff9f !important;
+        transform: none !important;
     }
 
     .process-text,
@@ -208,6 +220,7 @@
     .container--self .text-link {
         color: #ffffff !important;
     }
+
 }
 
 :root {
@@ -239,7 +252,8 @@
 .radio-tab,
 .q-pulldown-menu-button,
 .record-search,
-.search {
+.search,
+.guilds-item-btn .q-button {
     border-radius: 8px !important;
 }
 
@@ -249,10 +263,6 @@
     /* backdrop-filter: brightness(100%) saturate(120%) blur(8px); */
     /* background: none !important; */
     border-radius: 8px;
-}
-
-.guilds-item-btn .q-button {
-    border-radius: 8px !important;
 }
 
 .guilds-item {
@@ -267,7 +277,7 @@
 }
 
 .login-container {
-    background: none !important;
+    background-image: none !important;
 }
 
 .auto-login .avatar {
