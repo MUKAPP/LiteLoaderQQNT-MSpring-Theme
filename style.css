@@ -23,9 +23,6 @@
 .sys-notify,
 .msg-content-container,
 .sys-notify-card,
-.sidebar,
-.setting-tab,
-.setting-main,
 .nav-bar-container,
 .file-manager-main,
 .file-list-normal-scroll-container {
@@ -94,10 +91,6 @@
         background-color: rgba(0, 0, 0, 0.1) !important;
     }
 
-    #app {
-        background: #ffffff !important;
-    }
-
     .search-result,
     .q-popover,
     .user-card-main,
@@ -153,10 +146,6 @@
 
     .list-item:hover {
         background-color: rgba(255, 255, 255, 0.1) !important;
-    }
-
-    #app {
-        background: #1a1a1a !important;
     }
 
     .search-result,
