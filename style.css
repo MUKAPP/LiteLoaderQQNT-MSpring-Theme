@@ -117,6 +117,10 @@
         background-color: #ffffff !important;
     }
 
+    .setting-tab {
+        background-color: var(--bg_grey_standard) !important;
+    }
+
     .password-container__input-area .q-input,
     .password-container__input-area .password .input,
     .password-container__input-area .password .input.focus {
@@ -175,10 +179,12 @@
 
     .favorites-layout__left-area,
     .login-container,
-        .sidebar {
+    .sidebar,
+    .setting-main,
+    .setting-tab {
         background-color: #1a1a1a !important;
     }
-    
+
     .password-container__input-area .q-input,
     .password-container__input-area .password .input,
     .password-container__input-area .password .input.focus {
