@@ -206,6 +206,11 @@
     .login-panel .divider {
         color: #ffffff !important;
     }
+
+    .search-input,
+    .message-panel .top-bar__adder {
+        background: #ffffff10 !important;
+    }
 }
 
 :root {
