@@ -101,10 +101,11 @@
 
     .search-result,
     .q-popover,
-    .user-card-main {
+    .user-card-main,
+    .account-list {
         backdrop-filter: brightness(160%) saturate(120%) blur(8px);
         background: #ffffff9f !important;
-        border-radius: 8px;
+        border-radius: 8px !important;
     }
 
     .file-list-normal-sort,
@@ -117,6 +118,13 @@
     .favorites-layout__right-area,
     .favorites-layout__content {
         background-color: #ffffff !important;
+    }
+
+    .password-container__input-area .q-input,
+    .password-container__input-area .password .input,
+    .password-container__input-area .password .input.focus {
+        border-radius: 8px !important;
+        background: #00000021 !important;
     }
 }
 
@@ -150,10 +158,11 @@
 
     .search-result,
     .q-popover,
-    .user-card-main {
+    .user-card-main,
+    .account-list {
         backdrop-filter: brightness(160%) saturate(120%) blur(8px);
         background: #1717179f !important;
-        border-radius: 8px;
+        border-radius: 8px !important;
     }
 
     .file-list-normal-sort,
@@ -167,6 +176,37 @@
         background-color: #1a1a1a !important;
     }
 
+    .password-container__input-area .q-input,
+    .password-container__input-area .password .input,
+    .password-container__input-area .password .input.focus {
+        border-radius: 8px !important;
+        background: #ffffff21 !important;
+        color: #ffffff !important;
+    }
+
+    .login-panel {
+        color: #ffffff;
+    }
+
+    .qq-icon-font {
+        height: auto !important;
+        width: 64px !important;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 4px;
+        padding-bottom: 0px;
+        border-radius: 8px;
+        background: #ffffff9f !important;
+    }
+
+    .process-text,
+    .password-container__input-area,
+    .password-container__input-area .q-icon,
+    .password-container__input-area .q-input__inner,
+    .account-list .uin,
+    .login-panel .divider {
+        color: #ffffff !important;
+    }
 }
 
 :root {
@@ -196,7 +236,9 @@
 .top-bar__adder,
 .search-input,
 .radio-tab,
-.q-pulldown-menu-button {
+.q-pulldown-menu-button,
+.record-search,
+.search {
     border-radius: 8px !important;
 }
 
@@ -218,17 +260,20 @@
     min-width: auto !important;
 }
 
-.password-container__input-area .q-input,
-.password-container__input-area .password,
-.password-container__input-area .input.focus {
-    border-radius: 8px !important;
-    background: #0000003f !important;
-}
-
-.login-container{
+.password-container__input-area .q-input__inner,
+.password-container__input-area .password {
     background: none !important;
 }
 
-.auto-login .avatar{
+.login-container {
+    background: none !important;
+}
+
+.auto-login .avatar {
     box-shadow: 0px 4px 28px 0px #cb82beaf !important;
+}
+
+.record-msg .msg-content-container {
+    background: none !important;
+    backdrop-filter: none !important;
 }
