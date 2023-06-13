@@ -36,7 +36,6 @@
     background: #cb82be !important;
 }
 
-
 /* 列表条目圆角 */
 .viewport-list__inner {
     display: flex;
@@ -225,10 +224,18 @@
     background: #0000003f !important;
 }
 
+.password-container__input-area .password .input{
+  border-radius: 8px !important;
+}
+
 .login-container{
     background: none !important;
 }
 
 .auto-login .avatar{
     box-shadow: 0px 4px 28px 0px #cb82beaf !important;
+}
+
+.record-search .search .search-input{
+  border-radius: 4px !important;
 }
