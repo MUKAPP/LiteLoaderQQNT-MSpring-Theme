@@ -211,6 +211,10 @@
     .message-panel .top-bar__adder {
         background: #ffffff10 !important;
     }
+
+    .container--self .text-link {
+        color: #ffffff !important;
+    }
 }
 
 :root {
