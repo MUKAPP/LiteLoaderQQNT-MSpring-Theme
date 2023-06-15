@@ -79,6 +79,10 @@
         backdrop-filter: brightness(94%) saturate(120%) blur(8px);
     }
 
+    .chat-input-area {
+        background: #eeeeee3f;
+    }
+
     /* 聊天界面更多面板 */
     .side-panel {
         backdrop-filter: brightness(120%) saturate(120%) blur(32px);
