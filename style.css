@@ -1,38 +1,38 @@
-/* 设置背景图片与效果 */
-#app::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-image: var(--mspring-theme-background);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-}
-
 /* 删除背景 */
 .recent-contact,
 .viewport-list__inner,
 .contact,
 .tab-header,
 .radio-tab,
-.q-collapse-item>.q-collapse-item__header,
-.normal-file,
-.forward-ops .op-icon,
+/* .normal-file, */
 .sys-notify,
-.msg-content-container,
-.sys-notify-card,
-.nav-bar-container,
-.file-manager-main,
-.file-list-normal-scroll-container {
-    background: initial !important;
+/* .msg-content-container, */
+/* .sys-notify-card, */
+.file-list-normal-scroll-container,
+.sender-container,
+.tab-container .profile,
+/* 文件管理页面 文件列表下面的白条 */
+.file-area .loadmore-placeholder,
+/* 文件管理页面 群文件 群列表 */
+.group-file-container,
+.q-collapse-item,
+.q-collapse-item .q-collapse-item__header,
+/* 文件管理页面 类型列表 */
+.file-type-container,
+/* 文件管理页面 类型 图片与视频 */
+.file-list-grid-scroll-container,
+/* 文件管理页面 群文件 footer */
+.file-area-container-group-file-footer,
+/* 收藏 左侧列表 */
+.favorites-layout,
+.favorites-layout__left-area,
+/* 收藏 右侧 背景删不掉？？？？ */
+.favorites-layout__right-area,
+.favorites-layout__content,
+.favorites-header {
+    background: none !important;
 }
 
-/* 自己消息的背景 */
-.container--self {
-    background: #cb82be !important;
-}
 
 /* 列表条目圆角 */
 .viewport-list__inner {
@@ -42,159 +42,237 @@
     padding: 8px;
 }
 
+/* 好友通知、群通知列表项 */
+.sys-notify__container .sys-notify-card,
+.sys-notify__container .list-item {
+    border-radius: 8px;
+}
+
 /* 消息列表项圆角 */
 .list-item {
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
-.group-chat {
-    display: initial !important;
-}
-
-.chat-msg-area {
-    overflow: initial !important;
-}
-
-.chat-msg-area .list-wrap {
-    padding-bottom: calc(150px + 20px);
-}
-
+/* 聊天框 */
 .chat-input-area {
-    border-radius: 16px;
-    margin: 20px;
-    top: calc(var(--inputAreaHeight) * -1 + -40px);
-    z-index: 9;
+    border-radius: 16px 16px 0px 0px;
+}
+
+/* 文件管理 文件列表 块 */
+.file-list-normal-sort,
+/* 文件管理 类型 图片与视频 */
+.file-list-grid-scroll-container>* {
+    margin-bottom: 16px;
+}
+
+/* 添加模糊 */
+.normal-file,
+.radio-tab {
+    backdrop-filter: blur(8px);
+}
+
+/* 文件管理 发送人列表 */
+.file-manager-main .q-collapse-item {
+    background: none !important;
+}
+
+/* 
+    文件管理 发送人列表
+    文件管理 类型列表
+    文件管理 发送人列表 展开的子列表 */
+.file-manager-main .q-collapse-item__title,
+.file-manager-main .file-type,
+.file-manager-main .user-item-container {
+    border-radius: 8px !important;
 }
 
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
-    /* 添加模糊 */
-    .msg-content-container,
-    .normal-file,
-    .forward-ops .op-icon,
-    .radio-tab,
-    .sys-notify-card,
-    .chat-input-area {
-        backdrop-filter: brightness(94%) saturate(120%) blur(8px);
-    }
-
-    .chat-input-area {
-        background: #eeeeee3f;
+    /* 多选消息的按钮 */
+    .forward-ops .op-icon {
+        background: #00000010 !important;
     }
 
     /* 聊天界面更多面板 */
     .side-panel {
-        backdrop-filter: brightness(120%) saturate(120%) blur(32px);
-        box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%) !important;
-        background: #ffffff9f !important;
+        box-shadow: 0 4px 6px 0px #00000010 !important;
+        /* 
+            新版QQ整体窗口背景可以透明了
+            想保留透明背景但是发现背景透明了之后模糊也透明了。。。 */
+        background: #ffffffef !important;
+        backdrop-filter: blur(32px);
     }
 
-    /* 去除tab右边区域的背景 */
-    .tab-container {
-        background: initial !important;
+    /* 
+        主界面侧栏
+        主界面侧栏右边区域
+        文件管理页面侧栏
+        文件管理页面侧栏右边区域
+        设置侧栏
+        设置侧栏右边的区域 */
+    .sidebar-nav,
+    .tab-container,
+    .nav-bar-container,
+    .file-manager-main,
+    .setting-tab,
+    .setting-main {
+        background: #ffffffaf !important;
     }
 
     .list-item:hover {
-        background-color: rgba(0, 0, 0, 0.1) !important;
+        background-color: #00000021 !important;
+    }
+
+    /* 别人消息的背景 */
+    .message-content__wrapper .container--others {
+        background: #00000010 !important;
+    }
+
+    /* 自己消息的背景 */
+    .message-content__wrapper .container--self {
+        background: #cb82be !important;
+    }
+
+    /* 好友通知、群通知列表项 */
+    .sys-notify__container .sys-notify-card {
+        background: #00000010 !important;
     }
 
     .search-result,
     .q-popover,
     .user-card-main,
     .account-list {
-        backdrop-filter: brightness(160%) saturate(120%) blur(8px);
-        background: #ffffff9f !important;
+        backdrop-filter: blur(8px);
+        background: #ffffffef !important;
         border-radius: 8px !important;
     }
 
+    /* 
+        文件管理 文件列表 块
+        文件管理 文件列表 标题
+        文件管理 类型 图片与视频
+        设置 列表项卡片
+        设置 消息通知 列表项卡片 消息组
+        设置 存储管理 列表项卡片
+        设置 快捷键 列表项卡片 */
     .file-list-normal-sort,
-    .file-list-normal-sort-title {
-        background: #f0f0f0 !important;
-        margin-bottom: 16px;
+    .file-list-normal-sort-title,
+    .file-list-grid-scroll-container>*,
+    .setting-main__content>*>*:not(.better_qqnt)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    .setting-main__content .popup>*:not(.setting-item-title),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
+    .setting-main__content .shotcut>*,
+    .better_qqnt .wrap {
+        background: #00000010 !important;
         border-radius: 8px;
     }
 
-    .favorites-layout__right-area,
-    .favorites-layout__content,
     .login-container {
         background-color: #ffffff !important;
-    }
-
-    .setting-tab {
-        background-color: var(--bg_grey_standard) !important;
     }
 
     .password-container__input-area .q-input,
     .password-container__input-area .password .input,
     .password-container__input-area .password .input.focus {
         border-radius: 8px !important;
-        background: #00000021 !important;
+        background: #00000010 !important;
     }
 
-    .sidebar {
-        background: none !important;
-    }
 }
 
 
 /* 深色模式 */
 @media (prefers-color-scheme: dark) {
 
-    /* 添加模糊 */
-    .msg-content-container,
-    .normal-file,
-    .forward-ops .op-icon,
-    .radio-tab,
-    .sys-notify-card,
-    .chat-input-area {
-        backdrop-filter: brightness(140%) saturate(120%) blur(8px);
+    /* 多选消息的按钮 */
+    .forward-ops .op-icon {
+        background: #ffffff21 !important;
     }
 
-    .chat-input-area {
-        background: #2121213f;
-    }
-
+    /* 聊天界面更多面板 */
     .side-panel {
-        backdrop-filter: brightness(110%) saturate(120%) blur(32px);
-        box-shadow: 0 4px 6px 0px rgb(0 0 0 / 5%);
-        background: #1717179f !important;
+        box-shadow: 0 4px 6px 0px #00000010 !important;
+        /* 
+            新版QQ整体窗口背景可以透明了
+            想保留透明背景但是发现背景透明了之后模糊也透明了。。。 */
+        background: #171717ef !important;
+        backdrop-filter: blur(32px);
+    }
+
+    /* 
+        主界面侧栏
+        主界面侧栏右边区域
+        文件管理页面侧栏
+        文件管理页面侧栏右边区域
+        设置侧栏
+        设置侧栏右边的区域 */
+    .sidebar-nav,
+    .tab-container,
+    .nav-bar-container,
+    .file-manager-main,
+    .setting-tab,
+    .setting-main {
+        background: #171717af !important;
     }
 
     .list-item:hover {
-        background-color: rgba(255, 255, 255, 0.1) !important;
+        background-color: #ffffff3f !important;
+    }
+
+    /* 别人消息的背景 */
+    .message-content__wrapper .container--others {
+        background: #ffffff21 !important;
+    }
+
+    /* 自己消息的背景 */
+    .message-content__wrapper .container--self {
+        background: #cb82be !important;
+    }
+
+    /* 好友通知、群通知列表项 */
+    .sys-notify__container .sys-notify-card {
+        background: #ffffff21 !important;
     }
 
     .search-result,
     .q-popover,
     .user-card-main,
     .account-list {
-        backdrop-filter: brightness(160%) saturate(120%) blur(8px);
-        background: #1717179f !important;
+        backdrop-filter: blur(8px);
+        background: #171717ef !important;
         border-radius: 8px !important;
     }
 
+    /* 
+        文件管理 文件列表 块
+        文件管理 文件列表 标题
+        文件管理 类型 图片与视频
+        设置 列表项卡片
+        设置 消息通知 列表项卡片 消息组
+        设置 存储管理 列表项卡片
+        设置 快捷键 列表项卡片 */
     .file-list-normal-sort,
-    .file-list-normal-sort-title {
-        background: var(--overlay_top);
-        margin-bottom: 16px;
+    .file-list-normal-sort-title,
+    .file-list-grid-scroll-container>*,
+    .setting-main__content>*>*:not(.better_qqnt)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    .setting-main__content .popup>*:not(.setting-item-title),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
+    .setting-main__content .shotcut>*,
+    .better_qqnt .wrap {
+        background: #ffffff21 !important;
         border-radius: 8px;
     }
 
-    .favorites-layout__left-area,
-    .login-container,
-    .sidebar,
-    .setting-main,
-    .setting-tab {
-        background-color: #1a1a1a !important;
+    .login-container {
+        background-color: #171717 !important;
     }
 
     .password-container__input-area .q-input,
     .password-container__input-area .password .input,
     .password-container__input-area .password .input.focus {
         border-radius: 8px !important;
-        background: #ffffff21 !important;
-        color: #ffffff !important;
+        background: #ffffff3f !important;
     }
 
     .login-panel {
@@ -227,6 +305,7 @@
         background: #ffffff10 !important;
     }
 
+    /* 自己发送的链接颜色 */
     .container--self .text-link {
         color: #ffffff !important;
     }
@@ -299,6 +378,7 @@
     backdrop-filter: none !important;
 }
 
+/* 搜索框等点击之后粉线的圆角 */
 .q-input__inner:focus {
     border-radius: 8px !important;
 }
