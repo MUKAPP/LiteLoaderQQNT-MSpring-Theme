@@ -33,5 +33,3 @@
 ## 使用方法
 
 下载 Zip 文件 解压，将解压出的文件夹移动至 `BetterQQNT数据目录/plugins/` 下面，重启 QQNT 即可
-
-若想要自定义背景图片，将图片改为 `bg.jpg` 后放到 `BetterQQNT数据目录/plugins_data/mspring_theme/` 下面（自定义图片是原作者就有的功能，但是我并未额外适配）
