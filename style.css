@@ -86,6 +86,11 @@
     border-radius: 8px !important;
 }
 
+/* 登录页面QQ图标 */
+.qq-icon-font {
+    transform: none !important;
+}
+
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
@@ -264,6 +269,7 @@
         border-radius: 8px;
     }
 
+    /* 登录页面背景 */
     .login-container {
         background-color: #171717 !important;
     }
@@ -275,29 +281,53 @@
         background: #ffffff3f !important;
     }
 
-    .login-panel {
-        color: #ffffff;
+    .login-panel,
+    .proxy-setting__title,
+    .proxy-setting__subtitle,
+    #qPullDownMenuTrigger,
+    .login-panel .q-button.q-button--secondary.q-button--default>span {
+        color: #ffffff !important;
     }
 
-    .qq-icon-font {
-        height: auto !important;
-        width: 64px !important;
-        padding-left: 8px;
-        padding-right: 8px;
-        padding-top: 4px;
-        padding-bottom: 0px;
-        border-radius: 8px;
-        background: #ffffff9f !important;
-        transform: none !important;
+    .login-panel .q-button.q-button--secondary.q-button--default {
+        border-color: #ffffff7f !important;
+    }
+
+    .q-pulldown-menu-button {
+        background: #ffffff21 !important;
+    }
+
+    .login-panel .proxy-setting__type>div>div>span>i>svg>path {
+        fill: #ffffff !important;
     }
 
     .process-text,
     .password-container__input-area,
     .password-container__input-area .q-icon,
     .password-container__input-area .q-input__inner,
-    .account-list .uin,
-    .login-panel .divider {
+    .account-list .uin {
         color: #ffffff !important;
+    }
+
+    .login-panel .seperator {
+        color: #ffffff7f !important;
+    }
+
+    .login-panel .password-container__opreate.operation>div,
+    .login-panel .operation>div {
+        background: #ffffff7f !important;
+    }
+
+    /* 登录页隐私checkbox未勾选 */
+    .q-checkbox:not(.is-disabled):not(.is-checked):hover .q-checkbox__input {
+        background-color: #ffffff3f !important;
+        border-color: #ffffff9f !important;
+    }
+
+    /* 登录页隐私checkbox勾选 */
+    .q-checkbox .q-checkbox__input {
+        background-color: #ffffff10 !important;
+        border-color: #ffffff3f !important;
     }
 
     .search-input,
@@ -308,6 +338,16 @@
     /* 自己发送的链接颜色 */
     .container--self .text-link {
         color: #ffffff !important;
+    }
+
+    /* 登录页面QQ图标颜色 */
+    .qq-icon-font>*>*>* {
+        fill: #ffffff !important;
+    }
+
+    #app>div>div.window-control-area>div>i>svg>path,
+    #app>div>div.setting>i>svg>path {
+        fill: #ffffff !important;
     }
 
 }
@@ -381,4 +421,14 @@
 /* 搜索框等点击之后粉线的圆角 */
 .q-input__inner:focus {
     border-radius: 8px !important;
+}
+
+/* 登录页面链接颜色 */
+.login-panel .password-container__opreate.operation>span:nth-child(1)>span,
+.login-panel .password-container__opreate.operation>span:nth-child(3)>span,
+#chk1-label>a:nth-child(1),
+#chk1-label>a:nth-child(2),
+#app>div>div.login-panel>div>div.operation>span:nth-child(1),
+#app>div>div.login-panel>div>div.operation>span:nth-child(3) {
+    color: var(--text_link) !important;
 }
