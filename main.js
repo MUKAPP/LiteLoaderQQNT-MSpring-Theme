@@ -39,6 +39,7 @@ function watchCSSChange(webContents) {
 }
 
 
+// 加载插件时触发
 function onLoad(plugin) {
     ipcMain.on(
         "betterQQNT.mspring_theme.rendererReady",
@@ -50,6 +51,7 @@ function onLoad(plugin) {
 }
 
 
+// 创建窗口时触发
 function onBrowserWindowCreated(window, plugin) {
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();

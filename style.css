@@ -160,15 +160,16 @@
         设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
-        设置 快捷键 列表项卡片 */
+        设置 快捷键 列表项卡片
+        LiteLoaderQQNT 配置界面 */
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    .setting-main__content>*>*:not(.better_qqnt)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    .setting-main__content>*>*:not(.config_view, .appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
-    .better_qqnt .wrap {
+    .config_view .wrap {
         background: #00000010 !important;
         border-radius: 8px;
     }
