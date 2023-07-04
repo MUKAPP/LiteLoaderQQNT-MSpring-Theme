@@ -10,7 +10,7 @@
 
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
 
-基于 LiteLoaderQQNT 作者的 [test-theme](https://github.com/mo-jinran/BetterQQNT-test-theme) 编写
+基于 LiteLoaderQQNT 作者的 [test-theme](https://github.com/mo-jinran/test-theme) 编写
 
 ## 截图
 
