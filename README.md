@@ -1,4 +1,4 @@
-# LiteLoaderQQNT-MSpring-Theme
+# BetterQQNT-MSpring-Theme
 
 [LiteLoaderQQNT(原BetterQQNT JS版)](https://github.com/mo-jinran/BetterQQNT) 主题，优雅 · 粉粉 · 细致
 
