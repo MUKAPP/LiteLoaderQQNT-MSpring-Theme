@@ -32,4 +32,6 @@
 
 ## 使用方法
 
-下载 Zip 文件 解压，将解压出的文件夹移动至 `BetterQQNT数据目录/plugins/` 下面，重启 QQNT 即可
+下载的 Zip文件 解压，将解压出的文件夹移动至 `LiteLoaderQQNT数据目录/plugins/`，重启 QQ 即可
+
+BetterQQNT 的默认数据文件夹在 `用户目录/Documents/BetterQQNT`
