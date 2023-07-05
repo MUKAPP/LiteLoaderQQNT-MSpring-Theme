@@ -8,5 +8,12 @@ contextBridge.exposeInMainWorld("mspring_theme", {
     ),
     rendererReady: () => ipcRenderer.send(
         "betterQQNT.mspring_theme.rendererReady"
-    )
+    ),
+    getSettings: () => ipcRenderer.invoke(
+        "betterQQNT.mspring_theme.getSettings"
+    ),
+    setSettings: content => ipcRenderer.invoke(
+        "betterQQNT.mspring_theme.setSettings",
+        content
+    ),
 });
