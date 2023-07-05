@@ -251,7 +251,8 @@
     .search-result,
     .q-popover,
     .user-card-main,
-    .account-list {
+    .account-list,
+    .sticker-panel {
         backdrop-filter: blur(8px);
         background: #171717ef !important;
         border-radius: 8px !important;
