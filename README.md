@@ -1,6 +1,6 @@
 # LiteLoaderQQNT-MSpring-Theme
 
-[LiteLoaderQQNT(原BetterQQNT JS版)](https://github.com/mo-jinran/BetterQQNT) 主题，优雅 · 粉粉 · 细致
+[LiteLoaderQQNT(原BetterQQNT JS版)](https://github.com/mo-jinran/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用
 
