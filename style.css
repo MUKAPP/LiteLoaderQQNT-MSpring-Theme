@@ -110,13 +110,15 @@
     }
 
     /* 
-        主界面侧栏
+        (Windows) 主界面侧栏
+        (Linux) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
-    .sidebar-nav,
+    html.windows .sidebar-nav,
+    html.linux .sidebar,
     .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -136,7 +138,7 @@
 
     /* 自己消息的背景 */
     .message-content__wrapper .container--self {
-        background: #cb82be !important;
+        background: var(--mpink) !important;
     }
 
     /* 好友通知、群通知列表项 */
@@ -147,7 +149,8 @@
     .search-result,
     .q-popover,
     .user-card-main,
-    .account-list {
+    .account-list,
+    .sticker-panel {
         backdrop-filter: blur(8px);
         background: #ffffffef !important;
         border-radius: 8px !important;
@@ -235,7 +238,7 @@
 
     /* 自己消息的背景 */
     .message-content__wrapper .container--self {
-        background: #cb82be !important;
+        background: var(--mpink) !important;
     }
 
     /* 好友通知、群通知列表项 */
@@ -359,26 +362,29 @@
 }
 
 :root {
-    --el-color-primary: #cb82be;
+    --mpink: #cb82be;
+    --el-color-primary: var(--mpink);
 }
 
 .q-theme-tokens-light {
-    --brand_standard: #cb82be;
+    --brand_standard: var(--mpink);
     --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
     --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
-    --bubble_host: #cb82be;
+    --bubble_host: var(--mpink);
     --nt_brand_standard_2_20_2_alpha: #cb82be3f;
-    --overlay_active_brand: #cb82be;
-    --text_link: #cb82be;
+    --overlay_active_brand: var(--mpink);
+    --text_link: var(--mpink);
+    --text-brand: var(--mpink);
 }
 
 .q-theme-tokens-dark {
-    --brand_standard: #cb82be;
+    --brand_standard: var(--mpink);
     --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
     --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
-    --bubble_host: #cb82be;
-    --overlay_active_brand: #cb82be;
-    --text_link: #cb82be;
+    --bubble_host: var(--mpink);
+    --overlay_active_brand: var(--mpink);
+    --text_link: var(--mpink);
+    --text-brand: var(--mpink);
 }
 
 .send-btn-wrap,
@@ -445,4 +451,14 @@
 html.linux .recent-contact .viewport-list,
 html.linux .group-member .viewport-list {
     background-image: none !important;
+}
+
+/* 删除Linux版好友通知/群通知的多余边距 */
+html.linux .sys-notify .sys-notify-card {
+    padding: unset !important;
+}
+
+/* 删除Linux版搜索结果多余的第二层背景 */
+html.linux .search-result-background {
+    background-color: initial !important
 }
