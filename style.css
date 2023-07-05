@@ -212,19 +212,21 @@
     }
 
     /* 
-        主界面侧栏
+        (Windows) 主界面侧栏
+        (Linux) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
-    .sidebar-nav,
+    html.windows .sidebar-nav,
+    html.linux .sidebar,
     .tab-container,
     .nav-bar-container,
     .file-manager-main,
     .setting-tab,
     .setting-main {
-        background: #171717af !important;
+        background: #ffffffaf !important;
     }
 
     .list-item:hover {
