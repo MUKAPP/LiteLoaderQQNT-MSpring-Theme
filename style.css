@@ -356,7 +356,9 @@
         border-color: #ffffff3f !important;
     }
 
-    .search-input {
+    .search-input,
+    /* linux端最近聊天加号按钮 */
+    html.linux .contact-adder-btn {
         background: #ffffff10 !important;
     }
 
