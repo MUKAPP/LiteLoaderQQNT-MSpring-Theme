@@ -1,5 +1,5 @@
 // 页面加载完成时触发
-export function onLoad() {
+export function onLoad(_,LiteLoader) {
     const element = document.createElement("style");
     document.head.appendChild(element);
 
@@ -10,6 +10,18 @@ export function onLoad() {
     });
 
     mspring_theme.rendererReady();
+
+    // 判断操作系统类型
+    var osType = "";
+    var userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.indexOf("win") !== -1) {
+        osType = "windows";
+    } else if (userAgent.indexOf("linux") !== -1) {
+        osType = "linux";
+    }
+
+    document.documentElement.classList.add(osType);
+
 }
 
 
