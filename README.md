@@ -1,10 +1,12 @@
-# BetterQQNT-MSpring-Theme
+# LiteLoaderQQNT-MSpring-Theme
 
 [LiteLoaderQQNT(原BetterQQNT JS版)](https://github.com/mo-jinran/BetterQQNT) 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用
 
-> 重要：请使用最新版QQ（14480及以上版本）并在 `设置 - 通用 - 其他` 中开启 **透明效果**。
+> Windows 请使用 最新版QQ（14480及以上版本）并在 `设置 - 通用 - 其他` 中开启 **透明效果**。
+>
+> Linux 请配合 [Linux - 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。
 
 事实上我不怎么会 css，模仿着改的（）
 
@@ -34,4 +36,4 @@
 
 下载的 Zip文件 解压，将解压出的文件夹移动至 `LiteLoaderQQNT数据目录/plugins/`，重启 QQ 即可
 
-BetterQQNT 的默认数据文件夹在 `用户目录/Documents/BetterQQNT`
+LiteLoaderQQNT 的默认数据文件夹在 `用户目录/Documents/BetterQQNT`
