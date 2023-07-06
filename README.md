@@ -5,7 +5,8 @@
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用
 
 > Windows11 请使用 最新版QQ（14480及以上版本）并在 `设置 - 通用 - 其他` 中开启 **透明效果**。\
-> Linux 请配合 [Linux - 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。
+> Linux(KDE) 请配合 [Linux - 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。\
+> Linux更改主题颜色后需要重启QQ才能生效（我也不知道为什么）
 
 事实上我不怎么会 css，模仿着改的（）
 
