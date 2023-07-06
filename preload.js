@@ -3,17 +3,17 @@ const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("mspring_theme", {
     updateStyle: (callback) => ipcRenderer.on(
-        "betterQQNT.mspring_theme.updateStyle",
+        "liteLoader.mspring_theme.updateStyle",
         callback
     ),
     rendererReady: () => ipcRenderer.send(
-        "betterQQNT.mspring_theme.rendererReady"
+        "liteLoader.mspring_theme.rendererReady"
     ),
     getSettings: () => ipcRenderer.invoke(
-        "betterQQNT.mspring_theme.getSettings"
+        "liteLoader.mspring_theme.getSettings"
     ),
     setSettings: content => ipcRenderer.invoke(
-        "betterQQNT.mspring_theme.setSettings",
+        "liteLoader.mspring_theme.setSettings",
         content
     ),
 });

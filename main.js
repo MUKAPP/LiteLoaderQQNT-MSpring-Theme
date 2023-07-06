@@ -28,7 +28,7 @@ function updateStyle(webContents, settingsPath) {
             return;
         }
         webContents.send(
-            "betterQQNT.mspring_theme.updateStyle",
+            "liteLoader.mspring_theme.updateStyle",
             // 将主题色插入到style.css中
             `:root {
                 --theme-color: ${themeColor};
@@ -73,7 +73,7 @@ function onLoad(plugin) {
     }
 
     ipcMain.on(
-        "betterQQNT.mspring_theme.rendererReady",
+        "liteLoader.mspring_theme.rendererReady",
         (event, message) => {
             const window = BrowserWindow.fromWebContents(event.sender);
             updateStyle(window.webContents, settingsPath);
@@ -82,7 +82,7 @@ function onLoad(plugin) {
 
     // 监听渲染进程的updateStyle事件
     ipcMain.on(
-        "betterQQNT.mspring_theme.updateStyle",
+        "liteLoader.mspring_theme.updateStyle",
         (event, settingsPath) => {
             const window = BrowserWindow.fromWebContents(event.sender);
             updateStyle(window.webContents, settingsPath);
@@ -90,7 +90,7 @@ function onLoad(plugin) {
 
     // 监听渲染进程的watchCSSChange事件
     ipcMain.on(
-        "betterQQNT.mspring_theme.watchCSSChange",
+        "liteLoader.mspring_theme.watchCSSChange",
         (event, settingsPath) => {
             const window = BrowserWindow.fromWebContents(event.sender);
             watchCSSChange(window.webContents, settingsPath);
@@ -98,14 +98,14 @@ function onLoad(plugin) {
 
     // 监听渲染进程的watchSettingsChange事件
     ipcMain.on(
-        "betterQQNT.mspring_theme.watchSettingsChange",
+        "liteLoader.mspring_theme.watchSettingsChange",
         (event, settingsPath) => {
             const window = BrowserWindow.fromWebContents(event.sender);
             watchSettingsChange(window.webContents, settingsPath);
         });
 
     ipcMain.handle(
-        "betterQQNT.mspring_theme.getSettings",
+        "liteLoader.mspring_theme.getSettings",
         (event, message) => {
             try {
                 const data = fs.readFileSync(settingsPath, "utf-8");
@@ -119,7 +119,7 @@ function onLoad(plugin) {
     );
 
     ipcMain.handle(
-        "betterQQNT.mspring_theme.setSettings",
+        "liteLoader.mspring_theme.setSettings",
         (event, content) => {
             try {
                 const new_config = JSON.stringify(content);
