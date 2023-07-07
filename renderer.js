@@ -25,14 +25,14 @@ async function onLoad() {
 // 打开设置界面时触发
 async function onConfigView(view) {
     const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
-    const css_file_path = `file:///${plugin_path}/src/settings.css`;
-    const html_file_path = `file:///${plugin_path}/src/settings.html`;
+    const css_file_path = `file://${plugin_path}/src/settings.css`;
+    const html_file_path = `file://${plugin_path}/src/settings.html`;
 
     // CSS
-    const css_text = await (await fetch(css_file_path)).text();
-    const style = document.createElement("style");
-    style.textContent = css_text;
-    view.appendChild(style);
+    const link_element = document.createElement("link");
+    link_element.rel = "stylesheet";
+    link_element.href = css_file_path;
+    document.head.appendChild(link_element);
 
     // HTMl
     const html_text = await (await fetch(html_file_path)).text();
