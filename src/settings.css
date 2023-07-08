@@ -80,3 +80,17 @@
 .mspring_theme .wrap .title svg.is-fold {
     transform: rotate(0deg);
 }
+
+/* 颜色选择器 */
+.pick-color {
+    padding: 4px;
+}
+
+::-webkit-color-swatch-wrapper {
+    padding: 0px;
+}
+
+::-webkit-color-swatch {
+    border-radius: 4px;
+    border: #00000000 solid 1px;
+}
