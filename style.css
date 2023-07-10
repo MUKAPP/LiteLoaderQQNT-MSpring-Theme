@@ -35,7 +35,7 @@ body,
 .app,
 /* 查看图片顶栏 */
 .main-area__header {
-    background: none !important;
+    background: initial !important;
 }
 
 /* 列表条目圆角 */
