@@ -29,10 +29,14 @@
 /* 收藏 右侧 背景删不掉？？？？ */
 .favorites-layout__right-area,
 .favorites-layout__content,
-.favorites-header {
+.favorites-header,
+html,
+body,
+.app,
+/* 查看图片顶栏 */
+.main-area__header {
     background: none !important;
 }
-
 
 /* 列表条目圆角 */
 .viewport-list__inner {
@@ -89,6 +93,16 @@
 /* 登录页面QQ图标 */
 .qq-icon-font {
     transform: none !important;
+}
+
+/* 查看图片界面工具栏 */
+.main-area__header{
+    backdrop-filter: none !important;
+}
+
+/* 查看图片界面 */
+.main-area{
+    background: #0000007f !important;
 }
 
 /* 浅色模式 */
