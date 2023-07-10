@@ -101,9 +101,9 @@ body,
 }
 
 /* 查看图片界面 */
-.main-area {
+/* .main-area {
     background: #0000007f !important;
-}
+} */
 
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
