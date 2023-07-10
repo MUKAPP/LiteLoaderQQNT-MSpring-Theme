@@ -11,7 +11,7 @@
       "link": "https://github.com/MUKAPP"
     }
   ],
-  "platform": ["win32", "linux"],
+  "platform": ["win32", "linux", "darwin"],
   "injects": {
     "renderer": "./renderer.js",
     "main": "./main.js",

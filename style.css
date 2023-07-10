@@ -96,12 +96,12 @@ body,
 }
 
 /* 查看图片界面工具栏 */
-.main-area__header{
+.main-area__header {
     backdrop-filter: none !important;
 }
 
 /* 查看图片界面 */
-.main-area{
+.main-area {
     background: #0000007f !important;
 }
 
@@ -478,9 +478,13 @@ body,
 
 /* 
     删除Linux版最近聊天的加载占位背景
-    删除Linux版群成员列表的加载占位背景 */
+    删除Linux版群成员列表的加载占位背景
+    删除mac版最近聊天的加载占位背景
+    删除mac版群成员列表的加载占位背景 */
 html.linux .recent-contact .viewport-list,
-html.linux .group-member .viewport-list {
+html.linux .group-member .viewport-list,
+html.mac .recent-contact .viewport-list,
+html.mac .group-member .viewport-list {
     background-image: none !important;
 }
 

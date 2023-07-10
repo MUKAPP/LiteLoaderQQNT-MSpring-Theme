@@ -16,6 +16,8 @@ async function onLoad() {
         osType = "windows";
     } else if (userAgent.indexOf("linux") !== -1) {
         osType = "linux";
+    } else if (userAgent.indexOf("mac") !== -1) {
+        osType = "mac";
     }
     document.documentElement.classList.add(osType);
 
