@@ -525,6 +525,7 @@ html.linux .search-result-background {
     border-radius: 8px !important;
 }
 
+/* 管理员标签 */
 .group-user .q-tag.group-user__role:not(.primary) {
     color: var(--theme-color) !important;
     background: color-mix(in oklch, var(--theme-color), transparent 80%);
