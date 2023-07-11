@@ -135,6 +135,7 @@ body,
     /* 
         (Windows) 主界面侧栏
         (Linux) 主界面侧栏
+        (Mac) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
@@ -142,6 +143,7 @@ body,
         设置侧栏右边的区域 */
     html.windows .sidebar-nav,
     html.linux .sidebar,
+    html.mac .sidebar,
     .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -190,6 +192,7 @@ body,
         文件管理 类型 图片与视频
         (Windows) 设置 列表项卡片
         (Linux) 设置 列表项卡片 
+        (Mac) 设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
@@ -201,6 +204,7 @@ body,
     .file-list-grid-scroll-container>*,
     html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     html.linux .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
+    html.mac .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
@@ -255,6 +259,7 @@ body,
     /* 
         (Windows) 主界面侧栏
         (Linux) 主界面侧栏
+        (Mac) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
@@ -262,6 +267,7 @@ body,
         设置侧栏右边的区域 */
     html.windows .sidebar-nav,
     html.linux .sidebar,
+    html.mac .sidebar,
     .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -310,6 +316,7 @@ body,
         文件管理 类型 图片与视频
         (Windows) 设置 列表项卡片
         (Linux) 设置 列表项卡片 
+        (Mac) 设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
@@ -321,6 +328,7 @@ body,
     .file-list-grid-scroll-container>*,
     html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     html.linux .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
+    html.mac .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
@@ -393,8 +401,11 @@ body,
     }
 
     .main-search .search-input,
-    /* linux端最近聊天加号按钮 */
-    html.linux .contact-adder-btn {
+    /* 
+        Linux端最近聊天加号按钮
+        Mac端最近聊天加号按钮 */
+    html.linux .contact-adder-btn,
+    html.mac .contact-adder-btn {
         background: #ffffff10 !important;
     }
 
@@ -510,13 +521,19 @@ html.mac .group-member .viewport-list {
     background-image: none !important;
 }
 
-/* 删除Linux版好友通知/群通知的多余边距 */
-html.linux .sys-notify .sys-notify-card {
+/* 
+    删除Linux版好友通知/群通知的多余边距
+    删除Mac版好友通知/群通知的多余边距 */
+html.linux .sys-notify .sys-notify-card,
+html.mac .sys-notify .sys-notify-card {
     padding: unset !important;
 }
 
-/* 删除Linux版搜索结果多余的第二层背景 */
-html.linux .search-result-background {
+/* 
+    删除Linux版搜索结果多余的第二层背景
+    删除Mac版搜索结果多余的第二层背景 */
+html.linux .search-result-background,
+html.mac .search-result-background {
     background-color: initial !important
 }
 
