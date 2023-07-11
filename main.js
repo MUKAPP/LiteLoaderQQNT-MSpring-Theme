@@ -28,14 +28,24 @@ function updateStyle(webContents, settingsPath) {
         if (err) {
             return;
         }
+        const preloadString = `:root {
+    --theme-color: ${themeColor};
+    --background-color-light: color-mix(in oklch, #FFFFFF, transparent ${100 - backgroundOpacity}%);
+    --background-color-dark: color-mix(in oklch, #171717, transparent ${100 - backgroundOpacity}%);
+}`
+        // 判断操作系统是否为Windows，若不是则不使用color-mix
+        if (process.platform !== "win32") {
+            preloadString = `:root {
+    --theme-color: ${themeColor};
+    --background-color-light: #FFFFFFaf;
+    --background-color-dark: #171717af;
+}`
+        }
+
         webContents.send(
             "LiteLoader.mspring_theme.updateStyle",
             // 将主题色插入到style.css中
-            `:root {
-                --theme-color: ${themeColor};
-                --background-color-light: color-mix(in oklch, #FFFFFF, transparent ${100 - backgroundOpacity}%);
-                --background-color-dark: color-mix(in oklch, #171717, transparent ${100 - backgroundOpacity}%);
-            }`+ data
+            preloadString + "\n\n" + data
         );
     });
 }
