@@ -124,6 +124,15 @@ body,
     }
 
     /* 
+        聊天界面回顶按钮
+        聊天界面回底按钮 */
+    .chat-msg-area__tip--top-btn,
+    .chat-msg-area__tip--bottom {
+        background: #ffffff7f !important;
+        backdrop-filter: blur(32px);
+    }
+
+    /* 
         (Windows) 主界面侧栏
         (Linux) 主界面侧栏
         主界面侧栏右边区域
@@ -231,6 +240,15 @@ body,
             新版QQ整体窗口背景可以透明了
             想保留透明背景但是发现背景透明了之后模糊也透明了。。。 */
         background: #171717ef !important;
+        backdrop-filter: blur(32px);
+    }
+
+    /* 
+        聊天界面回顶按钮
+        聊天界面回底按钮 */
+    .chat-msg-area__tip--top-btn,
+    .chat-msg-area__tip--bottom {
+        background: #1717177f !important;
         backdrop-filter: blur(32px);
     }
 

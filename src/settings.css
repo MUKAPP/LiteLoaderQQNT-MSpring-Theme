@@ -100,7 +100,7 @@
 }
 
 /* 背景颜色透明度滑条 */
-input[type='range']::-webkit-slider-thumb {
+.mspring_theme input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 16px;
     width: 16px;
