@@ -71,6 +71,11 @@ async function onConfigView(view) {
         // 将修改后的settings保存到settings.json 
         mspring_theme.setSettings(settings);
     });
+
+    // 判断操作系统，如果不是windows就隐藏id为mst-settings-background-opacity的div
+    if (navigator.userAgent.toLowerCase().indexOf("win") === -1) {
+        view.querySelector("#mst-settings-background-opacity").style.display = "none";
+    }
 }
 
 
