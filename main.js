@@ -28,13 +28,13 @@ function updateStyle(webContents, settingsPath) {
         if (err) {
             return;
         }
-        const preloadString = `:root {
+        let preloadString = `:root {
     --theme-color: ${themeColor};
     --background-color-light: color-mix(in oklch, #FFFFFF, transparent ${100 - backgroundOpacity}%);
     --background-color-dark: color-mix(in oklch, #171717, transparent ${100 - backgroundOpacity}%);
 }`
         // 判断操作系统是否为Windows，若不是则不使用color-mix
-        if (process.platform !== "win32") {
+        if (process.platform !== 'win32') {
             preloadString = `:root {
     --theme-color: ${themeColor};
     --background-color-light: #FFFFFFaf;
