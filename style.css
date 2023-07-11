@@ -185,16 +185,18 @@ body,
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 配置界面
+        LiteLoaderQQNT 插件市场
         MSpring Theme 配置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     html.linux .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .config_view .wrap,
+    .plugins_marketplace .wrap,
     .mspring_theme .wrap {
         background: #00000010 !important;
         border-radius: 8px;
@@ -294,16 +296,18 @@ body,
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 配置界面
+        LiteLoaderQQNT 插件市场
         MSpring Theme 配置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     html.linux .setting-main__content>*:not(.config_view, .mspring_theme)>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .config_view .wrap,
+    .plugins_marketplace .wrap,
     .mspring_theme .wrap {
         background: #ffffff21 !important;
         border-radius: 8px;
