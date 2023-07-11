@@ -86,11 +86,29 @@
     padding: 4px;
 }
 
-::-webkit-color-swatch-wrapper {
+.mspring_theme ::-webkit-color-swatch-wrapper {
     padding: 0px;
 }
 
-::-webkit-color-swatch {
+.mspring_theme ::-webkit-color-swatch {
     border-radius: 4px;
     border: #00000000 solid 1px;
+}
+
+.mspring_theme input:focus {
+    border: 1px solid !important;
+}
+
+/* 背景颜色透明度滑条 */
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background: var(--theme-color);
+    cursor: pointer;
+}
+
+.pick-opacity {
+    padding: 4px;
 }

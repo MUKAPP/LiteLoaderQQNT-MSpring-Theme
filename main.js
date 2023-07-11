@@ -21,6 +21,7 @@ function updateStyle(webContents, settingsPath) {
     const data = fs.readFileSync(settingsPath, "utf-8");
     const config = JSON.parse(data);
     const themeColor = config.themeColor;
+    const backgroundOpacity = config.backgroundOpacity;
 
     const csspath = path.join(__dirname, "style.css");
     fs.readFile(csspath, "utf-8", (err, data) => {
@@ -32,6 +33,8 @@ function updateStyle(webContents, settingsPath) {
             // 将主题色插入到style.css中
             `:root {
                 --theme-color: ${themeColor};
+                --background-color-light: color-mix(in oklch, #FFFFFF, transparent ${100 - backgroundOpacity}%);
+                --background-color-dark: color-mix(in oklch, #171717, transparent ${100 - backgroundOpacity}%);
             }`+ data
         );
     });
@@ -68,8 +71,16 @@ function onLoad(plugin) {
     if (!fs.existsSync(settingsPath)) {
         fs.writeFileSync(settingsPath, JSON.stringify({
             "themeColor": "#cb82be",
-            "backgroundTransparent": true,
+            "backgroundOpacity": "61",
         }));
+    } else {
+        // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
+        const data = fs.readFileSync(settingsPath, "utf-8");
+        const config = JSON.parse(data);
+        if (!config.backgroundOpacity) {
+            config.backgroundOpacity = "61";
+            fs.writeFileSync(settingsPath, JSON.stringify(config));
+        }
     }
 
     ipcMain.on(

@@ -138,7 +138,7 @@ body,
     .file-manager-main,
     .setting-tab,
     .setting-main {
-        background: #ffffffaf !important;
+        background: var(--background-color-light) !important;
     }
 
     .viewport-list .list-item:hover {
@@ -249,7 +249,7 @@ body,
     .file-manager-main,
     .setting-tab,
     .setting-main {
-        background: #171717af !important;
+        background: var(--background-color-dark) !important;
     }
 
     .viewport-list .list-item:hover {
@@ -403,8 +403,8 @@ body,
 
 .q-theme-tokens-light {
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: color-mix(in srgb, var(--theme-color), black 20%);
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: color-mix(in srgb, var(--theme-color), black 10%);
     --bubble_host: var(--theme-color);
     --nt_brand_standard_2_20_2_alpha: #cb82be3f;
     --overlay_active_brand: var(--theme-color);
@@ -414,8 +414,8 @@ body,
 
 .q-theme-tokens-dark {
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #64405e;
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #97618e;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: color-mix(in srgb, var(--theme-color), black 20%);
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: color-mix(in srgb, var(--theme-color), black 10%);
     --bubble_host: var(--theme-color);
     --overlay_active_brand: var(--theme-color);
     --text_link: var(--theme-color);

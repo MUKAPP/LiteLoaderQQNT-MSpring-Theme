@@ -59,6 +59,18 @@ async function onConfigView(view) {
         mspring_theme.setSettings(settings);
     });
 
+    // 背景颜色透明
+    const backgroundOpacity = settings.backgroundOpacity;
+    // 给pick-opacity(input)设置默认值
+    const pickOpacity = view.querySelector(".pick-opacity");
+    pickOpacity.value = backgroundOpacity;
+    // 给pick-opacity(input)添加事件监听 
+    pickOpacity.addEventListener("change", (event) => {
+        // 修改settings的backgroundOpacity值 
+        settings.backgroundOpacity = event.target.value;
+        // 将修改后的settings保存到settings.json 
+        mspring_theme.setSettings(settings);
+    });
 }
 
 
