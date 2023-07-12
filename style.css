@@ -318,17 +318,19 @@ body,
         设置 消息通知 列表项卡片 消息组
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
+        LiteLoaderQQNT 主体&插件配置界面
         LiteLoaderQQNT 主体&插件配置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content>*>*:not(.config_view, .appearance-tab, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html.linux .setting-main__content>*:not(.config_view, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .shotcut),
-    html.mac .setting-main__content>*:not(.config_view, .mspring_theme, .plugins_marketplace)>*:not(.setting-item-title, .popup, .shotcut),
+    html.windows .setting-main__content:not(.liteloader)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    html.linux .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html.mac .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
-    .liteloader .wrap {
+    .liteloader .wrap,
+    .liteloader .setting-item-content {
         background: #ffffff21 !important;
         border-radius: 8px;
     }

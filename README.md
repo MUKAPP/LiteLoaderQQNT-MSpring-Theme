@@ -6,7 +6,9 @@
 
 > Windows11 请使用 最新版QQ（14480及以上版本）并在 `设置 - 通用 - 其他` 中开启 **透明效果**。\
 > Linux(KDE) 请配合 [Linux - 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。\
-> Linux更改主题颜色后需要重启QQ才能生效（我也不知道为什么）
+> Linux 更改主题颜色后需要重启QQ才能生效（我也不知道为什么）
+> 
+> 非Windows版 暂时无法更改背景颜色透明度（chromium版本过低）
 
 事实上我不怎么会 css，模仿着改的（）
 
