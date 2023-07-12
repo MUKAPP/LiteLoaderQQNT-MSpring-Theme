@@ -543,3 +543,8 @@ html.mac .search-result-background {
     color: var(--theme-color) !important;
     background: color-mix(in oklch, var(--theme-color), transparent 80%);
 }
+
+/* 去除VIP红色昵称 */
+.vip-name {
+    color: initial !important;
+}
