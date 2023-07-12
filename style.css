@@ -224,6 +224,11 @@ body,
         background: #00000010 !important;
     }
 
+    /* 去除VIP红色昵称 */
+    .vip-name {
+        color: initial !important;
+    }
+
 }
 
 
@@ -420,6 +425,11 @@ body,
         fill: #ffffff !important;
     }
 
+    /* 去除VIP红色昵称 */
+    .vip-name {
+        color: #ffffff !important;
+    }
+
 }
 
 :root {
@@ -542,9 +552,4 @@ html.mac .search-result-background {
 .group-user .q-tag.group-user__role:not(.primary) {
     color: var(--theme-color) !important;
     background: color-mix(in oklch, var(--theme-color), transparent 80%);
-}
-
-/* 去除VIP红色昵称 */
-.vip-name {
-    color: initial !important;
 }
