@@ -1,4 +1,4 @@
-<img src="./res/header.png" style="zoom:200%;" />
+<img src="./res/intro.png" style="zoom:200%;" />
 
 # LiteLoaderQQNT-MSpring-Theme
 
