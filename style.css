@@ -116,11 +116,9 @@ body,
     /* 聊天界面更多面板 */
     .side-panel {
         box-shadow: 0 4px 6px 0px #00000010 !important;
-        /* 
-            新版QQ整体窗口背景可以透明了
-            想保留透明背景但是发现背景透明了之后模糊也透明了。。。 */
-        background: #ffffffef !important;
-        backdrop-filter: blur(32px);
+        background: #ffffff !important;
+        backdrop-filter: blur(32px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     /* 
@@ -172,18 +170,25 @@ body,
     }
 
     .search-result {
-        backdrop-filter: blur(8px);
-        background: #ffffffef !important;
         border-radius: 12px !important;
+        background: #ffffff !important;
+        backdrop-filter: blur(32px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     .q-popover,
     .user-card-main,
-    .account-list,
-    .sticker-panel {
-        backdrop-filter: blur(8px);
-        background: #ffffffef !important;
+    .account-list {
         border-radius: 8px !important;
+        backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
+        background: #ffffff !important;
+        mix-blend-mode: multiply !important;
+    }
+
+    /* 表情面板 */
+    .sticker-panel {
+        /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
+        background: #ffffffef !important;
     }
 
     /* 
@@ -243,11 +248,9 @@ body,
     /* 聊天界面更多面板 */
     .side-panel {
         box-shadow: 0 4px 6px 0px #00000010 !important;
-        /* 
-            新版QQ整体窗口背景可以透明了
-            想保留透明背景但是发现背景透明了之后模糊也透明了。。。 */
-        background: #171717ef !important;
-        backdrop-filter: blur(32px);
+        background: #171717 !important;
+        backdrop-filter: blur(32px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     /* 
@@ -299,18 +302,25 @@ body,
     }
 
     .search-result {
-        backdrop-filter: blur(8px);
-        background: #171717ef !important;
         border-radius: 12px !important;
+        background: #171717 !important;
+        backdrop-filter: blur(32px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     .q-popover,
     .user-card-main,
-    .account-list,
-    .sticker-panel {
-        backdrop-filter: blur(8px);
-        background: #171717ef !important;
+    .account-list {
         border-radius: 8px !important;
+        backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
+        background: #171717 !important;
+        mix-blend-mode: multiply !important;
+    }
+
+    /* 表情面板 */
+    .sticker-panel {
+        /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
+        background: #ffffffef !important;
     }
 
     /* 
