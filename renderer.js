@@ -26,7 +26,7 @@ async function onLoad() {
 
 // 打开设置界面时触发
 async function onConfigView(view) {
-    const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
+    const plugin_path = (LiteLoader.plugins || BetterQQNT.plugins).mspring_theme.path.plugin;
     const css_file_path = `file://${plugin_path}/src/settings.css`;
     const html_file_path = `file://${plugin_path}/src/settings.html`;
 
