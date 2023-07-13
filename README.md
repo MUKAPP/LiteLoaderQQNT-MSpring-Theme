@@ -1,3 +1,5 @@
+<img src="./res/header.png" style="zoom:200%;" />
+
 # LiteLoaderQQNT-MSpring-Theme
 
 [LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
@@ -8,7 +10,7 @@
 > Linux(KDE) 请配合 [Linux - 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。\
 > Linux 更改主题颜色后需要重启QQ才能生效（我也不知道为什么）
 > 
-> 非Windows版 暂时无法更改背景颜色透明度（chromium版本过低）
+> 非Windows版 暂时无法更改背景颜色透明度（chromium版本过低，等待QQ官方更新）
 
 事实上我不怎么会 css，模仿着改的（）
 
@@ -20,19 +22,19 @@
 
 ### 日间模式
 
-![总览 置顶&选中聊天展示](./screenshots/1.png)
+![总览 置顶&选中聊天展示](./res/1.png)
 
-![非置顶](./screenshots/3.png)
+![非置顶](./res/3.png)
 
-![联系人](./screenshots/5.png)
+![联系人](./res/5.png)
 
 ### 夜间模式
 
-![总览 置顶&选中聊天展示](./screenshots/2.png)
+![总览 置顶&选中聊天展示](./res/2.png)
 
-![非置顶](./screenshots/4.png)
+![非置顶](./res/4.png)
 
-![联系人](./screenshots/6.png)
+![联系人](./res/6.png)
 
 ## 使用方法
 
