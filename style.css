@@ -202,18 +202,20 @@ body,
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 主体&插件配置界面
-        LiteLoaderQQNT 主体&插件配置界面*/
+        LiteLoaderQQNT 主体&插件配置界面
+        QQNTim 设置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content:not(.liteloader)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html.linux .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
-    html.mac .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html.windows .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    html.linux .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html.mac .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .liteloader .wrap,
-    .liteloader .setting-item-content {
+    .liteloader .setting-item-content,
+    .qqntim-settings-panel-section-content {
         background: #00000010 !important;
         border-radius: 8px;
     }
@@ -334,18 +336,20 @@ body,
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 主体&插件配置界面
-        LiteLoaderQQNT 主体&插件配置界面*/
+        LiteLoaderQQNT 主体&插件配置界面
+        QQNTim 设置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content:not(.liteloader)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html.linux .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
-    html.mac .setting-main__content:not(.liteloader)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html.windows .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
+    html.linux .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html.mac .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .liteloader .wrap,
-    .liteloader .setting-item-content {
+    .liteloader .setting-item-content,
+    .qqntim-settings-panel-section-content {
         background: #ffffff21 !important;
         border-radius: 8px;
     }
@@ -562,4 +566,39 @@ html.mac .search-result-background {
 .group-user .q-tag.group-user__role:not(.primary) {
     color: var(--theme-color) !important;
     background: color-mix(in oklch, var(--theme-color), transparent 80%);
+}
+
+/* 优化 QQNTim 设置界面样式 */
+.qqntim-settings-panel-section-header-title {
+    color: var(--text_primary) !important;
+    font-weight: var(--font-bold) !important;
+    font-size: min(var(--font_size_3), 18px) !important;
+    line-height: min(var(--line_height_3), 24px) !important;
+    margin-bottom: 8px !important;
+    padding: 0px 16px !important;
+}
+
+.qqntim-settings-panel-section-header {
+    padding: initial !important;
+}
+
+.qqntim-settings-panel-section {
+    margin: 0px 4px 0px !important;
+}
+
+.qqntim-settings-panel-section-content {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+    font-size: min(var(--font_size_3), 18px) !important;
+    line-height: min(var(--line_height_3), 24px) !important;
+    margin-bottom: 20px !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    padding: 0px 16px !important;
+}
+
+.qqntim-settings-nav-item{
+    padding-left: 32px !important;
 }
