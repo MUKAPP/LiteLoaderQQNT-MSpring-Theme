@@ -4,6 +4,7 @@
   "name": "MSpring Theme",
   "slug": "mspring_theme",
   "description": "LiteLoaderQQNT 主题，优雅 · 粉粉 · 细致",
+  "thumbnail": "./res/icon.png",
   "version": "1.0.3",
   "author": [
     {
@@ -11,7 +12,11 @@
       "link": "https://github.com/MUKAPP"
     }
   ],
-  "platform": ["win32", "linux", "darwin"],
+  "platform": [
+    "win32",
+    "linux",
+    "darwin"
+  ],
   "injects": {
     "renderer": "./renderer.js",
     "main": "./main.js",
