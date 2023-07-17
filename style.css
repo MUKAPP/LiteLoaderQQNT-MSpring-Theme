@@ -322,7 +322,7 @@ body,
     /* 表情面板 */
     .sticker-panel {
         /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
-        background: #ffffffef !important;
+        background: #171717ef !important;
     }
 
     /* 
@@ -599,6 +599,6 @@ html.mac .search-result-background {
     padding: 0px 16px !important;
 }
 
-.qqntim-settings-nav-item{
+.qqntim-settings-nav-item {
     padding-left: 32px !important;
 }
