@@ -11,12 +11,11 @@ async function onLoad() {
 
     // 判断操作系统类型
     var osType = "";
-    var userAgent = navigator.userAgent.toLowerCase();
-    if (userAgent.indexOf("win") !== -1) {
+    if (LiteLoader.os.platform === "win32") {
         osType = "windows";
-    } else if (userAgent.indexOf("linux") !== -1) {
+    } else if (LiteLoader.os.platform === "linux") {
         osType = "linux";
-    } else if (userAgent.indexOf("mac") !== -1) {
+    } else if (LiteLoader.os.platform === "darwin") {
         osType = "mac";
     }
     document.documentElement.classList.add(osType);
@@ -73,7 +72,7 @@ async function onConfigView(view) {
     });
 
     // 判断操作系统，如果不是windows就隐藏id为mst-settings-background-opacity的div
-    if (navigator.userAgent.toLowerCase().indexOf("win") === -1) {
+    if (LiteLoader.os.platform !== "win32") {
         view.querySelector("#mst-settings-background-opacity").style.display = "none";
     }
 }
