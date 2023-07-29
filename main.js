@@ -82,6 +82,7 @@ function onLoad(plugin) {
         fs.writeFileSync(settingsPath, JSON.stringify({
             "themeColor": "#cb82be",
             "backgroundOpacity": "61",
+            "heti": false,
         }));
     } else {
         // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
@@ -89,6 +90,11 @@ function onLoad(plugin) {
         const config = JSON.parse(data);
         if (!config.backgroundOpacity) {
             config.backgroundOpacity = "61";
+            fs.writeFileSync(settingsPath, JSON.stringify(config));
+        }
+        // 判断后来加入的heti是否存在，如果不存在则添加
+        if (!config.heti) {
+            config.heti = false;
             fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
     }
