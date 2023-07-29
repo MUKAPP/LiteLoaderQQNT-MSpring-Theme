@@ -562,10 +562,15 @@ html.mac .search-result-background {
     border-radius: 8px !important;
 }
 
-/* 管理员标签 */
-.group-user .q-tag.group-user__role:not(.primary) {
+/* 
+    管理员标签（群成员列表）
+    管理员标签（聊天界面）
+    群公告置顶标签
+ */
+.group-user .q-tag.group-user__role:not(.primary),.group-chat .q-tag.member-role-tag,
+.notice__container .top-flag {
     color: var(--theme-color) !important;
-    background: color-mix(in oklch, var(--theme-color), transparent 80%);
+    background: color-mix(in oklch, var(--theme-color), transparent 80%) !important;
 }
 
 /* 优化 QQNTim 设置界面样式 */
