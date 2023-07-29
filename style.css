@@ -567,7 +567,8 @@ html.mac .search-result-background {
     管理员标签（聊天界面）
     群公告置顶标签
  */
-.group-user .q-tag.group-user__role:not(.primary),.group-chat .q-tag.member-role-tag,
+.group-user .q-tag.group-user__role:not(.primary),
+.group-chat .q-tag.member-role-tag:not(.primary),
 .notice__container .top-flag {
     color: var(--theme-color) !important;
     background: color-mix(in oklch, var(--theme-color), transparent 80%) !important;
