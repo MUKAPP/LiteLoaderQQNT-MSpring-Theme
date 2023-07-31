@@ -1,10 +1,10 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "type": "theme",
   "name": "MSpring Theme",
   "slug": "mspring_theme",
   "description": "LiteLoaderQQNT 主题，优雅 · 粉粉 · 细致",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "thumbnail": "./res/icon.png",
   "author": [
     {
@@ -14,7 +14,11 @@
   ],
   "repository": {
     "repo": "MUKAPP/LiteLoaderQQNT-MSpring-Theme",
-    "branch": "main"
+    "branch": "v3",
+    "use_release": {
+      "tag": "1.0.6",
+      "name": "LiteLoaderQQNT-MSpring-Theme_1.0.6.zip"
+    }
   },
   "platform": [
     "win32",
