@@ -15,13 +15,47 @@ function debounce(fn, time) {
 }
 
 
+// 辅助函数 - 将十六进制颜色值转换为 RGB 值
+function hexToRGB(hex) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    return [r, g, b];
+}
+
+// 辅助函数 - 将 RGB 值转换为十六进制颜色值
+function RGBToHex(rgb) {
+    var r = rgb[0].toString(16).padStart(2, '0');
+    var g = rgb[1].toString(16).padStart(2, '0');
+    var b = rgb[2].toString(16).padStart(2, '0');
+    return '#' + r + g + b;
+}
+
+// 辅助函数 - 混合两个颜色的 RGB 值
+function blendColors(color1, color2, ratio) {
+    var blendedColor = [];
+    for (var i = 0; i < 3; i++) {
+        blendedColor[i] = Math.round(color1[i] * (1 - ratio) + color2[i] * ratio);
+    }
+    return blendedColor;
+}
+
+
 // 更新样式
 function updateStyle(webContents, settingsPath) {
     // 读取settings.json
     const data = fs.readFileSync(settingsPath, "utf-8");
     const config = JSON.parse(data);
     const themeColor = config.themeColor;
+    // 将themeTagColor设置成具有透明度的themeColor
+    const themeTagColor = themeColor + "3f";
+    // 将themeColorDark1设置成themeColor和10%的黑色的混合色
+    const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
+    // 将themeColorDark2设置成themeColor和20%的黑色的混合色
+    const themeColorDark2 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.2));
     const backgroundOpacity = config.backgroundOpacity;
+    // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
+    const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
 
     const csspath = path.join(__dirname, "style.css");
     fs.readFile(csspath, "utf-8", (err, data) => {
@@ -30,17 +64,12 @@ function updateStyle(webContents, settingsPath) {
         }
         let preloadString = `:root {
     --theme-color: ${themeColor};
-    --background-color-light: color-mix(in oklch, #FFFFFF, transparent ${100 - backgroundOpacity}%);
-    --background-color-dark: color-mix(in oklch, #171717, transparent ${100 - backgroundOpacity}%);
+    --theme-color-dark1: ${themeColorDark1};
+    --theme-color-dark2: ${themeColorDark2};
+    --background-color-light: #FFFFFF${backgroundOpacityHex};
+    --background-color-dark: #171717${backgroundOpacityHex};
+    --theme-tag-color: ${themeTagColor};
 }`
-        // 判断操作系统是否为Windows，若不是则不使用color-mix
-        if (process.platform !== 'win32') {
-            preloadString = `:root {
-    --theme-color: ${themeColor};
-    --background-color-light: #FFFFFFaf;
-    --background-color-dark: #171717af;
-}`
-        }
 
         webContents.send(
             "LiteLoader.mspring_theme.updateStyle",

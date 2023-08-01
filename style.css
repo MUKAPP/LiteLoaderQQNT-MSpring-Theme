@@ -26,7 +26,6 @@
 /* 收藏 左侧列表 */
 .favorites-layout,
 .favorites-layout__left-area,
-/* 收藏 右侧 背景删不掉？？？？ */
 .favorites-layout__right-area,
 .favorites-layout__content,
 .favorites-header,
@@ -452,8 +451,8 @@ body,
 
 .q-theme-tokens-light {
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: color-mix(in srgb, var(--theme-color), black 20%);
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: color-mix(in srgb, var(--theme-color), black 10%);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
     --bubble_host: var(--theme-color);
     --nt_brand_standard_2_20_2_alpha: #cb82be3f;
     --overlay_active_brand: var(--theme-color);
@@ -463,8 +462,8 @@ body,
 
 .q-theme-tokens-dark {
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: color-mix(in srgb, var(--theme-color), black 20%);
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: color-mix(in srgb, var(--theme-color), black 10%);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
     --bubble_host: var(--theme-color);
     --overlay_active_brand: var(--theme-color);
     --text_link: var(--theme-color);
@@ -571,7 +570,7 @@ html.mac .search-result-background {
 .group-chat .q-tag.member-role-tag:not(.primary),
 .notice__container .top-flag {
     color: var(--theme-color) !important;
-    background: color-mix(in oklch, var(--theme-color), transparent 80%) !important;
+    background: var(--theme-tag-color) !important;
 }
 
 /* 优化 QQNTim 设置界面样式 */
