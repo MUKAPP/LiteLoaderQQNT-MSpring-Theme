@@ -63,13 +63,13 @@ function updateStyle(webContents, settingsPath) {
             return;
         }
         let preloadString = `:root {
-    --theme-color: ${themeColor};
-    --theme-color-dark1: ${themeColorDark1};
-    --theme-color-dark2: ${themeColorDark2};
-    --background-color-light: #FFFFFF${backgroundOpacityHex};
-    --background-color-dark: #171717${backgroundOpacityHex};
-    --theme-tag-color: ${themeTagColor};
-}`
+            --theme-color: ${themeColor};
+            --theme-color-dark1: ${themeColorDark1};
+            --theme-color-dark2: ${themeColorDark2};
+            --background-color-light: #FFFFFF${backgroundOpacityHex};
+            --background-color-dark: #171717${backgroundOpacityHex};
+            --theme-tag-color: ${themeTagColor};
+        }`
 
         webContents.send(
             "LiteLoader.mspring_theme.updateStyle",
@@ -110,20 +110,26 @@ function onLoad(plugin) {
     if (!fs.existsSync(settingsPath)) {
         fs.writeFileSync(settingsPath, JSON.stringify({
             "themeColor": "#cb82be",
-            "backgroundOpacity": "61",
+            "backgroundOpacity": "70",
             "heti": false,
+            "tglike": false,
         }));
     } else {
         // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
         const data = fs.readFileSync(settingsPath, "utf-8");
         const config = JSON.parse(data);
         if (!config.backgroundOpacity) {
-            config.backgroundOpacity = "61";
+            config.backgroundOpacity = "70";
             fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
         // 判断后来加入的heti是否存在，如果不存在则添加
         if (!config.heti) {
             config.heti = false;
+            fs.writeFileSync(settingsPath, JSON.stringify(config));
+        }
+        // 判断后来加入的tglike是否存在，如果不存在则添加
+        if (!config.tglike) {
+            config.tglike = false;
             fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
     }

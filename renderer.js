@@ -1,5 +1,107 @@
 const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
 
+// 仿telegram, 同一个人的消息连起来 - form festoney8/LiteLoaderQQNT-Telegram-Theme，微改
+function concatBubble() {
+    const msgList = document.querySelector('#ml-root .ml-list');
+
+    if (msgList) {
+        function compareTwoMsg(lower, upper) {
+            return new Promise((resolve, reject) => {
+                try {
+                    // 检查lower是否包含timeStamp, gray-message
+                    if (lower.querySelector(".gray-tip-message,.message__timestamp")) {
+                        resolve();
+                        return;
+                    }
+                    // 检查upper和lower是否包含撤回, 检测message-container
+                    if (!lower.querySelector(".message-container") || !upper.querySelector(".message-container")) {
+                        resolve();
+                        return;
+                    }
+                    const avatarLower = lower.querySelector("span.avatar-span");
+                    const avatarUpper = upper.querySelector("span.avatar-span");
+                    // const usernameNodeLower = lower.querySelector("span.avatar-span");
+                    const usernameNodeLower = lower.querySelector("div.user-name");
+                    const usernameLower = avatarLower.getAttribute("aria-label");
+                    const usernameUpper = avatarUpper.getAttribute("aria-label");
+                    const containerLower = lower.querySelector("div.msg-content-container")
+                    if (usernameLower === usernameUpper) {
+                        const bubbleLower = lower.querySelector("div.msg-content-container");
+                        // 删除upper message的paddingBottom
+                        upper.style.paddingBottom = "0";
+                        // 删除upper message-container的paddingBottom
+                        upper.querySelector("div.message-container").style.paddingBottom = "0";
+                        // upper message-container的paddingTop为4px
+                        upper.querySelector("div.message-container").style.paddingTop = "4px";
+                        // lower message-container的paddingTop为4px
+                        lower.querySelector("div.message-container").style.paddingTop = "4px";
+                        // lower头像调透明
+                        avatarLower.style.opacity = "0";
+                        // lower的username 不显示
+                        if (usernameNodeLower && usernameNodeLower.style) {
+                            usernameNodeLower.style.marginBottom = "0";
+                            usernameNodeLower.style.display = "none";
+                        }
+
+                    }
+                    resolve();
+                } catch (error) {
+                    log("compareMessage Error", error)
+                    // log("lower", lower.innerHTML)
+                    // log("upper", upper.innerHTML)
+                    // 不reject, 避免影响其他任务
+                    resolve();
+                }
+            });
+        }
+
+        let lastMessageNodeList = Array.from(msgList.querySelectorAll("div.message"));
+
+        const observer = new MutationObserver(async function () {
+            // 比对两轮的msgList
+            let currMessageNodeList = Array.from(msgList.querySelectorAll("div.message"));
+            let lastMessageNodeSet = new Set(lastMessageNodeList);
+
+            let tasks = [];
+            for (let i = 0; i < currMessageNodeList.length - 1; i++) {
+                let currMsg = currMessageNodeList[i];
+                if (!lastMessageNodeSet.has(currMsg)) {
+                    tasks.push(compareTwoMsg(currMessageNodeList[i], currMessageNodeList[i + 1]));
+                }
+            }
+            // 提速
+            Promise.all(tasks).then(() => {
+                // log("Promise all complete")
+            }).catch(() => {
+                log("Promise not complete all")
+            });
+
+            lastMessageNodeList = currMessageNodeList;
+        });
+        const config = { childList: true };
+        observer.observe(msgList, config);
+    }
+}
+
+function observeElement(selector, callback, callbackEnable = true, interval = 100, timeout = 5000) {
+    let elapsedTime = 0;
+    const timer = setInterval(function () {
+        const element = document.querySelector(selector);
+        if (element) {
+            if (callbackEnable) {
+                callback();
+            }
+            clearInterval(timer);
+        }
+
+        elapsedTime += interval;
+        if (elapsedTime >= timeout) {
+            clearInterval(timer);
+            log('超时', selector, "未出现");
+        }
+    }, interval);
+}
+
 // 页面加载完成时触发
 async function onLoad() {
     const element = document.createElement("style");
@@ -67,6 +169,15 @@ async function onLoad() {
 
     }
 
+    // 判断是否开启tglike
+    if (settings.tglike) {
+        try {
+            observeElement('#ml-root .ml-list', concatBubble);
+        } catch (error) {
+            log("concatBubble error", error);
+        }
+    }
+
 }
 
 // 打开设置界面时触发
@@ -116,11 +227,6 @@ async function onConfigView(view) {
         mspring_theme.setSettings(settings);
     });
 
-    // 判断操作系统，如果不是windows就隐藏id为mst-settings-background-opacity的div
-    if (LiteLoader.os.platform !== "win32") {
-        view.querySelector("#mst-settings-background-opacity").style.display = "none";
-    }
-
     // 选择id为heti的q-switch
     const hetiSwitch = view.querySelector("#heti");
     // 判断settings的heti值，如果为false就移除is-active
@@ -128,7 +234,7 @@ async function onConfigView(view) {
         hetiSwitch.classList.remove("is-active");
     }
     // 给hetiSwitch添加点击监听
-    hetiSwitch.addEventListener("click", (event) => {
+    hetiSwitch.addEventListener("click", () => {
         // 判断是否有is-active，如果有就移除，如果没有就添加
         if (hetiSwitch.classList.contains("is-active")) {
             hetiSwitch.classList.remove("is-active");
@@ -138,6 +244,28 @@ async function onConfigView(view) {
             hetiSwitch.classList.add("is-active");
             // 修改settings的heti值为true
             settings.heti = true;
+        }
+        // 将修改后的settings保存到settings.json
+        mspring_theme.setSettings(settings);
+    });
+
+    // 选择id为tglike的q-switch
+    const tglikeSwitch = view.querySelector("#tglike");
+    // 判断settings的tglike值，如果为false就移除is-active
+    if (!settings.tglike) {
+        tglikeSwitch.classList.remove("is-active");
+    }
+    // 给tglikeSwitch添加点击监听
+    tglikeSwitch.addEventListener("click", () => {
+        // 判断是否有is-active，如果有就移除，如果没有就添加
+        if (tglikeSwitch.classList.contains("is-active")) {
+            tglikeSwitch.classList.remove("is-active");
+            // 修改settings的tglike值为false
+            settings.tglike = false;
+        } else {
+            tglikeSwitch.classList.add("is-active");
+            // 修改settings的tglike值为true
+            settings.tglike = true;
         }
         // 将修改后的settings保存到settings.json
         mspring_theme.setSettings(settings);
