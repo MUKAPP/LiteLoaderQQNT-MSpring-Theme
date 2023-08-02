@@ -27,20 +27,20 @@ function concatBubble() {
                     const containerLower = lower.querySelector("div.msg-content-container")
                     if (usernameLower === usernameUpper) {
                         const bubbleLower = lower.querySelector("div.msg-content-container");
-                        // 删除upper message的paddingBottom
-                        upper.style.paddingBottom = "0";
-                        // 删除upper message-container的paddingBottom
-                        upper.querySelector("div.message-container").style.paddingBottom = "0";
+                        // 删除lower message的paddingBottom
+                        lower.style.paddingBottom = "0";
+                        // 删除lower message-container的paddingBottom
+                        lower.querySelector("div.message-container").style.paddingBottom = "0";
                         // upper message-container的paddingTop为4px
                         upper.querySelector("div.message-container").style.paddingTop = "4px";
                         // lower message-container的paddingTop为4px
                         lower.querySelector("div.message-container").style.paddingTop = "4px";
-                        // lower头像调透明
-                        avatarLower.style.opacity = "0";
-                        // lower的username 不显示
-                        if (usernameNodeLower && usernameNodeLower.style) {
-                            usernameNodeLower.style.marginBottom = "0";
-                            usernameNodeLower.style.display = "none";
+                        // upper头像调透明
+                        avatarUpper.style.opacity = "0";
+                        // upper的username 不显示
+                        if (usernameNodeUpper && usernameNodeUpper.style) {
+                            usernameNodeUpper.style.marginBottom = "0";
+                            usernameNodeUpper.style.display = "none";
                         }
 
                     }
