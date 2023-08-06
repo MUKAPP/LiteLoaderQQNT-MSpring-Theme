@@ -130,11 +130,11 @@ async function onLoad() {
         // 在页面header插入heti的css和js
         const hetiLinkElement = document.createElement("link");
         hetiLinkElement.rel = "stylesheet";
-        hetiLinkElement.href = "https://unpkg.com/heti/umd/heti.min.css";
+        hetiLinkElement.href = `llqqnt://local-file/${plugin_path}/src/heti-m.css`;
         document.head.appendChild(hetiLinkElement);
 
         const hetiScriptElement = document.createElement("script");
-        hetiScriptElement.src = "https://unpkg.com/heti/umd/heti-addon.min.js";
+        hetiScriptElement.src = `llqqnt://local-file/${plugin_path}/src/heti-addon.min.js`;
         document.head.appendChild(hetiScriptElement);
 
         // 在页面header插入一段script，写一个函数

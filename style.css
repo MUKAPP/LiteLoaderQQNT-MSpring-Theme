@@ -104,6 +104,17 @@ body,
     background: #0000007f !important;
 } */
 
+/* 对话框背景 */
+.q-dialog-modal {
+    background: #0000003f !important;
+}
+
+/* 对话框 */
+.q-dialog-main {
+    box-shadow: 0 4px 32px 0px #00000021 !important;
+    border-radius: 12px;
+}
+
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
