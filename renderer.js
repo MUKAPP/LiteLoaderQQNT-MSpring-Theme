@@ -1,5 +1,9 @@
 const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
 
+function log(...args) {
+    console.log(`[Mspring Theme]`, ...args);
+}
+
 // 仿telegram, 同一个人的消息连起来 - form festoney8/LiteLoaderQQNT-Telegram-Theme，微改
 function concatBubble() {
     const msgList = document.querySelector('#ml-root .ml-list');
@@ -102,6 +106,48 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
     }, interval);
 }
 
+function insertHeti() {
+    // 在页面header插入heti的css和js
+    const hetiLinkElement = document.createElement("link");
+    hetiLinkElement.rel = "stylesheet";
+    hetiLinkElement.href = `llqqnt://local-file/${plugin_path}/src/heti-m.css`;
+    document.head.appendChild(hetiLinkElement);
+
+    const hetiScriptElement = document.createElement("script");
+    hetiScriptElement.src = `llqqnt://local-file/${plugin_path}/src/heti-addon.min.js`;
+    document.head.appendChild(hetiScriptElement);
+
+    // 在页面header插入一段script，写一个函数
+    // 需要传入一个元素，这个元素是heti的spacingElement方法的参数
+    // let heti = new Heti()
+    // heti.spacingElement(这个元素)
+    const hetiSpacingElementScriptElement = document.createElement("script");
+    hetiSpacingElementScriptElement.textContent = `
+            function hetiSpacingElement(element) {
+                let heti = new Heti();
+                heti.spacingElement(element);
+            }
+        `;
+    document.head.appendChild(hetiSpacingElementScriptElement);
+
+    // 页面变化时，遍历class中包含message-content的所有元素，如果class不包含heti的就加入heti的class
+    // 加入heti的class调用上面的函数
+    const observer = new MutationObserver((mutationsList) => {
+        for (let mutation of mutationsList) {
+            if (mutation.type === "childList") {
+                const messageContentElements = document.querySelectorAll(".message-content");
+                messageContentElements.forEach(element => {
+                    if (!element.classList.contains("heti")) {
+                        element.classList.add("heti");
+                        hetiSpacingElement(element);
+                    }
+                });
+            }
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
 // 页面加载完成时触发
 async function onLoad() {
     const element = document.createElement("style");
@@ -127,54 +173,21 @@ async function onLoad() {
     // 判断是否开启heti
     const settings = await mspring_theme.getSettings();
     if (settings.heti) {
-        // 在页面header插入heti的css和js
-        const hetiLinkElement = document.createElement("link");
-        hetiLinkElement.rel = "stylesheet";
-        hetiLinkElement.href = `llqqnt://local-file/${plugin_path}/src/heti-m.css`;
-        document.head.appendChild(hetiLinkElement);
-
-        const hetiScriptElement = document.createElement("script");
-        hetiScriptElement.src = `llqqnt://local-file/${plugin_path}/src/heti-addon.min.js`;
-        document.head.appendChild(hetiScriptElement);
-
-        // 在页面header插入一段script，写一个函数
-        // 需要传入一个元素，这个元素是heti的spacingElement方法的参数
-        // let heti = new Heti()
-        // heti.spacingElement(这个元素)
-        const hetiSpacingElementScriptElement = document.createElement("script");
-        hetiSpacingElementScriptElement.textContent = `
-            function hetiSpacingElement(element) {
-                let heti = new Heti();
-                heti.spacingElement(element);
-            }
-        `;
-        document.head.appendChild(hetiSpacingElementScriptElement);
-
-        // 页面变化时，遍历class中包含message-content的所有元素，如果class不包含heti的就加入heti的class
-        // 加入heti的class调用上面的函数
-        const observer = new MutationObserver((mutationsList, observer) => {
-            for (let mutation of mutationsList) {
-                if (mutation.type === "childList") {
-                    const messageContentElements = document.querySelectorAll(".message-content");
-                    messageContentElements.forEach(element => {
-                        if (!element.classList.contains("heti")) {
-                            element.classList.add("heti");
-                            hetiSpacingElement(element);
-                        }
-                    });
-                }
-            }
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-
+        log("开启赫蹏");
+        try {
+            observeElement('#ml-root .ml-list', insertHeti);
+        } catch (error) {
+            log("赫蹏加载出错", error);
+        }
     }
 
     // 判断是否开启tglike
     if (settings.tglike) {
+        log("开启消息合并");
         try {
             observeElement('#ml-root .ml-list', concatBubble);
         } catch (error) {
-            log("concatBubble error", error);
+            log("消息合并出错", error);
         }
     }
 
