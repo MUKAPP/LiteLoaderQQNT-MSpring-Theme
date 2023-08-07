@@ -50,8 +50,6 @@ function updateStyle(webContents, settingsPath) {
     const data = fs.readFileSync(settingsPath, "utf-8");
     const config = JSON.parse(data);
     const themeColor = config.themeColor;
-    // 将themeTagColor设置成具有透明度的themeColor
-    const themeTagColor = themeColor + "3f";
     // 将themeColorDark1设置成themeColor和10%的黑色的混合色
     const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
     // 将themeColorDark2设置成themeColor和20%的黑色的混合色
@@ -71,7 +69,8 @@ function updateStyle(webContents, settingsPath) {
             --theme-color-dark2: ${themeColorDark2};
             --background-color-light: #FFFFFF${backgroundOpacityHex};
             --background-color-dark: #171717${backgroundOpacityHex};
-            --theme-tag-color: ${themeTagColor};
+            --theme-tag-color: ${themeColor + "3f"};
+            --text-selected-color: ${themeColor + "7f"};
         }`
 
         webContents.send(

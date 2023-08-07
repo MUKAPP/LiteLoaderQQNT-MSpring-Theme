@@ -178,6 +178,16 @@ async function onLoad() {
         document.documentElement.classList.add(`mspring_background_plugin_enabled`);
     }
 
+    // 判断插件lite_tools是否存在且启用
+    if (LiteLoader.plugins.lite_tools && !LiteLoader.plugins.lite_tools.disabled) {
+        log("已启用轻量工具箱");
+        const ltOptions = await lite_tools.config();
+        if (ltOptions.background.enabled) {
+            log("已启用轻量工具箱-自定义背景");
+            document.documentElement.classList.add(`mspring_lite_tool_background_enabled`);
+        }
+    }
+
     // 判断是否开启heti
     const settings = await mspring_theme.getSettings();
     if (settings.heti) {

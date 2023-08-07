@@ -152,7 +152,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     html.windows .sidebar-nav,
     html.linux .sidebar,
     html.mac .sidebar,
-    .tab-container,
+    html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
     .setting-tab,
@@ -166,7 +166,12 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 别人消息的背景 */
     html:not(.mspring_background_plugin_enabled) .message-content__wrapper .container--others {
-        background: #00000010 !important;
+        background-color: #00000010 !important;
+    }
+
+    .message-content__wrapper .container--others span::selection,
+    .message-content__wrapper .container--others heti-spacing::selection {
+        background: var(--text-selected-color);
     }
 
     /* 自己消息的背景 */
@@ -246,6 +251,12 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: initial !important;
     }
 
+    /* 防撤回提示 */
+    html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
+        background: #00000010 !important;
+        backdrop-filter: initial !important;
+    }
+
 }
 
 
@@ -286,7 +297,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     html.windows .sidebar-nav,
     html.linux .sidebar,
     html.mac .sidebar,
-    .tab-container,
+    html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
     .setting-tab,
@@ -454,6 +465,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: #ffffff !important;
     }
 
+    /* 防撤回提示 */
+    html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
+        background: #ffffff21 !important;
+        backdrop-filter: initial !important;
+    }
 }
 
 :root {
