@@ -1,7 +1,7 @@
 const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
 
 function log(...args) {
-    console.log(`[Mspring Theme]`, ...args);
+    console.log(`[MSpring Theme]`, ...args);
 }
 
 // 仿telegram, 同一个人的消息连起来 - form festoney8/LiteLoaderQQNT-Telegram-Theme，微改
@@ -106,6 +106,7 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
     }, interval);
 }
 
+
 function insertHeti() {
     // 在页面header插入heti的css和js
     const hetiLinkElement = document.createElement("link");
@@ -148,6 +149,7 @@ function insertHeti() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
+
 // 页面加载完成时触发
 async function onLoad() {
     const element = document.createElement("style");
@@ -169,6 +171,12 @@ async function onLoad() {
         osType = "mac";
     }
     document.documentElement.classList.add(osType);
+
+    // 判断插件background_plugin是否存在且启用
+    if (LiteLoader.plugins.background_plugin && !LiteLoader.plugins.background_plugin.disabled) {
+        log("已启用背景插件");
+        document.documentElement.classList.add(`mspring_background_plugin_enabled`);
+    }
 
     // 判断是否开启heti
     const settings = await mspring_theme.getSettings();

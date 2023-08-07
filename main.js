@@ -3,7 +3,7 @@ const path = require("path");
 const { BrowserWindow, ipcMain } = require("electron");
 
 function log(...args) {
-    console.log(`[Mspring Theme] `, ...args);
+    console.log(`[MSpring Theme]`, ...args);
 }
 
 // 防抖函数

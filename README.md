@@ -72,5 +72,4 @@
 
 ## 插件冲突分析
 
-* **优化消息排版** 功能与 [**Markdown插件**](https://github.com/d0j1a1701/LiteLoaderQQNT-Markdown) 冲突，会表现为消息上下多出边距，并且标点挤压失效，不建议二者同时开启。
-* 正在考虑兼容 **QQNT自动轮换背景图** 等更换背景图的插件，优化在开启这些插件之后的样式。
+* **优化消息排版** 功能在 [**Markdown插件**](https://github.com/d0j1a1701/LiteLoaderQQNT-Markdown) 开启时会失效，Markdown插件自带了 `pangu.js` 的中英混排优化，开启二者之一就可以了。

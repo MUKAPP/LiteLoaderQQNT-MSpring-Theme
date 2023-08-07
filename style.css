@@ -10,7 +10,7 @@
 /* .sys-notify-card, */
 .file-list-normal-scroll-container,
 .sender-container,
-.tab-container .profile,
+html:not(.mspring_background_plugin_enabled) .tab-container .profile,
 /* 文件管理页面 文件列表下面的白条 */
 .file-area .loadmore-placeholder,
 /* 文件管理页面 群文件 群列表 */
@@ -57,7 +57,7 @@ body,
 }
 
 /* 聊天框 */
-.chat-input-area {
+html:not(.mspring_background_plugin_enabled) .chat-input-area {
     border-radius: 16px 16px 0px 0px;
 }
 
@@ -165,7 +165,7 @@ body,
     }
 
     /* 别人消息的背景 */
-    .message-content__wrapper .container--others {
+    html:not(.mspring_background_plugin_enabled) .message-content__wrapper .container--others {
         background: #00000010 !important;
     }
 
@@ -299,7 +299,7 @@ body,
     }
 
     /* 别人消息的背景 */
-    .message-content__wrapper .container--others {
+    html:not(.mspring_background_plugin_enabled) .message-content__wrapper .container--others {
         background: #ffffff21 !important;
     }
 
