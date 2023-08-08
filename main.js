@@ -2,7 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const { BrowserWindow, ipcMain } = require("electron");
 
-import { log } from "./utils.js";
+function log(...args) {
+    console.log(`[MSpring Theme]`, ...args);
+}
 
 // 防抖函数
 function debounce(fn, time) {

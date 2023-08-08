@@ -1,6 +1,8 @@
 const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
 
-import { log } from "./utils.js";
+function log(...args) {
+    console.log(`[MSpring Theme]`, ...args);
+}
 
 // 仿telegram, 同一个人的消息连起来 - form festoney8/LiteLoaderQQNT-Telegram-Theme，微改
 function concatBubble() {
