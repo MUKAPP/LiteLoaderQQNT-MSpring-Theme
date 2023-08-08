@@ -36,27 +36,27 @@
 
 ### 日间模式
 
-![总览 置顶&选中聊天展示](./res/1.png)
+![总览 置顶&选中聊天展示](./res/screenshots/1.png)
 
-![非置顶](./res/3.png)
+![非置顶](./res/screenshots/3.png)
 
 ### 夜间模式
 
-![总览 置顶&选中聊天展示](./res/2.png)
+![总览 置顶&选中聊天展示](./res/screenshots/2.png)
 
-![非置顶](./res/4.png)
+![非置顶](./res/screenshots/4.png)
 
 ### 设置页面
 
-![设置页面](./res/5.png)
+![设置页面](./res/screenshots/5.png)
 
 ### 优化消息排版演示
 
-![优化消息排版演示](./res/6.png)
+![优化消息排版演示](./res/screenshots/6.png)
 
 ### 连续消息合并演示
 
-![连续消息合并演示](./res/7.png)
+![连续消息合并演示](./res/screenshots/7.png)
 
 ## 使用方法
 

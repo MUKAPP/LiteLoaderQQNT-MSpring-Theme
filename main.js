@@ -2,9 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { BrowserWindow, ipcMain } = require("electron");
 
-function log(...args) {
-    console.log(`[MSpring Theme]`, ...args);
-}
+import { log } from "./utils.js";
 
 // 防抖函数
 function debounce(fn, time) {
@@ -58,11 +56,12 @@ function updateStyle(webContents, settingsPath) {
     // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
     const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
 
-    const csspath = path.join(__dirname, "style.css");
+    const csspath = path.join(__dirname, "src/style.css");
     fs.readFile(csspath, "utf-8", (err, data) => {
         if (err) {
             return;
         }
+
         let preloadString = `:root {
             --theme-color: ${themeColor};
             --theme-color-dark1: ${themeColorDark1};
@@ -84,7 +83,7 @@ function updateStyle(webContents, settingsPath) {
 
 // 监听CSS修改-开发时候用的
 function watchCSSChange(webContents, settingsPath) {
-    const filepath = path.join(__dirname, "style.css");
+    const filepath = path.join(__dirname, "src/style.css");
     fs.watch(filepath, "utf-8", debounce(() => {
         updateStyle(webContents, settingsPath);
     }, 100));
@@ -176,7 +175,7 @@ function onLoad(plugin) {
                 const config = JSON.parse(data);
                 return config;
             } catch (error) {
-                console.log(error);
+                log(error);
                 return {};
             }
         }
@@ -189,7 +188,7 @@ function onLoad(plugin) {
                 const new_config = JSON.stringify(content);
                 fs.writeFileSync(settingsPath, new_config, "utf-8");
             } catch (error) {
-                alert(error);
+                log(error);
             }
         }
     );
