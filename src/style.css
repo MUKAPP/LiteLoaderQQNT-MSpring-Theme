@@ -588,6 +588,29 @@ html.mac .search-result-background {
     border-radius: 8px !important;
 }
 
+/* 插件市场作者链接文字颜色 */
+.plugins_marketplace .plugin-list .extra-information a{
+    color: var(--theme-color) !important;
+}
+
+/* 颜色选择器 */
+.liteloader input[type="color"] {
+    padding: 4px;
+}
+
+.liteloader ::-webkit-color-swatch-wrapper {
+    padding: 0px;
+}
+
+.liteloader ::-webkit-color-swatch {
+    border-radius: 4px;
+    border: #00000000 solid 1px;
+}
+
+.liteloader input:focus {
+    border: 1px solid !important;
+}
+
 /* 
     管理员标签（群成员列表）
     管理员标签（聊天界面）

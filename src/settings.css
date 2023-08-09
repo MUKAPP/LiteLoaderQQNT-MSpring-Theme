@@ -81,24 +81,6 @@
     transform: rotate(0deg);
 }
 
-/* 颜色选择器 */
-.pick-color {
-    padding: 4px;
-}
-
-.mspring_theme ::-webkit-color-swatch-wrapper {
-    padding: 0px;
-}
-
-.mspring_theme ::-webkit-color-swatch {
-    border-radius: 4px;
-    border: #00000000 solid 1px;
-}
-
-.mspring_theme input:focus {
-    border: 1px solid !important;
-}
-
 /* 背景颜色透明度滑条 */
 .mspring_theme input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
