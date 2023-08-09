@@ -4,7 +4,7 @@
   "name": "MSpring Theme",
   "slug": "mspring_theme",
   "description": "LiteLoaderQQNT 主题，优雅 · 粉粉 · 细致",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "thumbnail": "./res/icon.png",
   "author": [
     {
@@ -17,7 +17,7 @@
     "branch": "v3",
     "use_release": {
       "tag": "latest",
-      "name": "LiteLoaderQQNT-MSpring-Theme_1.1.0.zip"
+      "name": "LiteLoaderQQNT-MSpring-Theme.zip"
     }
   },
   "platform": [
