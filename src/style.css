@@ -165,7 +165,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 别人消息的背景 */
-    html:not(.mspring_background_plugin_enabled) .message-content__wrapper .container--others {
+    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
         background-color: #00000010 !important;
     }
 
@@ -310,7 +310,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 别人消息的背景 */
-    html:not(.mspring_background_plugin_enabled) .message-content__wrapper .container--others {
+    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
         background: #ffffff21 !important;
     }
 
