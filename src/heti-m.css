@@ -12,16 +12,6 @@
     letter-spacing: .02em
 }
 
-.heti::before,
-.heti::after {
-    content: "";
-    display: table
-}
-
-.heti::after {
-    clear: both
-}
-
 .heti p {
     text-align: justify
 }

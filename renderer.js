@@ -94,6 +94,7 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
         if (element) {
             if (callbackEnable) {
                 callback();
+                log("已检测到", selector);
             }
             clearInterval(timer);
         }
@@ -106,8 +107,7 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
     }, interval);
 }
 
-
-function insertHeti() {
+function insertHeti(before) {
     // 在页面header插入heti的css和js
     const hetiLinkElement = document.createElement("link");
     hetiLinkElement.rel = "stylesheet";
@@ -131,12 +131,12 @@ function insertHeti() {
         `;
     document.head.appendChild(hetiSpacingElementScriptElement);
 
-    // 页面变化时，遍历class中包含message-content的所有元素，如果class不包含heti的就加入heti的class
+    // 页面变化时，遍历class中包含text-normal的所有元素，如果class不包含heti的就加入heti的class
     // 加入heti的class调用上面的函数
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
             if (mutation.type === "childList") {
-                const messageContentElements = document.querySelectorAll(".message-content");
+                const messageContentElements = document.querySelectorAll(before + ".text-normal");
                 messageContentElements.forEach(element => {
                     if (!element.classList.contains("heti")) {
                         element.classList.add("heti");
@@ -174,16 +174,16 @@ async function onLoad() {
 
     // 判断插件background_plugin是否存在且启用
     if (LiteLoader.plugins.background_plugin && !LiteLoader.plugins.background_plugin.disabled) {
-        log("已启用背景插件");
+        log("[检测]", "已启用背景插件");
         document.documentElement.classList.add(`mspring_background_plugin_enabled`);
     }
 
     // 判断插件lite_tools是否存在且启用
     if (LiteLoader.plugins.lite_tools && !LiteLoader.plugins.lite_tools.disabled) {
-        log("已启用轻量工具箱");
+        log("[检测]", "已启用轻量工具箱");
         const ltOptions = await lite_tools.config();
         if (ltOptions.background.enabled) {
-            log("已启用轻量工具箱-自定义背景");
+            log("[检测]", "已启用轻量工具箱-自定义背景");
             document.documentElement.classList.add(`mspring_lite_tool_background_enabled`);
         }
     }
@@ -191,21 +191,21 @@ async function onLoad() {
     // 判断是否开启heti
     const settings = await mspring_theme.getSettings();
     if (settings.heti) {
-        log("开启赫蹏");
+        log("[设置]", "开启赫蹏");
         try {
-            observeElement('#ml-root .ml-list', insertHeti);
+            observeElement('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
         } catch (error) {
-            log("赫蹏加载出错", error);
+            log("[错误]", "赫蹏加载出错", error);
         }
     }
 
     // 判断是否开启tglike
     if (settings.tglike) {
-        log("开启消息合并");
+        log("[设置]", "开启消息合并");
         try {
             observeElement('#ml-root .ml-list', concatBubble);
         } catch (error) {
-            log("消息合并出错", error);
+            log("[错误]", "消息合并出错", error);
         }
     }
 
@@ -231,7 +231,6 @@ async function onConfigView(view) {
     // 获取设置
     const settings = await mspring_theme.getSettings();
     const themeColor = settings.themeColor;
-    const backgroundTransparent = settings.backgroundTransparent;
 
     // 给pick-color(input)设置默认颜色
     const pickColor = view.querySelector(".pick-color");
