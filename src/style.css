@@ -142,16 +142,14 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 
         (Windows) 主界面侧栏
-        (Linux) 主界面侧栏
-        (Mac) 主界面侧栏
+        (Linux/Mac) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
     html.windows .sidebar-nav,
-    html.linux .sidebar,
-    html.mac .sidebar,
+    html:is(.linux, .mac) .sidebar,
     html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -211,8 +209,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
         (Windows) 设置 列表项卡片
-        (Linux) 设置 列表项卡片 
-        (Mac) 设置 列表项卡片
+        (Linux/Mac) 设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
@@ -223,8 +220,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
     html.windows .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html.linux .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
-    html.mac .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html:is(.linux, .mac) .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
@@ -287,16 +283,14 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 
         (Windows) 主界面侧栏
-        (Linux) 主界面侧栏
-        (Mac) 主界面侧栏
+        (Linux/Mac) 主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
     html.windows .sidebar-nav,
-    html.linux .sidebar,
-    html.mac .sidebar,
+    html:is(.linux, .mac) .sidebar,
     html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -351,8 +345,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
         (Windows) 设置 列表项卡片
-        (Linux) 设置 列表项卡片 
-        (Mac) 设置 列表项卡片
+        (Linux/Mac) 设置 列表项卡片 
         设置 消息通知 列表项卡片 消息组
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
@@ -363,8 +356,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
     html.windows .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.appearance-tab)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html.linux .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
-    html.mac .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
+    html:is(.linux, .mac) .setting-main__content:not(.liteloader, .qqntim-settings-panel)>*>*:not(.setting-item-title, .popup, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
@@ -415,6 +407,14 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: #ffffff !important;
     }
 
+    /* 登录页面手机验证文本颜色 */
+    .wait-confirm .title,
+    .wait-confirm .desc,
+    html.windows .auto-login .status-txt,
+    html:is(.linux, .mac) .status .notice>span {
+        color: #ffffff !important;
+    }
+
     .login-panel .seperator {
         color: #ffffff7f !important;
     }
@@ -437,11 +437,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     .main-search .search-input,
-    /* 
-        Linux端最近聊天加号按钮
-        Mac端最近聊天加号按钮 */
-    html.linux .contact-adder-btn,
-    html.mac .contact-adder-btn {
+    /* Linux/Mac端最近聊天加号按钮 */
+    html:is(.linux, .mac) .contact-adder-btn {
         background: #ffffff10 !important;
     }
 
@@ -551,35 +548,27 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 #chk1-label>a:nth-child(1),
 #chk1-label>a:nth-child(2),
 #app>div>div.login-panel>div>div.operation>span:nth-child(1),
-#app>div>div.login-panel>div>div.operation>span:nth-child(3) {
+#app>div>div.login-panel>div>div.operation>span:nth-child(3),
+.login-panel .operation {
     color: var(--text_link) !important;
 }
 
 /* 
-    删除Linux版最近聊天的加载占位背景
-    删除Linux版群成员列表的加载占位背景
-    删除mac版最近聊天的加载占位背景
-    删除mac版群成员列表的加载占位背景 */
-html.linux .recent-contact .viewport-list,
-html.linux .group-member .viewport-list,
-html.mac .recent-contact .viewport-list,
-html.mac .group-member .viewport-list {
+    删除Linux/Mac版最近聊天的加载占位背景
+    删除Linux/Mac版群成员列表的加载占位背景 */
+html:is(.linux, .mac) .recent-contact .viewport-list,
+html:is(.linux, .mac) .group-member .viewport-list {
     background-image: none !important;
 }
 
-/* 
-    删除Linux版好友通知/群通知的多余边距
-    删除Mac版好友通知/群通知的多余边距 */
-html.linux .sys-notify .sys-notify-card,
-html.mac .sys-notify .sys-notify-card {
+/* 删除Linux/Mac版好友通知/群通知的多余边距 */
+html:is(.linux, .mac) .sys-notify .sys-notify-card {
     padding: unset !important;
 }
 
 /* 
-    删除Linux版搜索结果多余的第二层背景
-    删除Mac版搜索结果多余的第二层背景 */
-html.linux .search-result-background,
-html.mac .search-result-background {
+    删除Linux/Mac版搜索结果多余的第二层背景 */
+html:is(.linux, .mac) .search-result-background {
     background-color: initial !important
 }
 
