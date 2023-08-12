@@ -529,7 +529,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 .auto-login .avatar {
-    box-shadow: 0px 4px 28px 0px #cb82beaf !important;
+    box-shadow: 0px 4px 28px 0px var(--text-selected-color) !important;
 }
 
 .record-msg .msg-content-container {
