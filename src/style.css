@@ -578,11 +578,11 @@ html:is(.linux, .mac) .search-result-background {
 }
 
 /* 插件市场作者链接文字颜色 */
-.plugins_marketplace .plugin-list .extra-information a {
+.liteloader a {
     color: var(--theme-color) !important;
 }
 
-.plugins_marketplace .plugin-list .extra-information a:hover {
+.liteloader a:hover {
     color: var(--theme-color-dark2) !important;
 }
 
