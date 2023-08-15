@@ -586,7 +586,7 @@ html:is(.linux, .mac) .search-result-background {
     color: var(--theme-color-dark2) !important;
 }
 
-/* 颜色选择器 */
+/* 设置页面input */
 .liteloader input[type="color"] {
     padding: 4px;
 }
@@ -597,11 +597,15 @@ html:is(.linux, .mac) .search-result-background {
 
 .liteloader ::-webkit-color-swatch {
     border-radius: 4px;
-    border: #00000000 solid 1px;
+    border: transparent solid 1px;
 }
 
-.liteloader input:focus {
-    border: 1px solid !important;
+.liteloader input:is([type="color"],[type="range"]):focus {
+    border: 1px solid #424242 !important;
+}
+
+.liteloader input[type="text"] {
+    border-radius: 8px !important;
 }
 
 /* 
