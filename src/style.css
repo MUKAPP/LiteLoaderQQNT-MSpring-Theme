@@ -577,7 +577,7 @@ html:is(.linux, .mac) .search-result-background {
     border-radius: 8px !important;
 }
 
-/* 插件市场作者链接文字颜色 */
+/* 设置界面链接文字颜色 */
 .liteloader a {
     color: var(--theme-color) !important;
 }
