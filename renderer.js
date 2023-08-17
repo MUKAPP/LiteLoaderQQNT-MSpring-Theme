@@ -107,6 +107,19 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
     }, interval);
 }
 
+function observeElement2(selector, callback, callbackEnable = true, interval = 100) {
+    const timer = setInterval(function () {
+        const element = document.querySelector(selector);
+        if (element) {
+            if (callbackEnable) {
+                callback();
+                log("已检测到", selector);
+            }
+            clearInterval(timer);
+        }
+    }, interval);
+}
+
 function insertHeti(before) {
     // 在页面header插入heti的css和js
     const hetiLinkElement = document.createElement("link");
@@ -193,7 +206,7 @@ async function onLoad() {
     if (settings.heti) {
         log("[设置]", "开启赫蹏");
         try {
-            observeElement('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
+            observeElement2('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
         } catch (error) {
             log("[错误]", "赫蹏加载出错", error);
         }
@@ -203,7 +216,7 @@ async function onLoad() {
     if (settings.tglike) {
         log("[设置]", "开启消息合并");
         try {
-            observeElement('#ml-root .ml-list', concatBubble);
+            observeElement2('#ml-root .ml-list', concatBubble);
         } catch (error) {
             log("[错误]", "消息合并出错", error);
         }
