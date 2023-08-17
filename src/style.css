@@ -167,11 +167,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background-color: #00000010 !important;
     }
 
-    .message-content__wrapper .container--others span::selection,
-    .message-content__wrapper .container--others heti-spacing::selection {
-        background: var(--text-selected-color);
-    }
-
     /* 自己消息的背景 */
     .message-content__wrapper .container--self {
         background: var(--theme-color) !important;
@@ -467,6 +462,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background: #ffffff21 !important;
         backdrop-filter: initial !important;
     }
+
+    /* DeepL插件 他人的消息框分割线颜色 */
+    .container--others #deepl-divider {
+        background: #ffffff3f !important;
+    }
 }
 
 :root {
@@ -600,7 +600,7 @@ html:is(.linux, .mac) .search-result-background {
     border: transparent solid 1px;
 }
 
-.liteloader input:is([type="color"],[type="range"]):focus {
+.liteloader input:is([type="color"], [type="range"]):focus {
     border: 1px solid #424242 !important;
 }
 
@@ -664,4 +664,21 @@ html.mspring_background_plugin_enabled .reply-element.reply-element--self {
 /* 开启背景插件后的搜索框多的双层方形背景 */
 html.mspring_background_plugin_enabled .main-search {
     background: none !important;
+}
+
+/* DeepL插件 自己的消息框分割线颜色 */
+.container--self #deepl-divider {
+    background: #ffffff3f !important;
+}
+
+/* 别人消息选中文字背景色 */
+.message-content__wrapper .container--others span::selection,
+.message-content__wrapper .container--others heti-spacing::selection {
+    background: var(--text-selected-color);
+}
+
+/* 自己消息选中文字背景色 */
+.message-content__wrapper .container--self span::selection,
+.message-content__wrapper .container--self heti-spacing::selection {
+    background: #ffffff3f;
 }
