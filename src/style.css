@@ -680,14 +680,14 @@ html.mspring_background_plugin_enabled .main-search {
 }
 
 /* 自己消息选中文字背景色 */
-.message-content__wrapper .container--others span::selection,
-.message-content__wrapper .container--others heti-spacing::selection,
-.message-content__wrapper .container--others br::selection,
-.message-content__wrapper .container--others img::selection {
+.message-content__wrapper .container--self span::selection,
+.message-content__wrapper .container--self heti-spacing::selection,
+.message-content__wrapper .container--self br::selection,
+.message-content__wrapper .container--self img::selection {
     background: #ffffff3f;
 }
 
-/* 别人消息选中文字背景色 */
+/* 编辑框选中文字背景色 */
 .ck-editor__main p::selection,
 .ck-editor__main img::selection {
     background: var(--text-selected-color);
