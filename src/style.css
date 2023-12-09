@@ -164,7 +164,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 别人消息的背景 */
     html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
-        background-color: #00000010 !important;
+        background: #00000010 !important;
     }
 
     /* 自己消息的背景 */
@@ -244,6 +244,25 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
+        background: #00000010 !important;
+        backdrop-filter: initial !important;
+    }
+
+    /* 插件设置 列表里的输入框 */
+    .liteloader input[type="text"] {
+        border-radius: 8px;
+        background: #00000010;
+        padding-left: 6px;
+    }
+
+    .liteloader input[type="text"]:focus {
+        background: #00000021 !important;
+        padding-left: 10px !important;
+    }
+
+    /* 轻量工具箱 +1和外置时间 */
+    .message-content-replace::after,
+    .lite-tools-time.bubble-outside::after {
         background: #00000010 !important;
         backdrop-filter: initial !important;
     }
@@ -467,6 +486,25 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .container--others #deepl-divider {
         background: #ffffff3f !important;
     }
+
+    /* 插件设置 列表里的输入框 */
+    .liteloader input[type="text"] {
+        border-radius: 8px;
+        background: #ffffff10;
+        padding-left: 6px;
+    }
+
+    .liteloader input[type="text"]:focus {
+        background: #ffffff21 !important;
+        padding-left: 10px !important;
+    }
+
+    /* 轻量工具箱 +1和外置时间 */
+    .message-content-replace::after,
+    .lite-tools-time.bubble-outside::after {
+        background: #ffffff21 !important;
+        backdrop-filter: initial !important;
+    }
 }
 
 :root {
@@ -604,8 +642,8 @@ html:is(.linux, .mac) .search-result-background {
     border: 1px solid #424242 !important;
 }
 
-.liteloader input[type="text"] {
-    border-radius: 8px !important;
+.liteloader .wrap .vertical-list-item input[type="text"] {
+    border-radius: 4px !important;
 }
 
 /* 

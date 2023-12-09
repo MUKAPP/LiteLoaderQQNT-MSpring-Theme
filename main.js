@@ -115,7 +115,7 @@ function onLoad(plugin) {
             "themeColor": "#cb82be",
             "backgroundOpacity": "70",
             "heti": false,
-            "tglike": false,
+            // "tglike": false,
         }));
     } else {
         // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
@@ -130,11 +130,11 @@ function onLoad(plugin) {
             config.heti = false;
             fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
-        // 判断后来加入的tglike是否存在，如果不存在则添加
-        if (!config.tglike) {
-            config.tglike = false;
-            fs.writeFileSync(settingsPath, JSON.stringify(config));
-        }
+        // // 判断后来加入的tglike是否存在，如果不存在则添加
+        // if (!config.tglike) {
+        //     config.tglike = false;
+        //     fs.writeFileSync(settingsPath, JSON.stringify(config));
+        // }
     }
 
     ipcMain.on(
