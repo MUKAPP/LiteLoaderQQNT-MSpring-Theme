@@ -115,6 +115,16 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     border-radius: 12px;
 }
 
+/* 设置背景 */
+.forward-msg, /* 转发的聊天记录 */
+.normal-file { /* 文件 */
+    background-color: #ffffff21 !important;
+    backdrop-filter: none !important;
+}
+.msg-content-container.ark-msg-content-container.container--others .ark-view-message_not-support { /* 不支持的消息 */
+    background: none !important;
+}
+
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
