@@ -284,8 +284,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 轻量工具箱 +1和外置时间 */
-    .message-content-replace::after,
-    .lite-tools-time.bubble-outside::after {
+    .message-content-replace::after:not(.mspring_lite_tool_background_enabled),
+    .lite-tools-time.bubble-outside::after:not(.mspring_lite_tool_background_enabled) {
         background: #00000010 !important;
         backdrop-filter: initial !important;
     }
@@ -540,8 +540,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 轻量工具箱 +1和外置时间 */
-    .message-content-replace::after,
-    .lite-tools-time.bubble-outside::after {
+    .message-content-replace::after:not(.mspring_lite_tool_background_enabled),
+    .lite-tools-time.bubble-outside::after:not(.mspring_lite_tool_background_enabled) {
         background: #ffffff21 !important;
         backdrop-filter: initial !important;
     }
