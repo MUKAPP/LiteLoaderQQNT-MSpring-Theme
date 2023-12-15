@@ -116,12 +116,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 /* 设置背景 */
-.forward-msg, /* 转发的聊天记录 */
-.normal-file { /* 文件 */
-    background-color: #ffffff21 !important;
-    backdrop-filter: none !important;
-}
-.msg-content-container.ark-msg-content-container.container--others .ark-view-message_not-support { /* 不支持的消息 */
+.msg-content-container.ark-msg-content-container.container--others .ark-view-message_not-support {
+    /* 不支持的消息 */
     background: none !important;
 }
 
@@ -175,6 +171,23 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 别人消息的背景 */
     html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
         background: #00000010 !important;
+    }
+
+    /* 
+        合并转发的聊天记录
+        文件 */
+    .forward-msg,
+    .normal-file {
+        background-color: #00000010 !important;
+        backdrop-filter: none !important;
+    }
+
+    /* 
+        合并转发的聊天记录（选中）
+        文件（选中） */
+    .forward-msg:active,
+    .normal-file:active {
+        background-color: #00000021 !important;
     }
 
     /* 自己消息的背景 */
@@ -330,6 +343,23 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 别人消息的背景 */
     html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
         background: #ffffff21 !important;
+    }
+
+    /* 
+        合并转发的聊天记录
+        文件 */
+    .forward-msg,
+    .normal-file {
+        background-color: #ffffff21 !important;
+        backdrop-filter: none !important;
+    }
+
+    /* 
+        合并转发的聊天记录（选中）
+        文件（选中） */
+    .forward-msg:active,
+    .normal-file:active {
+        background-color: #ffffff10 !important;
     }
 
     /* 自己消息的背景 */
