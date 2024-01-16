@@ -56,53 +56,59 @@ function insertHeti(before) {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
+try {
 
-// 页面加载完成时触发
-const element = document.createElement("style");
-document.head.appendChild(element);
 
-mspring_theme.updateStyle((event, message) => {
-    element.textContent = message;
-});
+    // 页面加载完成时触发
+    const element = document.createElement("style");
+    document.head.appendChild(element);
 
-mspring_theme.rendererReady();
+    mspring_theme.updateStyle((event, message) => {
+        element.textContent = message;
+    });
 
-// 判断操作系统类型
-var osType = "";
-if (LiteLoader.os.platform === "win32") {
-    osType = "windows";
-} else if (LiteLoader.os.platform === "linux") {
-    osType = "linux";
-} else if (LiteLoader.os.platform === "darwin") {
-    osType = "mac";
-}
-document.documentElement.classList.add(osType);
+    mspring_theme.rendererReady();
 
-// 判断插件background_plugin是否存在且启用
-if (LiteLoader.plugins.background_plugin && !LiteLoader.plugins.background_plugin.disabled) {
-    log("[检测]", "已启用背景插件");
-    document.documentElement.classList.add(`mspring_background_plugin_enabled`);
-}
-
-// 判断插件lite_tools是否存在且启用
-if (LiteLoader.plugins.lite_tools && !LiteLoader.plugins.lite_tools.disabled) {
-    log("[检测]", "已启用轻量工具箱");
-    const ltOptions = await lite_tools.config();
-    if (ltOptions.background.enabled) {
-        log("[检测]", "已启用轻量工具箱-自定义背景");
-        document.documentElement.classList.add(`mspring_lite_tool_background_enabled`);
+    // 判断操作系统类型
+    var osType = "";
+    if (LiteLoader.os.platform === "win32") {
+        osType = "windows";
+    } else if (LiteLoader.os.platform === "linux") {
+        osType = "linux";
+    } else if (LiteLoader.os.platform === "darwin") {
+        osType = "mac";
     }
-}
+    document.documentElement.classList.add(osType);
 
-// 判断是否开启heti
-const settings = await mspring_theme.getSettings();
-if (settings.heti) {
-    log("[设置]", "开启赫蹏");
-    try {
-        observeElement('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
-    } catch (error) {
-        log("[错误]", "赫蹏加载出错", error);
+    // 判断插件background_plugin是否存在且启用
+    if (LiteLoader.plugins.background_plugin && !LiteLoader.plugins.background_plugin.disabled) {
+        log("[检测]", "已启用背景插件");
+        document.documentElement.classList.add(`mspring_background_plugin_enabled`);
     }
+
+    // 判断插件lite_tools是否存在且启用
+    if (LiteLoader.plugins.lite_tools && !LiteLoader.plugins.lite_tools.disabled) {
+        log("[检测]", "已启用轻量工具箱");
+        const ltOptions = await lite_tools.getOptions();
+        if (ltOptions.background.enabled) {
+            log("[检测]", "已启用轻量工具箱-自定义背景");
+            document.documentElement.classList.add(`mspring_lite_tool_background_enabled`);
+        }
+    }
+
+    // 判断是否开启heti
+    const settings = await mspring_theme.getSettings();
+    if (settings.heti) {
+        log("[设置]", "开启赫蹏");
+        try {
+            observeElement('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
+        } catch (error) {
+            log("[错误]", "赫蹏加载出错", error);
+        }
+    }
+
+} catch (error) {
+    log("[渲染进程错误]", error);
 }
 
 
@@ -166,6 +172,6 @@ export const onSettingWindowCreated = async view => {
             mspring_theme.setSettings(settings);
         });
     } catch (error) {
-        log("[错误]", error);
+        log("[设置页面错误]", error);
     }
 }
