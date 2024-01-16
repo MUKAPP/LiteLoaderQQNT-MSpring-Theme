@@ -232,7 +232,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         (Windows) 设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 主体&插件配置界面
-        LiteLoaderQQNT 主体&插件配置界面
         QQNTim 设置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
@@ -242,8 +241,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
-    .liteloader .wrap,
-    .liteloader .setting-item-content,
+    .liteloader setting-panel,
     .qqntim-settings-panel-section-content {
         background: #00000010 !important;
         border-radius: 8px;
@@ -414,8 +412,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .popup>*:not(.setting-item-title),
     html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
-    .liteloader .wrap,
-    .liteloader .setting-item-content,
+    .liteloader setting-panel,
     .qqntim-settings-panel-section-content {
         background: #ffffff21 !important;
         border-radius: 8px;

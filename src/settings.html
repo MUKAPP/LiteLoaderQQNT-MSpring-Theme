@@ -1,38 +1,53 @@
-<body>
-    <section class="appearance">
-        <h1>外观</h1>
-        <div class="wrap">
-            <div class="vertical-list-item">
-                <h2>主题颜色</h2>
+<style>
+    /* 背景颜色透明度滑条 */
+    .mspring_theme input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 8px;
+        background: var(--theme-color);
+        cursor: pointer;
+    }
+
+    .pick-opacity {
+        padding: 4px;
+    }
+</style>
+
+<setting-section data-title="外观" class="appearance">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <setting-text>主题颜色</setting-text>
                 <input type="color" value="#ff0000" class="q-button q-button--small q-button--secondary pick-color" />
-            </div>
-            <hr class="horizontal-dividing-line">
-            <div class="vertical-list-item" id="mst-settings-background-opacity">
-                <h2>背景颜色透明度</h2>
+            </setting-item>
+            <setting-divider data-orientation="horizontal"></setting-divider>
+            <setting-item data-direction="row" id="mst-settings-background-opacity">
+                <setting-text>背景颜色透明度</setting-text>
                 <input type="range" value="1" min="0" max="100" step="1"
                     class="q-button q-button--small q-button--secondary pick-opacity" style="width: 61%;" />
-            </div>
-        </div>
-    </section>
-    <section class="enhancement">
-        <h1>增强</h1>
-        <div class="wrap">
-            <div class="vertical-list-item">
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<setting-section data-title="增强" class="enhancement">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
                 <div>
-                    <h2>优化消息排版</h2>
-                    <span class="secondary-text">使用 赫蹏，提供中英文混排美化、标点挤压，修改之后重启生效</span>
+                    <setting-text>优化消息排版</setting-text>
+                    <setting-text data-type="secondary">使用 赫蹏，提供中英文混排美化、标点挤压，修改之后重启生效</setting-text>
                 </div>
-                <div class="q-switch is-active" id="heti">
-                    <span class="q-switch__handle"></span>
-                </div>
-            </div>
-            <hr class="horizontal-dividing-line">
-            <div class="vertical-list-item">
+                <setting-switch id="heti"></setting-switch>
+            </setting-item>
+            <setting-divider data-orientation="horizontal"></setting-divider>
+            <setting-item data-direction="row">
                 <div>
-                    <h2>连续消息合并</h2>
-                    <span class="secondary-text">该功能因不稳定性已下线，建议使用 轻量工具箱 插件代替</span>
+                    <setting-text>连续消息合并</setting-text>
+                    <setting-text data-type="secondary">该功能因不稳定性已下线，建议使用 轻量工具箱 插件代替</setting-text>
                 </div>
-            </div>
-        </div>
-    </section>
-</body>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
