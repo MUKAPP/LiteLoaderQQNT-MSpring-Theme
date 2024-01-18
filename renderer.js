@@ -1,4 +1,4 @@
-const plugin_path = LiteLoader.plugins.mspring_theme.path.plugin;
+const plugin_path = LiteLoader.plugins["mspring_theme"].path.plugin;
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);

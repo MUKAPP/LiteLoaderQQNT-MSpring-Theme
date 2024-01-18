@@ -1,21 +1,29 @@
 /* 删除背景 */
+/* 最近联系列表 */
 .recent-contact,
+/* 最近联系列表 */
 .viewport-list__inner,
+/* 最近联系列表 */
 .contact,
+/* 联系人头部切换 */
 .tab-header,
-.radio-tab,
 /* .normal-file, */
+/* 联系人 群通知、好友通知 */
 .sys-notify,
 /* .msg-content-container, */
 /* .sys-notify-card, */
+/* 文件管理 文件列表 */
 .file-list-normal-scroll-container,
+/* 文件管理 发送人列表 */
 .sender-container,
+/* 联系人详情 */
 html:not(.mspring_background_plugin_enabled) .tab-container .profile,
-/* 文件管理页面 文件列表下面的白条 */
+/* 文件管理页面 文件列表下面加载更多的白条 */
 .file-area .loadmore-placeholder,
 /* 文件管理页面 群文件 群列表 */
 .group-file-container,
-.q-collapse-item,
+/* .q-collapse-item, */
+/* 文件管理页面 群文件 群列表项 */
 .q-collapse-item .q-collapse-item__header,
 /* 文件管理页面 类型列表 */
 .file-type-container,
@@ -69,10 +77,9 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 /* 添加模糊 */
-.normal-file,
-.radio-tab {
+/* .normal-file {
     backdrop-filter: blur(8px);
-}
+} */
 
 /* 文件管理 发送人列表 */
 .file-manager-main .q-collapse-item {
@@ -90,14 +97,14 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 /* 登录页面QQ图标 */
-.qq-icon-font {
+/* .qq-icon-font {
     transform: none !important;
-}
+} */
 
 /* 查看图片界面工具栏 */
-.main-area__header {
+/* .main-area__header {
     backdrop-filter: none !important;
-}
+} */
 
 /* 查看图片界面 */
 /* .main-area {
@@ -200,13 +207,20 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background: #00000010 !important;
     }
 
+    /* 搜索结果 */
     .search-result {
         border-radius: 12px !important;
         background: #ffffff !important;
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
+    /* 
+        菜单
+        聊天页面账号卡片
+        忘了 */
     .q-popover,
     .user-card-main,
     .account-list {
@@ -247,6 +261,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         border-radius: 8px;
     }
 
+    /* 登录页面背景 */
     .login-container {
         background-color: #ffffff !important;
     }
@@ -261,6 +276,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 去除VIP红色昵称 */
     .vip-name {
         color: initial !important;
+    }
+
+    /* 联系人头部切换 */
+    .radio-tab {
+        background: #00000010 !important;
     }
 
     /* 防撤回提示 */
@@ -370,13 +390,20 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background: #ffffff21 !important;
     }
 
+    /* 搜索结果 */
     .search-result {
         border-radius: 12px !important;
         background: #171717 !important;
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
+    /* 
+        菜单
+        聊天页面账号卡片
+        忘了 */
     .q-popover,
     .user-card-main,
     .account-list {
@@ -498,19 +525,14 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: #ffffff !important;
     }
 
-    /* 登录页面QQ图标颜色 */
-    .qq-icon-font>*>*>* {
-        fill: #ffffff !important;
-    }
-
-    #app>div>div.window-control-area>div>i>svg>path,
-    #app>div>div.setting>i>svg>path {
-        fill: #ffffff !important;
-    }
-
     /* 去除VIP红色昵称 */
     .vip-name {
         color: #ffffff !important;
+    }
+
+    /* 联系人头部切换 */
+    .radio-tab {
+        background: #ffffff21 !important;
     }
 
     /* 防撤回提示 */
@@ -695,37 +717,6 @@ html:is(.linux, .mac) .search-result-background {
     background: var(--theme-tag-color) !important;
 }
 
-/* 优化 QQNTim 设置界面样式 */
-.qqntim-settings-panel-section-header-title {
-    color: var(--text_primary) !important;
-    font-weight: var(--font-bold) !important;
-    font-size: min(var(--font_size_3), 18px) !important;
-    line-height: min(var(--line_height_3), 24px) !important;
-    margin-bottom: 8px !important;
-    padding: 0px 16px !important;
-}
-
-.qqntim-settings-panel-section-header {
-    padding: initial !important;
-}
-
-.qqntim-settings-panel-section {
-    margin: 0px 4px 0px !important;
-}
-
-.qqntim-settings-panel-section-content {
-    border-top-left-radius: 8px !important;
-    border-top-right-radius: 8px !important;
-    border-bottom-right-radius: 8px !important;
-    border-bottom-left-radius: 8px !important;
-    font-size: min(var(--font_size_3), 18px) !important;
-    line-height: min(var(--line_height_3), 24px) !important;
-    margin-bottom: 20px !important;
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
-    padding: 0px 16px !important;
-}
-
 /* 开启背景插件后自己发送消息的文本颜色 */
 html.mspring_background_plugin_enabled .msg-content-container.container--self {
     color: var(--bubble_host_text) !important;
@@ -766,4 +757,9 @@ html.mspring_background_plugin_enabled .main-search {
 .ck-editor__main p::selection,
 .ck-editor__main img::selection {
     background: var(--text-selected-color);
+}
+
+/* 提示 */
+.q-toast-item {
+    border-radius: 8px;
 }
