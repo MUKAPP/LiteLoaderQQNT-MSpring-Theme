@@ -18,7 +18,6 @@
     * [插件市场（推荐）](#插件市场推荐)
     * [手动安装](#手动安装)
 * [插件冲突分析](#插件冲突分析)
-* [其他](#其他)
 
 ## 注意事项
 
@@ -71,23 +70,3 @@
 
 * **优化消息排版** 功能在 [**Markdown插件**](https://github.com/d0j1a1701/LiteLoaderQQNT-Markdown) 开启时会失效，Markdown 插件自带了 `pangu.js` 的中英混排优化，开启二者之一就可以了
 * 最新版优化了开启 **背景插件** 和 **轻量工具箱-自定义背景** 之后的样式，开启 **轻量工具箱-自定义背景** 之后需要重启一次 QQ
-
-## 其他
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="
-      https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date&theme=dark
-    "
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="
-      https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date
-    "
-  />
-  <img
-    alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date"
-  />
-</picture>
