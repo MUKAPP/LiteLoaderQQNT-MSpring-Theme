@@ -3,7 +3,7 @@
 # LiteLoaderQQNT-MSpring-Theme
 
 > [!NOTE]
-> 该分支最高支持到 LiteLoaderQQNT 0.5.10，
+> 该分支最高支持到 LiteLoaderQQNT 0.5.10，v4 分支开始支持 1.0.0
 
 [LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
 
@@ -30,7 +30,7 @@
 > Linux 更改主题颜色后需要重启QQ才能生效
 
 > [!CAUTION]
-> **温馨提示：不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
+> **不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
 
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
