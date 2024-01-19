@@ -101,102 +101,106 @@ function watchSettingsChange(webContents, settingsPath) {
 
 
 // 加载插件时触发
-const pluginDataPath = LiteLoader.plugins["mspring_theme"].path.data;
-const settingsPath = path.join(pluginDataPath, "settings.json"); 
+function onLoad(plugin) {
+    const pluginDataPath = plugin.path.data;
+    const settingsPath = path.join(pluginDataPath, "settings.json");
 
-// fs判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
-if (!fs.existsSync(pluginDataPath)) {
-    fs.mkdirSync(pluginDataPath, { recursive: true });
-}
-// 判断settings.json是否存在，如果不存在则创建
-if (!fs.existsSync(settingsPath)) {
-    fs.writeFileSync(settingsPath, JSON.stringify({
-        "themeColor": "#cb82be",
-        "backgroundOpacity": "70",
-        "heti": false
-    }));
-} else {
-    // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
-    const data = fs.readFileSync(settingsPath, "utf-8");
-    const config = JSON.parse(data);
-    if (!config.backgroundOpacity) {
-        config.backgroundOpacity = "70";
-        fs.writeFileSync(settingsPath, JSON.stringify(config));
+    // fs判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
+    if (!fs.existsSync(pluginDataPath)) {
+        fs.mkdirSync(pluginDataPath, { recursive: true });
     }
-    // 判断后来加入的heti是否存在，如果不存在则添加
-    if (!config.heti) {
-        config.heti = false;
-        fs.writeFileSync(settingsPath, JSON.stringify(config));
-    }
-}
-
-ipcMain.on(
-    "LiteLoader.mspring_theme.rendererReady",
-    (event, message) => {
-        const window = BrowserWindow.fromWebContents(event.sender);
-        updateStyle(window.webContents, settingsPath);
-    }
-);
-
-// 监听渲染进程的updateStyle事件
-ipcMain.on(
-    "LiteLoader.mspring_theme.updateStyle",
-    (event, settingsPath) => {
-        const window = BrowserWindow.fromWebContents(event.sender);
-        updateStyle(window.webContents, settingsPath);
-    });
-
-// 监听渲染进程的watchCSSChange事件
-ipcMain.on(
-    "LiteLoader.mspring_theme.watchCSSChange",
-    (event, settingsPath) => {
-        const window = BrowserWindow.fromWebContents(event.sender);
-        watchCSSChange(window.webContents, settingsPath);
-    });
-
-// 监听渲染进程的watchSettingsChange事件
-ipcMain.on(
-    "LiteLoader.mspring_theme.watchSettingsChange",
-    (event, settingsPath) => {
-        const window = BrowserWindow.fromWebContents(event.sender);
-        watchSettingsChange(window.webContents, settingsPath);
-    });
-
-ipcMain.handle(
-    "LiteLoader.mspring_theme.getSettings",
-    (event, message) => {
-        try {
-            const data = fs.readFileSync(settingsPath, "utf-8");
-            const config = JSON.parse(data);
-            return config;
-        } catch (error) {
-            log(error);
-            return {};
+    // 判断settings.json是否存在，如果不存在则创建
+    if (!fs.existsSync(settingsPath)) {
+        fs.writeFileSync(settingsPath, JSON.stringify({
+            "themeColor": "#cb82be",
+            "backgroundOpacity": "70",
+            "heti": false,
+            // "tglike": false,
+        }));
+    } else {
+        // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
+        const data = fs.readFileSync(settingsPath, "utf-8");
+        const config = JSON.parse(data);
+        if (!config.backgroundOpacity) {
+            config.backgroundOpacity = "70";
+            fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
-    }
-);
-
-ipcMain.handle(
-    "LiteLoader.mspring_theme.setSettings",
-    (event, content) => {
-        try {
-            const new_config = JSON.stringify(content);
-            fs.writeFileSync(settingsPath, new_config, "utf-8");
-        } catch (error) {
-            log(error);
+        // 判断后来加入的heti是否存在，如果不存在则添加
+        if (!config.heti) {
+            config.heti = false;
+            fs.writeFileSync(settingsPath, JSON.stringify(config));
         }
+        // // 判断后来加入的tglike是否存在，如果不存在则添加
+        // if (!config.tglike) {
+        //     config.tglike = false;
+        //     fs.writeFileSync(settingsPath, JSON.stringify(config));
+        // }
     }
-);
 
-ipcMain.handle(
-    "LiteLoader.mspring_theme.logToMain",
-    (event, ...args) => {
-        log(...args);
-    }
-);
+    ipcMain.on(
+        "LiteLoader.mspring_theme.rendererReady",
+        (event, message) => {
+            const window = BrowserWindow.fromWebContents(event.sender);
+            updateStyle(window.webContents, settingsPath);
+        }
+    );
+
+    // 监听渲染进程的updateStyle事件
+    ipcMain.on(
+        "LiteLoader.mspring_theme.updateStyle",
+        (event, settingsPath) => {
+            const window = BrowserWindow.fromWebContents(event.sender);
+            updateStyle(window.webContents, settingsPath);
+        });
+
+    // 监听渲染进程的watchCSSChange事件
+    ipcMain.on(
+        "LiteLoader.mspring_theme.watchCSSChange",
+        (event, settingsPath) => {
+            const window = BrowserWindow.fromWebContents(event.sender);
+            watchCSSChange(window.webContents, settingsPath);
+        });
+
+    // 监听渲染进程的watchSettingsChange事件
+    ipcMain.on(
+        "LiteLoader.mspring_theme.watchSettingsChange",
+        (event, settingsPath) => {
+            const window = BrowserWindow.fromWebContents(event.sender);
+            watchSettingsChange(window.webContents, settingsPath);
+        });
+
+    ipcMain.handle(
+        "LiteLoader.mspring_theme.getSettings",
+        (event, message) => {
+            try {
+                const data = fs.readFileSync(settingsPath, "utf-8");
+                const config = JSON.parse(data);
+                return config;
+            } catch (error) {
+                log(error);
+                return {};
+            }
+        }
+    );
+
+    ipcMain.handle(
+        "LiteLoader.mspring_theme.setSettings",
+        (event, content) => {
+            try {
+                const new_config = JSON.stringify(content);
+                fs.writeFileSync(settingsPath, new_config, "utf-8");
+            } catch (error) {
+                log(error);
+            }
+        }
+    );
+
+}
+
 
 // 创建窗口时触发
-module.exports.onBrowserWindowCreated = window => {
+function onBrowserWindowCreated(window, plugin) {
+    const pluginDataPath = plugin.path.data;
     const settingsPath = path.join(pluginDataPath, "settings.json");
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();
@@ -205,4 +209,10 @@ module.exports.onBrowserWindowCreated = window => {
             watchSettingsChange(window.webContents, settingsPath);
         }
     });
+}
+
+
+module.exports = {
+    onLoad,
+    onBrowserWindowCreated,
 }

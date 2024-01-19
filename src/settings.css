@@ -1,0 +1,96 @@
+/* 通用 */
+.mspring_theme {
+    margin: 20px;
+}
+
+.mspring_theme h1 {
+    color: var(--text_primary);
+    font-weight: var(--font-bold);
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+    padding: 0px 16px;
+    margin-bottom: 8px;
+}
+
+.mspring_theme .wrap {
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 0px 16px;
+}
+
+.mspring_theme .vertical-list-item {
+    margin: 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mspring_theme .horizontal-dividing-line {
+    border: unset;
+    margin: unset;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mspring_theme .vertical-dividing-line {
+    border: unset;
+    margin: unset;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mspring_theme .ops-btns {
+    display: flex;
+}
+
+.mspring_theme .hidden {
+    display: none !important;
+}
+
+.mspring_theme .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.mspring_theme .secondary-text {
+    color: var(--text_secondary);
+    font-size: min(var(--font_size_2), 16px);
+    line-height: min(var(--line_height_2), 22px);
+    margin-top: 4px;
+}
+
+.mspring_theme .wrap .title {
+    cursor: pointer;
+    font-size: min(var(--font_size_3), 18px);
+    line-height: min(var(--line_height_3), 24px);
+}
+
+.mspring_theme .wrap .title svg {
+    width: 1em;
+    height: 1em;
+    transform: rotate(-180deg);
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+}
+
+.mspring_theme .wrap .title svg.is-fold {
+    transform: rotate(0deg);
+}
+
+/* 背景颜色透明度滑条 */
+.mspring_theme input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background: var(--theme-color);
+    cursor: pointer;
+}
+
+.pick-opacity {
+    padding: 4px;
+}

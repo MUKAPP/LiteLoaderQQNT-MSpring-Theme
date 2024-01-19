@@ -16,8 +16,4 @@ contextBridge.exposeInMainWorld("mspring_theme", {
         "LiteLoader.mspring_theme.setSettings",
         content
     ),
-    logToMain: (...args) => ipcRenderer.invoke(
-        "LiteLoader.mspring_theme.logToMain",
-        ...args
-    ),
 });
