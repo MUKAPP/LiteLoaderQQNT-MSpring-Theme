@@ -12,14 +12,6 @@
       "link": "https://github.com/MUKAPP"
     }
   ],
-  "repository": {
-    "repo": "MUKAPP/LiteLoaderQQNT-MSpring-Theme",
-    "branch": "v3",
-    "use_release": {
-      "tag": "latest",
-      "file": "LiteLoaderQQNT-MSpring-Theme.zip"
-    }
-  },
   "platform": [
     "win32",
     "linux",
@@ -29,5 +21,13 @@
     "renderer": "./renderer.js",
     "main": "./main.js",
     "preload": "./preload.js"
+  },
+  "repository": {
+    "repo": "MUKAPP/LiteLoaderQQNT-MSpring-Theme",
+    "branch": "v4",
+    "use_release": {
+      "tag": "latest",
+      "file": "LiteLoaderQQNT-MSpring-Theme.zip"
+    }
   }
 }
