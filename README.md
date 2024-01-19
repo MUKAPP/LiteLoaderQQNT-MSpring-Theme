@@ -2,6 +2,9 @@
 
 # LiteLoaderQQNT-MSpring-Theme
 
+> [!NOTE]
+> 该分支最高支持到 LiteLoaderQQNT 0.5.10，
+
 [LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
@@ -21,10 +24,12 @@
 
 ## 注意事项
 
+> [!TIP]
 > Windows11 请在 `设置 - 通用 - 其他` 中开启 **透明效果**。\
 > Linux (KDE) 请配合 [Linux | 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。\
 > Linux 更改主题颜色后需要重启QQ才能生效
->
+
+> [!CAUTION]
 > **温馨提示：不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
 
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
