@@ -16,9 +16,8 @@
     * [夜间模式](#夜间模式)
     * [设置页面](#设置页面)
     * [优化消息排版演示](#优化消息排版演示)
-    * [连续消息合并演示](#连续消息合并演示)
 * [使用方法](#使用方法)
-    * [插件市场（推荐）](#插件市场推荐)
+    <!-- * [插件市场（推荐）](#插件市场推荐) -->
     * [手动安装](#手动安装)
 * [插件冲突分析](#插件冲突分析)
 * [其他](#其他)
@@ -36,7 +35,7 @@
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
 
-基于 LiteLoaderQQNT 作者的 [test-theme](https://github.com/mo-jinran/test-theme) 编写
+<!-- 基于 LiteLoaderQQNT 作者的 [test-theme](https://github.com/mo-jinran/test-theme) 编写 -->
 
 ## 截图
 
@@ -62,15 +61,13 @@
 
 ## 使用方法
 
-### 插件市场（推荐）
+<!-- ### 插件市场（推荐）
 
-在 LiteLoader 插件市场内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可
+在 LiteLoader 插件市场内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
 
 ### 手动安装
 
-将下载的 Zip 文件解压，解压出的文件夹移动至 `LiteLoaderQQNT数据目录/plugins/` 内，重启 QQ 即可
-
-注：LiteLoaderQQNT 的默认数据目录在 `用户目录/Documents/LiteLoaderQQNT`
+将下载的 Zip 文件解压，解压出的文件夹移动至 `LiteLoaderQQNT/plugins/` 内，重启 QQ 即可
 
 ## 插件冲突分析
 
