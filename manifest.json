@@ -25,7 +25,7 @@
   "repository": {
     "repo": "MUKAPP/LiteLoaderQQNT-MSpring-Theme",
     "branch": "v4",
-    "use_release": {
+    "release": {
       "tag": "latest",
       "file": "LiteLoaderQQNT-MSpring-Theme.zip"
     }
