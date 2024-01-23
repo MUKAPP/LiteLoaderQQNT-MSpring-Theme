@@ -525,6 +525,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: #ffffff !important;
     }
 
+    /* 深色模式下将艾特颜色改为白色 */
+    .container--self .text-element--at {
+        color: #ffffff !important;
+    }
+
     /* 去除VIP红色昵称 */
     .vip-name {
         color: #ffffff !important;
