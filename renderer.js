@@ -120,6 +120,13 @@ export const onSettingWindowCreated = async view => {
 
         view.innerHTML = await (await fetch(html_file_path)).text();
 
+        document.querySelectorAll(".nav-item.liteloader").forEach((node) => {
+            if (node.textContent === "MSpring Theme") {
+                node.querySelector(".q-icon").innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M247.693-147.694q-34.328 0-67.894-15.077-33.565-15.076-55.95-40.306 22.923-6.539 43.384-27.808 20.461-21.27 20.461-56.808 0-41.922 29.038-70.96 29.038-29.038 70.961-29.038 41.922 0 70.96 29.038 29.038 29.038 29.038 70.96 0 57.75-41.124 98.874-41.125 41.125-98.874 41.125Zm0-59.999q33 0 56.5-23.5t23.5-56.5q0-17-11.5-28.5t-28.5-11.5q-17 0-28.5 11.5t-11.5 28.5q0 23-5.5 42t-14.5 36q5 2 10 2h10Zm212.306-162.308L370.77-459.23l342.614-342.614q11-11 27.5-11.5t28.5 11.5l33.23 33.229q12 12 12 28t-12 28L459.999-370.001Zm-172.306 82.308Z"/></svg>`;
+                // console.log(node.querySelector(".q-icon"))
+            }
+        });
+
         // 获取设置
         const settings = await mspring_theme.getSettings();
         const themeColor = settings.themeColor;
