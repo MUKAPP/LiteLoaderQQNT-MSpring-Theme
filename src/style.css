@@ -707,7 +707,7 @@ html:is(.linux, .mac) .search-result-background {
     border: 1px solid #424242 !important;
 }
 
-.liteloader .wrap .vertical-list-item input[type="text"] {
+.liteloader setting-panel input[type="text"] {
     border-radius: 4px !important;
 }
 
