@@ -5,7 +5,7 @@
 > [!NOTE]
 > 该分支最低支持 LiteLoaderQQNT 1.0.0（测试版），v3 分支支持 1.0.0 以下版本
 
-[LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
+[LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
 
@@ -18,7 +18,7 @@
   - [设置页面](#设置页面)
   - [优化消息排版演示](#优化消息排版演示)
 - [使用方法](#使用方法)
-    <!-- * [插件市场（推荐）](#插件市场推荐) -->
+  - [插件市场（推荐）](#插件市场推荐)
   - [手动安装](#手动安装)
 - [插件冲突分析](#插件冲突分析)
 - [其他](#其他)
@@ -35,8 +35,6 @@
 
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
-
-<!-- 基于 LiteLoaderQQNT 作者的 [test-theme](https://github.com/mo-jinran/test-theme) 编写 -->
 
 ## 截图
 
@@ -62,9 +60,9 @@
 
 ## 使用方法
 
-<!-- ### 插件市场（推荐）
+### 插件市场（推荐）
 
-在 LiteLoader 插件市场内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
+在 [LiteLoader 插件市场](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可
 
 ### 手动安装
 
