@@ -144,6 +144,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         mix-blend-mode: multiply;
     }
 
+    html:is(.linux) .side-panel {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 
         聊天界面回顶按钮
         聊天界面回底按钮 */
@@ -154,15 +159,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 
-        (Windows) 主界面侧栏
-        (Linux/Mac) 主界面侧栏
+        主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
-    html.windows .sidebar-nav,
-    html:is(.linux, .mac) .sidebar,
+    .sidebar-nav,
     html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -217,6 +220,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         margin-right: 8px;
     }
 
+    html:is(.linux) .search-result {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 
         菜单
         聊天页面账号卡片
@@ -230,6 +238,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         mix-blend-mode: multiply !important;
     }
 
+    html:is(.linux) .q-popover,
+    html:is(.linux) .user-card-main,
+    html:is(.linux) .account-list {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 表情面板 */
     .sticker-panel {
         /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
@@ -240,20 +255,18 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 块
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
-        (Windows) 设置 列表项卡片
-        (Linux/Mac) 设置 列表项卡片
+        设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
-        (Windows) 设置 存储管理 列表项卡片
+        设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 主体&插件配置界面
         QQNTim 设置界面*/
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html:is(.linux, .mac) .setting-main__content>*>*:not(.setting-item-title, .popup, .shotcut, .liteloader),
+    .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
-    html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .liteloader setting-panel,
     .qqntim-settings-panel-section-content {
@@ -327,6 +340,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         mix-blend-mode: multiply;
     }
 
+    html:is(.linux) .side-panel {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 
         聊天界面回顶按钮
         聊天界面回底按钮 */
@@ -337,15 +355,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 
-        (Windows) 主界面侧栏
-        (Linux/Mac) 主界面侧栏
+        主界面侧栏
         主界面侧栏右边区域
         文件管理页面侧栏
         文件管理页面侧栏右边区域
         设置侧栏
         设置侧栏右边的区域 */
-    html.windows .sidebar-nav,
-    html:is(.linux, .mac) .sidebar,
+    .sidebar-nav,
     html:not(.mspring_lite_tool_background_enabled) .tab-container,
     .nav-bar-container,
     .file-manager-main,
@@ -400,6 +416,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         margin-right: 8px;
     }
 
+    html:is(.linux) .search-result {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 
         菜单
         聊天页面账号卡片
@@ -413,6 +434,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         mix-blend-mode: multiply !important;
     }
 
+    html:is(.linux) .q-popover,
+    html:is(.linux) .user-card-main,
+    html:is(.linux) .account-list {
+        backdrop-filter: none !important;
+        mix-blend-mode: initial !important;
+    }
+
     /* 表情面板 */
     .sticker-panel {
         /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
@@ -423,10 +451,9 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 块
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
-        (Windows) 设置 列表项卡片
-        (Linux/Mac) 设置 列表项卡片 
+        设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
-        (Windows) 设置 存储管理 列表项卡片
+        设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
         LiteLoaderQQNT 主体&插件配置界面
         LiteLoaderQQNT 主体&插件配置界面
@@ -434,10 +461,9 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
-    html.windows .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    html:is(.linux, .mac) .setting-main__content>*>*:not(.setting-item-title, .popup, .shotcut, .liteloader),
+    .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
-    html.windows .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
     .setting-main__content .shotcut>*,
     .liteloader setting-panel,
     .qqntim-settings-panel-section-content {
@@ -488,8 +514,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 登录页面手机验证文本颜色 */
     .wait-confirm .title,
     .wait-confirm .desc,
-    html.windows .auto-login .status-txt,
-    html:is(.linux, .mac) .status .notice>span {
+    .auto-login .status-txt {
         color: #ffffff !important;
     }
 
@@ -514,11 +539,10 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         border-color: #ffffff3f !important;
     }
 
-    .main-search .search-input,
-    /* Linux/Mac端最近聊天加号按钮 */
-    html:is(.linux, .mac) .contact-adder-btn {
+    .main-search .search-input {
         background: #ffffff10 !important;
     }
+
 
     /* 自己发送的链接颜色 */
     .container--self .text-link {
@@ -581,7 +605,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
     --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
     --bubble_host: var(--theme-color);
-    --nt_brand_standard_2_20_2_alpha: #cb82be3f;
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
     --overlay_active_brand: var(--theme-color);
     --text_link: var(--theme-color);
     --text-brand: var(--theme-color);
@@ -592,6 +616,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
     --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
     --bubble_host: var(--theme-color);
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
     --overlay_active_brand: var(--theme-color);
     --text_link: var(--theme-color);
     --text-brand: var(--theme-color);
@@ -654,30 +679,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 #app>div>div.login-panel>div>div.operation>span:nth-child(3),
 .login-panel .operation {
     color: var(--text_link) !important;
-}
-
-/* 
-    删除Linux/Mac版最近聊天的加载占位背景
-    删除Linux/Mac版群成员列表的加载占位背景 */
-html:is(.linux, .mac) .recent-contact .viewport-list,
-html:is(.linux, .mac) .group-member .viewport-list {
-    background-image: none !important;
-}
-
-/* 删除Linux/Mac版好友通知/群通知的多余边距 */
-html:is(.linux, .mac) .sys-notify .sys-notify-card {
-    padding: unset !important;
-}
-
-/* 
-    删除Linux/Mac版搜索结果多余的第二层背景 */
-html:is(.linux, .mac) .search-result-background {
-    background-color: initial !important
-}
-
-/* 插件市场展开按钮 */
-.plugins_marketplace .adv-ops-btn {
-    border-radius: 8px !important;
 }
 
 /* 设置界面链接文字颜色 */

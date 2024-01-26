@@ -68,6 +68,7 @@ function updateStyle(webContents, settingsPath) {
             --theme-color: ${themeColor};
             --theme-color-dark1: ${themeColorDark1};
             --theme-color-dark2: ${themeColorDark2};
+            --theme-color-alpha: ${themeColor + "3f"};
             --background-color-light: #FFFFFF${backgroundOpacityHex};
             --background-color-dark: #171717${backgroundOpacityHex};
             --theme-tag-color: ${themeColor + "3f"};
@@ -99,10 +100,9 @@ function watchSettingsChange(webContents, settingsPath) {
     }, 100));
 }
 
-
 // 加载插件时触发
 const pluginDataPath = LiteLoader.plugins["mspring_theme"].path.data;
-const settingsPath = path.join(pluginDataPath, "settings.json"); 
+const settingsPath = path.join(pluginDataPath, "settings.json");
 
 // fs判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
 if (!fs.existsSync(pluginDataPath)) {
