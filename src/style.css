@@ -315,8 +315,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 轻量工具箱 +1和外置时间 */
-    .message-content-replace::after:not(.mspring_lite_tool_background_enabled),
-    .lite-tools-time.bubble-outside::after:not(.mspring_lite_tool_background_enabled) {
+    html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
+    html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after {
         background: #00000010 !important;
         backdrop-filter: initial !important;
     }
@@ -589,8 +589,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 轻量工具箱 +1和外置时间 */
-    .message-content-replace::after:not(.mspring_lite_tool_background_enabled),
-    .lite-tools-time.bubble-outside::after:not(.mspring_lite_tool_background_enabled) {
+    html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
+    html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after {
         background: #ffffff21 !important;
         backdrop-filter: initial !important;
     }
