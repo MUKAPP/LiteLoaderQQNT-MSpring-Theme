@@ -23,7 +23,7 @@ html:not(.mspring_background_plugin_enabled) .tab-container .profile,
 /* 文件管理页面 群文件 群列表 */
 .group-file-container,
 /* .q-collapse-item, */
-/* 文件管理页面 群文件 群列表项 */
+/* 各种折叠列表 头部 */
 .q-collapse-item .q-collapse-item__header,
 /* 文件管理页面 类型列表 */
 .file-type-container,
@@ -249,6 +249,20 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .sticker-panel {
         /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
         background: #ffffffef !important;
+    }
+
+    /* 转发消息 折叠列表 头部 */
+    .q-dialog .q-collapse-item .q-collapse-item__header{
+        background: #ffffffef !important;
+    }
+
+    /* 好友列表 折叠列表 头部 */
+    .contact .q-collapse-item .q-collapse-item__header{
+        background: #ffffffaf !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
     }
 
     /* 
