@@ -252,12 +252,12 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 转发消息 折叠列表 头部 */
-    .q-dialog .q-collapse-item .q-collapse-item__header{
+    .q-dialog .q-collapse-item .q-collapse-item__header {
         background: #ffffffef !important;
     }
 
     /* 好友列表 折叠列表 头部 */
-    .contact .q-collapse-item .q-collapse-item__header{
+    .contact .q-collapse-item .q-collapse-item__header {
         background: #ffffffaf !important;
         border-radius: 8px !important;
         margin-top: 8px !important;
@@ -459,6 +459,20 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .sticker-panel {
         /* 不知道为什么表情面板一使用 mix-blend-mode: multiply，backdrop-filter就会失效 */
         background: #171717ef !important;
+    }
+
+    /* 转发消息 折叠列表 头部 */
+    .q-dialog .q-collapse-item .q-collapse-item__header {
+        background: #303030ef !important;
+    }
+
+    /* 好友列表 折叠列表 头部 */
+    .contact .q-collapse-item .q-collapse-item__header {
+        background: #171717af !important;
+        border-radius: 8px !important;
+        margin-top: 8px !important;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
     }
 
     /* 
