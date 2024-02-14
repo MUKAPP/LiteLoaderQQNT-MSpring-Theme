@@ -256,15 +256,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background: #ffffffef !important;
     }
 
-    /* 好友列表 折叠列表 头部 */
-    .contact .q-collapse-item .q-collapse-item__header {
-        background: #ffffffaf !important;
-        border-radius: 8px !important;
-        margin-top: 8px !important;
-        margin-left: 8px !important;
-        margin-right: 8px !important;
-    }
-
     /* 
         文件管理 文件列表 块
         文件管理 文件列表 标题
@@ -464,15 +455,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 转发消息 折叠列表 头部 */
     .q-dialog .q-collapse-item .q-collapse-item__header {
         background: #303030ef !important;
-    }
-
-    /* 好友列表 折叠列表 头部 */
-    .contact .q-collapse-item .q-collapse-item__header {
-        background: #171717af !important;
-        border-radius: 8px !important;
-        margin-top: 8px !important;
-        margin-left: 8px !important;
-        margin-right: 8px !important;
     }
 
     /* 
