@@ -81,13 +81,13 @@ try {
     document.documentElement.classList.add(osType);
 
     // 判断插件background_plugin是否存在且启用
-    if (LiteLoader.plugins.background_plugin && !LiteLoader.plugins.background_plugin.disabled) {
+    if (LiteLoader.plugins["background_plugin"] && !LiteLoader.plugins["background_plugin"].disabled) {
         log("[检测]", "已启用背景插件");
         document.documentElement.classList.add(`mspring_background_plugin_enabled`);
     }
 
     // 判断插件lite_tools是否存在且启用
-    if (LiteLoader.plugins.lite_tools && !LiteLoader.plugins.lite_tools.disabled) {
+    if (LiteLoader.plugins["lite_tools"] && !LiteLoader.plugins["lite_tools"].disabled) {
         log("[检测]", "已启用轻量工具箱");
         const ltOptions = await lite_tools.getOptions();
         if (ltOptions.background.enabled) {

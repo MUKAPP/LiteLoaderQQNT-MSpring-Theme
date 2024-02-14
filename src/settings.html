@@ -23,7 +23,10 @@
             </setting-item>
             <setting-divider data-orientation="horizontal"></setting-divider>
             <setting-item data-direction="row" id="mst-settings-background-opacity">
-                <setting-text>背景颜色透明度</setting-text>
+                <div>
+                    <setting-text>背景颜色透明度</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial;">该选项在启用 <b>轻量工具箱-自定义背景</b> 之后不会生效</setting-text>
+                </div>
                 <input type="range" value="1" min="0" max="100" step="1"
                     class="q-button q-button--small q-button--secondary pick-opacity" style="width: 61%;" />
             </setting-item>
@@ -37,7 +40,7 @@
             <setting-item data-direction="row">
                 <div>
                     <setting-text>优化消息排版</setting-text>
-                    <setting-text data-type="secondary">使用 赫蹏，提供中英文混排美化、标点挤压，修改之后重启生效</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial;">使用 赫蹏，提供中英文混排美化、标点挤压，修改之后重启生效</setting-text>
                 </div>
                 <setting-switch id="heti"></setting-switch>
             </setting-item>
@@ -45,7 +48,7 @@
             <setting-item data-direction="row">
                 <div>
                     <setting-text>连续消息合并</setting-text>
-                    <setting-text data-type="secondary">该功能因不稳定性已下线，建议使用 轻量工具箱 插件代替</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial;">该功能因不稳定性已下线，建议使用 轻量工具箱 插件代替</setting-text>
                 </div>
             </setting-item>
         </setting-list>
