@@ -46,7 +46,7 @@ body,
 }
 
 /* 列表条目圆角 */
-.viewport-list__inner {
+.two-col-layout__aside .viewport-list__inner {
     display: flex;
     flex-direction: column;
     gap: 8px;
