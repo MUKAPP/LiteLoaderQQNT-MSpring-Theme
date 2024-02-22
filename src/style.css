@@ -260,6 +260,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 块
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
+        群文件 群在线文档
         设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
@@ -269,6 +270,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
+    .group-file-banner,
     .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
@@ -461,6 +463,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         文件管理 文件列表 块
         文件管理 文件列表 标题
         文件管理 类型 图片与视频
+        群文件 群在线文档
         设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
@@ -471,6 +474,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .file-list-normal-sort,
     .file-list-normal-sort-title,
     .file-list-grid-scroll-container>*,
+    .group-file-banner,
     .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
     .setting-main__content .popup>*:not(.setting-item-title),
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
