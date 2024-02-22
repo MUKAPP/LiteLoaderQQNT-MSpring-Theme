@@ -195,10 +195,17 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 
     /* 
         别人消息的背景
-        频道 别人消息背景 */
+        频道 别人消息背景
+        频道 帖子列表项目背景
+         */
     html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others,
-    .guild-main .message:not(.message-gray-tip,.message-self) .message-content {
+    .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
+    .guild-main .topic-list-item {
         background: #00000010 !important;
+    }
+
+    .guild-main .topic-list-item.is-active {
+        background: #00000021 !important;
     }
 
     /* 
@@ -399,9 +406,19 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background-color: #ffffff3f !important;
     }
 
-    /* 别人消息的背景 */
-    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
+    /* 
+        别人消息的背景
+        频道 别人消息背景
+        频道 帖子列表项目背景
+         */
+         html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others,
+         .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
+         .guild-main .topic-list-item {
         background: #ffffff21 !important;
+    }
+
+    .guild-main .topic-list-item.is-active {
+        background: #ffffff3f !important;
     }
 
     /* 
