@@ -26,8 +26,8 @@
 ## 注意事项
 
 > [!TIP]  
-> Windows11 请在 `设置 - 通用 - 其他` 中开启 **透明效果**。\
-> Linux (KDE) 请配合 [Linux | 背景毛玻璃](https://github.com/mo-jinran/linux-qqnt-background-blur) 插件使用。\
+> Windows11 22H2 及以上的版本推荐搭配 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。（如果不使用的话 Windows11 请在 `设置 - 通用 - 其他` 中开启 **透明效果**，Windows10没有，这个没办法。）\
+> Linux (KDE) 请配合 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。\
 > Linux 更改主题颜色后需要重启 QQ 才能生效\
 > 其他平台请自行尝试
 > 
