@@ -37,6 +37,21 @@ html:not(.mspring_background_plugin_enabled) .tab-container .profile,
 .favorites-layout__right-area,
 .favorites-layout__content,
 .favorites-header,
+/* 频道侧栏 */
+.guild-sidebar,
+/* 子频道列表 */
+.channel-container,
+/* 频道 私信列表 */
+.channelList .session-container,
+/* .channel, */
+/* 频道 聊天界面 */
+.channel .aio-main,
+/* 频道 帖子界面 */
+.channel .topic-wrap,
+/* 频道 成员列表 */
+.channel .userList,
+/* 频道 发现频道 侧栏 */
+.guild-main .main-area-left,
 html,
 body,
 .app,
@@ -178,8 +193,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background-color: #00000021 !important;
     }
 
-    /* 别人消息的背景 */
-    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others {
+    /* 
+        别人消息的背景
+        频道 别人消息背景 */
+    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others,
+    .guild-main .message:not(.message-gray-tip,.message-self) .message-content {
         background: #00000010 !important;
     }
 
