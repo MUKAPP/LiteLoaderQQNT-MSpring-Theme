@@ -198,7 +198,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         频道 别人消息背景
         频道 帖子列表项目背景
          */
-    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others:not(.mix-message__container--market-face, .mix-message__container--pic),
+    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others:not(.mix-message__container--market-face, .mix-message__container--pic,.mix-message__container--lottie-face),
     .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
     .guild-main .topic-list-item {
         background: #00000010 !important;
