@@ -1,63 +1,33 @@
 /* 删除背景 */
-/* 最近联系列表 */
-.recent-contact,
-/* 最近联系列表 */
-.viewport-list__inner,
-/* 最近联系列表 */
-.contact,
+/* 好友通知列表 */
+.tab-container .two-col-layout__main .sys-notify__content .viewport-list.sys-notify-list .viewport-list__inner,
+/* 联系人列表 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact,
 /* 联系人头部切换 */
-.tab-header,
-/* .normal-file, */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact .tab-header,
 /* 联系人 群通知、好友通知 */
-.sys-notify,
-/* .msg-content-container, */
-/* .sys-notify-card, */
+.tab-container .two-col-layout__main .sys-notify,
 /* 文件管理 文件列表 */
-.file-list-normal-scroll-container,
+#file-manage-scroll-list .file-list-normal-scroll-container,
+/* 文件管理 图片与视频 */
+#file-area-container .file-list-grid-scroll-container,
 /* 文件管理 发送人列表 */
-.sender-container,
+.file-manager-main .two-col-layout__aside .sender-container,
 /* 联系人详情 */
-html:not(.mspring_background_plugin_enabled) .tab-container .profile,
-/* 文件管理页面 文件列表下面加载更多的白条 */
-.file-area .loadmore-placeholder,
+html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__main .profile,
 /* 文件管理页面 群文件 群列表 */
-.group-file-container,
-/* .q-collapse-item, */
-/* 各种折叠列表 头部 */
-.q-collapse-item .q-collapse-item__header,
+.file-manager-main .two-col-layout__aside .group-file-container,
+/* 联系人 折叠列表 头部 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact-layout__content-area .q-collapse-item__header,
+/* 文件管理页面 折叠列表 */
+.file-manager-main .two-col-layout__aside :is(.sender-container, .file-type-container, .group-file-container) .q-collapse :is(.q-collapse-item__header, .q-collapse-item),
 /* 文件管理页面 类型列表 */
-.file-type-container,
-/* 文件管理页面 类型 图片与视频 */
-.file-list-grid-scroll-container,
+.file-manager-main .two-col-layout__aside .file-type-container,
 /* 文件管理页面 群文件 footer */
-.file-area-container-group-file-footer,
-/* 收藏 左侧列表 */
-.favorites-layout,
-.favorites-layout__left-area,
-.favorites-layout__right-area,
-.favorites-layout__content,
-.favorites-header,
-/* 频道侧栏 */
-.guild-sidebar,
-/* 子频道列表 */
-.channel-container,
-/* 频道 私信列表 */
-.channelList .session-container,
-/* .channel, */
-/* 频道 聊天界面 */
-.channel .aio-main,
-/* 频道 帖子界面 */
-.channel .topic-wrap,
+#file-area-container .file-area-container-group-file-footer,
 /* 频道 成员列表 */
-.channel .userList,
-/* 频道 发现频道 侧栏 */
-.guild-main .main-area-left,
-html,
-body,
-.app,
-/* 查看图片顶栏 */
-.main-area__header {
-    background: initial !important;
+.guild-main .channel-main .channel .chatDragDropArea .userList {
+    background: initial;
 }
 
 /* 列表条目圆角 */
@@ -91,16 +61,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     margin-bottom: 16px;
 }
 
-/* 添加模糊 */
-/* .normal-file {
-    backdrop-filter: blur(8px);
-} */
-
-/* 文件管理 发送人列表 */
-.file-manager-main .q-collapse-item {
-    background: none !important;
-}
-
 /* 
     文件管理 发送人列表
     文件管理 类型列表
@@ -108,137 +68,83 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 .file-manager-main .q-collapse-item__title,
 .file-manager-main .file-type,
 .file-manager-main .user-item-container {
-    border-radius: 8px !important;
+    border-radius: 8px;
 }
 
-/* 登录页面QQ图标 */
-/* .qq-icon-font {
-    transform: none !important;
-} */
-
-/* 查看图片界面工具栏 */
-/* .main-area__header {
-    backdrop-filter: none !important;
-} */
-
-/* 查看图片界面 */
-/* .main-area {
-    background: #0000007f !important;
-} */
-
-/* 对话框背景 */
-.q-dialog-modal {
-    background: #0000003f !important;
-}
-
-/* 对话框 */
-.q-dialog-main {
-    box-shadow: 0 4px 32px 0px #00000021 !important;
-    border-radius: 12px;
-}
-
-/* 设置背景 */
+/* 不支持的消息 */
 .msg-content-container.ark-msg-content-container.container--others .ark-view-message_not-support {
-    /* 不支持的消息 */
     background: none !important;
+    /* TODO 没机会触发，之后改 */
 }
 
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
-    /* 多选消息的按钮 */
-    .forward-ops .op-icon {
-        background: #00000010 !important;
-    }
-
     /* 聊天界面更多面板 */
-    .side-panel {
-        box-shadow: 0 4px 6px 0px #00000010 !important;
-        background: #ffffff !important;
+    .tab-container .two-col-layout__main .more-panel .side-panel {
+        /* background: #ffffff; */
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
     }
 
-    html:is(.linux) .side-panel {
+    html:is(.linux) .tab-container .two-col-layout__main .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
     }
 
     /* 
-        聊天界面回顶按钮
-        聊天界面回底按钮 */
-    .chat-msg-area__tip--top-btn,
-    .chat-msg-area__tip--bottom {
-        background: #ffffff7f !important;
+        聊天界面回顶、回底按钮 */
+    .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+        background: #ffffff7f;
         backdrop-filter: blur(32px);
     }
 
-    /* 
-        主界面侧栏
-        主界面侧栏右边区域
-        文件管理页面侧栏
-        文件管理页面侧栏右边区域
-        设置侧栏
-        设置侧栏右边的区域 */
-    .sidebar-nav,
-    html:not(.mspring_lite_tool_background_enabled) .tab-container,
-    .nav-bar-container,
-    .file-manager-main,
-    .setting-tab,
-    .setting-main {
-        background: var(--background-color-light) !important;
+    html:is(.linux) .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+        backdrop-filter: none !important;
     }
 
+    /* 各种列表鼠标悬浮效果 */
     .viewport-list .list-item:hover {
-        background-color: #00000021 !important;
+        background-color: #00000021;
     }
 
     /* 
-        别人消息的背景
         频道 别人消息背景
         频道 帖子列表项目背景
          */
-    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others:not(.mix-message__container--market-face, .mix-message__container--pic, .mix-message__container--lottie-face),
     .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
     .guild-main .topic-list-item {
-        background: #00000010 !important;
+        background: #00000010;
     }
 
     .guild-main .topic-list-item.is-active {
-        background: #00000021 !important;
+        background: #00000021;
     }
 
     /* 
         合并转发的聊天记录
         文件 */
-    .forward-msg,
-    .normal-file {
-        background-color: #00000010 !important;
-        backdrop-filter: none !important;
+    #ml-root .forward-msg,
+    #ml-root .normal-file {
+        background-color: #00000010;
     }
 
     /* 
         合并转发的聊天记录（选中）
         文件（选中） */
-    .forward-msg:active,
-    .normal-file:active {
-        background-color: #00000021 !important;
-    }
-
-    /* 自己消息的背景 */
-    .message-content__wrapper .container--self {
-        background: var(--theme-color) !important;
+    #ml-root .forward-msg:is(:active, :hover),
+    #ml-root .normal-file:is(:active, :hover) {
+        background-color: #00000021;
     }
 
     /* 好友通知、群通知列表项 */
     .sys-notify__container .sys-notify-card {
-        background: #00000010 !important;
+        background: #00000010;
     }
 
     /* 搜索结果 */
     .search-result {
-        border-radius: 12px !important;
-        background: #ffffff !important;
+        border-radius: 12px 12px 0px 0px;
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
         margin-left: 8px;
@@ -257,10 +163,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .q-popover,
     .user-card-main,
     .account-list {
-        border-radius: 8px !important;
-        backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
-        background: #ffffff !important;
-        mix-blend-mode: multiply !important;
+        backdrop-filter: blur(16px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     html:is(.linux) .q-popover,
@@ -284,48 +188,48 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 
         文件管理 文件列表 块
         文件管理 文件列表 标题
-        文件管理 类型 图片与视频
-        群文件 群在线文档
+        文件管理 类型 图片与视频 块
+        文件管理 类型 图片与视频 标题
+        群文件 群在线文档卡片
         设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
-        LiteLoaderQQNT 主体&插件配置界面
-        QQNTim 设置界面*/
-    .file-list-normal-sort,
-    .file-list-normal-sort-title,
-    .file-list-grid-scroll-container>*,
-    .group-file-banner,
+        LiteLoaderQQNT 主体&插件配置界面 */
+    #file-manage-scroll-list .file-list-normal-sort,
+    #file-manage-scroll-list .file-list-normal-sort-title,
+    #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
+    #file-area-container .file-list-normal-sort-title,
+    #file-manage-scroll-list .group-file-banner,
     .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    .setting-main__content .popup>*:not(.setting-item-title),
-    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
-    .setting-main__content .shotcut>*,
-    .liteloader setting-panel,
-    .qqntim-settings-panel-section-content {
-        background: #00000010 !important;
+    .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
+    .setting-main .setting-main__content .shortcut-tab .shotcut>*,
+    .setting-main .setting-main__content .liteloader setting-panel {
+        background: #00000010;
         border-radius: 8px;
     }
 
     /* 登录页面背景 */
-    .login-container {
-        background-color: #ffffff !important;
+    #login canvas {
+        display: none;
     }
 
-    .password-container__input-area .q-input,
-    .password-container__input-area .password .input,
-    .password-container__input-area .password .input.focus {
-        border-radius: 8px !important;
-        background: #00000010 !important;
+    #login {
+        background: var(--background-color-light) !important;
+    }
+
+    /* 登录页面输入框 */
+    #login .password-container__input-area .q-input,
+    #login .password-container__input-area .password .input,
+    #login .password-container__input-area .password .input.focus {
+        border-radius: 8px;
+        background: #00000010;
     }
 
     /* 去除VIP红色昵称 */
     .vip-name {
         color: initial !important;
-    }
-
-    /* 联系人头部切换 */
-    .radio-tab {
-        background: #00000010 !important;
     }
 
     /* 防撤回提示 */
@@ -342,15 +246,16 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     .liteloader input[type="text"]:focus {
-        background: #00000021 !important;
-        padding-left: 10px !important;
+        background: #00000021;
+        padding-left: 10px;
     }
 
     /* 轻量工具箱 +1和外置时间 */
     html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
-    html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after {
-        background: #00000010 !important;
-        backdrop-filter: initial !important;
+    /* html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after, */
+    html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::after {
+        background: #00000010;
+        backdrop-filter: initial;
     }
 
 }
@@ -359,99 +264,70 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 /* 深色模式 */
 @media (prefers-color-scheme: dark) {
 
-    /* 多选消息的按钮 */
-    .forward-ops .op-icon {
-        background: #ffffff21 !important;
-    }
-
     /* 聊天界面更多面板 */
-    .side-panel {
-        box-shadow: 0 4px 6px 0px #00000010 !important;
-        background: #171717 !important;
+    .tab-container .two-col-layout__main .more-panel .side-panel {
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
     }
 
-    html:is(.linux) .side-panel {
+    html:is(.linux) .tab-container .two-col-layout__main .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
     }
 
     /* 
-        聊天界面回顶按钮
-        聊天界面回底按钮 */
-    .chat-msg-area__tip--top-btn,
-    .chat-msg-area__tip--bottom {
-        background: #1717177f !important;
+        聊天界面回顶、回底按钮 */
+    .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+        background: #1717177f;
         backdrop-filter: blur(32px);
     }
 
-    /* 
-        主界面侧栏
-        主界面侧栏右边区域
-        文件管理页面侧栏
-        文件管理页面侧栏右边区域
-        设置侧栏
-        设置侧栏右边的区域 */
-    .sidebar-nav,
-    html:not(.mspring_lite_tool_background_enabled) .tab-container,
-    .nav-bar-container,
-    .file-manager-main,
-    .setting-tab,
-    .setting-main {
-        background: var(--background-color-dark) !important;
+    html:is(.linux) .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+        backdrop-filter: none !important;
     }
 
+    /* 各种列表鼠标悬浮效果 */
     .viewport-list .list-item:hover {
-        background-color: #ffffff3f !important;
+        background-color: #ffffff3f;
     }
 
     /* 
-        别人消息的背景
         频道 别人消息背景
         频道 帖子列表项目背景
          */
-    html:not(.mspring_background_plugin_enabled) .ml-list .message-content__wrapper .container--others:not(.mix-message__container--market-face, .mix-message__container--pic, .mix-message__container--lottie-face),
     .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
     .guild-main .topic-list-item {
-        background: #ffffff21 !important;
+        background: #ffffff21;
     }
 
     .guild-main .topic-list-item.is-active {
-        background: #ffffff3f !important;
+        background: #ffffff3f;
     }
 
     /* 
         合并转发的聊天记录
         文件 */
-    .forward-msg,
-    .normal-file {
-        background-color: #ffffff21 !important;
-        backdrop-filter: none !important;
+    #ml-root .forward-msg,
+    #ml-root .normal-file {
+        background-color: #ffffff21;
     }
 
     /* 
         合并转发的聊天记录（选中）
         文件（选中） */
-    .forward-msg:active,
-    .normal-file:active {
-        background-color: #ffffff10 !important;
-    }
-
-    /* 自己消息的背景 */
-    .message-content__wrapper .container--self {
-        background: var(--theme-color) !important;
+    #ml-root .forward-msg:is(:active, :hover),
+    #ml-root .normal-file:is(:active, :hover) {
+        background-color: #ffffff10;
     }
 
     /* 好友通知、群通知列表项 */
     .sys-notify__container .sys-notify-card {
-        background: #ffffff21 !important;
+        background: #ffffff21;
     }
 
     /* 搜索结果 */
     .search-result {
-        border-radius: 12px !important;
-        background: #171717 !important;
+        border-radius: 12px 12px 0px 0px;
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
         margin-left: 8px;
@@ -470,10 +346,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .q-popover,
     .user-card-main,
     .account-list {
-        border-radius: 8px !important;
-        backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
-        background: #171717 !important;
-        mix-blend-mode: multiply !important;
+        backdrop-filter: blur(16px) saturate(150%) opacity(40%);
+        mix-blend-mode: multiply;
     }
 
     html:is(.linux) .q-popover,
@@ -497,39 +371,43 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 
         文件管理 文件列表 块
         文件管理 文件列表 标题
-        文件管理 类型 图片与视频
-        群文件 群在线文档
+        文件管理 类型 图片与视频 块
+        文件管理 类型 图片与视频 标题
+        群文件 群在线文档卡片
         设置 列表项卡片
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
-        LiteLoaderQQNT 主体&插件配置界面
-        LiteLoaderQQNT 主体&插件配置界面
-        QQNTim 设置界面*/
-    .file-list-normal-sort,
-    .file-list-normal-sort-title,
-    .file-list-grid-scroll-container>*,
-    .group-file-banner,
+        LiteLoaderQQNT 主体&插件配置界面 */
+    #file-manage-scroll-list .file-list-normal-sort,
+    #file-manage-scroll-list .file-list-normal-sort-title,
+    #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
+    #file-area-container .file-list-normal-sort-title,
+    #file-manage-scroll-list .group-file-banner,
     .setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut),
-    .setting-main__content .popup>*:not(.setting-item-title),
-    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart),
-    .setting-main__content .shotcut>*,
-    .liteloader setting-panel,
-    .qqntim-settings-panel-section-content {
-        background: #ffffff21 !important;
+    .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
+    .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
+    .setting-main .setting-main__content .shortcut-tab .shotcut>*,
+    .setting-main .setting-main__content .liteloader setting-panel {
+        background: #ffffff21;
         border-radius: 8px;
     }
 
     /* 登录页面背景 */
-    .login-container {
-        background-color: #171717 !important;
+    #login canvas {
+        display: none;
     }
 
-    .password-container__input-area .q-input,
-    .password-container__input-area .password .input,
-    .password-container__input-area .password .input.focus {
-        border-radius: 8px !important;
-        background: #ffffff3f !important;
+    #login {
+        background: var(--background-color-dark) !important;
+    }
+
+    /* 登录页面输入框 */
+    #login .password-container__input-area .q-input,
+    #login .password-container__input-area .password .input,
+    #login .password-container__input-area .password .input.focus {
+        border-radius: 8px;
+        background: #ffffff3f;
     }
 
     .login-panel,
@@ -576,42 +454,20 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         background: #ffffff7f !important;
     }
 
-    /* 登录页隐私checkbox未勾选 */
-    .q-checkbox:not(.is-disabled):not(.is-checked):hover .q-checkbox__input {
-        background-color: #ffffff3f !important;
-        border-color: #ffffff9f !important;
-    }
-
-    /* 登录页隐私checkbox勾选 */
-    .q-checkbox .q-checkbox__input {
-        background-color: #ffffff10 !important;
-        border-color: #ffffff3f !important;
-    }
-
-    .main-search .search-input {
-        background: #ffffff10 !important;
-    }
-
-
     /* 自己发送的链接颜色 */
-    .container--self .text-link {
-        color: #ffffff !important;
+    #ml-root .container--self .text-link {
+        color: #ffffff;
     }
 
     /* 深色模式下将艾特颜色改为白色并添加下划线与普通消息文本进行区分 */
-    .container--self .text-element--at {
-        color: #ffffff !important;
+    #ml-root .container--self .text-element--at {
+        color: #ffffff;
         text-decoration: underline;
     }
 
     /* 去除VIP红色昵称 */
     .vip-name {
         color: #ffffff !important;
-    }
-
-    /* 联系人头部切换 */
-    .radio-tab {
-        background: #ffffff21 !important;
     }
 
     /* 防撤回提示 */
@@ -633,15 +489,16 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     .liteloader input[type="text"]:focus {
-        background: #ffffff21 !important;
-        padding-left: 10px !important;
+        background: #ffffff21;
+        padding-left: 10px;
     }
 
     /* 轻量工具箱 +1和外置时间 */
     html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
-    html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after {
-        background: #ffffff21 !important;
-        backdrop-filter: initial !important;
+    /* html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after, */
+    html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::after {
+        background: #ffffff21 ;
+        backdrop-filter: initial ;
     }
 }
 
@@ -650,25 +507,71 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 }
 
 .q-theme-tokens-light {
+    /* color-tokens */
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
-    --bubble_host: var(--theme-color);
-    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
-    --overlay_active_brand: var(--theme-color);
+    --on_brand_primary: var(--on-theme-text-color);
+    --on_brand_secondary: var(--on-theme-text-color);
     --text_link: var(--theme-color);
+    --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-light);
+    --bg_bottom_standard: var(--background-color-light);
+    --bg_bottom_light: var(--background-color-light);
+    --bg_nav_secondary: var(--background-color-light);
+    --bubble_host: var(--theme-color);
+    --bubble_guest: #00000010;
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    /* --fill_light_primary: TRANSPARENT; */
+    --overlay_active_brand: var(--theme-color);
+    --host_bubble_bg_css_value: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
     --text-brand: var(--theme-color);
+    --text-link: var(--theme-color);
+
+    /* mix-tokens */
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-light);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-light);
 }
 
 .q-theme-tokens-dark {
+    /* color-tokens */
     --brand_standard: var(--theme-color);
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
-    --bubble_host: var(--theme-color);
-    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
-    --overlay_active_brand: var(--theme-color);
+    --on_brand_primary: var(--on-theme-text-color);
+    --on_brand_secondary: var(--on-theme-text-color);
     --text_link: var(--theme-color);
+    --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-dark);
+    --bg_bottom_standard: var(--background-color-dark);
+    --bg_bottom_light: var(--background-color-dark);
+    --bg_nav_secondary: var(--background-color-dark);
+    --bubble_host: var(--theme-color);
+    --bubble_guest: #ffffff21;
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    /* --fill_light_primary: TRANSPARENT; */
+    --overlay_active_brand: var(--theme-color);
+    --host_bubble_bg_css_value: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
     --text-brand: var(--theme-color);
+    --text-link: var(--theme-color);
+
+    /* mix-tokens */
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
 }
 
 .send-btn-wrap,
@@ -685,8 +588,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 .q-context-menu:not(.is-pure),
 .q-context-sub-menu__container:not(.is-pure),
 .q-button {
-    /* backdrop-filter: brightness(100%) saturate(120%) blur(8px); */
-    /* background: none !important; */
     border-radius: 8px;
 }
 
@@ -701,17 +602,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     background: none !important;
 }
 
-.login-container {
-    background-image: none !important;
-}
-
 .auto-login .avatar {
     box-shadow: 0px 4px 28px 0px var(--text-selected-color) !important;
-}
-
-.record-msg .msg-content-container {
-    background: none !important;
-    backdrop-filter: none !important;
 }
 
 /* 搜索框等点击之后粉线的圆角 */
@@ -769,18 +661,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 .group-user .q-tag.group-user__role:not(.primary),
 .group-chat .q-tag.member-role-tag:not(.primary),
 .notice__container .top-flag {
-    color: var(--theme-color) !important;
-    background: var(--theme-tag-color) !important;
-}
-
-/* 开启背景插件后自己发送消息的文本颜色 */
-html.mspring_background_plugin_enabled .msg-content-container.container--self {
-    color: var(--bubble_host_text) !important;
-}
-
-/* 开启背景插件后自己回复消息的文本颜色 */
-html.mspring_background_plugin_enabled .reply-element.reply-element--self {
-    color: var(--on_brand_primary) !important;
+    color: var(--theme-color);
+    background: var(--theme-tag-color);
 }
 
 /* 开启背景插件后的搜索框多的双层方形背景 */

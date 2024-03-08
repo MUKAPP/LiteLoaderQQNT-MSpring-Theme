@@ -43,6 +43,37 @@ function blendColors(color1, color2, ratio) {
     return blendedColor;
 }
 
+// 辅助函数 - 获取最佳的文本颜色
+function getBestTextColor(bgColor) {
+    if (!bgColor) {
+        // 如果没有提供背景色，返回黑色
+        return 'black';
+    }
+
+    // 如果背景色是在rgb形式，将其转化为hex
+    if (bgColor.indexOf('rgb') === 0) {
+        bgColor = bgColor.replace('rgb(', '').replace(')', '').split(',').map(Number);
+        bgColor = ((bgColor[0] << 16) | (bgColor[1] << 8) | bgColor[2]).toString(16);
+    }
+
+    // 如果背景色是在hex形式，将其转化为rgb
+    if (bgColor.indexOf('#') === 0) {
+        bgColor = bgColor.slice(1);
+        if (bgColor.length === 3) {
+            bgColor = bgColor[0] + bgColor[0] + bgColor[1] + bgColor[1] + bgColor[2] + bgColor[2];
+        }
+        var r = parseInt(bgColor.slice(0, 2), 16);
+        var g = parseInt(bgColor.slice(2, 4), 16);
+        var b = parseInt(bgColor.slice(4, 6), 16);
+    }
+
+    // 计算背景色的亮度
+    var brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    // 如果背景色足够亮，返回黑色，否则返回白色
+    return brightness > 155 ? 'black' : 'white';
+}
+
 
 // 更新样式
 function updateStyle(webContents, settingsPath) {
@@ -57,6 +88,8 @@ function updateStyle(webContents, settingsPath) {
     const backgroundOpacity = config.backgroundOpacity;
     // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
     const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
+
+    const onThemeTextColor = getBestTextColor(themeColor) === "black" ? "#000000" : "#FFFFFF";
 
     const csspath = path.join(__dirname, "src/style.css");
     fs.readFile(csspath, "utf-8", (err, data) => {
@@ -73,6 +106,7 @@ function updateStyle(webContents, settingsPath) {
             --background-color-dark: #171717${backgroundOpacityHex};
             --theme-tag-color: ${themeColor + "3f"};
             --text-selected-color: ${themeColor + "7f"};
+            --on-theme-text-color: ${onThemeTextColor};
         }`
 
         webContents.send(
