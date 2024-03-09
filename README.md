@@ -43,63 +43,107 @@
 
 ### 日间模式
 
-<style>
-  .screenshots img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
-  }
-  .description {
-    border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;
-    margin-bottom: 16px;
-  }
-</style>
-
 <center class="screenshots">
-  <img src="./res/screenshots/1.png"><br>
-  <div class="description">总览</div>
+  <img src="./res/screenshots/1.png"
+  style="width: 100%;
+      max-width: 600px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+      display: inline-block;
+      color: #999;
+      padding: 2px;
+      margin-bottom: 16px;">总览</div>
 </center>
 
 <center class="screenshots">
-  <img src="./res/screenshots/7.png"><br>
-  <div class="description">更换主题色</div>
+  <img src="./res/screenshots/7.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">更换主题色</div>
 </center>
 
 <center class="screenshots">
-  <img src="./res/screenshots/2.png"><br>
-  <div class="description">独立聊天窗口</div>
+  <img src="./res/screenshots/2.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">独立聊天窗口</div>
 </center>
 
 <center class="screenshots">
-  <img src="./res/screenshots/3.png"><br>
-  <div class="description">设置界面</div>
+  <img src="./res/screenshots/3.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">设置界面</div>
 </center>
 
 ### 夜间模式
 
 <center class="screenshots">
-  <img src="./res/screenshots/4.png"><br>
-  <div class="description">总览</div>
+  <img src="./res/screenshots/4.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">总览</div>
 </center>
 
 <center class="screenshots">
-  <img src="./res/screenshots/5.png"><br>
-  <div class="description">独立聊天窗口</div>
+  <img src="./res/screenshots/5.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">独立聊天窗口</div>
 </center>
 
 <center class="screenshots">
-  <img src="./res/screenshots/6.png"><br>
-  <div class="description">设置界面</div>
+  <img src="./res/screenshots/6.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
+  <div style="border-bottom: 1px solid #d9d9d9;
+        display: inline-block;
+        color: #999;
+        padding: 2px;
+        margin-bottom: 16px;">设置界面</div>
 </center>
 
 ### 优化消息排版演示
 
 <center class="screenshots">
-  <img src="./res/screenshots/8.png"><br>
+  <img src="./res/screenshots/8.png"
+    style="width: 100%;
+        max-width: 600px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"><br>
   <div class="description">优化消息排版</div>
 </center>
 
@@ -136,5 +180,9 @@
   <img
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date"
+    style="width: 100%;
+      max-width: 600px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
   />
 </picture>
