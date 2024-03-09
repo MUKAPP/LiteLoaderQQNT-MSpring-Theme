@@ -3,22 +3,22 @@
 .tab-container .two-col-layout__main .sys-notify__content .viewport-list.sys-notify-list .viewport-list__inner,
 /* 联系人列表 */
 .tab-container .two-col-layout__aside .contact-layout__left-area .contact,
+/* 联系人 折叠列表 头部 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact-layout__content-area .q-collapse-item__header,
 /* 联系人头部切换 */
 .tab-container .two-col-layout__aside .contact-layout__left-area .contact .tab-header,
 /* 联系人 群通知、好友通知 */
 .tab-container .two-col-layout__main .sys-notify,
-/* 文件管理 文件列表 */
-#file-manage-scroll-list .file-list-normal-scroll-container,
-/* 文件管理 图片与视频 */
-#file-area-container .file-list-grid-scroll-container,
-/* 文件管理 发送人列表 */
-.file-manager-main .two-col-layout__aside .sender-container,
 /* 联系人详情 */
 html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__main .profile,
+/* 文件管理页面 文件列表 */
+#file-manage-scroll-list .file-list-normal-scroll-container,
+/* 文件管理页面 图片与视频 */
+#file-area-container .file-list-grid-scroll-container,
+/* 文件管理页面 发送人列表 */
+.file-manager-main .two-col-layout__aside .sender-container,
 /* 文件管理页面 群文件 群列表 */
 .file-manager-main .two-col-layout__aside .group-file-container,
-/* 联系人 折叠列表 头部 */
-.tab-container .two-col-layout__aside .contact-layout__left-area .contact-layout__content-area .q-collapse-item__header,
 /* 文件管理页面 折叠列表 */
 .file-manager-main .two-col-layout__aside :is(.sender-container, .file-type-container, .group-file-container) .q-collapse :is(.q-collapse-item__header, .q-collapse-item),
 /* 文件管理页面 类型列表 */
@@ -81,25 +81,24 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 @media (prefers-color-scheme: light) {
 
     /* 聊天界面更多面板 */
-    .tab-container .two-col-layout__main .more-panel .side-panel {
+    .container .more-panel .side-panel {
         /* background: #ffffff; */
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
     }
 
-    html:is(.linux) .tab-container .two-col-layout__main .more-panel .side-panel {
+    html:is(.linux) .container .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
     }
 
-    /* 
-        聊天界面回顶、回底按钮 */
-    .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    /* 聊天界面回顶、回底按钮 */
+    .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
         background: #ffffff7f;
         backdrop-filter: blur(32px);
     }
 
-    html:is(.linux) .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    html:is(.linux) .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
         backdrop-filter: none !important;
     }
 
@@ -232,6 +231,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: initial !important;
     }
 
+    /* 红包详情背景 */
+    .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
+        background: #ffffffff;
+    }
+
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
         background: #00000010 !important;
@@ -265,24 +269,23 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 @media (prefers-color-scheme: dark) {
 
     /* 聊天界面更多面板 */
-    .tab-container .two-col-layout__main .more-panel .side-panel {
+        .container .more-panel .side-panel {
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
     }
 
-    html:is(.linux) .tab-container .two-col-layout__main .more-panel .side-panel {
+    html:is(.linux) .container .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
     }
 
-    /* 
-        聊天界面回顶、回底按钮 */
-    .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    /* 聊天界面回顶、回底按钮 */
+    .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
         background: #1717177f;
         backdrop-filter: blur(32px);
     }
 
-    html:is(.linux) .tab-container .two-col-layout__main .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    html:is(.linux) .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
         backdrop-filter: none !important;
     }
 
@@ -470,6 +473,11 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         color: #ffffff !important;
     }
 
+    /* 红包详情背景 */
+    .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
+        background: #1b1b1bff;
+    }
+
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
         background: #ffffff21 !important;
@@ -497,8 +505,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
     /* html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after, */
     html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::after {
-        background: #ffffff21 ;
-        backdrop-filter: initial ;
+        background: #ffffff21;
+        backdrop-filter: initial;
     }
 }
 
