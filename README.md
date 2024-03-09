@@ -31,7 +31,9 @@
 > Linux 更改主题颜色后需要重启 QQ 才能生效\
 > 其他平台请自行尝试
 >
-> 设置界面适配 QQ 的设置（不包括超级调色盘）以及使用了 Web Components 的插件的设置，未使用 Web Components 的插件的设置界面不会适配
+> 设置界面适配 QQ 的设置（不包括超级调色盘）以及使用了 Web Components 的插件的设置，不会主动适配未使用 Web Components 的插件的设置界面
+> 
+> 修改背景推荐使用 [背景插件 (Background Plugin)](https://github.com/xh321/LiteLoaderQQNT-Background-Plugin) 或者 [轻量工具箱](https://github.com/xiyuesaves/LiteLoaderQQNT-lite_tools) 的自定义背景功能，开启或关闭自定义背景之后需要重启一次 QQ
 
 > [!CAUTION]  
 > **不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
@@ -71,7 +73,6 @@
 ## 插件冲突分析
 
 - **优化消息排版** 功能在 [**Markdown 插件**](https://github.com/d0j1a1701/LiteLoaderQQNT-Markdown) 开启时会失效，Markdown 插件自带了 `pangu.js` 的中英混排优化，开启二者之一就可以了
-- 最新版优化了开启 **背景插件** 和 **轻量工具箱-自定义背景** 之后的样式，开启或关闭 **轻量工具箱-自定义背景** 之后需要重启一次 QQ
 
 ## 其他
 
