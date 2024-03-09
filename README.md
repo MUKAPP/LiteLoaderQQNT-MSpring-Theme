@@ -43,22 +43,20 @@
 
 ### 日间模式
 
-![总览](./res/screenshots/1.png)
-
-<div align="center">更换主题色</div>
-
-![更换主题色](./res/screenshots/7.png)
-![独立聊天窗口](./res/screenshots/2.png)
-![设置界面](./res/screenshots/3.png)
+![总览](./res/screenshots/1.png "总览")
+![更换主题色](./res/screenshots/7.png "更换主题色")
+![独立聊天窗口](./res/screenshots/2.png "独立聊天窗口")
+![设置界面](./res/screenshots/3.png "设置界面")
 
 ### 夜间模式
 
-![总览](./res/screenshots/4.png)
-![独立聊天窗口](./res/screenshots/5.png)
-![设置界面](./res/screenshots/6.png)
+![总览](./res/screenshots/4.png "总览")
+![独立聊天窗口](./res/screenshots/5.png "独立聊天窗口")
+![设置界面](./res/screenshots/6.png "设置界面")
 
 ### 优化消息排版演示
-![优化消息排版](./res/screenshots/8.png)
+
+![优化消息排版](./res/screenshots/8.png "优化消息排版")
 
 ## 使用方法
 
