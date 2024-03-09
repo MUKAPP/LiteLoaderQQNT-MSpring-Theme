@@ -11,26 +11,26 @@
 
 ## 目录
 
-- [注意事项](#注意事项)
-- [截图](#截图)
-  - [日间模式](#日间模式)
-  - [夜间模式](#夜间模式)
-  - [设置页面](#设置页面)
-  - [优化消息排版演示](#优化消息排版演示)
-- [使用方法](#使用方法)
-  - [插件市场（推荐）](#插件市场推荐)
-  - [手动安装](#手动安装)
-- [插件冲突分析](#插件冲突分析)
-- [其他](#其他)
+- [LiteLoaderQQNT-MSpring-Theme](#liteloaderqqnt-mspring-theme)
+  - [目录](#目录)
+  - [注意事项](#注意事项)
+  - [截图](#截图)
+    - [日间模式](#日间模式)
+    - [夜间模式](#夜间模式)
+    - [优化消息排版演示](#优化消息排版演示)
+  - [使用方法](#使用方法)
+    - [手动安装](#手动安装)
+  - [插件冲突分析](#插件冲突分析)
+  - [其他](#其他)
 
 ## 注意事项
 
 > [!TIP]  
-> Windows11 22H2 及以上的版本推荐搭配 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。（如果不使用的话 Windows11 请在 `设置 - 通用 - 其他` 中开启 **透明效果**，Windows10没有，这个没办法。）\
+> Windows11 22H2 及以上的版本推荐搭配 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。（如果不使用的话 Windows11 请在 `设置 - 通用 - 其他` 中开启 **透明效果**，Windows10 没有，这个没办法。）\
 > Linux (KDE) 请配合 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。\
 > Linux 更改主题颜色后需要重启 QQ 才能生效\
 > 其他平台请自行尝试
-> 
+>
 > 设置界面适配 QQ 的设置（不包括超级调色盘）以及使用了 Web Components 的插件的设置，未使用 Web Components 的插件的设置界面不会适配
 
 > [!CAUTION]  
@@ -43,29 +43,71 @@
 
 ### 日间模式
 
-![总览 置顶&选中聊天展示](./res/screenshots/1.png)
+<style>
+  .screenshots img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+  }
+  .description {
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;
+    margin-bottom: 16px;
+  }
+</style>
 
-![非置顶](./res/screenshots/3.png)
+<center class="screenshots">
+  <img src="./res/screenshots/1.png"><br>
+  <div class="description">总览</div>
+</center>
+
+<center class="screenshots">
+  <img src="./res/screenshots/7.png"><br>
+  <div class="description">更换主题色</div>
+</center>
+
+<center class="screenshots">
+  <img src="./res/screenshots/2.png"><br>
+  <div class="description">独立聊天窗口</div>
+</center>
+
+<center class="screenshots">
+  <img src="./res/screenshots/3.png"><br>
+  <div class="description">设置界面</div>
+</center>
 
 ### 夜间模式
 
-![总览 置顶&选中聊天展示](./res/screenshots/2.png)
+<center class="screenshots">
+  <img src="./res/screenshots/4.png"><br>
+  <div class="description">总览</div>
+</center>
 
-![非置顶](./res/screenshots/4.png)
+<center class="screenshots">
+  <img src="./res/screenshots/5.png"><br>
+  <div class="description">独立聊天窗口</div>
+</center>
 
-### 设置页面
-
-![设置页面](./res/screenshots/5.png)
+<center class="screenshots">
+  <img src="./res/screenshots/6.png"><br>
+  <div class="description">设置界面</div>
+</center>
 
 ### 优化消息排版演示
 
-![优化消息排版演示](./res/screenshots/6.png)
+<center class="screenshots">
+  <img src="./res/screenshots/8.png"><br>
+  <div class="description">优化消息排版</div>
+</center>
 
 ## 使用方法
 
-### 插件市场（推荐）
+<!-- ### 插件市场（推荐）
 
-在 [LiteLoader 插件市场](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可
+在 [LiteLoader 插件市场](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
 
 ### 手动安装
 
