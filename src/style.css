@@ -71,12 +71,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     border-radius: 8px;
 }
 
-/* 不支持的消息 */
-.msg-content-container.ark-msg-content-container.container--others .ark-view-message_not-support {
-    background: none !important;
-    /* TODO 没机会触发，之后改 */
-}
-
 /* 浅色模式 */
 @media (prefers-color-scheme: light) {
 
