@@ -192,6 +192,30 @@ export const onSettingWindowCreated = async view => {
             // 将修改后的settings保存到settings.json
             mspring_theme.setSettings(settings);
         });
+
+        // 版本更新
+        const version = view.querySelector("#mst-settings-version");
+        version.textContent = LiteLoader.plugins["mspring_theme"].manifest.version
+
+        const updateButton = view.querySelector("#mst-settings-go-to-update");
+        updateButton.style.display = "none";
+
+        const release_latest_url = `https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest`;
+        fetch(release_latest_url).then((res) => {
+            const new_version = res.url.slice(res.url.lastIndexOf("/") + 1).replace("v", "");
+            log("[版本]", "最新版本", new_version);
+            if (new_version > LiteLoader.plugins["mspring_theme"].manifest.version) {
+                updateButton.style.display = "block";
+                updateButton.addEventListener("click", () => {
+                    mspring_theme.openWeb(release_latest_url);
+                });
+                version.innerHTML += ` <span style="color: #ff4d4f;">(有新版本: ${new_version})</span>`;
+            } else {
+                version.innerHTML += ` (已是最新版本)`;
+            }
+
+        });
+
     } catch (error) {
         log("[设置页面错误]", error);
     }

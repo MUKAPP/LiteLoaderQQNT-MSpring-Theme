@@ -1,9 +1,13 @@
 const fs = require("fs");
 const path = require("path");
-const { BrowserWindow, ipcMain } = require("electron");
+const { BrowserWindow, ipcMain, shell } = require("electron");
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);
+}
+
+function openWeb(url) {
+    shell.openExternal(url);
 }
 
 // 防抖函数
@@ -222,11 +226,13 @@ ipcMain.handle(
     }
 );
 
-ipcMain.handle(
-    "LiteLoader.mspring_theme.logToMain",
-    (event, ...args) => {
-        log(...args);
-    }
+ipcMain.on("LiteLoader.mspring_theme.openWeb", (event, ...message) =>
+    openWeb(...message)
+);
+
+ipcMain.handle("LiteLoader.mspring_theme.logToMain", (event, ...args) => {
+    log(...args);
+}
 );
 
 // 创建窗口时触发

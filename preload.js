@@ -20,4 +20,5 @@ contextBridge.exposeInMainWorld("mspring_theme", {
         "LiteLoader.mspring_theme.logToMain",
         ...args
     ),
+    openWeb: (url) => ipcRenderer.send("LiteLoader.mspring_theme.openWeb", url),
 });
