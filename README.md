@@ -42,6 +42,8 @@
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
 
+MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
+
 ## 截图
 
 ### 日间模式
