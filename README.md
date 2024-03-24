@@ -9,6 +9,8 @@
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
 
+MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
+
 ## 目录
 
 - [LiteLoaderQQNT-MSpring-Theme](#liteloaderqqnt-mspring-theme)
@@ -41,8 +43,6 @@
 
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
 如果你发现哪里还没有适配或者哪里有问题，欢迎提 Issues
-
-MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
 
 ## 截图
 
