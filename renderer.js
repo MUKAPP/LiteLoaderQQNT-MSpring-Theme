@@ -96,6 +96,22 @@ try {
         }
     }
 
+    let more_materials_enabled = LiteLoader.plugins["more_materials"] && !LiteLoader.plugins["more_materials"].disabled;
+
+    if (more_materials_enabled) {
+        log("[检测]", "已启用 More Materials");
+    }
+
+    if (document.body.id === "login") {
+        log("[检测]", "登录页面");
+        // 判断窗口是否是夜间模式
+        let isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let colorKey = isDarkMode ? 'dark' : 'light';
+        let defaultColor = isDarkMode ? '#171717' : '#ffffff';
+
+        document.body.style.backgroundColor = more_materials_enabled ? `var(--background-color-${colorKey})` : defaultColor;
+    }
+
     // 判断是否开启heti
     const settings = await mspring_theme.getSettings();
     if (settings.heti) {

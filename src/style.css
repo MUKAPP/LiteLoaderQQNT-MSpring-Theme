@@ -221,10 +221,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         display: none;
     }
 
-    #login {
-        background: var(--background-color-light) !important;
-    }
-
     /* 登录页面输入框 */
     #login .password-container__input-area .q-input,
     #login .password-container__input-area .password .input,
@@ -413,10 +409,6 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     /* 登录页面背景 */
     #login canvas {
         display: none;
-    }
-
-    #login {
-        background: var(--background-color-dark) !important;
     }
 
     /* 登录页面输入框 */
