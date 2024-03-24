@@ -26,7 +26,13 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 /* 文件管理页面 群文件 footer */
 #file-area-container .file-area-container-group-file-footer,
 /* 频道 成员列表 */
-.guild-main .channel-main .channel .chatDragDropArea .userList {
+.guild-main .channel-main .channel .chatDragDropArea .userList,
+/* 收藏页面 侧栏 */
+#app .favorites-layout .favorites-layout__left-area,
+/* 收藏页面 右侧 */
+#app .favorites-layout .favorites-layout__right-area .favorites-layout__content,
+/* 收藏页面 右侧 顶部 */
+#app .favorites-layout .favorites-layout__right-area .panel-header {
     background: initial;
 }
 
@@ -84,6 +90,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     html:is(.linux) .container .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
+    }
+
+    /* 频道三个侧栏 */
+    #app .guild-main .main-area .main-area-left,
+    #channelList .channel-container,
+    #channelList .session-container {
+        background: var(--background-color-light);
     }
 
     /* 聊天界面回顶、回底按钮 */
@@ -226,9 +239,9 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 红包详情背景 */
-    .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
+    /* .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
         background: #ffffffff;
-    }
+    } */
 
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
@@ -263,7 +276,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
 @media (prefers-color-scheme: dark) {
 
     /* 聊天界面更多面板 */
-        .container .more-panel .side-panel {
+    .container .more-panel .side-panel {
         backdrop-filter: blur(32px) saturate(150%) opacity(40%);
         mix-blend-mode: multiply;
     }
@@ -271,6 +284,13 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     html:is(.linux) .container .more-panel .side-panel {
         backdrop-filter: none !important;
         mix-blend-mode: initial !important;
+    }
+
+    /* 频道三个侧栏 */
+    #app .guild-main .main-area .main-area-left,
+    #channelList .channel-container,
+    #channelList .session-container {
+        background: var(--background-color-dark);
     }
 
     /* 聊天界面回顶、回底按钮 */
@@ -468,9 +488,9 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     }
 
     /* 红包详情背景 */
-    .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
+    /* .container .lucky-money-popup .lucky-money-dialog .q-popup__body .detail-container {
         background: #1b1b1bff;
-    }
+    } */
 
     /* 防撤回提示 */
     html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
@@ -517,7 +537,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     --bg_list: TRANSPARENT;
     --bg_nav: var(--background-color-light);
     --bg_bottom_standard: var(--background-color-light);
-    --bg_bottom_light: var(--background-color-light);
+    /* --bg_bottom_light: var(--background-color-light); */
     --bg_nav_secondary: var(--background-color-light);
     --bubble_host: var(--theme-color);
     --bubble_guest: #00000010;
@@ -551,7 +571,7 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     --bg_list: TRANSPARENT;
     --bg_nav: var(--background-color-dark);
     --bg_bottom_standard: var(--background-color-dark);
-    --bg_bottom_light: var(--background-color-dark);
+    /* --bg_bottom_light: var(--background-color-dark); */
     --bg_nav_secondary: var(--background-color-dark);
     --bubble_host: var(--theme-color);
     --bubble_guest: #ffffff21;
