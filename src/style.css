@@ -32,8 +32,15 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 /* 收藏页面 右侧 */
 #app .favorites-layout .favorites-layout__right-area .favorites-layout__content,
 /* 收藏页面 右侧 顶部 */
-#app .favorites-layout .favorites-layout__right-area .panel-header {
+#app .favorites-layout .favorites-layout__right-area .panel-header,
+/* 申请加群/加好友 底部 */
+#discover .discover__container .discover__content .form-item__action {
     background: initial;
+}
+
+/* 申请加群/加好友 顶部背景 */
+#discover .discover__container .discover__content .discover-application .stranger-item {
+    background: initial !important;
 }
 
 /* 列表条目圆角 */
@@ -201,7 +208,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
-        LiteLoaderQQNT 主体&插件配置界面 */
+        LiteLoaderQQNT 主体&插件配置界面
+        申请加群/加好友 项目背景 */
     #file-manage-scroll-list .file-list-normal-sort,
     #file-manage-scroll-list .file-list-normal-sort-title,
     #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
@@ -211,7 +219,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
     .setting-main .setting-main__content .shortcut-tab .shotcut>*,
-    .setting-main .setting-main__content .liteloader setting-panel {
+    .setting-main .setting-main__content .liteloader setting-panel,
+    #discover .discover__container .discover__content .application-form__container .q-scroll-view form > div > div > div {
         background: #00000010;
         border-radius: 8px;
     }
@@ -391,7 +400,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
         设置 消息通知 列表项卡片 消息组
         设置 存储管理 列表项卡片
         设置 快捷键 列表项卡片
-        LiteLoaderQQNT 主体&插件配置界面 */
+        LiteLoaderQQNT 主体&插件配置界面
+        申请加群/加好友 项目背景 */
     #file-manage-scroll-list .file-list-normal-sort,
     #file-manage-scroll-list .file-list-normal-sort-title,
     #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
@@ -401,7 +411,8 @@ html:not(.mspring_background_plugin_enabled) .chat-input-area {
     .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
     .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
     .setting-main .setting-main__content .shortcut-tab .shotcut>*,
-    .setting-main .setting-main__content .liteloader setting-panel {
+    .setting-main .setting-main__content .liteloader setting-panel,
+    #discover .discover__container .discover__content .application-form__container .q-scroll-view form > div > div > div  {
         background: #ffffff21;
         border-radius: 8px;
     }
