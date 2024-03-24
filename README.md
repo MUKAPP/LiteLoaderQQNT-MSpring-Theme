@@ -18,7 +18,8 @@
     - [日间模式](#日间模式)
     - [夜间模式](#夜间模式)
     - [优化消息排版演示](#优化消息排版演示)
-  - [使用方法](#使用方法)
+  - [安装方法](#安装方法)
+    - [插件商店（推荐）](#插件商店推荐)
     - [手动安装](#手动安装)
   - [插件冲突分析](#插件冲突分析)
   - [其他](#其他)
@@ -60,11 +61,11 @@
 
 ![优化消息排版](./res/screenshots/8.png "优化消息排版")
 
-## 使用方法
+## 安装方法
 
-<!-- ### 插件市场（推荐）
+### 插件商店（推荐）
 
-在 [LiteLoader 插件市场](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可 -->
+在 [插件商店](https://github.com/Night-stars-1/LiteLoaderQQNT-Plugin-Plugin-Store) 内找到 `MSpring Theme`，点击安装按钮，等待安装按钮变为重启按钮，点击重启按钮重启 QQ 即可
 
 ### 手动安装
 
