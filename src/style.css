@@ -58,7 +58,7 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 }
 
 /* 消息列表项圆角 */
-.viewport-list .list-item {
+.recent-contact-item {
     border-radius: 12px;
 }
 
