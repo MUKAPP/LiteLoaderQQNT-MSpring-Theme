@@ -214,6 +214,10 @@ html:is(.linux) .account-list {
 #login canvas {
     display: none;
 }
+/*让联系人列表界面选择之后展示为圆角*/
+.list-item {
+border-radius: 8px; 
+}
 
 /* 登录页面输入框 */
 #login .password-container__input-area .password .input,
