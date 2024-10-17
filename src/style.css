@@ -56,7 +56,9 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 .sys-notify__container .list-item {
     border-radius: 8px;
 }
-
+.notify-option {
+    border-radius: 8px; 
+}
 /* 消息列表项圆角 */
 .recent-contact-item {
     border-radius: 12px;
