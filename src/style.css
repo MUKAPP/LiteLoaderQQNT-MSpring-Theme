@@ -56,17 +56,20 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 .sys-notify__container .list-item {
     border-radius: 8px;
 }
-/*适用于较新版本的QQNT*/
+
+/* 联系人页面上方 好友通知、群通知 */
 .notify-option {
     border-radius: 8px; 
 }
+
 /* 消息列表项圆角 */
 .recent-contact-item {
     border-radius: 12px;
 }
-/* 把任务栏QQ图标上方的消息通知消息内容加入圆角 */
+
+/* 任务栏消息通知列表项目 */
 .msg-list .list-item.across-mode.msg-list-item {
-    border-radius: 10px; /* 可以根据需要调整圆角的大小 */
+    border-radius: 8px;
 }
 
 /* 联系人列表项圆角 */
@@ -150,12 +153,12 @@ html:is(.linux) .container .more-panel .side-panel {
     background-color: var(--msp-container);
 }
 
-
-/* cc*/
+/* 好友通知、群通知列表项 */
 .sys-notify__container .sys-notify-card {
     background: var(--msp-container);
 }
-.notify-op/
+
+/* 搜索结果 */
 .search-result {
     border-radius: 12px 12px 0px 0px;
     backdrop-filter: blur(32px) saturate(150%) opacity(40%);
