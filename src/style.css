@@ -56,22 +56,18 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 .sys-notify__container .list-item {
     border-radius: 8px;
 }
-
 /* 联系人页面上方 好友通知、群通知 */
 .notify-option {
     border-radius: 8px; 
 }
-
 /* 消息列表项圆角 */
 .recent-contact-item {
     border-radius: 12px;
 }
-
 /* 任务栏消息通知列表项目 */
 .msg-list .list-item.across-mode.msg-list-item {
     border-radius: 8px;
 }
-
 /* 联系人列表项圆角 */
 .list-item.contact-item {
     border-radius: 12px;
@@ -145,12 +141,14 @@ html:is(.linux) .container .more-panel .side-panel {
     background: var(--msp-container-active);
 }
 
-/*  合并转发的聊天记录
+/* 
+    合并转发的聊天记录
     文件 */
 #ml-root .forward-msg,
 #ml-root .normal-file {
     background-color: var(--msp-container);
 }
+
 /*好友管理器界面选择好友展示圆角*/
 [data-v-413b2f22].table__row{
  border-radius: 8px; 
@@ -627,6 +625,11 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 }
 
 .liteloader setting-panel input[type="text"] {
+    border-radius: 8px !important;
+}
+
+/*聊天列表界面上方无网络提示*/
+[data-v-dcad7d08][data-v-3911881f].network-tip.lite-tools-vue-component.vue-component{
     border-radius: 8px !important;
 }
 
