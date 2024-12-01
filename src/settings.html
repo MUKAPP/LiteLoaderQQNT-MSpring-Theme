@@ -1,7 +1,13 @@
 <style>
     /* 背景颜色透明度滑条 */
+    .mspring_theme input[type='range'] {
+        width: 100%;
+        height: 32px;
+        background: transparent;
+        outline: none;
+    }
+
     .mspring_theme input[type='range']::-webkit-slider-thumb {
-	margin-top: -8px;
         -webkit-appearance: none;
         height: 16px;
         width: 16px;
@@ -13,6 +19,7 @@
     .mspring_theme input[type='range']::-webkit-slider-runnable-track {
         height: 0px;
         background: transparent;
+        margin-top: -16px;
     }
 
     .pick-opacity {
