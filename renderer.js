@@ -1,5 +1,11 @@
 const plugin_path = LiteLoader.plugins["mspring_theme"].path.plugin;
-import style from "./src/qsetting.css" assert {type: "css"};
+// import style from "./src/qsetting.css" assert {type: "css"}; 此方法会导致在1.2.3+uno2版本中报错
+
+// 动态插入 qsetting.css
+const qsettingStyle = document.createElement("link");
+qsettingStyle.rel = "stylesheet";
+qsettingStyle.href = `local:///${plugin_path}/src/qsetting.css`;
+document.head.appendChild(qsettingStyle);
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);
