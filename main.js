@@ -303,6 +303,15 @@ ipcMain.handle("LiteLoader.mspring_theme.readFile", async (event, filePath) => {
     }
 });
 
+// 监听来自设置窗口强行覆盖气泡颜色的通知
+ipcMain.on("LiteLoader.mspring_theme.updateForceBubbleColor", (event, state) => {
+    // 遍历所有窗口
+    for (const window of BrowserWindow.getAllWindows()) {
+        // 向每个窗口的渲染进程发送应用样式的指令
+        window.webContents.send("LiteLoader.mspring_theme.applyForceBubbleColor", state);
+    }
+});
+
 // 创建窗口时触发
 module.exports.onBrowserWindowCreated = window => {
     const settingsPath = path.join(pluginDataPath, "settings.json");

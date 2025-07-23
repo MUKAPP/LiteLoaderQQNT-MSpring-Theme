@@ -111,6 +111,17 @@ try {
         document.documentElement.classList.add("mspring_force_host_bubble_color");
     }
 
+    // 强制覆盖气泡颜色 设置监听
+    mspring_theme.onApplyForceBubbleColor((event, state) => {
+        const docElement = document.documentElement;
+        log(`设置修改强制气泡颜色: ${state}`);
+        if (state) {
+            docElement.classList.add("mspring_force_host_bubble_color");
+        } else {
+            docElement.classList.remove("mspring_force_host_bubble_color");
+        }
+    });
+
     // 判断插件background_plugin是否存在且启用
     if (LiteLoader.plugins["background_plugin"] && !LiteLoader.plugins["background_plugin"].disabled) {
         log("[检测]", "已启用背景插件");
@@ -234,13 +245,13 @@ export const onSettingWindowCreated = async view => {
             const isActive = event.currentTarget.hasAttribute("is-active");
 
             if (isActive) {
-                event.currentTarget.removeAttribute("is-active")
-                // 修改settings的forceHostBubbleColor值为false
+                event.currentTarget.removeAttribute("is-active");
                 settings.forceHostBubbleColor = false;
+                mspring_theme.updateForceBubbleColor(false);
             } else {
                 event.currentTarget.setAttribute("is-active", "");
-                // 修改settings的forceHostBubbleColor值为true
                 settings.forceHostBubbleColor = true;
+                mspring_theme.updateForceBubbleColor(true);
             }
 
             // 将修改后的settings保存到settings.json
