@@ -3,6 +3,7 @@
     --brand_standard: #0099ffff;
     --on_brand_primary: #ffffffff;
     --on_brand_secondary: #ffffffff;
+    --brand_light: #0099ff33;
     --text_primary: #000000ff;
     --text_primary_light: #00000099;
     --text_secondary_02: #ccccccff;
@@ -13,6 +14,8 @@
     --text_link: #2d77e5ff;
     --text_secondary: #00000080;
     --text_tertiary: #0000004d;
+    --brand_text: #0099ffff;
+    --text_allwhite_primary: #ffffff;
     --icon_primary: #000000ff;
     --icon_secondary_01: #999999ff;
     --icon_secondary_02: #ccccccff;
@@ -42,7 +45,6 @@
     --bg_nav_secondary: #ffffffff;
     --bubble_host: #0099ffff;
     --bubble_guest: #ffffffff;
-    --bubble_host_text: #ffffff;
     --on_bubble_host_text: #ffffffff;
     --bubble_guest_text: #000000ff;
     --bubble_host_1: #0099ffff;
@@ -86,16 +88,15 @@
     --tag_blue_bg: #0099ff33;
     --tag_blue: #0099ff33;
     --tag_red: #ff862e33;
+    --tag_gray_bg: #9e9e9e33;
+    --tag_gray_text: #9e9e9eff;
     --border_white: #ffffffff;
     --border_secondary: #0000000f;
     --border_primary: #00000014;
+    --border_light: rgba(0, 0, 0, 0.04);
     --mac_border_primary: #00000014;
     --mac_border_secondary: #0000000f;
     --host_bubble_bg_css_value: #0099ff;
-    --tag_gray_bg: #9e9e9e33;
-    --tag_gray_text: #9e9e9eff;
-    --brand_text: #0099ffff;
-    --brand_light: #0099ff33;
 
 }
 
@@ -103,6 +104,7 @@
     --brand_standard: #0066ccff;
     --on_brand_primary: #ffffffff;
     --on_brand_secondary: #ffffffff;
+    --brand_light: #0066cc33;
     --text_primary: #ffffffe6;
     --text_primary_light: #ffffff99;
     --text_secondary_02: #666666ff;
@@ -113,6 +115,8 @@
     --text_link: #2d77e5ff;
     --text_secondary: #ffffff99;
     --text_tertiary: #ffffff66;
+    --brand_text: #0066ccff;
+    --text_allwhite_primary: #ffffff;
     --icon_primary: #ffffffb3;
     --icon_secondary_01: #666666ff;
     --icon_secondary_02: #4d4d4dff;
@@ -142,7 +146,6 @@
     --bg_nav_secondary: #1b1b1bff;
     --bubble_host: #666666ff;
     --bubble_guest: #262626ff;
-    --bubble_host_text: #f2f2f2;
     --on_bubble_host_text: #ffffffff;
     --bubble_guest_text: #f2f2f2ff;
     --bubble_host_1: #262626ff;
@@ -186,16 +189,15 @@
     --tag_blue_bg: #0099ff33;
     --tag_blue: #0099ff40;
     --tag_red: #ff862e33;
+    --tag_gray_bg: #9e9e9e33;
+    --tag_gray_text: #9e9e9eff;
     --border_white: #262626ff;
     --border_secondary: #ffffff33;
     --border_primary: #ffffff29;
+    --border_light: rgba(255, 255, 255, 0.04);
     --mac_border_primary: #ffffff29;
     --mac_border_secondary: #ffffff33;
     --host_bubble_bg_css_value: #0099ff;
-    --tag_gray_bg: #9e9e9e33;
-    --tag_gray_text: #9e9e9eff;
-    --brand_text: #0066ccff;
-    --brand_light: #0066cc33;
 
 }
 
@@ -224,7 +226,9 @@
     --nt_bg_top_light_2_overlay_pressed_2_mix: #e0e0e0ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(204, 204, 204, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(204, 204, 204, 0.7);
+    --nt_fill_standard_primary_2_overlay_hover_brand_2_mix: #00000043;
     --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #0000004c;
     --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #d6d6d6ff;
     --nt_bg_white_2_overlay_hover_2_mix: #f5f5f5ff;
@@ -234,7 +238,6 @@
     --nt_icon_red_2_overlay_hover_2_mix: #f5314fff;
     --nt_icon_red_2_overlay_pressed_2_mix: #e02d48ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #0000003b;
-    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #0000004c;
     --nt_bubble_guest_2_overlay_pressed_2_mix: #0000002d;
     --nt_icon_primary_2_20_2_alpha: rgba(0, 0, 0, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(242, 242, 242, 0.95);
@@ -266,8 +269,15 @@
     --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 153, 255, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
+    --nt_fill_standard_secondary_2_overlay_hover_brand_2_mix: #0000001d;
+    --nt_fill_standard_secondary_2_overlay_pressed_brand_2_mix: #00000031;
+    --nt_fill_light_secondary_2_overlay_hover_brand_2_mix: #ebebebff;
+    --nt_fill_light_secondary_2_overlay_pressed_brand_2_mix: #d6d6d6ff;
     --nt_text_link_2_overlay_hover_2_mix: #c37db7ff;
     --nt_text_link_2_overlay_pressed_2_mix: #b272a7ff;
+    --nt_tag_red_text_2_10_2_alpha: rgba(247, 76, 48, 0.1);
+    --nt_tag_blue_text_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_text_black_2_5_2_alpha: rgba(0, 0, 0, 0.05);
     --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
     --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
     --nt_icon_secondary_02_2_80_2_alpha: rgba(204, 204, 204, 0.8);
@@ -288,7 +298,9 @@
     --nt_bg_top_light_2_overlay_pressed_2_mix: #282828ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(77, 77, 77, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(77, 77, 77, 0.7);
+    --nt_fill_standard_primary_2_overlay_hover_brand_2_mix: #ffffff43;
     --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #82828254;
     --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #202020ff;
     --nt_bg_white_2_overlay_hover_2_mix: #373737ff;
@@ -298,7 +310,6 @@
     --nt_icon_red_2_overlay_hover_2_mix: #ff4360ff;
     --nt_icon_red_2_overlay_pressed_2_mix: #d62b45ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #ffffff43;
-    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #82828254;
     --nt_bubble_guest_2_overlay_pressed_2_mix: #67676745;
     --nt_icon_primary_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(26, 26, 26, 0.95);
@@ -330,8 +341,15 @@
     --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 102, 204, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
+    --nt_fill_standard_secondary_2_overlay_hover_brand_2_mix: #ffffff22;
+    --nt_fill_standard_secondary_2_overlay_pressed_brand_2_mix: #3c3c3c36;
+    --nt_fill_light_secondary_2_overlay_hover_brand_2_mix: #ffffff22;
+    --nt_fill_light_secondary_2_overlay_pressed_brand_2_mix: #3c3c3c36;
     --nt_text_link_2_overlay_hover_2_mix: #cf8cc3ff;
     --nt_text_link_2_overlay_pressed_2_mix: #aa6d9fff;
+    --nt_tag_red_text_2_10_2_alpha: rgba(247, 76, 48, 0.1);
+    --nt_tag_blue_text_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_text_black_2_5_2_alpha: rgba(0, 0, 0, 0.05);
     --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
     --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
     --nt_icon_secondary_02_2_80_2_alpha: rgba(77, 77, 77, 0.8);

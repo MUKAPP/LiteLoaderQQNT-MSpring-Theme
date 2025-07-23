@@ -11,6 +11,10 @@
 .tab-container .two-col-layout__main .sys-notify,
 /* 联系人详情 */
 html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__main .profile,
+/* 文件管理页面 侧栏背景 */
+#app .container .nav-bar-container,
+/* 文件管理页面 文件分类 */
+.file-area-container-list .file-list-header-container.file-list-header,
 /* 文件管理页面 文件列表 */
 #file-manage-scroll-list .file-list-normal-scroll-container,
 /* 文件管理页面 图片与视频 */
@@ -25,6 +29,8 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 .file-manager-main .two-col-layout__aside .file-type-container,
 /* 文件管理页面 群文件 footer */
 #file-area-container .file-area-container-group-file-footer,
+/* 文件管理页面 加载更多 */
+.container .file-area-list .file-list-normal-scroll .loadmore-placeholder,
 /* 频道 成员列表 */
 .guild-main .channel-main .channel .chatDragDropArea .userList,
 /* 收藏页面 侧栏 */
@@ -59,7 +65,7 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
 
 /* 联系人页面上方 好友通知、群通知 */
 .notify-option {
-    border-radius: 8px; 
+    border-radius: 8px;
 }
 
 /* 消息列表项圆角 */
@@ -105,6 +111,18 @@ html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .msg-
     color: var(--on_bubble_host_text) !important;
     backdrop-filter: none !important;
 }
+
+/* 自己发送的链接颜色 */
+#ml-root .ml-item .message .message-container .msg-content-container.container--self .message-content .text-link {
+    /* 不知道为什么实在覆盖不了 */
+    color: #ffffff !important;
+}
+
+/* 将自己的艾特颜色改为白色并添加下划线与普通消息文本进行区分 */
+/* #ml-root .ml-item .message .message-container .msg-content-container.container--self .message-content .text-element--at {
+    color: #ffffff;
+    text-decoration: underline;
+} */
 
 /* 自己回复消息的文本颜色 */
 html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
@@ -167,6 +185,11 @@ html:is(.linux) .container .more-panel .side-panel {
     margin-right: 8px;
 }
 
+/* 文件管理页面 搜索框 */
+.title-bar-center .search .q-input.search-input {
+    background: var(--msp-container) !important;
+}
+
 /* 搜索结果背景色 */
 .bg-color-counts-1 {
     --side-list-bg: var(--bg_bottom_light) !important;
@@ -205,19 +228,25 @@ html:is(.linux) .account-list {
     设置 消息通知 列表项卡片 消息组
     设置 存储管理 列表项卡片
     设置 快捷键 列表项卡片
+    设置 权限设置 列表项卡片
+    设置 账号绑与授权 卡片
     LiteLoaderQQNT 主体&插件配置界面
-    申请加群/加好友 项目背景 */
+    申请加群/加好友 项目背景
+    文件管理 三个大按钮 */
 #file-manage-scroll-list .file-list-normal-sort,
 #file-manage-scroll-list .file-list-normal-sort-title,
 #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
 #file-area-container .file-list-normal-sort-title,
 #file-manage-scroll-list .group-file-banner,
-.setting-main__content>*>*:not(.appearance-tab, .liteloader)>*:not(.setting-item-title, .popup, .storage-space, .shotcut, .group-msg-title),
+.setting-main__content>*>*:not(.appearance-tab, .liteloader, .auth-setting, .account-container)>*:not(.setting-item-title, .popup, .storage-space, .shotcut, .group-msg-title),
 .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
 .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
 .setting-main .setting-main__content .shortcut-tab .shotcut>*,
+.setting-main .setting-main__content .auth-setting .setting-item-group,
+.setting-main .setting-main__content .account-container .account-item__container,
 .setting-main .setting-main__content .liteloader setting-panel,
-#discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div {
+#discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div,
+.file-area .shortcut-items .shortcut-item {
     background: var(--msp-container);
     border-radius: 8px;
 }
@@ -277,12 +306,12 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 聊天界面回顶、回底按钮 */
-    .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    .container .q-notification.theme-default {
         background: #ffffff7f;
         backdrop-filter: blur(32px);
     }
 
-    html:is(.linux) .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    html:is(.linux) .container .q-notification.theme-default {
         backdrop-filter: none !important;
     }
 
@@ -335,12 +364,12 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 聊天界面回顶、回底按钮 */
-    .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    .container .q-notification.theme-default {
         background: #1717177f;
         backdrop-filter: blur(32px);
     }
 
-    html:is(.linux) .container .q-notification:is(.chat-msg-area__tip--top-btn, .chat-msg-area__tip--bottom) {
+    html:is(.linux) .container .q-notification.theme-default {
         backdrop-filter: none !important;
     }
 
@@ -405,17 +434,6 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     .login-panel .password-container__opreate.operation>div,
     .login-panel .operation>div {
         background: #ffffff7f !important;
-    }
-
-    /* 自己发送的链接颜色 */
-    #ml-root .container--self .text-link {
-        color: #ffffff;
-    }
-
-    /* 深色模式下将艾特颜色改为白色并添加下划线与普通消息文本进行区分 */
-    #ml-root .container--self .text-element--at {
-        color: #ffffff;
-        text-decoration: underline;
     }
 
     /* DeepL插件 他人的消息框分割线颜色 */
@@ -642,7 +660,7 @@ html.mspring_background_plugin_enabled .main-search {
 }
 
 /* DeepL插件 自己的消息框分割线颜色 */
-.container--self #deepl-divider {
+.msg-content-container.container--self #deepl-divider {
     background: #ffffff3f !important;
 }
 
@@ -655,10 +673,10 @@ html.mspring_background_plugin_enabled .main-search {
 }
 
 /* 自己消息选中文字背景色 */
-.message-content__wrapper .container--self span::selection,
-.message-content__wrapper .container--self heti-spacing::selection,
-.message-content__wrapper .container--self br::selection,
-.message-content__wrapper .container--self img::selection {
+.message-content__wrapper .msg-content-container.container--self span::selection,
+.message-content__wrapper .msg-content-container.container--self heti-spacing::selection,
+.message-content__wrapper .msg-content-container.container--self br::selection,
+.message-content__wrapper .msg-content-container.container--self img::selection {
     background: #ffffff3f;
 }
 
