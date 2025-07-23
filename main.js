@@ -1,4 +1,5 @@
 const fs = require("fs");
+const fsPromises = require("fs").promises;
 const path = require("path");
 const { BrowserWindow, ipcMain, shell, net, systemPreferences } = require("electron");
 
@@ -118,26 +119,24 @@ function getBestTextColor(hexColor) {
 
 
 // 更新样式
-function updateStyle(webContents, settingsPath) {
-    // 读取settings.json
-    const data = fs.readFileSync(settingsPath, "utf-8");
-    const config = JSON.parse(data);
-    const themeColor = config.themeColor;
-    // 将themeColorDark1设置成themeColor和10%的黑色的混合色
-    const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
-    // 将themeColorDark2设置成themeColor和20%的黑色的混合色
-    const themeColorDark2 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.2));
-    const backgroundOpacity = config.backgroundOpacity;
-    // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
-    const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
+async function updateStyle(webContents, settingsPath) {
+    try {
+        // 读取settings.json
+        const data = await fsPromises.readFile(settingsPath, "utf-8");
+        const config = JSON.parse(data);
+        const themeColor = config.themeColor;
+        // 将themeColorDark1设置成themeColor和10%的黑色的混合色
+        const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
+        // 将themeColorDark2设置成themeColor和20%的黑色的混合色
+        const themeColorDark2 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.2));
+        const backgroundOpacity = config.backgroundOpacity;
+        // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
+        const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
 
-    const onThemeTextColor = getBestTextColor(themeColor) === "black" ? "#000000" : "#FFFFFF";
+        const onThemeTextColor = getBestTextColor(themeColor) === "black" ? "#000000" : "#FFFFFF";
 
-    const csspath = path.join(__dirname, "src/style.css");
-    fs.readFile(csspath, "utf-8", (err, data) => {
-        if (err) {
-            return;
-        }
+        const csspath = path.join(__dirname, "src/style.css");
+        const cssData = await fsPromises.readFile(csspath, "utf-8");
 
         let preloadString = `:root {
             --theme-color: ${themeColor};
@@ -154,9 +153,11 @@ function updateStyle(webContents, settingsPath) {
         webContents.send(
             "LiteLoader.mspring_theme.updateStyle",
             // 将主题色插入到style.css中
-            preloadString + "\n\n" + data
+            preloadString + "\n\n" + cssData
         );
-    });
+    } catch (err) {
+        log("更新样式出错", err);
+    }
 }
 
 
@@ -180,36 +181,46 @@ function watchSettingsChange(webContents, settingsPath) {
 const pluginDataPath = LiteLoader.plugins["mspring_theme"].path.data;
 const settingsPath = path.join(pluginDataPath, "settings.json");
 
-// fs判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
+// 判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
 if (!fs.existsSync(pluginDataPath)) {
     fs.mkdirSync(pluginDataPath, { recursive: true });
 }
-// 判断settings.json是否存在，如果不存在则创建
-if (!fs.existsSync(settingsPath)) {
-    fs.writeFileSync(settingsPath, JSON.stringify({
-        "themeColor": "#cb82be",
-        "backgroundOpacity": "70",
-        "heti": false,
-        "forceHostBubbleColor": false,
-    }));
-} else {
-    const data = fs.readFileSync(settingsPath, "utf-8");
-    const config = JSON.parse(data);
-    // 判断后来加入的backgroundOpacity是否存在，如果不存在则添加
-    if (!config.backgroundOpacity) {
-        config.backgroundOpacity = "70";
-        fs.writeFileSync(settingsPath, JSON.stringify(config));
+
+const defaultConfig = {
+    "themeColor": "#cb82be",
+    "backgroundOpacity": "70",
+    "heti": false,
+    "forceHostBubbleColor": false,
+};
+
+// 检查和更新配置文件
+try {
+    if (!fs.existsSync(settingsPath)) {
+        // 如果文件不存在，直接写入默认配置
+        fs.writeFileSync(settingsPath, JSON.stringify(defaultConfig, null, 4), "utf-8");
+    } else {
+        // 如果文件存在，读取并检查缺失的键
+        const data = fs.readFileSync(settingsPath, "utf-8");
+        const config = JSON.parse(data);
+        let updated = false;
+
+        // 遍历默认配置的键，如果当前配置中不存在，则添加它
+        for (const key in defaultConfig) {
+            if (config[key] === undefined) {
+                config[key] = defaultConfig[key];
+                updated = true;
+            }
+        }
+
+        // 如果有任何更新，则只写一次文件
+        if (updated) {
+            fs.writeFileSync(settingsPath, JSON.stringify(config, null, 4), "utf-8");
+        }
     }
-    // 判断后来加入的heti是否存在，如果不存在则添加
-    if (!config.heti) {
-        config.heti = false;
-        fs.writeFileSync(settingsPath, JSON.stringify(config));
-    }
-    // 判断后来加入的forceHostBubbleColor是否存在，如果不存在则添加
-    if (!config.forceHostBubbleColor) {
-        config.forceHostBubbleColor = false;
-        fs.writeFileSync(settingsPath, JSON.stringify(config));
-    }
+} catch (error) {
+    log("更新 settings.json 时出错", error);
+    // 如果发生错误（如JSON损坏），可以用默认配置覆盖它
+    fs.writeFileSync(settingsPath, JSON.stringify(defaultConfig, null, 4), "utf-8");
 }
 
 ipcMain.on(
@@ -246,9 +257,9 @@ ipcMain.on(
 
 ipcMain.handle(
     "LiteLoader.mspring_theme.getSettings",
-    (event, message) => {
+    async (event, message) => {
         try {
-            const data = fs.readFileSync(settingsPath, "utf-8");
+            const data = await fsPromises.readFile(settingsPath, "utf-8");
             const config = JSON.parse(data);
             return config;
         } catch (error) {
@@ -283,8 +294,13 @@ ipcMain.handle("LiteLoader.mspring_theme.fetchData", (event, url) => {
     return fetchData(url);
 });
 
-ipcMain.handle("LiteLoader.mspring_theme.readFile", (event, filePath) => {
-    return fs.readFileSync(filePath, "utf-8");
+ipcMain.handle("LiteLoader.mspring_theme.readFile", async (event, filePath) => {
+    try {
+        return await fsPromises.readFile(filePath, "utf-8");
+    } catch (error) {
+        log("读取文件时出错", error);
+        return null; // 或返回错误信息
+    }
 });
 
 // 创建窗口时触发

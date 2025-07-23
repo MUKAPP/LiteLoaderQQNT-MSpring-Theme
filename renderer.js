@@ -13,14 +13,16 @@ function observeElement(selector, callback, callbackEnable = true, interval = 10
         if (element) {
             if (callbackEnable) {
                 callback();
-                log("已检测到", selector);
+            } else {
+                callback(element);
             }
+            log("已检测到", selector);
             clearInterval(timer);
         }
     }, interval);
 }
 
-function insertHeti(before) {
+function insertHeti(messageListElement, selector) {
     // 在页面header插入heti的css和js
     const hetiLinkElement = document.createElement("link");
     hetiLinkElement.rel = "stylesheet";
@@ -45,17 +47,21 @@ function insertHeti(before) {
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
             if (mutation.type === "childList") {
-                const messageContentElements = document.querySelectorAll(before + ".text-normal");
-                messageContentElements.forEach(element => {
-                    if (!element.classList.contains("heti")) {
-                        element.classList.add("heti");
-                        hetiSpacingElement(element);
+                // 处理新增的节点
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === 1) { // 确保是元素节点
+                        node.querySelectorAll(selector).forEach(element => {
+                            if (!element.classList.contains("heti")) {
+                                element.classList.add("heti");
+                                hetiSpacingElement(element);
+                            }
+                        });
                     }
                 });
             }
         }
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(messageListElement, { childList: true, subtree: true });
 }
 
 function compareVersions(v1, v2) {
@@ -114,7 +120,7 @@ try {
     // 判断插件lite_tools是否存在且启用
     if (LiteLoader.plugins["lite_tools"] && !LiteLoader.plugins["lite_tools"].disabled) {
         log("[检测]", "已启用轻量工具箱");
-        const ltData = await mspring_theme.readFile(LiteLoader.plugins["lite_tools"].path.data+"/config.json");
+        const ltData = await mspring_theme.readFile(LiteLoader.plugins["lite_tools"].path.data + "/config.json");
         const ltOptions = JSON.parse(ltData);
         if (ltOptions && ltOptions.background) {
             if (ltOptions.background.enabled) {
@@ -145,7 +151,9 @@ try {
     if (settings.heti) {
         log("[设置]", "开启赫蹏");
         try {
-            observeElement('#ml-root .ml-list', function () { insertHeti(".ml-list ") });
+            observeElement('#ml-root .ml-list', (element) => {
+                insertHeti(element, ".text-normal");
+            }, false);
         } catch (error) {
             log("[错误]", "赫蹏加载出错", error);
         }
