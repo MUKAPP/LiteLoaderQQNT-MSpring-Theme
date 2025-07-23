@@ -1,4 +1,4 @@
-<img src="./res/intro.png" style="zoom:200%;" />
+<img src="./res/github/intro.png" style="zoom:200%;" />
 
 # LiteLoaderQQNT-MSpring-Theme
 
@@ -52,20 +52,20 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ### 日间模式
 
-![总览](./res/screenshots/1.png "总览")
-![更换主题色](./res/screenshots/7.png "更换主题色")
-![独立聊天窗口](./res/screenshots/2.png "独立聊天窗口")
-![设置界面](./res/screenshots/3.png "设置界面")
+![总览](./res/github/screenshots/1.png "总览")
+![更换主题色](./res/github/screenshots/7.png "更换主题色")
+![独立聊天窗口](./res/github/screenshots/2.png "独立聊天窗口")
+![设置界面](./res/github/screenshots/3.png "设置界面")
 
 ### 夜间模式
 
-![总览](./res/screenshots/4.png "总览")
-![独立聊天窗口](./res/screenshots/5.png "独立聊天窗口")
-![设置界面](./res/screenshots/6.png "设置界面")
+![总览](./res/github/screenshots/4.png "总览")
+![独立聊天窗口](./res/github/screenshots/5.png "独立聊天窗口")
+![设置界面](./res/github/screenshots/6.png "设置界面")
 
 ### 优化消息排版演示
 
-![优化消息排版](./res/screenshots/8.png "优化消息排版")
+![优化消息排版](./res/github/screenshots/8.png "优化消息排版")
 
 ## 安装方法
 
@@ -76,7 +76,7 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 ### PluginInstaller
 
 安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/v4/manifest.json`，点击确定按钮\
-或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/LiteLoaderQQNT-MSpring-Theme/res/protocio-install.html) 直接拉起 PluginInstaller 安装插件
+或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/LiteLoaderQQNT-MSpring-Theme/res/github/protocio-install.html) 直接拉起 PluginInstaller 安装插件
 
 ### 手动安装
 
