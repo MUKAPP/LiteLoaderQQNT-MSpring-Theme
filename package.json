@@ -1,7 +1,7 @@
 {
   "$schema": "./plugin.schema.json",
   "name": "mspring_theme",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "QwQNT 主题，优雅 · 粉粉 · 细致",
   "main": "./main/qwqnt.js",
   "type": "commonjs",
