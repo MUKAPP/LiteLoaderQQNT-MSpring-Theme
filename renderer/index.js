@@ -12,7 +12,7 @@ const frameworkType = await mspring_theme.getFrameworkType();
 
 const plugin_path = frameworkType === "liteloader"
     ? LiteLoader.plugins["mspring_theme"].path.plugin
-    : __self.meta.path;
+    : qwqnt.framework.plugins['mspring_theme'].meta.path;
 
 function observeElement(selector, callback, callbackEnable = true, interval = 100) {
     const timer = setInterval(function () {
@@ -98,7 +98,7 @@ async function initTheme() {
         document.head.appendChild(element);
 
         mspring_theme.updateStyle((event, message) => {
-            element.textContent = message;
+                element.textContent = message;
         });
 
         mspring_theme.rendererReady();
@@ -303,7 +303,7 @@ async function settingWindowCreated(view) {
         const version = view.querySelector("#mst-settings-version");
         version.textContent = frameworkType === "liteloader"
             ? LiteLoader.plugins["mspring_theme"].manifest.version
-            : __self.meta.packageJson.version
+            : qwqnt.framework.plugins['mspring_theme'].meta.packageJson.version
 
         const updateButton = view.querySelector("#mst-settings-go-to-update");
         updateButton.style.display = "none";
@@ -318,7 +318,7 @@ async function settingWindowCreated(view) {
                     log("[版本]", "最新版本", new_version);
                     if (compareVersions(new_version, frameworkType === "liteloader"
                         ? LiteLoader.plugins["mspring_theme"].manifest.version
-                        : __self.meta.packageJson.version) > 0) {
+                        : qwqnt.framework.plugins['mspring_theme'].meta.packageJson.version) > 0) {
                         updateButton.style.display = "block";
                         version.innerHTML += ` <span style="color: #ff4d4f;">(有新版本: ${new_version})</span>`;
 
