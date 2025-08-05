@@ -225,12 +225,39 @@ function watchSettingsChange(webContents, settingsPath) {
 // 加载插件时触发
 const pluginDataPath = frameworkType === "liteloader"
     ? LiteLoader.plugins["mspring_theme"].path.data
-    : path.join(qwqnt.framework.paths.data, "mspring_theme");
+    : path.join(qwqnt.framework.paths.configs, "mspring_theme");
 const settingsPath = path.join(pluginDataPath, "settings.json");
 
 // 判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
 if (!fs.existsSync(pluginDataPath)) {
     fs.mkdirSync(pluginDataPath, { recursive: true });
+}
+
+// 迁移配置
+if (frameworkType === "qwqnt") {
+    const oldPluginDataPath = path.join(qwqnt.framework.paths.data, "mspring_theme");
+    const oldSettingsPath = path.join(oldPluginDataPath, "settings.json");
+    const oldSettingsPathExists = fs.existsSync(oldSettingsPath);
+
+    if (!fs.existsSync(settingsPath) && oldSettingsPathExists) {
+        try {
+            const oldData = fs.readFileSync(oldSettingsPath, "utf-8");
+            fs.writeFileSync(settingsPath, oldData, "utf-8");
+            log("已从旧路径迁移 settings.json");
+            fs.unlinkSync(oldSettingsPath);
+            log("已删除旧的 settings.json");
+            const remainingFiles = fs.readdirSync(oldPluginDataPath);
+            // 如果目录为空，则删除它
+            if (remainingFiles.length === 0) {
+                fs.rmdirSync(oldPluginDataPath);
+                log("旧插件目录为空，已删除");
+            } else {
+                log("旧插件目录中仍有其他文件，不删除目录");
+            }
+        } catch (error) {
+            log("迁移旧 settings.json 时出错", error);
+        }
+    }
 }
 
 const defaultConfig = {
