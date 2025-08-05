@@ -126,6 +126,12 @@ function getBestTextColor(hexColor) {
 // 更新样式
 async function updateStyle(webContents, settingsPath) {
     try {
+        // 检查 webContents 是否仍然有效
+        if (!webContents || webContents.isDestroyed()) {
+            log("WebContents 已被销毁，跳过样式更新");
+            return;
+        }
+
         // 读取settings.json
         const data = await fsPromises.readFile(settingsPath, "utf-8");
         const config = JSON.parse(data);
@@ -157,33 +163,63 @@ async function updateStyle(webContents, settingsPath) {
             --on-theme-text-color: ${onThemeTextColor};
         }`
 
-        webContents.send(
-            "mspring_theme.updateStyle",
-            // 将主题色插入到style.css中
-            preloadString + "\n\n" + cssData
-        );
+        // 在发送之前再次检查
+        if (!webContents.isDestroyed()) {
+            webContents.send(
+                "mspring_theme.updateStyle",
+                // 将主题色插入到style.css中
+                preloadString + "\n\n" + cssData
+            );
+        } else {
+            log("WebContents 在处理过程中被销毁，跳过发送");
+        }
     } catch (err) {
         log("更新样式出错", err);
     }
 }
 
 
+// 存储监听器的 Map，用于清理
+const watchersMap = new WeakMap();
+
 // 监听CSS修改-开发时候用的
 function watchCSSChange(webContents, settingsPath) {
     const filepath = path.join(frameworkType === "liteloader"
         ? LiteLoader.plugins["mspring_theme"].path.plugin
         : qwqnt.framework.plugins["mspring_theme"].meta.path, "src/style.css");
-    fs.watch(filepath, "utf-8", debounce(() => {
-        updateStyle(webContents, settingsPath);
-    }, 100));
-}
 
+    const watcher = fs.watch(filepath, "utf-8", debounce(() => {
+        if (!webContents.isDestroyed()) {
+            updateStyle(webContents, settingsPath);
+        } else {
+            log("WebContents 已被销毁，清理 CSS 监听器");
+            watcher.close();
+        }
+    }, 100));
+
+    // 存储监听器以便后续清理
+    if (!watchersMap.has(webContents)) {
+        watchersMap.set(webContents, []);
+    }
+    watchersMap.get(webContents).push(watcher);
+}
 
 // 监听配置文件修改
 function watchSettingsChange(webContents, settingsPath) {
-    fs.watch(settingsPath, "utf-8", debounce(() => {
-        updateStyle(webContents, settingsPath);
+    const watcher = fs.watch(settingsPath, "utf-8", debounce(() => {
+        if (!webContents.isDestroyed()) {
+            updateStyle(webContents, settingsPath);
+        } else {
+            log("WebContents 已被销毁，清理设置监听器");
+            watcher.close();
+        }
     }, 100));
+
+    // 存储监听器以便后续清理
+    if (!watchersMap.has(webContents)) {
+        watchersMap.set(webContents, []);
+    }
+    watchersMap.get(webContents).push(watcher);
 }
 
 // 加载插件时触发
@@ -331,15 +367,44 @@ ipcMain.on("mspring_theme.updateForceBubbleColor", (event, state) => {
     }
 });
 
+// 清理监听器
+function cleanupWatchers(webContents) {
+    const watchers = watchersMap.get(webContents);
+    if (watchers) {
+        watchers.forEach(watcher => {
+            try {
+                watcher.close();
+                log("已清理文件监听器");
+            } catch (error) {
+                log("清理监听器时出错", error);
+            }
+        });
+        watchersMap.delete(webContents);
+    }
+}
+
 // 创建窗口时触发
 function browserWindowCreated(window) {
     const settingsPath = path.join(pluginDataPath, "settings.json");
+
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();
         if (url.includes("app://./renderer/")) {
             watchCSSChange(window.webContents, settingsPath);
             watchSettingsChange(window.webContents, settingsPath);
         }
+    });
+
+    // 窗口关闭时清理监听器
+    window.on("closed", () => {
+        log("窗口被关闭，清理监听器");
+        cleanupWatchers(window.webContents);
+    });
+
+    // webContents 销毁时也清理监听器
+    window.webContents.on("destroyed", () => {
+        log("webContents被销毁，清理监听器");
+        cleanupWatchers(window.webContents);
     });
 }
 
