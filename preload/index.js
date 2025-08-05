@@ -3,34 +3,38 @@ const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("mspring_theme", {
     updateStyle: (callback) => ipcRenderer.on(
-        "LiteLoader.mspring_theme.updateStyle",
+        "mspring_theme.updateStyle",
         callback
     ),
     rendererReady: () => ipcRenderer.send(
-        "LiteLoader.mspring_theme.rendererReady"
+        "mspring_theme.rendererReady"
     ),
+    getFrameworkType: () => ipcRenderer.invoke(
+        "mspring_theme.getFrameworkType"
+    ),
+    getPlatform: () => process.platform,
     getSettings: () => ipcRenderer.invoke(
-        "LiteLoader.mspring_theme.getSettings"
+        "mspring_theme.getSettings"
     ),
     setSettings: content => ipcRenderer.invoke(
-        "LiteLoader.mspring_theme.setSettings",
+        "mspring_theme.setSettings",
         content
     ),
     logToMain: (...args) => ipcRenderer.invoke(
-        "LiteLoader.mspring_theme.logToMain",
+        "mspring_theme.logToMain",
         ...args
     ),
-    openWeb: (url) => ipcRenderer.send("LiteLoader.mspring_theme.openWeb", url),
-    fetchData: (url) => ipcRenderer.invoke("LiteLoader.mspring_theme.fetchData", url),
-    readFile: (path) => ipcRenderer.invoke("LiteLoader.mspring_theme.readFile", path),
+    openWeb: (url) => ipcRenderer.send("mspring_theme.openWeb", url),
+    fetchData: (url) => ipcRenderer.invoke("mspring_theme.fetchData", url),
+    readFile: (path) => ipcRenderer.invoke("mspring_theme.readFile", path),
     // 强制覆盖气泡颜色 从设置页通知主进程
     updateForceBubbleColor: (state) => ipcRenderer.send(
-        "LiteLoader.mspring_theme.updateForceBubbleColor",
+        "mspring_theme.updateForceBubbleColor",
         state
     ),
     // 强制覆盖气泡颜色 在所有窗口接收主进程的通知
     onApplyForceBubbleColor: (callback) => ipcRenderer.on(
-        "LiteLoader.mspring_theme.applyForceBubbleColor",
+        "mspring_theme.applyForceBubbleColor",
         callback
     ),
 });

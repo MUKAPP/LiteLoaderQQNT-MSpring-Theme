@@ -230,7 +230,7 @@ html:is(.linux) .account-list {
     设置 快捷键 列表项卡片
     设置 权限设置 列表项卡片
     设置 账号绑与授权 卡片
-    LiteLoaderQQNT 主体&插件配置界面
+    LiteLoaderQQNT/QwQNT 主体&插件配置界面
     申请加群/加好友 项目背景
     文件管理 三个大按钮 */
 #file-manage-scroll-list .file-list-normal-sort,
@@ -244,7 +244,7 @@ html:is(.linux) .account-list {
 .setting-main .setting-main__content .shortcut-tab .shotcut>*,
 .setting-main .setting-main__content .auth-setting .setting-item-group,
 .setting-main .setting-main__content .account-container .account-item__container,
-.setting-main .setting-main__content .liteloader setting-panel,
+.setting-main .setting-main__content :is(.liteloader,.qwqnt.q-scroll-view) setting-panel,
 #discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div,
 .file-area .shortcut-items .shortcut-item {
     background: var(--msp-container);
@@ -339,13 +339,13 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 插件设置 列表里的输入框 */
-    .liteloader input[type="text"] {
+    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"] {
         border-radius: 8px;
         background: var(--msp-container);
         padding-left: 8px;
     }
 
-    .liteloader input[type="text"]:focus {
+    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"]:focus {
         background: var(--msp-container-active);
         padding-left: 10px;
     }
@@ -442,13 +442,13 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 插件设置 列表里的输入框 */
-    .liteloader input[type="text"] {
+    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"] {
         border-radius: 8px;
         background: #ffffff10;
         padding-left: 8px;
     }
 
-    .liteloader input[type="text"]:focus {
+    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"]:focus {
         background: var(--msp-container);
         padding-left: 10px;
     }
@@ -612,33 +612,33 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 }
 
 /* 设置界面链接文字颜色 */
-.liteloader a {
+:is(.liteloader,.qwqnt.q-scroll-view) a {
     color: var(--theme-color) !important;
 }
 
-.liteloader a:hover {
+:is(.liteloader,.qwqnt.q-scroll-view) a:hover {
     color: var(--theme-color-dark2) !important;
 }
 
 /* 设置页面input */
-.liteloader input[type="color"] {
+:is(.liteloader,.qwqnt.q-scroll-view) input[type="color"] {
     padding: 4px;
 }
 
-.liteloader ::-webkit-color-swatch-wrapper {
+:is(.liteloader,.qwqnt.q-scroll-view) ::-webkit-color-swatch-wrapper {
     padding: 0px;
 }
 
-.liteloader ::-webkit-color-swatch {
+:is(.liteloader,.qwqnt.q-scroll-view) ::-webkit-color-swatch {
     border-radius: 4px;
     border: transparent solid 1px;
 }
 
-.liteloader input:is([type="color"], [type="range"]):focus {
+:is(.liteloader,.qwqnt.q-scroll-view) input:is([type="color"], [type="range"]):focus {
     border: 1px solid #424242 !important;
 }
 
-.liteloader setting-panel input[type="text"] {
+:is(.liteloader,.qwqnt.q-scroll-view) setting-panel input[type="text"] {
     border-radius: 8px !important;
 }
 

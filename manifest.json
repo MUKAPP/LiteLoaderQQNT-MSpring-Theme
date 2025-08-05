@@ -19,9 +19,9 @@
     "darwin"
   ],
   "injects": {
-    "renderer": "./renderer.js",
-    "main": "./main.js",
-    "preload": "./preload.js"
+    "renderer": "./renderer/liteloader.js",
+    "main": "./main/liteloader.js",
+    "preload": "./preload/index.js"
   },
   "repository": {
     "repo": "MUKAPP/LiteLoaderQQNT-MSpring-Theme",

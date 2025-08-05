@@ -1,11 +1,16 @@
 const fs = require("fs");
 const fsPromises = require("fs").promises;
 const path = require("path");
-const { BrowserWindow, ipcMain, shell, net, systemPreferences } = require("electron");
+const { BrowserWindow, ipcMain, shell, net } = require("electron");
+
+// 框架类型检测
+const frameworkType = global.MSPRING_FRAMEWORK_TYPE
 
 function log(...args) {
     console.log(`[MSpring Theme]`, ...args);
 }
+
+// log("框架类型", frameworkType);
 
 function openWeb(url) {
     shell.openExternal(url);
@@ -135,7 +140,9 @@ async function updateStyle(webContents, settingsPath) {
 
         const onThemeTextColor = getBestTextColor(themeColor) === "black" ? "#000000" : "#FFFFFF";
 
-        const csspath = path.join(__dirname, "src/style.css");
+        const csspath = path.join(frameworkType === "liteloader"
+            ? LiteLoader.plugins["mspring_theme"].path.plugin
+            : qwqnt.framework.plugins["mspring_theme"].meta.path, "src/style.css");
         const cssData = await fsPromises.readFile(csspath, "utf-8");
 
         let preloadString = `:root {
@@ -151,7 +158,7 @@ async function updateStyle(webContents, settingsPath) {
         }`
 
         webContents.send(
-            "LiteLoader.mspring_theme.updateStyle",
+            "mspring_theme.updateStyle",
             // 将主题色插入到style.css中
             preloadString + "\n\n" + cssData
         );
@@ -163,7 +170,9 @@ async function updateStyle(webContents, settingsPath) {
 
 // 监听CSS修改-开发时候用的
 function watchCSSChange(webContents, settingsPath) {
-    const filepath = path.join(__dirname, "src/style.css");
+    const filepath = path.join(frameworkType === "liteloader"
+        ? LiteLoader.plugins["mspring_theme"].path.plugin
+        : qwqnt.framework.plugins["mspring_theme"].meta.path, "src/style.css");
     fs.watch(filepath, "utf-8", debounce(() => {
         updateStyle(webContents, settingsPath);
     }, 100));
@@ -178,7 +187,9 @@ function watchSettingsChange(webContents, settingsPath) {
 }
 
 // 加载插件时触发
-const pluginDataPath = LiteLoader.plugins["mspring_theme"].path.data;
+const pluginDataPath = frameworkType === "liteloader"
+    ? LiteLoader.plugins["mspring_theme"].path.data
+    : path.join(qwqnt.framework.paths.data, "mspring_theme");
 const settingsPath = path.join(pluginDataPath, "settings.json");
 
 // 判断插件路径是否存在，如果不存在则创建（同时创建父目录（如果不存在的话））
@@ -191,6 +202,7 @@ const defaultConfig = {
     "backgroundOpacity": "70",
     "heti": false,
     "forceHostBubbleColor": false,
+    "logToMain": false,
 };
 
 // 检查和更新配置文件
@@ -224,7 +236,7 @@ try {
 }
 
 ipcMain.on(
-    "LiteLoader.mspring_theme.rendererReady",
+    "mspring_theme.rendererReady",
     (event, message) => {
         const window = BrowserWindow.fromWebContents(event.sender);
         updateStyle(window.webContents, settingsPath);
@@ -233,7 +245,7 @@ ipcMain.on(
 
 // 监听渲染进程的updateStyle事件
 ipcMain.on(
-    "LiteLoader.mspring_theme.updateStyle",
+    "mspring_theme.updateStyle",
     (event, settingsPath) => {
         const window = BrowserWindow.fromWebContents(event.sender);
         updateStyle(window.webContents, settingsPath);
@@ -241,7 +253,7 @@ ipcMain.on(
 
 // 监听渲染进程的watchCSSChange事件
 ipcMain.on(
-    "LiteLoader.mspring_theme.watchCSSChange",
+    "mspring_theme.watchCSSChange",
     (event, settingsPath) => {
         const window = BrowserWindow.fromWebContents(event.sender);
         watchCSSChange(window.webContents, settingsPath);
@@ -249,14 +261,21 @@ ipcMain.on(
 
 // 监听渲染进程的watchSettingsChange事件
 ipcMain.on(
-    "LiteLoader.mspring_theme.watchSettingsChange",
+    "mspring_theme.watchSettingsChange",
     (event, settingsPath) => {
         const window = BrowserWindow.fromWebContents(event.sender);
         watchSettingsChange(window.webContents, settingsPath);
     });
 
 ipcMain.handle(
-    "LiteLoader.mspring_theme.getSettings",
+    "mspring_theme.getFrameworkType",
+    (event) => {
+        return frameworkType;
+    }
+);
+
+ipcMain.handle(
+    "mspring_theme.getSettings",
     async (event, message) => {
         try {
             const data = await fsPromises.readFile(settingsPath, "utf-8");
@@ -270,7 +289,7 @@ ipcMain.handle(
 );
 
 ipcMain.handle(
-    "LiteLoader.mspring_theme.setSettings",
+    "mspring_theme.setSettings",
     (event, content) => {
         try {
             const new_config = JSON.stringify(content);
@@ -281,20 +300,20 @@ ipcMain.handle(
     }
 );
 
-ipcMain.on("LiteLoader.mspring_theme.openWeb", (event, ...message) =>
+ipcMain.on("mspring_theme.openWeb", (event, ...message) =>
     openWeb(...message)
 );
 
-ipcMain.handle("LiteLoader.mspring_theme.logToMain", (event, ...args) => {
+ipcMain.handle("mspring_theme.logToMain", (event, ...args) => {
     log(...args);
 }
 );
 
-ipcMain.handle("LiteLoader.mspring_theme.fetchData", (event, url) => {
+ipcMain.handle("mspring_theme.fetchData", (event, url) => {
     return fetchData(url);
 });
 
-ipcMain.handle("LiteLoader.mspring_theme.readFile", async (event, filePath) => {
+ipcMain.handle("mspring_theme.readFile", async (event, filePath) => {
     try {
         return await fsPromises.readFile(filePath, "utf-8");
     } catch (error) {
@@ -304,22 +323,32 @@ ipcMain.handle("LiteLoader.mspring_theme.readFile", async (event, filePath) => {
 });
 
 // 监听来自设置窗口强行覆盖气泡颜色的通知
-ipcMain.on("LiteLoader.mspring_theme.updateForceBubbleColor", (event, state) => {
+ipcMain.on("mspring_theme.updateForceBubbleColor", (event, state) => {
     // 遍历所有窗口
     for (const window of BrowserWindow.getAllWindows()) {
         // 向每个窗口的渲染进程发送应用样式的指令
-        window.webContents.send("LiteLoader.mspring_theme.applyForceBubbleColor", state);
+        window.webContents.send("mspring_theme.applyForceBubbleColor", state);
     }
 });
 
 // 创建窗口时触发
-module.exports.onBrowserWindowCreated = window => {
+function browserWindowCreated(window) {
     const settingsPath = path.join(pluginDataPath, "settings.json");
     window.on("ready-to-show", () => {
         const url = window.webContents.getURL();
-        if (url.includes("app://./renderer/index.html")) {
+        if (url.includes("app://./renderer/")) {
             watchCSSChange(window.webContents, settingsPath);
             watchSettingsChange(window.webContents, settingsPath);
         }
+    });
+}
+
+if (frameworkType === "liteloader") {
+    module.exports.onBrowserWindowCreated = window => {
+        browserWindowCreated(window);
+    }
+} else {
+    qwqnt.main.hooks.whenBrowserWindowCreated.peek((window) => {
+        browserWindowCreated(window);
     });
 }

@@ -1,0 +1,21 @@
+{
+  "$schema": "./plugin.schema.json",
+  "name": "mspring_theme",
+  "version": "1.4.0",
+  "description": "QwQNT 主题，优雅 · 粉粉 · 细致",
+  "main": "./main/qwqnt.js",
+  "type": "commonjs",
+  "author": "MUKAPP",
+  "license": "MIT",
+  "qwqnt": {
+    "name": "MSpring Theme",
+    "icon": "./res/brush_FILL0_wght300_GRAD0_opsz24.svg",
+    "inject": {
+      "preload": "./preload/index.js",
+      "renderer": "./renderer/qwqnt.js"
+    },
+    "dependencies": {
+        "qwqnt-plugin_settings": "^1.2.3"
+    }
+  }
+}

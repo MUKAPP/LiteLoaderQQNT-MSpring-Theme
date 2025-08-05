@@ -15,6 +15,7 @@ node_modules/
 .idea/
 *.iml
 .vscode/
+.codebuddy/
 *.suo
 *.user
 *.userosscache

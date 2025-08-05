@@ -5,14 +5,14 @@
 > [!NOTE]  
 > 该分支最低支持 LiteLoaderQQNT 1.0.0（测试版），v3 分支支持 1.0.0 以下版本
 
-[LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT) 主题，优雅 · 粉粉 · 细致
+[LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT)/QwQNT 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
 
 MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
 
 > [!WARNING]  
-> 由于风控严重，开发者已经很久未使用 LiteLoaderQQNT，本插件暂停开发
+> 由于风控严重，本插件开发进度可能会很缓慢
 
 ## 目录
 
@@ -24,9 +24,11 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
     - [夜间模式](#夜间模式)
     - [优化消息排版演示](#优化消息排版演示)
   - [安装方法](#安装方法)
-    - [插件列表查看](#插件列表查看)
-    - [PluginInstaller](#plugininstaller)
-    - [手动安装](#手动安装)
+    - [LiteLoaderQQNT](#liteloaderqqnt)
+      - [管理器安装](#管理器安装)
+      - [插件列表查看](#插件列表查看)
+      - [PluginInstaller](#plugininstaller)
+    - [QwQNT](#qwqnt)
   - [插件冲突分析](#插件冲突分析)
   - [其他](#其他)
 
@@ -69,18 +71,24 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ## 安装方法
 
-### 插件列表查看
+### LiteLoaderQQNT
+
+#### 管理器安装
+
+下载 [release](https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest) 内的 `LiteLoaderQQNT-MSpring-Theme.zip`，进入 LiteLoaderQQNT 设置，找到“安装新插件”右侧的“选择文件”按钮，选择刚刚下载的 zip 文件。
+
+#### 插件列表查看
 
 安装 [插件列表查看](https://github.com/ltxhhz/LL-plugin-list-viewer) 插件，打开对应设置页面，找到本插件，点击 **安装** - **使用 Release 包**，安装完成之后重启
 
-### PluginInstaller
+#### PluginInstaller
 
 安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/v4/manifest.json`，点击确定按钮\
 或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/LiteLoaderQQNT-MSpring-Theme/res/github/protocio-install.html) 直接拉起 PluginInstaller 安装插件
 
-### 手动安装
+### QwQNT
 
-将下载的 Zip 文件解压，解压出的文件夹移动至 `LiteLoaderQQNT/plugins/` 内，重启 QQ 即可\
+下载 [release](https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest) 内的 `LiteLoaderQQNT-MSpring-Theme.zip`，将下载的 zip 文件解压，解压出的文件夹移动至 `qwqnt/qwqnt-storage/plugins/` 内，重启 QQ 即可\
 （如果解压之后不是一个文件夹，而是几个文件夹和几个文件，那么请创建一个文件夹，将解压出来的文件夹和文件放进去，然后再移动到上述路径内）
 
 ## 插件冲突分析
