@@ -177,12 +177,14 @@ html:is(.linux) .container .more-panel .side-panel {
 }
 
 /* 搜索结果 */
-.search-result {
+.recent-contact .search-result {
     border-radius: 12px 12px 0px 0px;
     backdrop-filter: blur(32px) saturate(150%) opacity(40%);
     mix-blend-mode: multiply;
     margin-left: 8px;
     margin-right: 8px;
+    /* background: var(--bg_bottom_light); */
+    --side-list-bg: var(--bg_bottom_light) !important;
 }
 
 /* 文件管理页面 搜索框 */
@@ -190,12 +192,7 @@ html:is(.linux) .container .more-panel .side-panel {
     background: var(--msp-container) !important;
 }
 
-/* 搜索结果背景色 */
-.bg-color-counts-1 {
-    --side-list-bg: var(--bg_bottom_light) !important;
-}
-
-html:is(.linux) .search-result {
+html:is(.linux) .recent-contact .search-result {
     backdrop-filter: none !important;
     mix-blend-mode: initial !important;
 }
