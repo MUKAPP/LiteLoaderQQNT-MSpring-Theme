@@ -1,6 +1,22 @@
 /* 删除背景 */
+/* 主页 消息列表和聊天界面 */
+#app .container-content .message-panel,
+/* 独立聊天窗口 消息列表和聊天界面 */
+#app .container-content,
+/* 主页 左侧图标侧栏 */
+#app .container-content .sidebar .sidebar-nav,
+/* 主页 左侧消息列表 */
+#app .container-content .recent-contact,
+/* 联系人界面 联系人列表和联系人详情 */
+#app .container-content .contact-layout.container-content-view,
+/* 联系人界面 联系人列表 */
+#app .container-content .contact-layout.container-content-view .contact,
+/* 联系人界面 联系人详情 */
+#app .container-content .contact-layout.container-content-view .contact-profile,
+/* 好友通知界面 */
+.contact-layout.container-content-view .sys-notify,
 /* 好友通知列表 */
-.tab-container .two-col-layout__main .sys-notify__content .viewport-list.sys-notify-list .viewport-list__inner,
+.contact-layout.container-content-view .sys-notify .sys-notify-list .viewport-list__inner,
 /* 联系人列表 */
 .tab-container .two-col-layout__aside .contact-layout__left-area .contact,
 /* 联系人 折叠列表 头部 */
@@ -68,19 +84,53 @@ html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__mai
     border-radius: 8px;
 }
 
+/* 主页 下半部分 */
+#app .global-container .container-content {
+    /* 去除边距 */
+    margin: 0;
+}
+
+/* 主页 左侧消息列表 顶部搜索 */
+.container-content .recent-contact .contact-top-bar {
+    padding-top: 4px;
+}
+
+/* 主页 聊天界面 顶栏 */
+#app .container-content .panel-header {
+    padding-top: 0;
+    padding-bottom: 8px;
+    height: unset;
+}
+
+/* 主页顶栏天气 */
+.global-container .topbar .user-profile-card__widgets {
+    display: none;
+}
+
 /* 消息列表项圆角 */
-.recent-contact-item {
+.recent-contact-item .item__content,
+/* 联系人列表项圆角 */
+.list-item.contact-item {
     border-radius: 12px;
+}
+
+/* 消息列表项 选中背景 */
+#app .recent-contact-item--selected .item__content::before,
+/* 消息列表项 悬浮背景 */
+#app .recent-contact-item .item__content:hover::before,
+/* 联系人列表项 选中背景 */
+#app .contact-layout__left-area .contact-item.list-item--selected::before,
+/* 联系人列表项 悬浮背景 */
+#app .contact-layout__left-area .list-item.contact-item:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* 任务栏消息通知列表项目 */
 .msg-list .list-item.across-mode.msg-list-item {
     border-radius: 8px;
-}
-
-/* 联系人列表项圆角 */
-.list-item.contact-item {
-    border-radius: 12px;
 }
 
 /* 聊天框 */
@@ -114,8 +164,7 @@ html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .msg-
 
 /* 自己发送的链接颜色 */
 #ml-root .ml-item .message .message-container .msg-content-container.container--self .message-content .text-link {
-    /* 不知道为什么实在覆盖不了 */
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 /* 将自己的艾特颜色改为白色并添加下划线与普通消息文本进行区分 */
@@ -134,13 +183,13 @@ html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #ap
 }
 
 /* 聊天界面更多面板 */
-.container .more-panel .side-panel {
+.more-panel .side-panel {
     /* background: #ffffff; */
     backdrop-filter: blur(32px) saturate(150%) opacity(40%);
     mix-blend-mode: multiply;
 }
 
-html:is(.linux) .container .more-panel .side-panel {
+html:is(.linux) .more-panel .side-panel {
     backdrop-filter: none !important;
     mix-blend-mode: initial !important;
 }
@@ -177,14 +226,15 @@ html:is(.linux) .container .more-panel .side-panel {
 }
 
 /* 搜索结果 */
-.recent-contact .search-result {
-    border-radius: 12px 12px 0px 0px;
+#app .recent-contact .search-content {
+    left: 8px;
     backdrop-filter: blur(32px) saturate(150%) opacity(40%);
     mix-blend-mode: multiply;
-    margin-left: 8px;
-    margin-right: 8px;
-    /* background: var(--bg_bottom_light); */
-    --side-list-bg: var(--bg_bottom_light) !important;
+}
+
+html:is(.linux) .recent-contact .search-result {
+    backdrop-filter: none !important;
+    mix-blend-mode: initial !important;
 }
 
 /* 文件管理页面 搜索框 */
@@ -192,7 +242,14 @@ html:is(.linux) .container .more-panel .side-panel {
     background: var(--msp-container) !important;
 }
 
-html:is(.linux) .recent-contact .search-result {
+/* 菜单 */
+.q-context-menu {
+    backdrop-filter: blur(16px) saturate(150%) opacity(40%);
+    mix-blend-mode: multiply;
+    background: var(--fill_light_secondary) !important;
+}
+
+html:is(.linux) .q-context-menu {
     backdrop-filter: none !important;
     mix-blend-mode: initial !important;
 }
@@ -226,7 +283,7 @@ html:is(.linux) .account-list {
     设置 存储管理 列表项卡片
     设置 快捷键 列表项卡片
     设置 权限设置 列表项卡片
-    设置 账号绑与授权 卡片
+    设置 账号绑定与授权 卡片
     LiteLoaderQQNT/QwQNT 主体&插件配置界面
     申请加群/加好友 项目背景
     文件管理 三个大按钮 */
@@ -235,13 +292,13 @@ html:is(.linux) .account-list {
 #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
 #file-area-container .file-list-normal-sort-title,
 #file-manage-scroll-list .group-file-banner,
-.setting-main__content>*>*:not(.appearance-tab, .liteloader, .auth-setting, .account-container)>*:not(.setting-item-title, .popup, .storage-space, .shotcut, .group-msg-title),
+.setting-main__content>*>*:not(.appearance-tab, .liteloader, .auth-setting, .account-container)>*:not(.setting-item-title, .popup, .storage-space, .shotcut, .group-msg-title, .copyright),
 .setting-main__content .notify-tab .popup>*:not(.setting-item-title),
 .setting-main__content .storage-space>*:not(.setting-item-title, .storage-chart, .title),
 .setting-main .setting-main__content .shortcut-tab .shotcut>*,
 .setting-main .setting-main__content .auth-setting .setting-item-group,
-.setting-main .setting-main__content .account-container .account-item__container,
-.setting-main .setting-main__content :is(.liteloader,.qwqnt.q-scroll-view) setting-panel,
+.setting-main .setting-main__content .account-container .account-bind__container,
+.setting-main .setting-main__content :is(.liteloader, .qwqnt.q-scroll-view) setting-panel,
 #discover .discover__container .discover__content .application-form__container .q-scroll-view form>div>div>div,
 .file-area .shortcut-items .shortcut-item {
     background: var(--msp-container);
@@ -279,6 +336,22 @@ html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabl
     backdrop-filter: initial !important;
 }
 
+/* 聊天界面 提示（时间等） */
+.babble {
+    background: var(--msp-container);
+}
+
+/* 聊天界面回顶、回底按钮 */
+#app .q-notification.theme-default {
+    backdrop-filter: blur(16px) saturate(150%) opacity(40%);
+    mix-blend-mode: multiply;
+}
+
+html:is(.linux) #app .q-notification.theme-default {
+    backdrop-filter: none !important;
+    mix-blend-mode: initial !important;
+}
+
 /* 轻量工具箱 +1和外置时间 */
 html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
 /* html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after, */
@@ -300,16 +373,6 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     /* 登录背景 */
     #login {
         background: var(--background-color-light) !important;
-    }
-
-    /* 聊天界面回顶、回底按钮 */
-    .container .q-notification.theme-default {
-        background: #ffffff7f;
-        backdrop-filter: blur(32px);
-    }
-
-    html:is(.linux) .container .q-notification.theme-default {
-        backdrop-filter: none !important;
     }
 
     /* 
@@ -336,13 +399,13 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 插件设置 列表里的输入框 */
-    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"] {
+    :is(.liteloader, .qwqnt.q-scroll-view) input[type="text"] {
         border-radius: 8px;
         background: var(--msp-container);
         padding-left: 8px;
     }
 
-    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"]:focus {
+    :is(.liteloader, .qwqnt.q-scroll-view) input[type="text"]:focus {
         background: var(--msp-container-active);
         padding-left: 10px;
     }
@@ -358,16 +421,6 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     #channelList .channel-container,
     #channelList .session-container {
         background: var(--background-color-dark);
-    }
-
-    /* 聊天界面回顶、回底按钮 */
-    .container .q-notification.theme-default {
-        background: #1717177f;
-        backdrop-filter: blur(32px);
-    }
-
-    html:is(.linux) .container .q-notification.theme-default {
-        backdrop-filter: none !important;
     }
 
     /* 
@@ -439,13 +492,13 @@ html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::a
     }
 
     /* 插件设置 列表里的输入框 */
-    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"] {
+    :is(.liteloader, .qwqnt.q-scroll-view) input[type="text"] {
         border-radius: 8px;
         background: #ffffff10;
         padding-left: 8px;
     }
 
-    :is(.liteloader,.qwqnt.q-scroll-view) input[type="text"]:focus {
+    :is(.liteloader, .qwqnt.q-scroll-view) input[type="text"]:focus {
         background: var(--msp-container);
         padding-left: 10px;
     }
@@ -609,33 +662,33 @@ html.mspring_force_host_bubble_color .q-theme-tokens-dark {
 }
 
 /* 设置界面链接文字颜色 */
-:is(.liteloader,.qwqnt.q-scroll-view) a {
+:is(.liteloader, .qwqnt.q-scroll-view) a {
     color: var(--theme-color) !important;
 }
 
-:is(.liteloader,.qwqnt.q-scroll-view) a:hover {
+:is(.liteloader, .qwqnt.q-scroll-view) a:hover {
     color: var(--theme-color-dark2) !important;
 }
 
 /* 设置页面input */
-:is(.liteloader,.qwqnt.q-scroll-view) input[type="color"] {
+:is(.liteloader, .qwqnt.q-scroll-view) input[type="color"] {
     padding: 4px;
 }
 
-:is(.liteloader,.qwqnt.q-scroll-view) ::-webkit-color-swatch-wrapper {
+:is(.liteloader, .qwqnt.q-scroll-view) ::-webkit-color-swatch-wrapper {
     padding: 0px;
 }
 
-:is(.liteloader,.qwqnt.q-scroll-view) ::-webkit-color-swatch {
+:is(.liteloader, .qwqnt.q-scroll-view) ::-webkit-color-swatch {
     border-radius: 4px;
     border: transparent solid 1px;
 }
 
-:is(.liteloader,.qwqnt.q-scroll-view) input:is([type="color"], [type="range"]):focus {
+:is(.liteloader, .qwqnt.q-scroll-view) input:is([type="color"], [type="range"]):focus {
     border: 1px solid #424242 !important;
 }
 
-:is(.liteloader,.qwqnt.q-scroll-view) setting-panel input[type="text"] {
+:is(.liteloader, .qwqnt.q-scroll-view) setting-panel input[type="text"] {
     border-radius: 8px !important;
 }
 
