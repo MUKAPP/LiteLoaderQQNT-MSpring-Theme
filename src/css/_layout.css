@@ -1,0 +1,151 @@
+/* 主页 下半部分 */
+#app .container-content {
+    /* 去除边距 */
+    margin: 0;
+}
+
+/* 主页 左侧消息列表 顶部搜索 */
+.container-content .recent-contact .contact-top-bar {
+    padding-top: 4px;
+}
+
+/* 主页 聊天界面 顶栏 */
+#app .container-content .panel-header {
+    padding-top: 0;
+    padding-bottom: 8px;
+    height: unset;
+}
+
+/* 主页顶栏天气 */
+#app .topbar .user-profile-card__widgets {
+    display: none;
+}
+
+/* 列表条目圆角 */
+.two-col-layout__aside .viewport-list__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+/* 各种列表鼠标悬浮效果 */
+.viewport-list .list-item:hover {
+    background-color: var(--msp-container-active);
+}
+
+/* 消息列表项圆角 */
+.recent-contact-item .item__content,
+/* 联系人列表项圆角 */
+.list-item.contact-item {
+    border-radius: 12px;
+}
+
+/* 消息列表项 选中背景 */
+#app .recent-contact-item--selected .item__content::before,
+/* 消息列表项 悬浮背景 */
+#app .recent-contact-item .item__content:hover::before,
+/* 联系人列表项 选中背景 */
+#app .contact-layout__left-area .contact-item.list-item--selected::before,
+/* 联系人列表项 悬浮背景 */
+#app .contact-layout__left-area .list-item.contact-item:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* 任务栏消息通知列表项目 */
+.msg-list .list-item.across-mode.msg-list-item {
+    border-radius: 8px;
+}
+
+/* 好友通知、群通知列表项 */
+.sys-notify__container .sys-notify-card,
+.sys-notify__container .list-item {
+    border-radius: 8px;
+    background: var(--msp-container);
+}
+
+/* 联系人页面上方 好友通知、群通知 */
+.notify-option {
+    border-radius: 8px;
+}
+
+/* 聊天界面更多面板 */
+.more-panel .side-panel {
+    /* background: #ffffff; */
+    backdrop-filter: blur(32px) saturate(150%) opacity(40%);
+    mix-blend-mode: multiply;
+}
+
+html:is(.linux) .more-panel .side-panel {
+    backdrop-filter: none !important;
+    mix-blend-mode: initial !important;
+}
+
+/* 频道三个侧栏 */
+@media (prefers-color-scheme: light) {
+    #app .guild-main .main-area .main-area-left,
+    #channelList .channel-container,
+    #channelList .session-container {
+        background: var(--background-color-light);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #app .guild-main .main-area .main-area-left,
+    #channelList .channel-container,
+    #channelList .session-container {
+        background: var(--background-color-dark);
+    }
+}
+
+/* 频道 别人消息背景, 帖子列表项目背景 */
+.guild-main .message:not(.message-gray-tip, .message-self) .message-content,
+.guild-main .topic-list-item {
+    background: var(--msp-container);
+}
+
+.guild-main .topic-list-item.is-active {
+    background: var(--msp-container-active);
+}
+
+/* 文件管理 文件列表 块 */
+.file-list-normal-sort,
+/* 文件管理 类型 图片与视频 */
+.file-list-grid-scroll-container>* {
+    margin-bottom: 16px;
+}
+
+/* 
+    文件管理 发送人列表
+    文件管理 类型列表
+    文件管理 发送人列表 展开的子列表 */
+.file-manager-main .q-collapse-item__title,
+.file-manager-main .file-type,
+.file-manager-main .user-item-container {
+    border-radius: 8px;
+}
+
+/* 
+    文件管理 文件列表 块
+    文件管理 文件列表 标题
+    文件管理 类型 图片与视频 块
+    文件管理 类型 图片与视频 标题
+    群文件 群在线文档卡片
+*/
+#file-manage-scroll-list .file-list-normal-sort,
+#file-manage-scroll-list .file-list-normal-sort-title,
+#file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
+#file-area-container .file-list-normal-sort-title,
+#file-manage-scroll-list .group-file-banner {
+    background: var(--msp-container);
+    border-radius: 8px;
+}
+
+.guilds-item {
+    border-radius: 16px !important;
+    height: initial !important;
+    min-width: auto !important;
+}

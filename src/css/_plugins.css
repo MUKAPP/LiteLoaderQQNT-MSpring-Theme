@@ -1,0 +1,24 @@
+/* 轻量工具箱 +1和外置时间 */
+html:not(.mspring_lite_tool_background_enabled) .message-content-replace::after,
+/* html:not(.mspring_lite_tool_background_enabled) .lite-tools-time.bubble-outside::after, */
+html:not(.mspring_lite_tool_background_enabled) .lite-tools-slot.outside-slot::after {
+    background: var(--msp-container);
+    backdrop-filter: initial;
+}
+
+/* 开启背景插件后的搜索框多的双层方形背景 */
+html.mspring_background_plugin_enabled .main-search {
+    background: none !important;
+}
+
+/* DeepL插件 自己的消息框分割线颜色 */
+.msg-content-container.container--self #deepl-divider {
+    background: #ffffff3f !important;
+}
+
+/* DeepL插件 他人的消息框分割线颜色 */
+@media (prefers-color-scheme: dark) {
+    .container--others #deepl-divider {
+        background: var(--msp-container-active) !important;
+    }
+}

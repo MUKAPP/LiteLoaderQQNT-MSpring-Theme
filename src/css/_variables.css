@@ -1,0 +1,99 @@
+:root {
+    --el-color-primary: var(--theme-color);
+}
+
+.q-theme-tokens-light {
+    /* mspring */
+    --msp-container: #00000010;
+    --msp-container-active: #00000021;
+
+    /* color-tokens */
+    --brand_standard: var(--theme-color);
+    --on_brand_primary: var(--on-theme-text-color);
+    --on_brand_secondary: var(--on-theme-text-color);
+    --text_link: var(--theme-color);
+    --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-light);
+    --bg_bottom_standard: var(--background-color-light);
+    /* --bg_bottom_light: var(--background-color-light); */
+    --bg_nav_secondary: var(--background-color-light);
+    --bubble_guest: var(--msp-container);
+    /* --fill_light_primary: TRANSPARENT; */
+    --overlay_active_brand: var(--theme-color);
+    --svip_red: var(--text_primary);
+    /* 管理员标签 */
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: var(--theme-color-alpha);
+    --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
+    --text-brand: var(--theme-color);
+    --text-link: var(--theme-color);
+
+    /* mix-tokens */
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-light);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-light);
+}
+
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-light,
+html.mspring_force_host_bubble_color .q-theme-tokens-light {
+    --bubble_host: var(--theme-color);
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --host_bubble_bg_css_value: var(--theme-color);
+}
+
+.q-theme-tokens-dark {
+    /* mspring */
+    --msp-container: #ffffff21;
+    --msp-container-active: #ffffff3f;
+
+    /* color-tokens */
+    --brand_standard: var(--theme-color);
+    --on_brand_primary: var(--on-theme-text-color);
+    --on_brand_secondary: var(--on-theme-text-color);
+    --text_link: var(--theme-color);
+    --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-dark);
+    --bg_bottom_standard: var(--background-color-dark);
+    /* --bg_bottom_light: var(--background-color-dark); */
+    --bg_nav_secondary: var(--background-color-dark);
+    --bubble_guest: var(--msp-container);
+    /* --fill_light_primary: TRANSPARENT; */
+    --overlay_active_brand: var(--theme-color);
+    --svip_red: var(--text_primary);
+    /* 管理员标签 */
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: var(--theme-color-alpha);
+    --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
+    --text-brand: var(--theme-color);
+    --text-link: var(--theme-color);
+
+    /* mix-tokens */
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-dark1);
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-dark2);
+    --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
+
+    /* 解决深色模式下聊天列表置顶项目选中背景失效 */
+    /* 暂未发现其他冲突 */
+    --nt_on_brand_primary_2_5_2_alpha: var(--theme-color)
+}
+
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
+html.mspring_force_host_bubble_color .q-theme-tokens-dark {
+    --bubble_host: var(--theme-color);
+    --bubble_host_text: var(--on-theme-text-color);
+    --bubble_host_1: var(--theme-color);
+    --bubble_host_2: var(--theme-color);
+    --on_bubble_host_text: var(--on-theme-text-color);
+    --host_bubble_bg_css_value: var(--theme-color);
+}

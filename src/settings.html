@@ -1,0 +1,122 @@
+<style>
+    /* 背景颜色透明度滑条 */
+    .mspring_theme input[type='range']::-webkit-slider-thumb {
+        margin-top: -8px;
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 8px;
+        background: var(--theme-color);
+        cursor: pointer;
+    }
+
+    .mspring_theme input[type='range']::-webkit-slider-runnable-track {
+        height: 0px;
+        background: transparent;
+    }
+
+    .pick-opacity {
+        padding: 4px;
+    }
+</style>
+
+<setting-section data-title="提示" class="tips">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <setting-text>若使用新版 QQ 请在 超级调色盘 中使用 <strong>极简白</strong></setting-text>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<setting-section data-title="外观" class="appearance">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <setting-text>主题颜色</setting-text>
+                <input type="color" value="#ff0000" class="q-button q-button--small q-button--secondary pick-color" />
+            </setting-item>
+            <setting-item data-direction="row" id="mst-settings-background-opacity">
+                <div>
+                    <setting-text>背景颜色透明度</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial; line-clamp: initial;">该选项在启用
+                        <b>轻量工具箱-自定义背景</b>
+                        之后不会生效</setting-text>
+                </div>
+                <input type="range" value="1" min="0" max="100" step="1"
+                    class="q-button q-button--small q-button--secondary pick-opacity"
+                    style="width: 61%; height:25px;" />
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>强制覆盖自己发送的气泡颜色</setting-text>
+                    <setting-text data-type="secondary"
+                        style="-webkit-line-clamp: initial; line-clamp: initial; margin-right: 8px;">默认情况下不需要开启。如果想要在开启其他修改背景的插件时，让自己的气泡背景显示为主题色，就需要开启该功能</setting-text>
+                </div>
+                <setting-switch id="force-host-bubble-color" style="min-width: 28px;"></setting-switch>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>强制覆盖夜间模式主页背景</setting-text>
+                    <setting-text data-type="secondary"
+                        style="-webkit-line-clamp: initial; line-clamp: initial; margin-right: 8px;">默认开启。由于新版 QQ 夜间模式下会使用 !important 覆盖部分属性，所以主题只能强行覆盖。如果影响到其他插件的效果，请关闭该功能</setting-text>
+                </div>
+                <setting-switch id="force-night-mode-background" style="min-width: 28px;"></setting-switch>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<setting-section data-title="增强" class="enhancement">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>优化消息排版</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial; line-clamp: initial;">使用
+                        赫蹏，提供中英文混排美化、标点挤压 (修改之后重启生效)</setting-text>
+                </div>
+                <setting-switch id="heti"></setting-switch>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<setting-section data-title="关于" class="about">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>版本号</setting-text>
+                    <setting-text data-type="secondary" id="mst-settings-version"
+                        style="-webkit-line-clamp: initial; line-clamp: initial">没问题的话这里显示的是版本号</setting-text>
+                </div>
+                <setting-button data-type="primary" id="mst-settings-go-to-update">去更新</setting-button>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>Telegram 频道</setting-text>
+                    <setting-text data-type="secondary">https://t.me/MUKAPP_Personal</setting-text>
+                </div>
+                <setting-button data-type="secondary" id="msp-tg-channel">进去瞅瞅</setting-button>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<setting-section data-title="其他" class="others">
+    <setting-panel>
+        <setting-list data-direction="column">
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>输出日志到主进程</setting-text>
+                    <setting-text data-type="secondary" style="-webkit-line-clamp: initial; line-clamp: initial;">
+                        非调试不建议开启
+                    </setting-text>
+                </div>
+                <setting-switch id="msp-log-to-main"></setting-switch>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>

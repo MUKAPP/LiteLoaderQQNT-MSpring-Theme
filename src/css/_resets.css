@@ -1,0 +1,71 @@
+/* 删除背景 */
+/* 主页 消息列表和聊天界面 */
+#app .container-content .message-panel,
+/* 独立聊天窗口 消息列表和聊天界面 */
+/* #app .container-content, */
+/* 主页 左侧图标侧栏 */
+#app .container-content .sidebar .sidebar-nav,
+/* 主页 左侧消息列表 */
+#app .container-content .recent-contact,
+/* 联系人界面 联系人列表和联系人详情 */
+#app .container-content .contact-layout.container-content-view,
+/* 联系人界面 联系人列表 */
+#app .container-content .contact-layout.container-content-view .contact,
+/* 联系人界面 联系人详情 */
+#app .container-content .contact-layout.container-content-view .contact-profile,
+/* 好友通知界面 */
+.contact-layout.container-content-view .sys-notify,
+/* 好友通知列表 */
+.contact-layout.container-content-view .sys-notify .sys-notify-list .viewport-list__inner,
+/* 联系人列表 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact,
+/* 联系人 折叠列表 头部 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact-layout__content-area .q-collapse-item__header,
+/* 联系人头部切换 */
+.tab-container .two-col-layout__aside .contact-layout__left-area .contact .tab-header,
+/* 联系人 群通知、好友通知 */
+.tab-container .two-col-layout__main .sys-notify,
+/* 联系人详情 */
+html:not(.mspring_background_plugin_enabled) .tab-container .two-col-layout__main .profile,
+/* 文件管理页面 侧栏背景 */
+#app .container .nav-bar-container,
+/* 文件管理页面 文件分类 */
+.file-area-container-list .file-list-header-container.file-list-header,
+/* 文件管理页面 文件列表 */
+#file-manage-scroll-list .file-list-normal-scroll-container,
+/* 文件管理页面 图片与视频 */
+#file-area-container .file-list-grid-scroll-container,
+/* 文件管理页面 发送人列表 */
+.file-manager-main .two-col-layout__aside .sender-container,
+/* 文件管理页面 群文件 群列表 */
+.file-manager-main .two-col-layout__aside .group-file-container,
+/* 文件管理页面 折叠列表 */
+.file-manager-main .two-col-layout__aside :is(.sender-container, .file-type-container, .group-file-container) .q-collapse :is(.q-collapse-item__header, .q-collapse-item),
+/* 文件管理页面 类型列表 */
+.file-manager-main .two-col-layout__aside .file-type-container,
+/* 文件管理页面 群文件 footer */
+#file-area-container .file-area-container-group-file-footer,
+/* 文件管理页面 加载更多 */
+.container .file-area-list .file-list-normal-scroll .loadmore-placeholder,
+/* 频道 成员列表 */
+.guild-main .channel-main .channel .chatDragDropArea .userList,
+/* 收藏页面 侧栏 */
+#app .favorites-layout .favorites-layout__left-area,
+/* 收藏页面 右侧 */
+#app .favorites-layout .favorites-layout__right-area .favorites-layout__content,
+/* 收藏页面 右侧 顶部 */
+#app .favorites-layout .favorites-layout__right-area .panel-header,
+/* 申请加群/加好友 底部 */
+#discover .discover__container .discover__content .form-item__action {
+    background: none;
+}
+
+/* 申请加群/加好友 顶部背景 */
+#discover .discover__container .discover__content .discover-application .stranger-item {
+    background: initial !important;
+}
+
+/* 删除QQ主题的背景 */
+.q-miracle-background {
+    background: none !important;
+}
