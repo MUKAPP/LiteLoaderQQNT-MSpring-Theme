@@ -189,7 +189,7 @@ async function updateStyle(webContents, settingsPath) {
 
         const csspath = path.join(frameworkType === "liteloader"
             ? LiteLoader.plugins["mspring-theme"].path.plugin
-            : qwqnt.framework.plugins["mspring-theme"].meta.path, "src/style.css");
+            : qwqnt.framework.plugins["mspring-theme"].meta.path, "src/style.min.css");
         
         const cssData = await bundleCss(csspath);
 

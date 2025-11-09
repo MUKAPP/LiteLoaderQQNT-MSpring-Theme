@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/QwQ-002/types/main/plugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/qwqnt-community/types/main/plugin.schema.json",
   "name": "mspring-theme",
   "version": "2.0.0",
   "description": "QwQNT 主题，优雅 · 粉粉 · 细致",
@@ -7,6 +7,13 @@
   "type": "commonjs",
   "author": "MUKAPP",
   "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist src/style.min.css mspring-theme.zip",
+    "build:css": "sass src/style.scss | postcss -o src/style.min.css",
+    "pack": "node pack.js",
+    "build": "npm run clean && npm run build:css && npm run pack",
+    "dev": "npm run build:css && nodemon --watch src -e scss --exec \"npm run build:css\""
+  },
   "qwqnt": {
     "name": "MSpring Theme",
     "icon": "./res/brush_FILL0_wght300_GRAD0_opsz24.svg",
@@ -15,7 +22,17 @@
       "renderer": "./renderer/qwqnt.js"
     },
     "dependencies": {
-        "qwqnt-plugin-settings": "^2.0.0"
+      "qwqnt-plugin-settings": "^2.0.0"
     }
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.2",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "rimraf": "^6.1.0",
+    "sass": "^1.93.3"
   }
 }
