@@ -25,8 +25,13 @@ jobs:
       - name: Build plugin
         run: npm run build
 
+      - name: Unzip artifact for clean upload
+        run: |
+          mkdir -p release
+          unzip mspring-theme.zip -d release
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: mspring-theme-plugin
-          path: mspring-theme.zip
+          path: release/
