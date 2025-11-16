@@ -123,47 +123,6 @@ function getBestTextColor(hexColor) {
 }
 
 
-// 捆绑CSS文件
-async function bundleCss(filePath) {
-    try {
-        let fileContent = await fsPromises.readFile(filePath, "utf-8");
-        const fileDir = path.dirname(filePath);
-        const importRegex = /@import\s+url\("(.+?)"\);/g;
-
-        // 使用 matchAll 获取所有匹配项，避免循环中的闭包问题
-        const importMatches = [...fileContent.matchAll(importRegex)];
-        
-        const resolvedImports = await Promise.all(importMatches.map(async (match) => {
-            const importPath = path.resolve(fileDir, match[1]);
-            try {
-                // 递归调用 bundleCss 来处理嵌套的导入
-                const importedContent = await bundleCss(importPath);
-                return {
-                    importStatement: match[0],
-                    content: importedContent
-                };
-            } catch (error) {
-                log(`无法读取导入的文件 ${importPath}:`, error);
-                return {
-                    importStatement: match[0],
-                    content: '' // 出错时替换为空字符串
-                };
-            }
-        }));
-
-        // 按顺序将导入的内容替换回原文件内容
-        for (const resolved of resolvedImports) {
-            fileContent = fileContent.replace(resolved.importStatement, resolved.content);
-        }
-
-        return fileContent;
-    } catch (error) {
-        log(`捆绑CSS时出错 ${filePath}:`, error);
-        return ''; // 返回空字符串以避免中断
-    }
-}
-
-
 // 更新样式
 async function updateStyle(webContents, settingsPath) {
     try {
@@ -178,9 +137,9 @@ async function updateStyle(webContents, settingsPath) {
         const config = JSON.parse(data);
         const themeColor = config.themeColor;
         // 将themeColorDark1设置成themeColor和10%的黑色的混合色
-        const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
+        // const themeColorDark1 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.1));
         // 将themeColorDark2设置成themeColor和20%的黑色的混合色
-        const themeColorDark2 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.2));
+        // const themeColorDark2 = RGBToHex(blendColors(hexToRGB(themeColor), [0, 0, 0], 0.2));
         const backgroundOpacity = config.backgroundOpacity;
         // 将backgroundOpacity(是个0-100的整数值)转为两位hex值作为RGBA的透明度（注意不要出现小数）
         const backgroundOpacityHex = Math.round(backgroundOpacity * 2.55).toString(16).padStart(2, "0");
@@ -190,18 +149,17 @@ async function updateStyle(webContents, settingsPath) {
         const csspath = path.join(frameworkType === "liteloader"
             ? LiteLoader.plugins["mspring-theme"].path.plugin
             : qwqnt.framework.plugins["mspring-theme"].meta.path, "src/style.min.css");
-        
-        const cssData = await bundleCss(csspath);
+        const cssData = await fsPromises.readFile(csspath, "utf-8");
 
+            // --theme-color-dark1: ${themeColorDark1};
+            // --theme-color-dark2: ${themeColorDark2};
+            // --theme-color-alpha: ${themeColor + "3f"};
+            // --text-selected-color: ${themeColor + "7f"};
+            // --theme-tag-color: ${themeColor + "3f"};
         let preloadString = `:root {
             --theme-color: ${themeColor};
-            --theme-color-dark1: ${themeColorDark1};
-            --theme-color-dark2: ${themeColorDark2};
-            --theme-color-alpha: ${themeColor + "3f"};
             --background-color-light: #FFFFFF${backgroundOpacityHex};
             --background-color-dark: #171717${backgroundOpacityHex};
-            --theme-tag-color: ${themeColor + "3f"};
-            --text-selected-color: ${themeColor + "7f"};
             --on-theme-text-color: ${onThemeTextColor};
         }`
 
@@ -226,19 +184,17 @@ const watchersMap = new WeakMap();
 
 // 监听CSS修改-开发时候用的
 function watchCSSChange(webContents, settingsPath) {
-    const cssDir = path.join(frameworkType === "liteloader"
+    const cssFilePath = path.join(frameworkType === "liteloader"
         ? LiteLoader.plugins["mspring-theme"].path.plugin
-        : qwqnt.framework.plugins["mspring-theme"].meta.path, "src");
+        : qwqnt.framework.plugins["mspring-theme"].meta.path, "src/style.min.css");
 
-    const watcher = fs.watch(cssDir, { recursive: true }, debounce((eventType, filename) => {
-        if (filename && (filename.endsWith('.css') || filename.includes('css' + path.sep))) {
-            log(`CSS文件 ${filename} 发生变动, 重新加载样式...`);
-            if (!webContents.isDestroyed()) {
-                updateStyle(webContents, settingsPath);
-            } else {
-                log("WebContents 已被销毁，清理 CSS 监听器");
-                watcher.close();
-            }
+    const watcher = fs.watch(cssFilePath, debounce((eventType, filename) => {
+        log(`CSS文件 ${filename} 发生变动, 重新加载样式...`);
+        if (!webContents.isDestroyed()) {
+            updateStyle(webContents, settingsPath);
+        } else {
+            log("WebContents 已被销毁，清理 CSS 监听器");
+            watcher.close();
         }
     }, 100));
 

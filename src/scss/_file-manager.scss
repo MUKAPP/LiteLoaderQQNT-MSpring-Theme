@@ -1,0 +1,62 @@
+/* 文件管理界面的相关样式 */
+@use "variables" as *;
+
+// /* 文件管理页面 文件分类 */
+// .file-area-container-list .file-list-header-container.file-list-header,
+// /* 文件管理页面 文件列表 */
+// #file-manage-scroll-list .file-list-normal-scroll-container,
+// /* 文件管理页面 图片与视频 */
+// #file-area-container .file-list-grid-scroll-container,
+// /* 文件管理页面 发送人列表 */
+// .file-manager-main .two-col-layout__aside .sender-container,
+// /* 文件管理页面 群文件 群列表 */
+// .file-manager-main .two-col-layout__aside .group-file-container,
+// /* 文件管理页面 折叠列表 */
+// .file-manager-main .two-col-layout__aside :is(.sender-container, .file-type-container, .group-file-container) .q-collapse :is(.q-collapse-item__header, .q-collapse-item),
+// /* 文件管理页面 类型列表 */
+// .file-manager-main .two-col-layout__aside .file-type-container,
+// /* 文件管理页面 群文件 footer */
+// #file-area-container .file-area-container-group-file-footer,
+// /* 文件管理页面 加载更多 */
+// .container .file-area-list .file-list-normal-scroll .loadmore-placeholder {
+//     background: none;
+// }
+
+// /* 文件管理 文件列表 块 */
+// .file-list-normal-sort,
+// /* 文件管理 类型 图片与视频 */
+// .file-list-grid-scroll-container>* {
+//     margin-bottom: 16px;
+// }
+
+// /* 
+//     文件管理 发送人列表
+//     文件管理 类型列表
+//     文件管理 发送人列表 展开的子列表 */
+// .file-manager-main .q-collapse-item__title,
+// .file-manager-main .file-type,
+// .file-manager-main .user-item-container {
+//     border-radius: 8px;
+// }
+
+// /* 文件管理页面 搜索框 */
+// .title-bar-center .search .q-input.search-input {
+//     background: var(--msp-container) !important;
+// }
+
+// /* 
+//     文件管理 文件列表 块
+//     文件管理 文件列表 标题
+//     文件管理 类型 图片与视频 块
+//     文件管理 类型 图片与视频 标题
+//     群文件 群在线文档卡片
+//     文件管理 三个大按钮 */
+// #file-manage-scroll-list .file-list-normal-sort,
+// #file-manage-scroll-list .file-list-normal-sort-title,
+// #file-area-container .file-area-container-list .file-list-grid-scroll-container>div,
+// #file-area-container .file-list-normal-sort-title,
+// #file-manage-scroll-list .group-file-banner,
+// .file-area .shortcut-items .shortcut-item {
+//     background: var(--msp-container);
+//     border-radius: 8px;
+// }

@@ -22,18 +22,25 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
 
     // 页面变化时，遍历class中包含text-normal的所有元素，如果class不包含heti的就加入heti的class
     // 加入heti的class调用上面的函数
+    function processHeti(rootElement) {
+        rootElement.querySelectorAll(selector).forEach(element => {
+            if (!element.classList.contains("heti")) {
+                element.classList.add("heti");
+                hetiSpacingElement(element);
+            }
+        });
+    }
+
+    // 处理页面上已经存在的元素
+    processHeti(messageListElement);
+
+    // 设置监听器，处理新增的元素
     const observer = new MutationObserver((mutationsList) => {
         for (let mutation of mutationsList) {
             if (mutation.type === "childList") {
-                // 处理新增的节点
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1) { // 确保是元素节点
-                        node.querySelectorAll(selector).forEach(element => {
-                            if (!element.classList.contains("heti")) {
-                                element.classList.add("heti");
-                                hetiSpacingElement(element);
-                            }
-                        });
+                        processHeti(node); // 复用上面的函数处理新增节点
                     }
                 });
             }
@@ -137,7 +144,7 @@ async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType,
         if (settings.heti && url.startsWith("app://./renderer/index.html")) {
             log("[设置]", "开启赫蹏");
             try {
-                observeElement('#ml-root .ml-list', (element) => {
+                observeElement('#ml-root', (element) => {
                     insertHeti(element, ".text-normal", mspring_theme, plugin_path);
                 }, false);
             } catch (error) {

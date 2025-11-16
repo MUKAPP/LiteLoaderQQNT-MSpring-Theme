@@ -1,0 +1,54 @@
+/* 频道（服务器）界面的相关样式 */
+@use "variables" as *;
+
+// /* 频道 成员列表 */
+// .guild-main .channel-main .channel .chatDragDropArea .userList {
+//     background: none;
+// }
+
+// /* 
+//     频道 别人消息背景
+//     频道 帖子列表项目背景
+//          */
+// .guild-main .message:not(.message-gray-tip, .message-self) .message-content,
+// .guild-main .topic-list-item {
+//     background: var(--msp-container);
+// }
+
+// .guild-main .topic-list-item.is-active {
+//     background: var(--msp-container-active);
+// }
+
+// .guilds-item {
+//     border-radius: 16px !important;
+//     height: initial !important;
+//     min-width: auto !important;
+// }
+
+// /* 
+//     管理员标签（群成员列表）
+//     群公告置顶标签
+//  */
+// .group-user .q-tag.group-user__role:not(.primary),
+// .notice__container .top-flag {
+//     color: var(--theme-color);
+//     background: var(--theme-tag-color);
+// }
+
+// @media (prefers-color-scheme: light) {
+//     /* 频道三个侧栏 */
+//     #app .guild-main .main-area .main-area-left,
+//     #channelList .channel-container,
+//     #channelList .session-container {
+//         background: var(--background-color-light);
+//     }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//     /* 频道三个侧栏 */
+//     #app .guild-main .main-area .main-area-left,
+//     #channelList .channel-container,
+//     #channelList .session-container {
+//         background: var(--background-color-dark);
+//     }
+// }

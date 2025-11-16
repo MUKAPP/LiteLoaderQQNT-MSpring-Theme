@@ -36,16 +36,16 @@
     --bg_aio_4: #d6e9ffff;
     --bg_nav: #f2f2f2ff;
     --mac_bg_nav: #ffffff1a;
-    --bg_bottom_standard: #f2f2f2ff;
+    --bg_bottom_standard: #f5f5f5ff;
     --bg_bottom_light: #ffffffff;
     --bg_middle_standard: #f2f2f2ff;
     --bg_middle_light: #ffffffff;
     --bg_top_standard: #f2f2f2ff;
     --bg_top_light: #ffffffff;
     --bg_nav_secondary: #ffffffff;
-    --bubble_host: #0099ffff;
+    --bubble_host: #ccebffff;
     --bubble_guest: #ffffffff;
-    --on_bubble_host_text: #ffffffff;
+    --on_bubble_host_text: #000000ff;
     --bubble_guest_text: #000000ff;
     --bubble_host_1: #0099ffff;
     --bubble_host_2: #0099ffff;
@@ -64,7 +64,7 @@
     --overlay_hover_brand: #00000014;
     --overlay_pressed_brand: #00000029;
     --overlay_active_brand: #0099ffff;
-    --overlay_top: #0000000f;
+    --overlay_top: #0000000a;
     --overlay_mask_standard: #00000080;
     --overlay_mask_dark: #00000099;
     --overlay_pressed: #0000001f;
@@ -97,6 +97,8 @@
     --mac_border_primary: #00000014;
     --mac_border_secondary: #0000000f;
     --host_bubble_bg_css_value: #0099ff;
+    --fill_search_light: #ffffff80;
+    --fill_search_dark: #ffffff33;
 
 }
 
@@ -198,6 +200,8 @@
     --mac_border_primary: #ffffff29;
     --mac_border_secondary: #ffffff33;
     --host_bubble_bg_css_value: #0099ff;
+    --fill_search_light: #ffffff0d;
+    --fill_search_dark: #ffffff0d;
 
 }
 
@@ -216,20 +220,22 @@
 
 /* mix-tokens */
 .q-theme-tokens-light {
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #bb78afff;
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #aa6d9fff;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #008debff;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #0080d6ff;
     --nt_feedback_error_2_overlay_hover_brand_2_mix: #e4462cff;
     --nt_feedback_error_2_overlay_pressed_brand_2_mix: #cf4028ff;
     --nt_icon_white_2_overlay_hover_2_mix: #f5f5f5ff;
     --nt_icon_white_2_overlay_pressed_2_mix: #e0e0e0ff;
+    --nt_brand_standard_2_blend_white_020_2_mix: #33adffff;
     --nt_bg_top_light_2_overlay_hover_2_mix: #f5f5f5ff;
     --nt_bg_top_light_2_overlay_pressed_2_mix: #e0e0e0ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(204, 204, 204, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(204, 204, 204, 0.7);
     --nt_fill_standard_primary_2_overlay_hover_brand_2_mix: #00000043;
-    --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
-    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #0000004c;
-    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
+    --nt_text_link_2_50_2_alpha: rgba(45, 119, 229, 0.5);
+    --nt_bg_nav_2_60_2_alpha: rgba(242, 242, 242, 0.6);
+    --nt_bg_bottom_standard_2_50_2_alpha: rgba(245, 245, 245, 0.5);
+    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #abc5d6ff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #d6d6d6ff;
     --nt_bg_white_2_overlay_hover_2_mix: #f5f5f5ff;
     --nt_bg_white_2_overlay_pressed_2_mix: #e0e0e0ff;
@@ -238,7 +244,8 @@
     --nt_icon_red_2_overlay_hover_2_mix: #f5314fff;
     --nt_icon_red_2_overlay_pressed_2_mix: #e02d48ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #0000003b;
-    --nt_bubble_guest_2_overlay_pressed_2_mix: #0000002d;
+    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #0000004c;
+    --nt_bubble_guest_2_overlay_pressed_2_mix: #e0e0e0ff;
     --nt_icon_primary_2_20_2_alpha: rgba(0, 0, 0, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(242, 242, 242, 0.95);
     --nt_tag_red_2_20_2_alpha: rgba(255, 134, 46, 0.2);
@@ -246,62 +253,72 @@
     --nt_tag_blue_2_20_2_alpha: rgba(0, 153, 255, 0.2);
     --nt_tag_blue_2_25_2_alpha: rgba(0, 153, 255, 0.25);
     --nt_tag_blue_2_10_2_alpha: rgba(0, 153, 255, 0.1);
-    --nt_brand_standard_2_20_2_alpha: rgba(203, 130, 190, 0.2);
+    --nt_brand_standard_2_20_2_alpha: rgba(0, 153, 255, 0.2);
     --nt_feedback_error_2_20_2_alpha: rgba(247, 76, 48, 0.2);
     --nt_text_white_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_bg_white_2_70_2_alpha: rgba(255, 255, 255, 0.7);
+    --nt_bg_white_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_bg_white_2_90_2_alpha: rgba(255, 255, 255, 0.9);
     --nt_bg_white_2_97_2_alpha: rgba(255, 255, 255, 0.97);
     --nt_bg_white_2_50_2_alpha: rgba(255, 255, 255, 0.5);
     --nt_bg_white_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_bg_white_2_30_2_alpha: rgba(255, 255, 255, 0.3);
     --nt_text_white_2_80_2_alpha: rgba(255, 255, 255, 0.8);
-    --nt_brand_standard_2_50_2_alpha: rgba(203, 130, 190, 0.5);
+    --nt_brand_standard_2_50_2_alpha: rgba(0, 153, 255, 0.5);
     --nt_bg_nav_secondary_2_60_2_alpha: rgba(255, 255, 255, 0.6);
-    --nt_bg_nav_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_feedback_error_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_brand_standard_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_brand_standard_2_10_2_alpha: rgba(0, 153, 255, 0.1);
     --nt_on_brand_primary_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_text_primary_2_72_2_alpha: rgba(0, 0, 0, 0.72);
     --nt_text_white_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_fill_standard_primary_2_4_2_alpha: rgba(0, 0, 0, 0.04);
     --nt_brand_light_2_20_2_alpha: rgba(0, 153, 255, 0.2);
-    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
+    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(0, 153, 255, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 153, 255, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_fill_standard_secondary_2_overlay_hover_brand_2_mix: #0000001d;
     --nt_fill_standard_secondary_2_overlay_pressed_brand_2_mix: #00000031;
     --nt_fill_light_secondary_2_overlay_hover_brand_2_mix: #ebebebff;
     --nt_fill_light_secondary_2_overlay_pressed_brand_2_mix: #d6d6d6ff;
-    --nt_text_link_2_overlay_hover_2_mix: #c37db7ff;
-    --nt_text_link_2_overlay_pressed_2_mix: #b272a7ff;
+    --nt_text_link_2_overlay_hover_2_mix: #2b72dcff;
+    --nt_text_link_2_overlay_pressed_2_mix: #2869c9ff;
     --nt_tag_red_text_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_tag_blue_text_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_tag_blue_text_2_10_2_alpha: rgba(0, 153, 255, 0.1);
+    --nt_brand_standard_2_0_2_alpha: rgba(0, 153, 255, 0);
     --nt_text_black_2_5_2_alpha: rgba(0, 0, 0, 0.05);
+    --nt_bg_nav_2_40_2_alpha: rgba(242, 242, 242, 0.4);
+    --nt_bg_nav_2_80_2_alpha: rgba(242, 242, 242, 0.8);
+    --nt_text_primary_2_20_2_alpha: rgba(0, 0, 0, 0.2);
     --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
     --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
     --nt_icon_secondary_02_2_80_2_alpha: rgba(204, 204, 204, 0.8);
     --nt_blur_bottom_superlight_2_30_2_alpha: rgba(255, 255, 255, 0.3);
     --nt_fill_standard_secondary_2_8_2_alpha: rgba(0, 0, 0, 0.08);
-    --nt_overlay_active_brand_2_40_2_alpha: rgba(203, 130, 190, 0.4);
+    --nt_overlay_active_brand_2_40_2_alpha: rgba(0, 153, 255, 0.4);
+    --nt_border_white_2_80_2_alpha: rgba(255, 255, 255, 0.8);
+    --nt_bubble_guest_text_2_60_2_alpha: rgba(0, 0, 0, 0.6);
+    --nt_text_primary_2_60_2_alpha: rgba(0, 0, 0, 0.6);
+    --nt_fill_light_primary_2_40_2_alpha: rgba(255, 255, 255, 0.4);
 
 }
 
 .q-theme-tokens-dark {
-    --nt_brand_standard_2_overlay_hover_brand_2_mix: #cf8cc3ff;
-    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #aa6d9fff;
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: #1472d0ff;
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: #0056abff;
     --nt_feedback_error_2_overlay_hover_brand_2_mix: #f85a40ff;
     --nt_feedback_error_2_overlay_pressed_brand_2_mix: #cf4028ff;
     --nt_icon_white_2_overlay_hover_2_mix: #ffffffff;
     --nt_icon_white_2_overlay_pressed_2_mix: #d6d6d6ff;
+    --nt_brand_standard_2_blend_white_020_2_mix: #3385d6ff;
     --nt_bg_top_light_2_overlay_hover_2_mix: #404040ff;
     --nt_bg_top_light_2_overlay_pressed_2_mix: #282828ff;
     --nt_icon_secondary_02_2_0_2_alpha: rgba(77, 77, 77, 0);
     --nt_icon_secondary_02_2_70_2_alpha: rgba(77, 77, 77, 0.7);
     --nt_fill_standard_primary_2_overlay_hover_brand_2_mix: #ffffff43;
-    --nt_text_link_2_50_2_alpha: rgba(203, 130, 190, 0.5);
-    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #82828254;
-    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #aa6d9fff;
+    --nt_text_link_2_50_2_alpha: rgba(45, 119, 229, 0.5);
+    --nt_bg_nav_2_60_2_alpha: rgba(17, 17, 17, 0.6);
+    --nt_bg_bottom_standard_2_50_2_alpha: rgba(17, 17, 17, 0.5);
+    --nt_bubble_host_2_overlay_pressed_brand_2_mix: #565656ff;
     --nt_bg_white_2_overlay_pressed_brand_2_mix: #202020ff;
     --nt_bg_white_2_overlay_hover_2_mix: #373737ff;
     --nt_bg_white_2_overlay_pressed_2_mix: #202020ff;
@@ -310,7 +327,8 @@
     --nt_icon_red_2_overlay_hover_2_mix: #ff4360ff;
     --nt_icon_red_2_overlay_pressed_2_mix: #d62b45ff;
     --nt_fg_grey_standard_2_overlay_hover_2_mix: #ffffff43;
-    --nt_bubble_guest_2_overlay_pressed_2_mix: #67676745;
+    --nt_fg_grey_standard_2_overlay_pressed_2_mix: #82828254;
+    --nt_bubble_guest_2_overlay_pressed_2_mix: #202020ff;
     --nt_icon_primary_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_bg_grey_standard_2_95_2_alpha: rgba(26, 26, 26, 0.95);
     --nt_tag_red_2_20_2_alpha: rgba(255, 134, 46, 0.2);
@@ -318,44 +336,52 @@
     --nt_tag_blue_2_20_2_alpha: rgba(0, 153, 255, 0.2);
     --nt_tag_blue_2_25_2_alpha: rgba(0, 153, 255, 0.25);
     --nt_tag_blue_2_10_2_alpha: rgba(0, 153, 255, 0.1);
-    --nt_brand_standard_2_20_2_alpha: rgba(203, 130, 190, 0.2);
+    --nt_brand_standard_2_20_2_alpha: rgba(0, 102, 204, 0.2);
     --nt_feedback_error_2_20_2_alpha: rgba(247, 76, 48, 0.2);
     --nt_text_white_2_60_2_alpha: rgba(255, 255, 255, 0.6);
     --nt_bg_white_2_70_2_alpha: rgba(38, 38, 38, 0.7);
+    --nt_bg_white_2_60_2_alpha: rgba(38, 38, 38, 0.6);
     --nt_bg_white_2_90_2_alpha: rgba(38, 38, 38, 0.9);
     --nt_bg_white_2_97_2_alpha: rgba(38, 38, 38, 0.97);
     --nt_bg_white_2_50_2_alpha: rgba(38, 38, 38, 0.5);
     --nt_bg_white_2_40_2_alpha: rgba(38, 38, 38, 0.4);
     --nt_bg_white_2_30_2_alpha: rgba(38, 38, 38, 0.3);
     --nt_text_white_2_80_2_alpha: rgba(255, 255, 255, 0.8);
-    --nt_brand_standard_2_50_2_alpha: rgba(203, 130, 190, 0.5);
-    --nt_bg_nav_secondary_2_60_2_alpha: rgba(23, 23, 23, 0.6);
-    --nt_bg_nav_2_60_2_alpha: rgba(23, 23, 23, 0.6);
+    --nt_brand_standard_2_50_2_alpha: rgba(0, 102, 204, 0.5);
+    --nt_bg_nav_secondary_2_60_2_alpha: rgba(27, 27, 27, 0.6);
     --nt_feedback_error_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_brand_standard_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_brand_standard_2_10_2_alpha: rgba(0, 102, 204, 0.1);
     --nt_on_brand_primary_2_40_2_alpha: rgba(255, 255, 255, 0.4);
     --nt_text_primary_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_text_white_2_72_2_alpha: rgba(255, 255, 255, 0.72);
     --nt_fill_standard_primary_2_4_2_alpha: rgba(255, 255, 255, 0.04);
     --nt_brand_light_2_20_2_alpha: rgba(0, 102, 204, 0.2);
-    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(203, 130, 190, 0.4);
+    --nt_host_bubble_bg_css_value_2_40_2_alpha: rgba(0, 153, 255, 0.4);
     --nt_brand_light_2_40_2_alpha: rgba(0, 102, 204, 0.4);
     --nt_icon_white_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_fill_standard_secondary_2_overlay_hover_brand_2_mix: #ffffff22;
     --nt_fill_standard_secondary_2_overlay_pressed_brand_2_mix: #3c3c3c36;
     --nt_fill_light_secondary_2_overlay_hover_brand_2_mix: #ffffff22;
     --nt_fill_light_secondary_2_overlay_pressed_brand_2_mix: #3c3c3c36;
-    --nt_text_link_2_overlay_hover_2_mix: #cf8cc3ff;
-    --nt_text_link_2_overlay_pressed_2_mix: #aa6d9fff;
+    --nt_text_link_2_overlay_hover_2_mix: #3d82e7ff;
+    --nt_text_link_2_overlay_pressed_2_mix: #2664c0ff;
     --nt_tag_red_text_2_10_2_alpha: rgba(247, 76, 48, 0.1);
-    --nt_tag_blue_text_2_10_2_alpha: rgba(203, 130, 190, 0.1);
+    --nt_tag_blue_text_2_10_2_alpha: rgba(0, 102, 204, 0.1);
+    --nt_brand_standard_2_0_2_alpha: rgba(0, 102, 204, 0);
     --nt_text_black_2_5_2_alpha: rgba(0, 0, 0, 0.05);
+    --nt_bg_nav_2_40_2_alpha: rgba(17, 17, 17, 0.4);
+    --nt_bg_nav_2_80_2_alpha: rgba(17, 17, 17, 0.8);
+    --nt_text_primary_2_20_2_alpha: rgba(255, 255, 255, 0.2);
     --nt_on_brand_primary_2_5_2_alpha: rgba(255, 255, 255, 0.05);
     --nt_on_brand_primary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
     --nt_icon_secondary_02_2_80_2_alpha: rgba(77, 77, 77, 0.8);
     --nt_blur_bottom_superlight_2_30_2_alpha: rgba(0, 0, 0, 0.3);
     --nt_fill_standard_secondary_2_8_2_alpha: rgba(255, 255, 255, 0.08);
-    --nt_overlay_active_brand_2_40_2_alpha: rgba(203, 130, 190, 0.4);
+    --nt_overlay_active_brand_2_40_2_alpha: rgba(0, 102, 204, 0.4);
+    --nt_border_white_2_80_2_alpha: rgba(38, 38, 38, 0.8);
+    --nt_bubble_guest_text_2_60_2_alpha: rgba(242, 242, 242, 0.6);
+    --nt_text_primary_2_60_2_alpha: rgba(255, 255, 255, 0.6);
+    --nt_fill_light_primary_2_40_2_alpha: rgba(38, 38, 38, 0.4);
 
 }
 

@@ -1,0 +1,112 @@
+/* 消息列表、联系人列表等通用列表样式 */
+@use "variables" as *;
+
+#app {
+    .container-content {
+        .two-col-layout__aside {
+            // 主页、独立聊天界面 列表条目
+            .viewport-list .viewport-list__inner {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding: 8px;
+                border-radius: 12px;
+
+                .recent-contact-item .item__content,
+                .list-item.contact-item {
+                    position: relative;
+                    border-radius: 12px;
+
+                    &::before {
+                        position: absolute;
+                        inset: 0;
+                        border-radius: inherit;
+                    }
+                }
+
+                // 选中聊天
+                .recent-contact-item--selected .item__content {
+                    &::before {
+                        background: var(--theme-color) !important;
+                    }
+                    .item__title {
+                        .main-info {
+                            color: var(--on-theme-text-color);
+                        }
+                        .secondary-info {
+                            color: rgba(from var(--on-theme-text-color) r g b / 40%);
+                        }
+                    }
+                    .item__summary {
+                        .summary-main,
+                        .summary-bubble .q-icon {
+                            color: rgba(from var(--on-theme-text-color) r g b / 50%);
+                        }
+                    }
+                }
+
+                .recent-contact-item:not(.recent-contact-item--selected) {
+                    // 置顶状态
+                    &.recent-contact-item--top .item__content {
+                        background: none;
+                        &::before {
+                            background: var(--msp-container);
+                        }
+                    }
+
+                    // hover 状态
+                    &:hover .item__content::before,
+                    &.recent-contact-item--top:hover .item__content::before {
+                        background: var(--msp-container-hover) !important;
+                    }
+                }
+
+                .recent-contact-item.recent-contact-item--menu {
+                    border-radius: inherit;
+                    .item__content::after {
+                        inset: 0;
+                        border-radius: inherit;
+                    }
+                }
+            }
+        }
+
+        .two-col-layout__main {
+            // 好友通知、群通知列表项
+            .sys-notify__container .sys-notify-card {
+                background: var(--msp-container);
+            }
+        }
+    }
+
+    // 任务栏消息通知
+    .container .msg {
+        .list-item {
+            .list-item__content {
+                border-radius: 8px;
+            }
+        }
+
+        // 底部按钮
+        .text-button {
+            color: var(--theme-color);
+
+            &:hover {
+                color: var(--theme-color-hover);
+            }
+            &:active {
+                color: var(--theme-color-pressed);
+            }
+        }
+    }
+}
+
+// /* 联系人页面上方 好友通知、群通知 */
+// .notify-option {
+//     border-radius: 8px;
+// }
+
+// html:is(.linux) .recent-contact .search-result {
+//     backdrop-filter: none !important;
+//     mix-blend-mode: initial !important;
+// }

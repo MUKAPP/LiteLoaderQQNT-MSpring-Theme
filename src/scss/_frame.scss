@@ -1,0 +1,61 @@
+/* 主应用框架、顶栏、侧边栏等样式 */
+@use "variables" as *;
+
+#app {
+    // 左侧栏
+    .sidebar-nav {
+        .sidebar__upper {
+            padding-top: 4px;
+
+            // 动画开始
+            .tab-item:hover .tab-item-mask {
+                opacity: 0.05;
+            }
+            // 悬浮
+            @keyframes maskZoomIn {
+                100% {
+                    opacity: 0.05;
+                }
+            }
+            // 激活
+            .tab-item-mask.is-active {
+                opacity: 0.1;
+            }
+            // 点击
+            @keyframes maskZoomPress {
+                100% {
+                    opacity: 0.05;
+                }
+            }
+        }
+    }
+    /* 主页 下半部分 */
+    .container-content {
+        /* 去除边距 */
+        margin: 0;
+
+        /* 聊天界面 顶栏 */
+        .panel-header {
+            padding-top: 0;
+            padding-bottom: 8px;
+            height: unset;
+        }
+    }
+
+    /* 左侧消息列表 顶部搜索 */
+    .two-col-layout__aside .contact-top-bar {
+        padding-top: 4px;
+
+        // 搜索结果
+        .search-content {
+            left: 8px;
+            backdrop-filter: $blur-backdrop-filter-32;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    /* 主页顶栏天气 */
+    .topbar .user-profile-card__widgets {
+        display: none;
+    }
+}

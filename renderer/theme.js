@@ -7,7 +7,7 @@ async function initTheme({ log, mspring_theme }) {
         document.head.appendChild(element);
 
         mspring_theme.updateStyle((event, message) => {
-                element.textContent = message;
+            element.textContent = message;
         });
 
         mspring_theme.rendererReady();

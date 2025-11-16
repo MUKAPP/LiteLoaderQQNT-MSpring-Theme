@@ -37,7 +37,7 @@ archive.directory('renderer/', 'renderer');
 archive.glob('**/*', {
   cwd: 'src',
   ignore: [
-    'css/**',       // 排除 css 文件夹及其内容
+    'scss/**',       // 排除 css 文件夹及其内容
     'style.scss',   // 排除 style.scss 源文件
     '*.map'         // 可选：排除可能产生的 sourcemap 文件
   ]

@@ -1,0 +1,189 @@
+/* 基础、重置和全局通用样式 */
+@use "variables" as *;
+
+%bg-none {
+    background: none;
+}
+%bg-none-important {
+    background: none !important;
+}
+
+#app {
+    // 主页
+    .global-container {
+        .container-content {
+            // 消息列表和聊天界面
+            .message-panel,
+            // 左侧消息列表
+            .recent-contact {
+                @extend %bg-none-important;
+            }
+
+            // 侧栏
+            .sidebar {
+                .sidebar-nav {
+                    @extend %bg-none-important;
+                }
+            }
+
+            // 联系人界面
+            .contact-layout {
+                // 联系人列表和联系人详情
+                &,
+                // 联系人列表
+                .contact,
+                // 联系人详情
+                .contact-profile {
+                    @extend %bg-none-important;
+                }
+
+                // 好友通知/群通知界面
+                .sys-notify {
+                    // 界面
+                    &,
+                // 列表
+                .sys-notify-list .viewport-list__inner {
+                        @extend %bg-none;
+                    }
+                }
+
+                // 联系人列表
+                .contact {
+                    @extend %bg-none;
+
+                    .tab {
+                        // 切换 tab
+                        .tab-header {
+                            @extend %bg-none;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* QQ主题背景 */
+        .q-miracle-background {
+            @extend %bg-none-important;
+        }
+    }
+
+    // 独立聊天界面
+    .chat-container {
+        .container-content {
+            // 消息列表和聊天界面
+            &,
+            // 左侧消息列表
+            .recent-contact {
+                @extend %bg-none-important;
+            }
+        }
+
+        /* QQ主题背景 */
+        .q-miracle-background {
+            @extend %bg-none-important;
+        }
+    }
+
+    // 文件管理页面
+    .container:has(.file-manager-main) {
+        // 侧栏
+        .nav-bar-container {
+            @extend %bg-none;
+        }
+    }
+
+    // 收藏界面
+    .favorites-layout {
+        // 顶栏
+        .panel-header {
+            @extend %bg-none;
+        }
+    }
+
+    // 申请加群/加好友界面
+    .discover_container {
+        .discover-contact-info {
+            @extend %bg-none-important;
+        }
+        .form-item__action {
+            @extend %bg-none;
+        }
+    }
+}
+
+#app {
+    // 输入框、下拉菜单按钮
+    .q-input,
+    .q-textarea,
+    .q-pulldown-menu-button {
+        border-radius: 8px;
+        background: var(--msp-container);
+
+        /* 搜索框等点击之后粉线的圆角 */
+        .q-input__inner:focus,
+        .q-textarea__inner:focus {
+            border-radius: 8px !important;
+        }
+    }
+
+    // 发送按钮
+    .send-btn-wrap,
+    // .top-bar__adder,
+    // .search-input,
+    // .record-search,
+    // .search,
+    // .guilds-item-btn .q-button,
+    // 好友界面切换tab
+    .radio-tab {
+        border-radius: 8px !important;
+    }
+
+    .q-button {
+        border-radius: 8px;
+    }
+}
+
+/* 去除VIP名字特殊效果 以下三段 */
+// .recent-contact-item:not(.recent-contact-item--selected),
+// .contact-buddy-item:not(.list-item--selected) {
+//     .vip-name {
+//         color: unset !important;
+//     }
+
+//     .text-ellipsis[style*="vip"] {
+//         // -webkit-text-fill-color: unset !important;
+//         // background: unset !important;
+//         color: var(--text_primary) !important;
+//         // text-shadow: unset !important;
+//         // filter: unset !important;
+//     }
+
+//     .main-info.text-ellipsis {
+//         .text-ellipsis {
+//             // -webkit-text-fill-color: unset !important;
+//             // background: unset !important;
+//             color: var(--text_primary) !important;
+//             // text-shadow: unset !important;
+//             // filter: unset !important;
+//         }
+//     }
+// }
+
+// .chat-header__contact-name {
+//     .text-ellipsis {
+//         // -webkit-text-fill-color: unset !important;
+//         // background: unset !important;
+//         color: var(--text_primary) !important;
+//         // text-shadow: unset !important;
+//         // filter: unset !important;
+//     }
+// }
+
+// .buddy-profile__info-name,
+// .buddy-profile__header-name {
+//     // -webkit-text-fill-color: unset !important;
+//     // background: unset !important;
+//     color: var(--text_primary) !important;
+//     // text-shadow: unset !important;
+//     // filter: unset !important;
+// }

@@ -1,0 +1,173 @@
+/* 主题所使用的各类 CSS 变量 */
+
+/* 变量 */
+:root {
+    // --el-color-primary: var(--theme-color);
+}
+
+.q-theme-tokens-light {
+    /* mspring */
+    --theme-color-hover: color-mix(in srgb, var(--theme-color), black 10%);
+    --theme-color-active: color-mix(in srgb, var(--theme-color), black 20%);
+    --theme-color-pressed: color-mix(in srgb, var(--theme-color), black 30%);
+
+    --msp-container: rgba(0, 0, 0, 0.05);
+    --msp-container-hover: rgba(0, 0, 0, 0.1);
+    --msp-container-active: rgba(0, 0, 0, 0.2);
+    --msp-container-pressed: rgba(0, 0, 0, 0.3);
+
+    --msp-text-1: rgba(0, 0, 0, 0.87);
+    --msp-text-2: rgba(0, 0, 0, 0.6);
+    --msp-text-3: rgba(0, 0, 0, 0.38);
+    --msp-text-4: rgba(0, 0, 0, 0.12);
+
+    --msp-white-variable: #ffffff;
+
+    /* color-tokens */
+    // 主题色
+    --brand_standard: var(--theme-color);
+    // --on_brand_primary: var(--on-theme-text-color);
+    // --on_brand_secondary: var(--on-theme-text-color);
+    --text_primary: var(--msp-text-1);
+    --text_primary_light: var(--msp-text-2);
+    --on_bg_text: var(--msp-text-3);
+    // --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-light);
+    --bg_bottom_standard: var(--background-color-light);
+    // /* --bg_bottom_light: var(--background-color-light); */
+    --bg_nav_secondary: var(--background-color-light);
+    // 自己的消息气泡颜色
+    --bubble_host: var(--theme-color);
+    // 其他人的消息气泡颜色
+    --bubble_guest: var(--msp-container);
+    // 自己的消息气泡文本颜色
+    --on_bubble_host_text: var(--on-theme-text-color);
+    // 其他人的消息气泡文本颜色
+    --bubble_guest_text: var(--msp-text-1);
+
+    // /* --fill_light_primary: TRANSPARENT; */
+
+    --overlay_hover: var(--msp-container-hover);
+    --overlay_active_brand: var(--theme-color);
+    --overlay_active: var(--msp-container-active);
+    --overlay_pressed: var(--msp-container-pressed);
+    --svip_red: var(--text_primary);
+    // 管理员标签
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);
+    // --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
+    --text-primary: var(--msp-text-1);
+    --text-primary-light: var(--msp-text-2);
+    --text-secondary-01: var(--msp-text-3);
+    --text-secondary-02: var(--msp-text-4);
+    // --text-brand: var(--theme-color);
+    // 链接颜色
+    --text_link: var(--theme-color);
+
+    /* mix-tokens */
+    // 主题色 hover
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-hover);
+    // 主题色按下
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-pressed);
+    --nt_brand_standard_2_10_2_alpha: rgba(from var(--theme-color) r g b / 10%);
+    // --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-light);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-light);
+}
+
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-light,
+html.mspring_force_host_bubble_color .q-theme-tokens-light {
+    // --bubble_host: var(--theme-color);
+    // --bubble_host_text: var(--on-theme-text-color);
+    // --bubble_host_1: var(--theme-color);
+    // --bubble_host_2: var(--theme-color);
+    // --on_bubble_host_text: var(--on-theme-text-color);
+    // --host_bubble_bg_css_value: var(--theme-color);
+}
+
+.q-theme-tokens-dark {
+    /* mspring */
+    --theme-color-hover: color-mix(in srgb, var(--theme-color), black 10%);
+    --theme-color-active: color-mix(in srgb, var(--theme-color), black 20%);
+    --theme-color-pressed: color-mix(in srgb, var(--theme-color), black 30%);
+
+    --msp-container: rgba(255, 255, 255, 0.05);
+    --msp-container-hover: rgba(255, 255, 255, 0.1);
+    --msp-container-active: rgba(255, 255, 255, 0.2);
+    --msp-container-pressed: rgba(255, 255, 255, 0.3);
+
+    --msp-text-1: rgba(255, 255, 255, 0.87);
+    --msp-text-2: rgba(255, 255, 255, 0.6);
+    --msp-text-3: rgba(255, 255, 255, 0.38);
+    --msp-text-4: rgba(255, 255, 255, 0.12);
+
+    --msp-white-variable: #000000;
+
+    /* color-tokens */
+    // 主题色
+    --brand_standard: var(--theme-color);
+    // --on_brand_primary: var(--on-theme-text-color);
+    // --on_brand_secondary: var(--on-theme-text-color);
+    --text_primary: var(--msp-text-1);
+    --text_primary_light: var(--msp-text-2);
+    --on_bg_text: var(--msp-text-3);
+    // --bg_list: TRANSPARENT;
+    --bg_nav: var(--background-color-dark);
+    --bg_bottom_standard: var(--background-color-dark);
+    // /* --bg_bottom_light: var(--background-color-dark); */
+    --bg_nav_secondary: var(--background-color-dark);
+    // 自己的消息气泡颜色
+    --bubble_host: var(--theme-color);
+    // 其他人的消息气泡颜色
+    --bubble_guest: var(--msp-container);
+    // 自己的消息气泡文本颜色
+    --on_bubble_host_text: var(--on-theme-text-color);
+    // 其他人的消息气泡文本颜色
+    --bubble_guest_text: var(--msp-text-1);
+
+    // /* --fill_light_primary: TRANSPARENT; */
+
+    --overlay_hover: var(--msp-container-hover);
+    --overlay_active_brand: var(--theme-color);
+    --overlay_active: var(--msp-container-active);
+    --overlay_pressed: var(--msp-container-pressed);
+    --svip_red: var(--text_primary);
+    // 管理员标签
+    --tag_blue_text: var(--theme-color);
+    --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);
+    // --brand_text: var(--theme-color);
+
+    /* ancient-tokens */
+    --text-primary: var(--msp-text-1);
+    --text-primary-light: var(--msp-text-2);
+    --text-secondary-01: var(--msp-text-3);
+    --text-secondary-02: var(--msp-text-4);
+    // --text-brand: var(--theme-color);
+    // 链接颜色
+    --text_link: var(--theme-color);
+
+    /* mix-tokens */
+    // 主题色 hover
+    --nt_brand_standard_2_overlay_hover_brand_2_mix: var(--theme-color-hover);
+    // 主题色按下
+    --nt_brand_standard_2_overlay_pressed_brand_2_mix: var(--theme-color-pressed);
+    // --nt_brand_standard_2_20_2_alpha: var(--theme-color-alpha);
+    --nt_brand_standard_2_10_2_alpha: rgba(from var(--theme-color) r g b / 10%);
+    --nt_bg_nav_secondary_2_60_2_alpha: var(--background-color-dark);
+    --nt_bg_nav_2_60_2_alpha: var(--background-color-dark);
+}
+
+html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .q-theme-tokens-dark,
+html.mspring_force_host_bubble_color .q-theme-tokens-dark {
+    // --bubble_host: var(--theme-color);
+    // --bubble_host_text: var(--on-theme-text-color);
+    // --bubble_host_1: var(--theme-color);
+    // --bubble_host_2: var(--theme-color);
+    // --on_bubble_host_text: var(--on-theme-text-color);
+    // --host_bubble_bg_css_value: var(--theme-color);
+}
+
+$blur-backdrop-filter-16: blur(16px) saturate(150%) opacity(40%);
+$blur-backdrop-filter-32: blur(32px) saturate(150%) opacity(40%);

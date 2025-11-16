@@ -1,0 +1,78 @@
+/* 菜单、弹窗、卡片等浮动元素的样式 */
+@use "variables" as *;
+
+#app {
+    /* 申请加群/加好友 */
+    #discover .discover-application {
+        .q-select,
+        .option-list {
+            background: var(--msp-container);
+            border-radius: 8px;
+        }
+    }
+
+    .aio {
+        .menu-stickers-panel {
+            border-radius: 8px;
+            backdrop-filter: $blur-backdrop-filter-16;
+            mix-blend-mode: multiply;
+        }
+    }
+}
+
+// 菜单
+.q-context-menu:not(.is-pure),
+.q-context-sub-menu__container:not(.is-pure),
+.q-popover {
+    backdrop-filter: $blur-backdrop-filter-16;
+    mix-blend-mode: multiply;
+    background: var(--fill_light_primary) !important;
+    &::before {
+        backdrop-filter: none;
+        mix-blend-mode: none;
+    }
+}
+// 顶部表情回应区域
+.q-context-menu {
+    .menu-stickers-wrapper {
+        border-radius: 8px;
+        .menu-stickers {
+            border-radius: 8px !important;
+        }
+    }
+}
+
+// /*  暂时无效，之后再看
+//     聊天页面账号卡片
+//     忘了 */
+// .user-card-main,
+// .account-list {
+//     backdrop-filter: blur(16px) saturate(150%) opacity(40%);
+//     mix-blend-mode: multiply;
+// }
+
+// html:is(.linux) .q-popover,
+// html:is(.linux) .user-card-main,
+// html:is(.linux) .account-list {
+//     backdrop-filter: none !important;
+//     mix-blend-mode: initial !important;
+// }
+
+// .q-context-menu:not(.is-pure),
+// .q-context-sub-menu__container:not(.is-pure) {
+//     border-radius: 8px;
+// }
+
+// @media (prefers-color-scheme: light) {
+//     /* 转发消息 折叠列表 头部 */
+//     .q-dialog .q-collapse-item .q-collapse-item__header {
+//         background: #ffffffef !important;
+//     }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//     /* 转发消息 折叠列表 头部 */
+//     .q-dialog .q-collapse-item .q-collapse-item__header {
+//         background: #303030ef !important;
+//     }
+// }

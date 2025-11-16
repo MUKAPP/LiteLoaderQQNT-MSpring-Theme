@@ -1,8 +1,13 @@
-@import "./css/_variables";
-@import "./css/_resets";
-@import "./css/_layout";
-@import "./css/_components";
-@import "./css/_chat";
-@import "./css/_login";
-@import "./css/_plugins";
-@import "./css/_settings";
+@charset "UTF-8";
+
+@use "./scss/variables";
+@use "./scss/base";
+@use "./scss/frame";
+@use "./scss/lists";
+@use "./scss/chat";
+@use "./scss/channels";
+@use "./scss/settings";
+@use "./scss/login";
+@use "./scss/modals";
+@use "./scss/file-manager";
+@use "./scss/plugins";

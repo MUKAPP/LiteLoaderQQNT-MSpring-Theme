@@ -1,0 +1,159 @@
+/* 聊天界面、消息气泡、输入框等样式 */
+@use "variables" as *;
+
+#app {
+    // 聊天界面
+    .container-content {
+        // 聊天框
+        .chat-input-area {
+            border-radius: 16px 16px 0px 0px;
+        }
+
+        .aio {
+            // 回顶回底按钮背景模糊
+            // .chat-msg-area__tip--top>*, // 回顶因为有父布局无法生效
+            .chat-msg-area__tip--bottom {
+                backdrop-filter: $blur-backdrop-filter-16;
+                mix-blend-mode: multiply;
+            }
+
+            // 更多面板
+            .more-panel .side-panel {
+                backdrop-filter: $blur-backdrop-filter-32;
+                mix-blend-mode: multiply;
+            }
+
+            // /* 自己消息选中文字背景色 */
+            // .message-content__wrapper .msg-content-container.container--self span::selection,
+            // .message-content__wrapper .msg-content-container.container--self heti-spacing::selection,
+            // .message-content__wrapper .msg-content-container.container--self br::selection,
+            // .message-content__wrapper .msg-content-container.container--self img::selection {
+            //     background: #ffffff3f;
+            // }
+
+            // /* 编辑框选中文字背景色 */
+            // .ck-editor__main p::selection,
+            // .ck-editor__main img::selection {
+            //     background: var(--text-selected-color);
+            // }
+        }
+    }
+
+    // 聊天消息列表
+    // 聊天界面和合并转发消息都要用到，所以放出来
+    #ml-root {
+        .message {
+            .message-container {
+                .message-content__wrapper {
+                    // 消息气泡
+                    .msg-content-container {
+                        .message-content {
+                            // AT
+                            .text-element--at {
+                                font-weight: bold;
+                            }
+                        }
+
+                        // 其他人的消息
+                        &.container--others {
+                            &:focus {
+                                background: var(--msp-container-active);
+                            }
+                            .message-content {
+                                ::selection {
+                                    background: rgba(from var(--theme-color) r g b / 30%);
+                                }
+                            }
+                        }
+
+                        // 自己的消息
+                        &.container--self {
+                            background: var(--theme-color);
+                            // background: var(--theme-color) !important;
+                            // color: var(--on_bubble_host_text) !important;
+                            // backdrop-filter: none !important;
+                            .message-content {
+                                // 链接
+                                .text-link {
+                                    color: var(--on-theme-text-color);
+                                }
+
+                                ::selection {
+                                    background: rgba(from var(--on-theme-text-color) r g b / 30%);
+                                }
+                            }
+                        }
+
+                        // 卡片链接
+                        &.ark-msg-content-container {
+                            .rich-ui-app-wrapper [data-view-id="app"] {
+                                background: var(--msp-container) !important;
+                            }
+                        }
+                    }
+
+                    // 合并转发的聊天记录
+                    .forward-msg,
+                        // 文件
+                        .normal-file {
+                        background-color: var(--msp-container);
+                        &:hover {
+                            background-color: var(--msp-container-hover);
+                        }
+                        &:active {
+                            background-color: var(--msp-container-active);
+                        }
+                    }
+                }
+            }
+
+            // 聊天界面 提示（时间等） */
+            .babble {
+                background: var(--msp-container);
+            }
+        }
+    }
+}
+/* 聊天框 */
+// html:not(.mspring_background_plugin_enabled) .chat-input-area {
+//     border-radius: 16px 16px 0px 0px;
+// }
+
+// /* 强制覆盖自己的气泡颜色 */
+// html.mspring_force_host_bubble_color #app .chat-msg-area .ml-list .message .msg-content-container.container--self {
+//     background: var(--theme-color) !important;
+//     color: var(--on_bubble_host_text) !important;
+//     backdrop-filter: none !important;
+// }
+
+// html.mspring_background_plugin_enabled:not(.mspring_force_host_bubble_color) #app .chat-msg-area .ml-list .message .reply-element.reply-element--self {
+//     color: var(--text_primary) !important;
+// }
+
+// html:is(.linux) .more-panel .side-panel {
+//     backdrop-filter: none !important;
+//     mix-blend-mode: initial !important;
+// }
+
+// /* 防撤回提示 */
+// html:not(.mspring_background_plugin_enabled, .mspring_lite_tool_background_enabled) .message-content-recalled {
+//     background: var(--msp-container) !important;
+//     backdrop-filter: initial !important;
+// }
+
+// html:is(.linux) #app .q-notification.theme-default {
+//     backdrop-filter: none !important;
+//     mix-blend-mode: initial !important;
+// }
+
+// @media (prefers-color-scheme: light) {
+//     #ml-root .container--others .ptt-element__button .q-icon {
+//         color: #ffffff;
+//     }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//     #ml-root .container--others .ptt-element__button .q-icon {
+//         color: #171717;
+//     }
+// }
