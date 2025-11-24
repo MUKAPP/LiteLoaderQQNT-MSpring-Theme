@@ -4,14 +4,17 @@
 %bg-none {
     background: none;
 }
+
 %bg-none-important {
     background: none !important;
 }
 
 #app {
+
     // 主页
     .global-container {
         .container-content {
+
             // 消息列表和聊天界面
             .message-panel,
             // 左侧消息列表
@@ -28,6 +31,7 @@
 
             // 联系人界面
             .contact-layout {
+
                 // 联系人列表和联系人详情
                 &,
                 // 联系人列表
@@ -39,10 +43,11 @@
 
                 // 好友通知/群通知界面
                 .sys-notify {
+
                     // 界面
                     &,
-                // 列表
-                .sys-notify-list .viewport-list__inner {
+                    // 列表
+                    .sys-notify-list .viewport-list__inner {
                         @extend %bg-none;
                     }
                 }
@@ -52,6 +57,7 @@
                     @extend %bg-none;
 
                     .tab {
+
                         // 切换 tab
                         .tab-header {
                             @extend %bg-none;
@@ -70,6 +76,7 @@
     // 独立聊天界面
     .chat-container {
         .container-content {
+
             // 消息列表和聊天界面
             &,
             // 左侧消息列表
@@ -86,6 +93,7 @@
 
     // 文件管理页面
     .container:has(.file-manager-main) {
+
         // 侧栏
         .nav-bar-container {
             @extend %bg-none;
@@ -94,6 +102,7 @@
 
     // 收藏界面
     .favorites-layout {
+
         // 顶栏
         .panel-header {
             @extend %bg-none;
@@ -105,13 +114,29 @@
         .discover-contact-info {
             @extend %bg-none-important;
         }
+
         .form-item__action {
             @extend %bg-none;
         }
     }
+
+    // 独立好友信息界面（窗口暂时背景没有透明，故先不启用）
+    .standalone-mini-profile-container {
+        @extend %bg-none;
+
+        #mini-buddy-profile {
+            @extend %bg-none;
+        }
+    }
+
+    // 同上
+    .mini-buddy {
+        @extend %bg-none;
+    }
 }
 
 #app {
+
     // 输入框、下拉菜单按钮
     .q-input,
     .q-textarea,

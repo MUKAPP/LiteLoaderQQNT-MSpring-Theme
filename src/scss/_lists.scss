@@ -4,6 +4,7 @@
 #app {
     .container-content {
         .two-col-layout__aside {
+
             // 主页、独立聊天界面 列表条目
             .viewport-list .viewport-list__inner {
                 display: flex;
@@ -22,6 +23,11 @@
                         inset: 0;
                         border-radius: inherit;
                     }
+
+                    // 去除 vip 名字特殊效果
+                    .main-info .text-ellipsis {
+                        color: unset !important;
+                    }
                 }
 
                 // 选中聊天
@@ -29,15 +35,19 @@
                     &::before {
                         background: var(--theme-color) !important;
                     }
+
                     .item__title {
                         .main-info {
                             color: var(--on-theme-text-color);
                         }
+
                         .secondary-info {
                             color: rgba(from var(--on-theme-text-color) r g b / 40%);
                         }
                     }
+
                     .item__summary {
+
                         .summary-main,
                         .summary-bubble .q-icon {
                             color: rgba(from var(--on-theme-text-color) r g b / 50%);
@@ -46,9 +56,11 @@
                 }
 
                 .recent-contact-item:not(.recent-contact-item--selected) {
+
                     // 置顶状态
                     &.recent-contact-item--top .item__content {
                         background: none;
+
                         &::before {
                             background: var(--msp-container);
                         }
@@ -63,6 +75,7 @@
 
                 .recent-contact-item.recent-contact-item--menu {
                     border-radius: inherit;
+
                     .item__content::after {
                         inset: 0;
                         border-radius: inherit;
@@ -72,10 +85,17 @@
         }
 
         .two-col-layout__main {
+
             // 好友通知、群通知列表项
             .sys-notify__container .sys-notify-card {
                 background: var(--msp-container);
             }
+
+            // 去除 vip 名字特殊效果
+            .buddy-profile__info-name {
+                color: unset !important;
+            }
+
         }
     }
 
@@ -94,6 +114,7 @@
             &:hover {
                 color: var(--theme-color-hover);
             }
+
             &:active {
                 color: var(--theme-color-pressed);
             }

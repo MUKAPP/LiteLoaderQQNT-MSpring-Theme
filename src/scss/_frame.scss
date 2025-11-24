@@ -2,6 +2,7 @@
 @use "variables" as *;
 
 #app {
+
     // 左侧栏
     .sidebar-nav {
         .sidebar__upper {
@@ -11,16 +12,19 @@
             .tab-item:hover .tab-item-mask {
                 opacity: 0.05;
             }
+
             // 悬浮
             @keyframes maskZoomIn {
                 100% {
                     opacity: 0.05;
                 }
             }
+
             // 激活
             .tab-item-mask.is-active {
                 opacity: 0.1;
             }
+
             // 点击
             @keyframes maskZoomPress {
                 100% {
@@ -29,6 +33,7 @@
             }
         }
     }
+
     /* 主页 下半部分 */
     .container-content {
         /* 去除边距 */
@@ -39,6 +44,11 @@
             padding-top: 0;
             padding-bottom: 8px;
             height: unset;
+
+            // 去除 vip 名字特殊效果
+            .chat-header__contact-name {
+                color: unset !important;
+            }
         }
     }
 

@@ -51,7 +51,7 @@
     --overlay_active_brand: var(--theme-color);
     --overlay_active: var(--msp-container-active);
     --overlay_pressed: var(--msp-container-pressed);
-    --svip_red: var(--text_primary);
+    --svip_red: none;
     // 管理员标签
     --tag_blue_text: var(--theme-color);
     --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);
@@ -133,7 +133,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --overlay_active_brand: var(--theme-color);
     --overlay_active: var(--msp-container-active);
     --overlay_pressed: var(--msp-container-pressed);
-    --svip_red: var(--text_primary);
+    --svip_red: none;
     // 管理员标签
     --tag_blue_text: var(--theme-color);
     --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);

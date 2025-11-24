@@ -2,8 +2,10 @@
 @use "variables" as *;
 
 #app {
+
     /* 申请加群/加好友 */
     #discover .discover-application {
+
         .q-select,
         .option-list {
             background: var(--msp-container);
@@ -27,15 +29,18 @@
     backdrop-filter: $blur-backdrop-filter-16;
     mix-blend-mode: multiply;
     background: var(--fill_light_primary) !important;
+
     &::before {
         backdrop-filter: none;
         mix-blend-mode: none;
     }
 }
+
 // 顶部表情回应区域
 .q-context-menu {
     .menu-stickers-wrapper {
         border-radius: 8px;
+
         .menu-stickers {
             border-radius: 8px !important;
         }
