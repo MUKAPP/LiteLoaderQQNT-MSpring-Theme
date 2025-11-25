@@ -115,6 +115,32 @@
                         }
                     }
                 }
+
+                // 表情回应
+                .message-tips {
+                    .reaction-item-bg {
+                        background-color: var(--msp-container);
+                        border-radius: 8px;
+                    }
+
+                    .reaction-item-bg--clicked {
+                        background-color: var(--host_bubble_bg_css_value);
+                        opacity: 0.8;
+                    }
+
+                    .more-reaction-item {
+                        border-radius: 8px;
+                        background: var(--msp-container);
+
+                        &:hover {
+                            background: var(--msp-container-hover);
+                        }
+
+                        &:active {
+                            background: var(--msp-container-active);
+                        }
+                    }
+                }
             }
 
             // 聊天界面 提示（时间等） */
@@ -126,6 +152,7 @@
 
     .standalone-mini-profile-container {
         #mini-buddy-profile {
+
             // 去除 vip 名字特殊效果
             .buddy-profile__header-name {
                 color: unset !important;
