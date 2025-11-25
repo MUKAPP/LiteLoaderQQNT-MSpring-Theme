@@ -57,6 +57,7 @@
     --tag_blue_text: var(--theme-color);
     --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);
     // --brand_text: var(--theme-color);
+    // 表情回应背景
     --host_bubble_bg_css_value: var(--theme-color);
 
     /* ancient-tokens */
@@ -140,6 +141,8 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --tag_blue_text: var(--theme-color);
     --tag_blue_bg: rgb(from var(--theme-color) r g b / 20%);
     // --brand_text: var(--theme-color);
+    // 表情回应背景
+    --host_bubble_bg_css_value: var(--theme-color);
 
     /* ancient-tokens */
     --text-primary: var(--msp-text-1);
