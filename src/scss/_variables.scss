@@ -31,6 +31,7 @@
     --text_primary: var(--msp-text-1);
     --text_primary_light: var(--msp-text-2);
     --on_bg_text: var(--msp-text-3);
+    --text_link: var(--theme-color);
     // --bg_list: TRANSPARENT;
     --bg_nav: var(--background-color-light);
     --bg_bottom_standard: var(--background-color-light);
@@ -63,8 +64,7 @@
     --text-secondary-01: var(--msp-text-3);
     --text-secondary-02: var(--msp-text-4);
     // --text-brand: var(--theme-color);
-    // 链接颜色
-    --text_link: var(--theme-color);
+    --text-link: var(--theme-color);
 
     /* mix-tokens */
     // 主题色 hover
@@ -113,6 +113,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --text_primary: var(--msp-text-1);
     --text_primary_light: var(--msp-text-2);
     --on_bg_text: var(--msp-text-3);
+    --text_link: var(--theme-color);
     // --bg_list: TRANSPARENT;
     --bg_nav: var(--background-color-dark);
     --bg_bottom_standard: var(--background-color-dark);
@@ -145,8 +146,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     --text-secondary-01: var(--msp-text-3);
     --text-secondary-02: var(--msp-text-4);
     // --text-brand: var(--theme-color);
-    // 链接颜色
-    --text_link: var(--theme-color);
+    --text-link: var(--theme-color);
 
     /* mix-tokens */
     // 主题色 hover
