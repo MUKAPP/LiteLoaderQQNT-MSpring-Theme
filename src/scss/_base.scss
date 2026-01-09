@@ -98,6 +98,10 @@
         .nav-bar-container {
             @extend %bg-none;
         }
+
+        .file-manager-main {
+            @extend %bg-none;
+        }
     }
 
     // 收藏界面

@@ -1,6 +1,47 @@
 /* 文件管理界面的相关样式 */
 @use "variables" as *;
 
+#app {
+    .container:has(.file-manager-main) {
+
+        // 右侧主要内容
+        .file-manager-main {
+            border: 0;
+
+            // 左侧联系人/群列表
+            .main-left {
+                .user-list-container {
+                    padding-top: unset;
+
+                    // 折叠列表标题（无折叠列表时直接显示好友/群列表）
+                    .q-collapse-item__header {
+                        margin-bottom: 8px;
+
+                        .user-list {
+                            border-radius: 8px;
+                        }
+                    }
+
+                    // 折叠列表内容
+                    .q-collapse-item__content {
+                        .user-list-margin.user-list {
+                            margin-bottom: 8px;
+                            border-radius: 8px;
+                        }
+                    }
+                }
+            }
+
+            // 右侧文件列表
+            .file-area {
+                .file-area-container {
+                    margin-top: unset;
+                }
+            }
+        }
+    }
+}
+
 // /* 文件管理页面 文件分类 */
 // .file-area-container-list .file-list-header-container.file-list-header,
 // /* 文件管理页面 文件列表 */
