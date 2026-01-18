@@ -46,38 +46,3 @@
         }
     }
 }
-
-// /*  暂时无效，之后再看
-//     聊天页面账号卡片
-//     忘了 */
-// .user-card-main,
-// .account-list {
-//     backdrop-filter: blur(16px) saturate(150%) opacity(40%);
-//     mix-blend-mode: multiply;
-// }
-
-// html:is(.linux) .q-popover,
-// html:is(.linux) .user-card-main,
-// html:is(.linux) .account-list {
-//     backdrop-filter: none !important;
-//     mix-blend-mode: initial !important;
-// }
-
-// .q-context-menu:not(.is-pure),
-// .q-context-sub-menu__container:not(.is-pure) {
-//     border-radius: 8px;
-// }
-
-// @media (prefers-color-scheme: light) {
-//     /* 转发消息 折叠列表 头部 */
-//     .q-dialog .q-collapse-item .q-collapse-item__header {
-//         background: #ffffffef !important;
-//     }
-// }
-
-// @media (prefers-color-scheme: dark) {
-//     /* 转发消息 折叠列表 头部 */
-//     .q-dialog .q-collapse-item .q-collapse-item__header {
-//         background: #303030ef !important;
-//     }
-// }

@@ -26,19 +26,12 @@
                 mix-blend-mode: multiply;
             }
 
-            // /* 自己消息选中文字背景色 */
-            // .message-content__wrapper .msg-content-container.container--self span::selection,
-            // .message-content__wrapper .msg-content-container.container--self heti-spacing::selection,
-            // .message-content__wrapper .msg-content-container.container--self br::selection,
-            // .message-content__wrapper .msg-content-container.container--self img::selection {
-            //     background: #ffffff3f;
-            // }
-
-            // /* 编辑框选中文字背景色 */
-            // .ck-editor__main p::selection,
-            // .ck-editor__main img::selection {
-            //     background: var(--text-selected-color);
-            // }
+            /* 编辑框选中文字背景色 */
+            .qq-msg-editor {
+                ::selection {
+                    background: rgba(from var(--theme-color) r g b / 30%);
+                }
+            }
         }
     }
 
@@ -150,15 +143,12 @@
         }
     }
 
-    // 历史记录页面 - 覆盖样式重置为默认
+    // 历史记录页面
     .record #ml-root {
         .message {
             .message-container {
                 .message-content__wrapper {
-                    // 消息气泡 - 重置自定义样式
                     .msg-content-container {
-                        // 如果需要重置某些样式，在这里添加
-                        // 例如：
                         &.container--self {
                             background: initial;
 
