@@ -137,6 +137,14 @@
     .mini-buddy {
         @extend %bg-none;
     }
+
+
+    // 好友管理器
+    .contact-management {
+        .viewport-list__inner {
+            @extend %bg-none;
+        }
+    }
 }
 
 #app {

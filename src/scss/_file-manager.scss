@@ -43,7 +43,7 @@
                 }
 
                 .file-area-container {
-                    padding-bottom: 16px;
+                    padding-bottom: 20px;
 
                     .file-list-normal-scroll-border {
                         border-top-left-radius: 0;
@@ -53,9 +53,7 @@
                     // 文件列表 折叠标题
                     .file-list-normal-sort-title-height {
                         border-radius: 0;
-                        background: rgb(from color-mix(in srgb, var(--msp-container), var(--bg_white)) r g b / 1);
-                        backdrop-filter: $blur-backdrop-filter-16;
-                        mix-blend-mode: multiply;
+                        background: rgb(from var(--bg_white) r g b / 0.8);
                     }
 
                     // 群文件 footer

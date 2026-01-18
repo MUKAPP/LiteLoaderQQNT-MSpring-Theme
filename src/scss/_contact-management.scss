@@ -1,0 +1,25 @@
+/* 好友管理器页面的相关样式 */
+@use "variables" as *;
+
+body:has(.contact-management) {
+    #app {
+
+        // 好友管理器
+        .contact-management {
+
+            .contact-table {
+                background: var(--msp-container);
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+
+    .q-dialog {
+
+        // 权限设置对话框
+        .permission-setting .form-item-category .option-list {
+            background: var(--msp-container);
+        }
+    }
+}
