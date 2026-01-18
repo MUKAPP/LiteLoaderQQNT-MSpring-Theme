@@ -73,7 +73,7 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 #### PluginInstaller
 
-安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/mspring-theme/v4/manifest.json`，点击确定按钮\
+安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/mspring-theme/v5/manifest.json`，点击确定按钮\
 或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/mspring-theme/res/github/protocio-install.html) 直接拉起 PluginInstaller 安装插件
 
 ### QwQNT
