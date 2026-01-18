@@ -68,6 +68,10 @@
                         // 自己的消息
                         &.container--self {
                             background: var(--theme-color);
+                            
+                            .mspring_force_host_bubble_color & {
+                                background: var(--theme-color) !important;
+                            }
 
                             // background: var(--theme-color) !important;
                             // color: var(--on_bubble_host_text) !important;
