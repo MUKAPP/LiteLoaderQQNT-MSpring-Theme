@@ -150,6 +150,28 @@
         }
     }
 
+    // 历史记录页面 - 覆盖样式重置为默认
+    .record #ml-root {
+        .message {
+            .message-container {
+                .message-content__wrapper {
+                    // 消息气泡 - 重置自定义样式
+                    .msg-content-container {
+                        // 如果需要重置某些样式，在这里添加
+                        // 例如：
+                        &.container--self {
+                            background: initial;
+
+                            ::selection {
+                                background: rgba(from var(--theme-color) r g b / 30%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .standalone-mini-profile-container {
         #mini-buddy-profile {
 
