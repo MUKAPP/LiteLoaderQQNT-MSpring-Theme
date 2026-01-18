@@ -24,7 +24,8 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
     // 加入heti的class调用上面的函数
     function processHeti(rootElement) {
         rootElement.querySelectorAll(selector).forEach(element => {
-            if (!element.classList.contains("heti")) {
+            // 检查是否已经包含 heti class 或已经有 heti-spacing 元素（避免重复应用）
+            if (!element.classList.contains("heti") && !element.querySelector("heti-spacing")) {
                 element.classList.add("heti");
                 hetiSpacingElement(element);
             }
@@ -140,17 +141,67 @@ async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType,
             document.body.style.backgroundColor = more_materials_enabled ? `var(--background-color-${colorKey})` : defaultColor;
         }
 
-        // 判断是否开启heti
+        // Heti 功能初始化
+        let applyHeti = null;
         if (settings.heti && url.startsWith("app://./renderer/index.html")) {
-            log("[设置]", "开启赫蹏");
-            try {
-                observeElement('#ml-root', (element) => {
-                    insertHeti(element, ".text-normal", mspring_theme, plugin_path);
-                }, false);
-            } catch (error) {
-                log("[错误]", "赫蹏加载出错", error);
-            }
+            let hetiApplied = false;
+
+            applyHeti = () => {
+                if (hetiApplied) {
+                    return;
+                }
+
+                const currentHash = window.location.hash;
+
+                if (currentHash.includes("#/main/message") || currentHash.includes("#/forward")) {
+                    log("[设置]", "应用赫蹏，聊天页面，hash:", currentHash);
+                    try {
+                        observeElement('#ml-root', (element) => {
+                            insertHeti(element, ".text-normal", mspring_theme, plugin_path);
+                        }, false);
+                        hetiApplied = true;
+                    } catch (error) {
+                        log("[错误]", "赫蹏加载出错", error);
+                    }
+                }
+            };
+
+            // 立即尝试应用（如果已经在目标页面）
+            applyHeti();
         }
+
+        // 通用 URL 变化监听
+        const wrapHistory = (type) => {
+            const original = history[type];
+            return function (...args) {
+                const result = original.apply(this, args);
+                // 创建并派发一个自定义事件
+                const event = new Event(type);
+                event.arguments = args;
+                window.dispatchEvent(event);
+                return result;
+            };
+        };
+
+        // 重写 pushState 和 replaceState
+        history.pushState = wrapHistory('pushState');
+        history.replaceState = wrapHistory('replaceState');
+
+        // URL 变化时的通用处理
+        const onUrlChange = () => {
+            log("[检测]", "URL 变化:", window.location.href);
+
+            // 调用各个功能的处理函数
+            if (applyHeti) {
+                applyHeti();
+            }
+        };
+
+        // 监听所有可能导致 URL 变化的情况
+        window.addEventListener('hashchange', onUrlChange);     // 手动修改 hash
+        window.addEventListener('popstate', onUrlChange);       // 浏览器前进/后退
+        window.addEventListener('pushState', onUrlChange);      // 代码调用 pushState
+        window.addEventListener('replaceState', onUrlChange);   // 代码调用 replaceState
 
     } catch (error) {
         log("[渲染进程错误]", error);
