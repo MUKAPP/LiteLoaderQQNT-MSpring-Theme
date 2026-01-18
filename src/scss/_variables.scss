@@ -46,7 +46,7 @@
     // 其他人的消息气泡文本颜色
     --bubble_guest_text: var(--msp-text-1);
 
-    // /* --fill_light_primary: TRANSPARENT; */
+    --fill_light_primary: var(--msp-container);
 
     --overlay_hover: var(--msp-container-hover);
     --overlay_active_brand: var(--theme-color);
@@ -130,7 +130,7 @@ html.mspring_force_host_bubble_color .q-theme-tokens-light {
     // 其他人的消息气泡文本颜色
     --bubble_guest_text: var(--msp-text-1);
 
-    // /* --fill_light_primary: TRANSPARENT; */
+    --fill_light_primary: var(--msp-container);
 
     --overlay_hover: var(--msp-container-hover);
     --overlay_active_brand: var(--theme-color);

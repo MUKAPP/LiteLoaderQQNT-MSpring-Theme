@@ -4,7 +4,7 @@
 /* 登录页面背景 */
 #login {
     // background: none !important;
-    background-color: var(--fill_light_primary) !important;
+    background-color: var(--bg_white) !important;
 
     #polar {
         display: none;
@@ -15,7 +15,7 @@
             .account-list {
                 backdrop-filter: $blur-backdrop-filter-16;
                 mix-blend-mode: multiply;
-                background: var(--fill_light_primary) !important;
+                background: var(--bg_white) !important;
             }
 
             .password {

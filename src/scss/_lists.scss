@@ -82,6 +82,13 @@
                     }
                 }
             }
+
+            // 联系人分组 折叠标题
+            .q-collapse-item__header {
+                background: rgb(from color-mix(in srgb, var(--msp-container), var(--bg_white)) r g b / 1);
+                backdrop-filter: $blur-backdrop-filter-16;
+                mix-blend-mode: multiply;
+            }
         }
 
         .two-col-layout__main {

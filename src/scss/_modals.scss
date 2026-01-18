@@ -28,7 +28,7 @@
 .q-popover {
     backdrop-filter: $blur-backdrop-filter-16;
     mix-blend-mode: multiply;
-    background: var(--fill_light_primary) !important;
+    background: var(--bg_white) !important;
 
     &::before {
         backdrop-filter: none;

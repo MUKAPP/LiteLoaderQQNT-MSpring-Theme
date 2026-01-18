@@ -34,8 +34,37 @@
 
             // 右侧文件列表
             .file-area {
-                .file-area-container {
+                .file-area-shortcut {
                     margin-top: unset;
+
+                    .shortcut-item {
+                        // border-radius: 8px;
+                    }
+                }
+
+                .file-area-container {
+                    padding-bottom: 16px;
+
+                    .file-list-normal-scroll-border {
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                    }
+
+                    // 文件列表 折叠标题
+                    .file-list-normal-sort-title-height {
+                        border-radius: 0;
+                        background: rgb(from color-mix(in srgb, var(--msp-container), var(--bg_white)) r g b / 1);
+                        backdrop-filter: $blur-backdrop-filter-16;
+                        mix-blend-mode: multiply;
+                    }
+
+                    // 群文件 footer
+                    .file-area-container-group-file-footer {
+                        border-radius: 0;
+                        background: rgb(from color-mix(in srgb, var(--msp-container), var(--bg_white)) r g b / 1);
+                        backdrop-filter: $blur-backdrop-filter-16;
+                        mix-blend-mode: multiply;
+                    }
                 }
             }
         }
