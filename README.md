@@ -1,22 +1,16 @@
 <img src="./res/github/intro.png" style="zoom:200%;" />
 
-# LiteLoaderQQNT-MSpring-Theme
+# MSpring Theme
 
-> [!NOTE]  
-> 该分支最低支持 LiteLoaderQQNT 1.0.0（测试版），v3 分支支持 1.0.0 以下版本
-
-[LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT)/QwQNT 主题，优雅 · 粉粉 · 细致
+[LiteLoaderQQNT](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT)/[QwQNT](https://qwqnt-community.github.io/docs/) 主题，优雅 · 粉粉 · 细致
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
 
 MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
 
-> [!WARNING]  
-> 由于风控严重，本插件开发进度可能会很缓慢
-
 ## 目录
 
-- [LiteLoaderQQNT-MSpring-Theme](#liteloaderqqnt-mspring-theme)
+- [MSpring Theme](#mspring-theme)
   - [目录](#目录)
   - [注意事项](#注意事项)
   - [截图](#截图)
@@ -39,10 +33,6 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 > Linux (KDE) 请配合 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。\
 > Linux 更改主题颜色后需要重启 QQ 才能生效\
 > 其他平台请自行尝试
->
-> 设置界面适配 QQ 的设置（不包括超级调色盘）以及使用了 Web Components 的插件的设置，不会主动适配未使用 Web Components 的插件的设置界面
-> 
-> 修改背景推荐使用 [背景插件 (Background Plugin)](https://github.com/xh321/LiteLoaderQQNT-Background-Plugin) 或者 [轻量工具箱](https://github.com/xiyuesaves/LiteLoaderQQNT-lite_tools) 的自定义背景功能，开启或关闭自定义背景之后需要重启一次 QQ
 
 > [!CAUTION]  
 > **不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
