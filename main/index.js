@@ -266,8 +266,8 @@ const defaultConfig = {
     "backgroundOpacity": "70",
     "heti": false,
     "forceHostBubbleColor": false,
+    "forceNightModeBackground": true,
     "logToMain": false,
-    // "force"
 };
 
 // 检查和更新配置文件
@@ -393,6 +393,13 @@ ipcMain.on("mspring_theme.updateForceBubbleColor", (event, state) => {
     for (const window of BrowserWindow.getAllWindows()) {
         // 向每个窗口的渲染进程发送应用样式的指令
         window.webContents.send("mspring_theme.applyForceBubbleColor", state);
+    }
+});
+
+// 监听来自设置窗口强制覆盖夜间模式背景的通知
+ipcMain.on("mspring_theme.updateForceNightModeBackground", (event, state) => {
+    for (const window of BrowserWindow.getAllWindows()) {
+        window.webContents.send("mspring_theme.applyForceNightModeBackground", state);
     }
 });
 

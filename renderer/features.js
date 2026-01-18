@@ -98,6 +98,22 @@ async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType,
             }
         });
 
+        // 判断是否强制覆盖夜间模式主页背景
+        if (settings.forceNightModeBackground) {
+            document.documentElement.classList.add("mspring_force_night_mode_background");
+        }
+
+        // 强制覆盖夜间模式背景 设置监听
+        mspring_theme.onApplyForceNightModeBackground((event, state) => {
+            const docElement = document.documentElement;
+            log(`设置修改强制夜间模式背景: ${state}`);
+            if (state) {
+                docElement.classList.add("mspring_force_night_mode_background");
+            } else {
+                docElement.classList.remove("mspring_force_night_mode_background");
+            }
+        });
+
         if (frameworkType === "liteloader") {
             // 判断插件background_plugin是否存在且启用
             if (LiteLoader.plugins["background_plugin"] && !LiteLoader.plugins["background_plugin"].disabled) {

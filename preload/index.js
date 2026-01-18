@@ -37,4 +37,14 @@ contextBridge.exposeInMainWorld("mspring_theme", {
         "mspring_theme.applyForceBubbleColor",
         callback
     ),
+    // 强制覆盖夜间模式背景 从设置页通知主进程
+    updateForceNightModeBackground: (state) => ipcRenderer.send(
+        "mspring_theme.updateForceNightModeBackground",
+        state
+    ),
+    // 强制覆盖夜间模式背景 在所有窗口接收主进程的通知
+    onApplyForceNightModeBackground: (callback) => ipcRenderer.on(
+        "mspring_theme.applyForceNightModeBackground",
+        callback
+    ),
 });

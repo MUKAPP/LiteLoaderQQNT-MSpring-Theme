@@ -82,6 +82,28 @@ async function settingWindowCreated(view, { log, mspring_theme, frameworkType, p
             mspring_theme.setSettings(settings);
         });
 
+        // 选择 id 为 force-night-mode-background 的 setting-switch
+        const forceNightModeBackgroundSwitch = view.querySelector("#force-night-mode-background");
+        if (settings.forceNightModeBackground) {
+            forceNightModeBackgroundSwitch.setAttribute("is-active", "");
+        }
+        // 添加点击监听
+        forceNightModeBackgroundSwitch.addEventListener("click", (event) => {
+            const isActive = event.currentTarget.hasAttribute("is-active");
+
+            if (isActive) {
+                event.currentTarget.removeAttribute("is-active");
+                settings.forceNightModeBackground = false;
+                mspring_theme.updateForceNightModeBackground(false);
+            } else {
+                event.currentTarget.setAttribute("is-active", "");
+                settings.forceNightModeBackground = true;
+                mspring_theme.updateForceNightModeBackground(true);
+            }
+
+            mspring_theme.setSettings(settings);
+        });
+
         // 版本更新
         const version = view.querySelector("#mst-settings-version");
         version.textContent = frameworkType === "liteloader"

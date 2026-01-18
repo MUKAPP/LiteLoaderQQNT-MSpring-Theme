@@ -1,12 +1,20 @@
 /* 基础、重置和全局通用样式 */
 @use "variables" as *;
 
+// 背景透明样式 - 根据是否强制覆盖使用不同优先级
 %bg-none {
     background: none;
 }
 
-%bg-none-important {
-    background: none !important;
+// 强制覆盖背景样式（用于夜间模式）
+// 当 html 有 mspring_force_night_mode_background 时使用 !important
+// 否则使用普通样式
+@mixin bg-none-conditional {
+    background: none;
+    
+    html.mspring_force_night_mode_background & {
+        background: none !important;
+    }
 }
 
 #app {
@@ -19,13 +27,13 @@
             .message-panel,
             // 左侧消息列表
             .recent-contact {
-                @extend %bg-none-important;
+                @include bg-none-conditional;
             }
 
             // 侧栏
             .sidebar {
                 .sidebar-nav {
-                    @extend %bg-none-important;
+                    @include bg-none-conditional;
                 }
             }
 
@@ -38,7 +46,7 @@
                 .contact,
                 // 联系人详情
                 .contact-profile {
-                    @extend %bg-none-important;
+                    @include bg-none-conditional;
                 }
 
                 // 好友通知/群通知界面
@@ -69,7 +77,7 @@
 
         /* QQ主题背景 */
         .q-miracle-background {
-            @extend %bg-none-important;
+            @include bg-none-conditional;
         }
     }
 
@@ -81,13 +89,13 @@
             &,
             // 左侧消息列表
             .recent-contact {
-                @extend %bg-none-important;
+                @include bg-none-conditional;
             }
         }
 
         /* QQ主题背景 */
         .q-miracle-background {
-            @extend %bg-none-important;
+            @include bg-none-conditional;
         }
     }
 
@@ -116,7 +124,7 @@
     // 申请加群/加好友界面
     .discover_container {
         .discover-contact-info {
-            @extend %bg-none-important;
+            @include bg-none-conditional;
         }
 
         .form-item__action {
