@@ -65,7 +65,7 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 #### 管理器安装
 
-下载 [release](https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest) 内的 `LiteLoaderQQNT-MSpring-Theme.zip`，进入 LiteLoaderQQNT 设置，找到“安装新插件”右侧的“选择文件”按钮，选择刚刚下载的 zip 文件。
+下载 [release](https://github.com/MUKAPP/mspring-theme/releases/latest) 内的 `mspring-theme.zip`，进入 LiteLoaderQQNT 设置，找到“安装新插件”右侧的“选择文件”按钮，选择刚刚下载的 zip 文件。
 
 #### 插件列表查看
 
@@ -73,12 +73,14 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 #### PluginInstaller
 
-安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/v4/manifest.json`，点击确定按钮\
-或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/LiteLoaderQQNT-MSpring-Theme/res/github/protocio-install.html) 直接拉起 PluginInstaller 安装插件
+安装 [PluginInstaller](https://github.com/xinyihl/LiteLoaderQQNT-PluginInstaller) 插件，打开对应设置页面，在安装插件输入框内输入 `https://raw.githubusercontent.com/MUKAPP/mspring-theme/v4/manifest.json`，点击确定按钮\
+或者也可以同时安装 [Protocio](https://github.com/PRO-2684/protocio) 插件，然后点击 [该链接](https://mukapp.github.io/mspring-theme/res/github/protocio-install.html) 直接拉起 PluginInstaller 安装插件
 
 ### QwQNT
 
-下载 [release](https://github.com/MUKAPP/LiteLoaderQQNT-MSpring-Theme/releases/latest) 内的 `LiteLoaderQQNT-MSpring-Theme.zip`，将下载的 zip 文件解压，解压出的文件夹移动至 `qwqnt/qwqnt-storage/plugins/` 内，重启 QQ 即可\
+前置插件：[qwqnt-plugin-settings](https://github.com/qwqnt-community/qwqnt-plugin-settings)
+
+下载 [release](https://github.com/MUKAPP/mspring-theme/releases/latest) 内的 `mspring-theme.zip`，将下载的 zip 文件解压，解压出的文件夹移动至 `qwqnt/qwqnt-storage/plugins/` 内，重启 QQ 即可\
 （如果解压之后不是一个文件夹，而是几个文件夹和几个文件，那么请创建一个文件夹，将解压出来的文件夹和文件放进去，然后再移动到上述路径内）
 
 ## 插件冲突分析
@@ -91,18 +93,18 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
-      https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date&theme=dark
+      https://api.star-history.com/svg?repos=MUKAPP/mspring-theme&type=Date&theme=dark
     "
   />
   <source
     media="(prefers-color-scheme: light)"
     srcset="
-      https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date
+      https://api.star-history.com/svg?repos=MUKAPP/mspring-theme&type=Date
     "
   />
   <img
     alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=MUKAPP/LiteLoaderQQNT-MSpring-Theme&type=Date"
+    src="https://api.star-history.com/svg?repos=MUKAPP/mspring-theme&type=Date"
     style="width: 100%;
       max-width: 600px;
       border-radius: 4px;
