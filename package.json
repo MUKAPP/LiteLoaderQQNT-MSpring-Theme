@@ -22,7 +22,7 @@
       "renderer": "./renderer/qwqnt.js"
     },
     "dependencies": {
-      "qwqnt-plugin-settings": "^2.0.0"
+      "qwqnt-hako": "^1.0.1"
     }
   },
   "devDependencies": {

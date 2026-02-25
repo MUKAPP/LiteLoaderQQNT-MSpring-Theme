@@ -6,7 +6,7 @@
 
 目前适配了大部分日间模式以及夜间模式场景，对很多地方的细节都进行了处理，欢迎使用 & star
 
-MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal) 
+MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ## 目录
 
@@ -28,13 +28,13 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ## 注意事项
 
-> [!TIP]  
+> [!TIP]
 > Windows11 22H2 及以上的版本推荐搭配 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。\
 > Linux (KDE) 请配合 [More Materials](https://github.com/mo-jinran/More-Materials) 插件使用。\
 > Linux 更改主题颜色后需要重启 QQ 才能生效\
 > 其他平台请自行尝试
 
-> [!CAUTION]  
+> [!CAUTION]
 > **不要在 QQ 官方群聊发送*任何*可以看出你使用了第三方插件的截图，不论是本主题还是其他主题其他插件**
 
 作者之前没怎么接触过前端开发，所以非常菜鸡（）\
@@ -78,7 +78,7 @@ MUK 的 TG 频道：[MUKAPP](https://t.me/MUKAPP_Personal)
 
 ### QwQNT
 
-前置插件：[qwqnt-plugin-settings](https://github.com/qwqnt-community/qwqnt-plugin-settings)
+前置插件：[qwqnt-hako](https://github.com/qwqnt-community/qwqnt-hako)
 
 下载 [release](https://github.com/MUKAPP/mspring-theme/releases/latest) 内的 `mspring-theme.zip`，将下载的 zip 文件解压，解压出的文件夹移动至 `qwqnt/qwqnt-storage/plugins/` 内，重启 QQ 即可\
 （如果解压之后不是一个文件夹，而是几个文件夹和几个文件，那么请创建一个文件夹，将解压出来的文件夹和文件放进去，然后再移动到上述路径内）
