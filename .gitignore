@@ -19,3 +19,5 @@ Thumbs.db
 
 # gemini cli 上下文文件
 GEMINI.md
+
+.continue/
