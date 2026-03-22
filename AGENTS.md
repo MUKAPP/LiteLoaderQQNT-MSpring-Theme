@@ -6,7 +6,7 @@
 
 - 项目：MSpring Theme
 - 类型：LiteLoaderQQNT / QwQNT 主题（theme）
-- 打包：通过 `npm run pack` 生成 `mspring-theme.zip`，并发布到 GitHub Release
+- 打包：通过 `npm run build` 生成 `mspring-theme.zip`，并发布到 GitHub Release
 
 ## 目录结构（简述）
 
@@ -31,7 +31,7 @@
 1. 确认工作区干净（`git status`）
 2. 更新版本号并提交
 3. 构建与打包：
-   - 推荐：`npm run build`（包含 clean + build:css + pack）
+   - 推荐：`npm run build`（包含清理旧产物、重新构建 CSS、执行打包）
 4. 创建 tag 并推送
 5. 创建 GitHub Release 并上传 `mspring-theme.zip`
 
@@ -58,7 +58,7 @@
 ### 可以做的事
 
 - 按 issue/PR 描述修改代码、样式、文档
-- 运行 `npm run build`/`npm run pack` 验证打包
+- 运行 `npm run build` 验证打包
 - 更新版本号、补充 changelog/release notes（按维护者要求）
 
 ### 不应该做的事

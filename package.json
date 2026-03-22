@@ -9,10 +9,8 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist src/style.min.css mspring-theme.zip",
-    "build:css": "sass src/style.scss | postcss -o src/style.min.css",
-    "pack": "node pack.js",
-    "build": "npm run clean && npm run build:css && npm run pack",
-    "dev": "npm run build:css && nodemon --watch src -e scss --exec \"npm run build:css\""
+    "build": "npm run clean && (sass src/style.scss | postcss -o src/style.min.css) && node pack.js",
+    "dev": "(sass src/style.scss | postcss -o src/style.min.css) && nodemon --watch src -e scss --exec \"sass src/style.scss | postcss -o src/style.min.css\""
   },
   "qwqnt": {
     "name": "MSpring Theme",
