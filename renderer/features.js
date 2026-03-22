@@ -20,34 +20,68 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
         `;
     document.head.appendChild(hetiSpacingElementScriptElement);
 
-    // 页面变化时，遍历class中包含text-normal的所有元素，如果class不包含heti的就加入heti的class
-    // 加入heti的class调用上面的函数
+    function applyHetiToElement(element) {
+        if (!element.matches(selector) || element.querySelector("heti-spacing")) {
+            return;
+        }
+
+        element.classList.add("heti");
+        hetiSpacingElement(element);
+    }
+
+    // 页面变化时，遍历 class 中包含 text-normal 的所有元素
     function processHeti(rootElement) {
-        rootElement.querySelectorAll(selector).forEach(element => {
-            // 检查是否已经包含 heti class 或已经有 heti-spacing 元素（避免重复应用）
-            if (!element.classList.contains("heti") && !element.querySelector("heti-spacing")) {
-                element.classList.add("heti");
-                hetiSpacingElement(element);
-            }
+        if (!rootElement || rootElement.nodeType !== 1) {
+            return;
+        }
+
+        applyHetiToElement(rootElement);
+        rootElement.querySelectorAll(selector).forEach(applyHetiToElement);
+    }
+
+    let processTimer = null;
+    const pendingRoots = new Set();
+
+    function scheduleHetiProcess(element) {
+        if (!element || element.nodeType !== 1) {
+            return;
+        }
+
+        pendingRoots.add(element);
+
+        if (processTimer !== null) {
+            return;
+        }
+
+        processTimer = requestAnimationFrame(() => {
+            pendingRoots.forEach(processHeti);
+            pendingRoots.clear();
+            processTimer = null;
         });
     }
 
     // 处理页面上已经存在的元素
     processHeti(messageListElement);
 
-    // 设置监听器，处理新增的元素
+    // 设置监听器，处理新增元素和后续文本重渲染
     const observer = new MutationObserver((mutationsList) => {
-        for (let mutation of mutationsList) {
+        for (const mutation of mutationsList) {
             if (mutation.type === "childList") {
+                if (mutation.target.nodeType === 1) {
+                    scheduleHetiProcess(mutation.target);
+                }
+
                 mutation.addedNodes.forEach(node => {
-                    if (node.nodeType === 1) { // 确保是元素节点
-                        processHeti(node); // 复用上面的函数处理新增节点
+                    if (node.nodeType === 1) {
+                        scheduleHetiProcess(node);
                     }
                 });
+            } else if (mutation.type === "characterData" && mutation.target.parentElement) {
+                scheduleHetiProcess(mutation.target.parentElement);
             }
         }
     });
-    observer.observe(messageListElement, { childList: true, subtree: true });
+    observer.observe(messageListElement, { childList: true, subtree: true, characterData: true });
 }
 
 function compareVersions(v1, v2) {
