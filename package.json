@@ -12,8 +12,9 @@
     "build:heti:css": "sass --silence-deprecation=import,global-builtin --no-source-map vendor/heti/heti-m.scss src/heti-m.css",
     "build:heti:js": "esbuild vendor/heti/js/heti-entry.js --bundle --format=iife --platform=browser --charset=utf8 --outfile=src/heti-addon.js",
     "build:heti": "npm run build:heti:css && npm run build:heti:js",
-    "build": "npm run clean && npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css) && node pack.js",
-    "dev": "npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css) && nodemon --watch src --watch vendor/heti -e scss,js --exec \"npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css)\""
+    "build:css": "sass src/style.scss | postcss -o src/style.min.css",
+    "build": "npm run clean && npm run build:heti && npm run build:css && node pack.js",
+    "dev": "npm run build:heti && npm run build:css && nodemon --watch src/style.scss --watch src/scss --watch vendor/heti -e scss,js --ignore src/heti-addon.js --ignore src/style.min.css --ignore src/heti-m.css --exec \"npm run build:heti && npm run build:css\""
   },
   "qwqnt": {
     "name": "MSpring Theme",
