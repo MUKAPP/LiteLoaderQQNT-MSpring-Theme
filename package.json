@@ -8,9 +8,12 @@
   "author": "MUKAPP",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf dist src/style.min.css mspring-theme.zip",
-    "build": "npm run clean && (sass src/style.scss | postcss -o src/style.min.css) && node pack.js",
-    "dev": "(sass src/style.scss | postcss -o src/style.min.css) && nodemon --watch src -e scss --exec \"sass src/style.scss | postcss -o src/style.min.css\""
+    "clean": "rimraf dist src/style.min.css src/heti-addon.js src/heti-m.css mspring-theme.zip",
+    "build:heti:css": "sass --silence-deprecation=import,global-builtin --no-source-map vendor/heti/heti-m.scss src/heti-m.css",
+    "build:heti:js": "esbuild vendor/heti/js/heti-entry.js --bundle --format=iife --platform=browser --charset=utf8 --outfile=src/heti-addon.js",
+    "build:heti": "npm run build:heti:css && npm run build:heti:js",
+    "build": "npm run clean && npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css) && node pack.js",
+    "dev": "npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css) && nodemon --watch src --watch vendor/heti -e scss,js --exec \"npm run build:heti && (sass src/style.scss | postcss -o src/style.min.css)\""
   },
   "qwqnt": {
     "name": "MSpring Theme",
@@ -27,6 +30,8 @@
     "archiver": "^7.0.1",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.2",
+    "esbuild": "^0.28.0",
+    "heti-findandreplacedomtext": "^0.5.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",

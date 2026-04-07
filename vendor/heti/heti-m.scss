@@ -1,0 +1,57 @@
+/*!
+ * Project: Heti
+ * URL: https://github.com/sivan/heti
+ * Author: Sivan [sun.sivan@gmail.com]
+ * MUKAPP 修改：聊天场景使用的精简样式入口
+ */
+
+@import "lib/variables";
+@import "lib/helpers/add-on";
+
+#{$root-selector} {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: $letter-spacing-medium;
+
+    p {
+        text-align: justify;
+
+        @include non-cjk-block {
+            text-align: start;
+        }
+    }
+
+    pre {
+        overflow: auto;
+        white-space: pre;
+        word-wrap: normal;
+    }
+
+    @include non-cjk-block {
+        letter-spacing: $letter-spacing-normal;
+    }
+
+    a,
+    abbr,
+    code,
+    heti-spacing,
+    [lang="en-US"] {
+        letter-spacing: normal;
+    }
+
+    table {
+        word-break: break-word;
+    }
+
+    q {
+        quotes: map-get(map-get($chinese-quote-presets, $chinese-quote-set), "horizontal");
+
+        @include non-cjk-block {
+            quotes: initial;
+            quotes: auto;
+        }
+    }
+
+    @include hetiAddOns();
+}

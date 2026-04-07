@@ -6,7 +6,7 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
     hetiStyleElement.textContent = hetiAddonCSS;
     document.head.appendChild(hetiStyleElement);
 
-    const hetiAddonJS = await mspring_theme.readFile(`${plugin_path}/src/heti-addon.min.js`);
+    const hetiAddonJS = await mspring_theme.readFile(`${plugin_path}/src/heti-addon.js`);
     const hetiScriptElement = document.createElement("script");
     hetiScriptElement.textContent = hetiAddonJS;
     document.head.appendChild(hetiScriptElement);
@@ -21,7 +21,7 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
     document.head.appendChild(hetiSpacingElementScriptElement);
 
     function applyHetiToElement(element) {
-        if (!element.matches(selector) || element.querySelector("heti-spacing")) {
+        if (!element.matches(selector) || element.querySelector("heti-spacing, heti-adjacent, heti-close")) {
             return;
         }
 

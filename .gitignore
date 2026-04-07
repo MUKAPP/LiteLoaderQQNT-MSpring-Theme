@@ -1,6 +1,9 @@
 # 忽略编译输出目录
 /src/style.min.css
+/src/heti-addon.js
+/src/heti-m.css
 mspring-theme.zip
+
 
 # 忽略 Node.js 模块
 /node_modules
