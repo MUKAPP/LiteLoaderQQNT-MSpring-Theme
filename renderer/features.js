@@ -170,25 +170,26 @@ async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType,
             log(document.documentElement.classList);
         }
 
-        let more_materials_enabled = frameworkType === "liteloader"
-            ? LiteLoader.plugins["more_materials"] && !LiteLoader.plugins["more_materials"].disabled
-            : false;
+        let more_materials_enabled = false;
+        if (frameworkType === "liteloader") {
+            more_materials_enabled = !!(LiteLoader.plugins["more_materials"] && !LiteLoader.plugins["more_materials"].disabled);
+        } else if (frameworkType === "qwqnt") {
+            // QwQNT 插件名为 qwqnt-more-materials
+            more_materials_enabled = !!(qwqnt?.framework?.plugins?.["qwqnt-more-materials"]
+                || qwqnt?.framework?.plugins?.["more_materials"]);
+        }
 
         if (more_materials_enabled) {
             log("[检测]", "已启用 More Materials");
+            document.documentElement.classList.add("mspring_more_materials_enabled");
         }
 
         const url = window.location.href;
         log("[检测]", "当前页面", url);
 
-        if (url.startsWith("app://./renderer/login.html")) {
+        // 兼容旧版 login.html 与新版 newLogin.html
+        if (url.toLowerCase().includes("login.html")) {
             log("[检测]", "登录页面");
-            // 判断窗口是否是夜间模式
-            let isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            let colorKey = isDarkMode ? 'dark' : 'light';
-            let defaultColor = isDarkMode ? '#171717' : '#ffffff';
-
-            document.body.style.backgroundColor = more_materials_enabled ? `var(--background-color-${colorKey})` : defaultColor;
         }
 
         // Heti 功能初始化

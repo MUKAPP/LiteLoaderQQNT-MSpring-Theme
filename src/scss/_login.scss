@@ -1,16 +1,32 @@
 /* 登录界面的相关样式 */
 @use "variables" as *;
 
-/* 登录页面背景 */
-#login {
-    // background: none !important;
-    background-color: var(--bg_white) !important;
+/* 清除登录页官方渐变/实色，兼容旧 login.html 与新 newLogin.html */
+html:has(body#login) {
+    background: none !important;
+}
 
+/* 默认实色；启用 More Materials 后由下方半透明变量接管 */
+body#login {
+    background: #ffffff !important;
+
+    &.q-theme-tokens-dark,
+    &[q-theme="dark"] {
+        background: #171717 !important;
+    }
+
+    /* 旧版登录极光/粒子背景 */
     #polar {
         display: none;
     }
 
+    /* 新版登录页彩色渐变层（节点同时是登录 UI 容器，只能清背景，不能 display:none） */
+    .color-bg {
+        background: none !important;
+    }
+
     #app {
+        /* 旧版登录面板 */
         .login-panel {
             .account-list {
                 backdrop-filter: $blur-backdrop-filter-16;
@@ -36,9 +52,26 @@
                 .avatar {
                     box-shadow: 0 2px 28px 0 rgb(from var(--theme-color) r g b / 40%);
                 }
-
             }
         }
 
+        /* 新版登录头像选中态阴影 */
+        .login-new-panel,
+        .mix-login {
+            .avatar-item.is-selected .avatar-wrap,
+            .auto-login .avatar {
+                box-shadow: 0 2px 28px 0 rgb(from var(--theme-color) r g b / 40%);
+            }
+        }
+    }
+}
+
+/* 搭配 More Materials 时使用主题背景透明度变量，透出窗口材质 */
+html.mspring_more_materials_enabled body#login {
+    background: var(--background-color-light) !important;
+
+    &.q-theme-tokens-dark,
+    &[q-theme="dark"] {
+        background: var(--background-color-dark) !important;
     }
 }
