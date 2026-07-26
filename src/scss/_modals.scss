@@ -22,6 +22,14 @@
     }
 }
 
+// 表情面板使用与菜单相同的实色 multiply 毛玻璃。
+#app .aio .sticker-panel {
+    background: var(--bg_white) !important;
+    backdrop-filter: $blur-backdrop-filter-16 !important;
+    -webkit-backdrop-filter: $blur-backdrop-filter-16 !important;
+    mix-blend-mode: multiply !important;
+}
+
 // 菜单毛玻璃：滤镜必须作用在菜单本体，才能得到不透明实色底上的 multiply 模糊。
 // backdrop-filter 会让元素成为 fixed 后代的 containing block；渲染脚本通过
 // Popover Top Layer 绕过该限制，同时保留二级菜单原有的 DOM、事件和生命周期。
