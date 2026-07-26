@@ -22,12 +22,21 @@
     }
 }
 
-// 表情面板使用与菜单相同的实色 multiply 毛玻璃。
-#app .aio .sticker-panel {
+// 表情面板外层是 z-index 堆叠上下文，毛玻璃需放在这一层才能采样聊天界面。
+#app .aio .expression-panel-inner {
     background: var(--bg_white) !important;
+    border-radius: 8px;
     backdrop-filter: $blur-backdrop-filter-16 !important;
     -webkit-backdrop-filter: $blur-backdrop-filter-16 !important;
     mix-blend-mode: multiply !important;
+
+    // 内层实色背景会盖住外层的模糊结果。
+    .sticker-panel {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        mix-blend-mode: normal !important;
+    }
 }
 
 // 菜单毛玻璃：滤镜必须作用在菜单本体，才能得到不透明实色底上的 multiply 模糊。
