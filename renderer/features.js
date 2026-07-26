@@ -101,6 +101,63 @@ function compareVersions(v1, v2) {
     return parts1.length === parts2.length ? 0 : -1;
 }
 
+let contextSubMenuTopLayerObserver = null;
+
+/**
+ * 将二级菜单放入浏览器 Top Layer，但保留原始 DOM 父子关系。
+ * backdrop-filter 会让一级菜单成为 fixed 后代的 containing block；Top Layer 可绕过
+ * 该定位和裁切限制，同时不破坏二级菜单的事件冒泡与 Vue 生命周期。
+ */
+function setupContextSubMenuTopLayer() {
+    if (contextSubMenuTopLayerObserver || !document.body) {
+        return;
+    }
+
+    const selector = ".q-context-sub-menu__container:not(.is-pure)";
+
+    const showSubMenus = (root) => {
+        if (!(root instanceof Element)) {
+            return;
+        }
+
+        const subMenus = root.matches(selector)
+            ? [root]
+            : root.querySelectorAll(selector);
+
+        for (const subMenu of subMenus) {
+            if (typeof subMenu.showPopover !== "function") {
+                continue;
+            }
+
+            subMenu.setAttribute("popover", "manual");
+            if (!subMenu.matches(":popover-open")) {
+                try {
+                    subMenu.showPopover();
+                } catch (error) {
+                    // Vue 可能已在观察器回调前移除菜单，此时无需处理。
+                    if (subMenu.isConnected) {
+                        throw error;
+                    }
+                }
+            }
+        }
+    };
+
+    contextSubMenuTopLayerObserver = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+                showSubMenus(node);
+            }
+        }
+    });
+
+    contextSubMenuTopLayerObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+    showSubMenus(document.body);
+}
+
 async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType, plugin_path, observeElement }) {
     try {
         // 判断操作系统类型
@@ -115,6 +172,8 @@ async function setupThemeFeatures(settings, { log, mspring_theme, frameworkType,
             osType = "mac";
         }
         document.documentElement.classList.add(osType);
+
+        setupContextSubMenuTopLayer();
 
         // 判断是否强制覆盖自己的气泡颜色
         if (settings.forceHostBubbleColor) {

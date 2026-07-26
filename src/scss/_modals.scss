@@ -22,18 +22,32 @@
     }
 }
 
-// 菜单
+// 菜单毛玻璃：滤镜必须作用在菜单本体，才能得到不透明实色底上的 multiply 模糊。
+// backdrop-filter 会让元素成为 fixed 后代的 containing block；渲染脚本通过
+// Popover Top Layer 绕过该限制，同时保留二级菜单原有的 DOM、事件和生命周期。
 .q-context-menu:not(.is-pure),
 .q-context-sub-menu__container:not(.is-pure),
-.q-popover {
-    backdrop-filter: $blur-backdrop-filter-16;
-    mix-blend-mode: multiply;
+.q-popover,
+body[support-gauss-blur="true"] .q-context-menu:not(.is-pure),
+body[support-gauss-blur="true"] .q-context-sub-menu__container:not(.is-pure) {
     background: var(--bg_white) !important;
+    backdrop-filter: $blur-backdrop-filter-16 !important;
+    -webkit-backdrop-filter: $blur-backdrop-filter-16 !important;
+    mix-blend-mode: multiply !important;
 
+    // 关闭 QQ 原生的第二层毛玻璃，避免重复混合。
     &::before {
-        backdrop-filter: none;
-        mix-blend-mode: none;
+        content: none !important;
+        display: none !important;
+        background: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
+}
+
+// Popover Top Layer 的 UA 默认 margin:auto 会改写 QQ 计算出的 fixed 坐标。
+.q-context-sub-menu__container[popover] {
+    margin: 0 !important;
 }
 
 // 顶部表情回应区域
