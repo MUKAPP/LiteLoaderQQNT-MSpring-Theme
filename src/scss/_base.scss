@@ -132,18 +132,18 @@
         }
     }
 
-    // 独立好友信息界面（窗口暂时背景没有透明，故先不启用）
+    // 独立好友信息窗口需要遮蔽原生 Acrylic/Mica 背景。
     .standalone-mini-profile-container {
-        @extend %bg-none;
+        background: rgb(from var(--background-color-light) r g b / 1) !important;
 
         #mini-buddy-profile {
-            @extend %bg-none;
+            background: inherit !important;
         }
     }
 
-    // 同上
-    .mini-buddy {
-        @extend %bg-none;
+    // 资料卡窗口内的填充层与卡片背景保持一致。
+    body:has(.standalone-mini-profile-container) & .mini-buddy {
+        background: rgb(from var(--background-color-light) r g b / 1) !important;
     }
 
 
@@ -153,6 +153,15 @@
             @extend %bg-none;
         }
     }
+}
+
+body.q-theme-tokens-dark #app .standalone-mini-profile-container,
+body.q-theme-tokens-dark #app .standalone-mini-profile-container #mini-buddy-profile,
+body.q-theme-tokens-dark:has(.standalone-mini-profile-container) #app .mini-buddy,
+body[q-theme="dark"] #app .standalone-mini-profile-container,
+body[q-theme="dark"] #app .standalone-mini-profile-container #mini-buddy-profile,
+body[q-theme="dark"]:has(.standalone-mini-profile-container) #app .mini-buddy {
+    background: rgb(from var(--background-color-dark) r g b / 1) !important;
 }
 
 #app {
