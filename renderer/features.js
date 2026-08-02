@@ -38,7 +38,6 @@ async function insertHeti(messageListElement, selector, mspring_theme, plugin_pa
         applyHetiToElement(rootElement);
         rootElement.querySelectorAll(selector).forEach(applyHetiToElement);
     }
-
     let processTimer = null;
     const pendingRoots = new Set();
 
@@ -106,7 +105,7 @@ let contextSubMenuTopLayerObserver = null;
 /**
  * 将二级菜单放入浏览器 Top Layer，但保留原始 DOM 父子关系。
  * backdrop-filter 会让一级菜单成为 fixed 后代的 containing block；Top Layer 可绕过
- * 该定位和裁切限制，同时不破坏二级菜单的事件冒泡与 Vue 生命周期。
+ * 该定位和裁切限制，同时不破坏二级菜单的事件冒泡与 Vue/Lit 生命周期。
  */
 function setupContextSubMenuTopLayer() {
     if (contextSubMenuTopLayerObserver || !document.body) {
@@ -114,6 +113,101 @@ function setupContextSubMenuTopLayer() {
     }
 
     const selector = ".q-context-sub-menu__container:not(.is-pure)";
+    const liteToolsHostSelector = "lt-context-menu-item";
+    const observedShadowRoots = new WeakSet();
+    const liteToolsMenuStyleSheet = new CSSStyleSheet();
+    liteToolsMenuStyleSheet.replaceSync(`
+        .submenu-panel {
+            background: var(--bg_white) !important;
+            backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
+            -webkit-backdrop-filter: blur(16px) saturate(150%) opacity(40%) !important;
+            mix-blend-mode: multiply !important;
+        }
+
+        .submenu-panel::before {
+            content: none !important;
+            display: none !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            mix-blend-mode: normal !important;
+        }
+    `);
+
+    const applyLiteToolsMenuStyle = (shadowRoot) => {
+        if (shadowRoot.adoptedStyleSheets.includes(liteToolsMenuStyleSheet)) {
+            return;
+        }
+
+        shadowRoot.adoptedStyleSheets = [
+            ...shadowRoot.adoptedStyleSheets,
+            liteToolsMenuStyleSheet
+        ];
+    };
+
+    const showSubMenu = (subMenu, resetMargin = false) => {
+        if (typeof subMenu.showPopover !== "function") {
+            return;
+        }
+
+        subMenu.setAttribute("popover", "manual");
+        if (resetMargin) {
+            // Popover UA 样式的 margin:auto 会再次改写 LiteTools 计算出的 fixed 坐标。
+            subMenu.style.setProperty("margin", "0", "important");
+        }
+
+        if (!subMenu.matches(":popover-open")) {
+            try {
+                subMenu.showPopover();
+            } catch (error) {
+                // Vue/Lit 可能已在观察器回调前移除菜单，此时无需处理。
+                if (subMenu.isConnected) {
+                    throw error;
+                }
+            }
+        }
+    };
+
+    const observeLiteToolsHost = (host) => {
+        const shadowRoot = host.shadowRoot;
+        if (!shadowRoot || observedShadowRoots.has(shadowRoot)) {
+            return;
+        }
+
+        observedShadowRoots.add(shadowRoot);
+        applyLiteToolsMenuStyle(shadowRoot);
+
+        const processShadowRoot = () => {
+            shadowRoot.querySelectorAll(".submenu-panel").forEach((subMenu) => {
+                showSubMenu(subMenu, true);
+            });
+
+            shadowRoot.querySelectorAll(liteToolsHostSelector).forEach(observeLiteToolsHost);
+        };
+
+        const shadowObserver = new MutationObserver(processShadowRoot);
+        shadowObserver.observe(shadowRoot, {
+            attributes: true,
+            attributeFilter: ["style"],
+            childList: true,
+            subtree: true
+        });
+        processShadowRoot();
+    };
+
+    const processLiteToolsHost = (host) => {
+        if (host.shadowRoot) {
+            observeLiteToolsHost(host);
+            return;
+        }
+
+        // Lit 组件可能先挂载宿主节点，再异步创建 ShadowRoot。
+        queueMicrotask(() => {
+            if (host.isConnected) {
+                observeLiteToolsHost(host);
+            }
+        });
+    };
 
     const showSubMenus = (root) => {
         if (!(root instanceof Element)) {
@@ -125,21 +219,15 @@ function setupContextSubMenuTopLayer() {
             : root.querySelectorAll(selector);
 
         for (const subMenu of subMenus) {
-            if (typeof subMenu.showPopover !== "function") {
-                continue;
-            }
+            showSubMenu(subMenu);
+        }
 
-            subMenu.setAttribute("popover", "manual");
-            if (!subMenu.matches(":popover-open")) {
-                try {
-                    subMenu.showPopover();
-                } catch (error) {
-                    // Vue 可能已在观察器回调前移除菜单，此时无需处理。
-                    if (subMenu.isConnected) {
-                        throw error;
-                    }
-                }
-            }
+        const liteToolsHosts = root.matches(liteToolsHostSelector)
+            ? [root]
+            : root.querySelectorAll(liteToolsHostSelector);
+
+        for (const host of liteToolsHosts) {
+            processLiteToolsHost(host);
         }
     };
 
